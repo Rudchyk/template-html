@@ -23,9 +23,6 @@
     </div>
     <div class="main" id="current-ex2">
         <div class="qtcontent visible">
-            <div class="return">
-                <a href="/">Возврат на сайт</a>
-            </div>
             <h1>ВНИМАНИЕ! Вы используете устаревший браузер Internet Explorer 7(6)</h1>
             <p>Данный сайт построен на передовых, современных технологиях и не поддерживает Internet Explorer 7(6)-ой версии.</p>
             <p>Настоятельно Вам рекомендуем выбрать и установить любой из современных браузеров. Это бесплатно и займет всего несколько минут.</p>
@@ -49,16 +46,16 @@
             </table>
             <h2>Почему нужно поменять браузер IE7(6) на другой?</h2>
             <p>
-                Браузер Internet Explorer 7(6) является не просто браузером старой 
+                Браузер Internet Explorer 7(6) является не просто браузером старой
                 версии, а устаревшим браузером, браузером старого поколения. Он не может
-                 предоставить все возможности, которые могут предоставить современные 
+                 предоставить все возможности, которые могут предоставить современные
                 браузеры, а скорость его работы в несколько раз ниже! Internet Explorer 7(6)
                  не способен корректно отображать большинство сайтов.
             </p>
             <p>
-                Если по каким либо причинам Вы не имеете доступа к возможности 
-                установки программ, то рекомендуем воспользоваться "portable" версиями 
-                браузеров. Они не требуют инсталляции на компьютер и работают с любого 
+                Если по каким либо причинам Вы не имеете доступа к возможности
+                установки программ, то рекомендуем воспользоваться "portable" версиями
+                браузеров. Они не требуют инсталляции на компьютер и работают с любого
                 диска или вашей флешки: <noindex><a href="http://portableapps.com/apps/internet/firefox_portable" target="_blank" rel="nofollow">Mozilla Firefox</a></noindex> или <noindex><a href="http://portableapps.com/apps/internet/google_chrome_portable" target="_blank" rel="nofollow">Google Chrome</a></noindex>.
             </p>
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -89,14 +86,11 @@
             </table>
         </div>
         <div class="qtcontent">
-            <div class="return">
-                <a href="/">Return to site</a>
-            </div>
             <h1>СAUTION! You are using the out-of-date browser Internet Explorer 7(6)</h1>
             <p>This site is built on the advanced, modern technologies and does not support Internet Explorer version 7(6).</p>
             <p>
-                It is insistently recommended to you to choose and establish any 
-                of modern browsers. It is free of charge and also will take only some 
+                It is insistently recommended to you to choose and establish any
+                of modern browsers. It is free of charge and also will take only some
                 minutes.
             </p>
             <table class="brows" cellspacing="0">
@@ -119,10 +113,10 @@
             </table>
             <h2>Why it is necessary to change browser IE7(6) to another?</h2>
             <p>
-                Browser Internet Explorer 6 is not simply a browser of the old 
-                version, it is an out-of-date browser, a browser of old generation! It 
+                Browser Internet Explorer 6 is not simply a browser of the old
+                version, it is an out-of-date browser, a browser of old generation! It
                 cannot give all possibilities which can be given by modern browsers, and
-                 speed of its work is several times lower! Internet Explorer 7(6) is not 
+                 speed of its work is several times lower! Internet Explorer 7(6) is not
                 capable to display the majority of sites correctly.
             </p>
             <table class="why" cellspacing="0">
@@ -157,15 +151,25 @@
     <div class="footer"><!-- --></div>
 </div>
 <!--jQuery library-->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../js/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="../js/jquery-1.10.2.min.js"></script>
 <script>
     (function($) {
-        $(function() {
-            $('ul.tabs').delegate('li:not(.current)', 'click', function() {
-                $(this).addClass('current').siblings().removeClass('current').parents('div.wrap').find('div.qtcontent').eq($(this).index()).fadeIn(0).siblings('div.qtcontent').hide();
-            })
-        })
+        $(function tabs(){
+            var settings = {
+                tab : '.tabs',
+                tabCurrent : 'current',
+                tabSection : '.wrap',
+                tabContent : '.qtcontent'
+            };
+            $(settings.tab).delegate('li:not(.'+settings.tabCurrent+')', 'click', function() {
+                var $el = $(this);
+                $el
+                    .addClass(settings.tabCurrent)
+                    .siblings().removeClass(settings.tabCurrent)
+                    .parents(settings.tabSection).find(settings.tabContent).eq($el.index()).fadeIn(150)
+                    .siblings(settings.tabContent).hide();
+            });
+        });
     })(jQuery)
 </script>
 </body>
