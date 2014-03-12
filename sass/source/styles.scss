@@ -1,0 +1,35 @@
+@import "var";
+
+/* ---------->>> HEADER <<<-----------*/
+
+.header{}
+
+/* ---------->>> CONTENT <<<-----------*/
+
+.content{
+    padding-bottom: $footer-height;
+}
+.main-section{}
+
+/* ---------->>> SIDEBAR <<<-----------*/
+
+.sidebar{}
+
+/* ---------->>> WIDGET <<<-----------*/
+
+/* ---------->>> FOOTER <<<-----------*/
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    height: $footer-height;
+    width: 100%;
+}
+
+/* ---------->>> POPUPS <<<-----------*/
+
+/* ---------->>> OTHER STYLES <<<-----------*/
+
+
