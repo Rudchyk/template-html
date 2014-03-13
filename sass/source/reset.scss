@@ -1,6 +1,6 @@
 @import "compass/css3";
 @import "compass/reset/utilities";
-@import "compass/utilities/text/ellipsis";
+@import "compass/typography/text/ellipsis";
 @import "compass/typography/lists/bullets";
 @import "compass/utilities/general/clearfix";
 
@@ -159,9 +159,9 @@ section{
 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
 */
 
-audio, 
-canvas, 
-video{ 
+audio,
+canvas,
+video{
     display: inline-block; /* 1 */
     vertical-align: baseline; /* 2 */
 }
@@ -204,11 +204,11 @@ body{
     -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 }
 
-pre, 
-code, 
-kbd, 
+pre,
+code,
+kbd,
 samp,
-q{  
+q{
     @include hyphens(none);
 }
 
@@ -229,20 +229,20 @@ pre{
 }
 
 q,
-blockquote{ 
+blockquote{
     @include reset-quotation;
 }
 
-sub, 
-sup { 
+sub,
+sup {
     font-size: smaller;
 }
 
-sup { 
-    vertical-align: super; 
+sup {
+    vertical-align: super;
 }
 
-sub { 
+sub {
     vertical-align: sub;
 }
 
@@ -251,10 +251,10 @@ strong {
     font-weight: bold;
 }
 
-em, 
+em,
 i,
 dfn{
-    font-style:italic; 
+    font-style:italic;
 }
 
 u{
@@ -304,7 +304,7 @@ ol{
 /*  Remove most spacing between table cells. */
 
 table{
-    @include reset-table; 
+    @include reset-table;
 }
 
 th,
@@ -360,13 +360,13 @@ textarea{
 2. Improve usability and consistency of cursor style between image-type `input` and others.
 */
 
-a[href], 
+a[href],
 input[type="submit"],
 html input[type="button"], /* 1 */
 input[type="image"],
-input[type="reset"], 
-label[for], 
-select, 
+input[type="reset"],
+label[for],
+select,
 button,
 .button{
     cursor: pointer; /* 2 */
@@ -392,15 +392,15 @@ select{
 
 a:active,
 a:hover,
-input, 
+input,
 textarea,
 select,
 button,
-input:hover, 
+input:hover,
 textarea:hover,
 select:hover,
 button:hover,
-input:focus, 
+input:focus,
 textarea:focus,
 select:focus,
 button:focus{
@@ -436,7 +436,7 @@ Re-set default cursor for disabled elements.
 button[disabled],
 input[disabled],
 textarea,
-select{ 
+select{
     cursor: default;
 }
 
