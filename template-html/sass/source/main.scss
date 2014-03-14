@@ -27,7 +27,7 @@ a,
 html {
     min-width: $standard; // No mobile!!!
     >body .container-wrap{
-        height: auto; 
+        height: auto;
         min-height: 100%;
     }
 }
@@ -73,11 +73,11 @@ $paragraf-margin: 10px 0;
 
 .text{
     line-height: normal;
-    h1, 
-    h2, 
-    h3, 
-    h4, 
-    h5, 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
     h6{
         margin: $paragraf-margin;
     }
@@ -85,7 +85,7 @@ $paragraf-margin: 10px 0;
     h2{}
     h3{}
     ul{
-        list-style: disc; 
+        list-style: disc;
         margin: $paragraf-margin;
         li{}
     }
@@ -100,7 +100,7 @@ $paragraf-margin: 10px 0;
     p{
         margin: $paragraf-margin;
     }
-    table, 
+    table,
     td{
         border: 1px solid #ccc;
     }
@@ -118,9 +118,11 @@ $paragraf-margin: 10px 0;
     blockquote{
         border-left: 2px solid #000;
         margin: 16px 28px 10px 16px;
-        padding-left: 16px; 
+        padding-left: 16px;
     }
-    img{}
+    img{
+        max-width: 100%;
+    }
 }
 
 /* ---------->>> IMAGES <<<-----------*/
