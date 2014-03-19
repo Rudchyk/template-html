@@ -1,19 +1,19 @@
 @import "var";
 
-/* ---------->>> IE11 <<<-----------*/
+// /* ---------->>> IE11 <<<-----------*/
 
 .ie11{}
 
-/* ---------->>> IE10 <<<-----------*/
+// /* ---------->>> IE10 <<<-----------*/
 
-/*clear the password reveal button and the clear button in IE10*/
-/*.hidden_input::-ms-clear,
-.hidden_input::-ms-reveal{
-  display: none;
-}*/
+// /*clear the password reveal button and the clear button in IE10*/
+// .hidden_input::-ms-clear,
+// .hidden_input::-ms-reveal{
+//   display: none;
+// }
 .ie10{}
 
-/* ---------->>> IE9 <<<-----------*/
+// /* ---------->>> IE9 <<<-----------*/
 
 .ie9{}
 
@@ -32,18 +32,18 @@
     }
 }
 
-/* ---------->>> Firefox <<<-----------*/
+// /* ---------->>> Firefox <<<-----------*/
 
 .ff{}
 
-/* ---------->>> Opera <<<-----------*/
+// /* ---------->>> Opera <<<-----------*/
 
 .opera{}
 
-/* ---------->>> Safari <<<-----------*/
+// /* ---------->>> Safari <<<-----------*/
 
 .safari{}
 
-/* ---------->>> Chrome <<<-----------*/
+// /* ---------->>> Chrome <<<-----------*/
 
 .chrome{}

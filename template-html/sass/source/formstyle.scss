@@ -51,9 +51,9 @@ $field-placeholder: #777;
     &[data-operaplaceholder]{
         color: $field-placeholder;
     }
-    &:focus{
-        @include field-focus;
-    }
+    // &:focus{
+    //     @include field-focus;
+    // }
 }
 select.field{
     padding-right: 0;
@@ -61,10 +61,6 @@ select.field{
 textarea.field{
     min-height: 60px;
 }
-// .field-size{
-//     width: px;
-//     height: px;
-// }
 .full-width{
     width: 100%;
 }

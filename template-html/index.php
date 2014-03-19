@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>name</title>
+    <title>index</title>
 
     <style>
     .main{width: 940px;margin: auto;}

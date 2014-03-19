@@ -8,8 +8,8 @@ if (head.browser.ie && head.browser.version < 9) {
 
 head.js(
     "js/jquery-1.10.2.min.js",
-    "js/form.min.js",
-    "js/scripts.js",
+    "js/rform.min.js",
+    // "js/scripts.js",
     function() {}
 );
 

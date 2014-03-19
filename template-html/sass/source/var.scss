@@ -1,6 +1,10 @@
 @import "compass/css3";
 @import "compass/typography/vertical_rhythm";
 
+@mixin rwd-width($el-width, $parent-width: $standard) {
+    width: $el-width * 100% / $parent-width;
+}
+
 @mixin adjust-font-size-to($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) {
     @if not $relative-font-sizing and $from-size != $base-font-size {
         @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
