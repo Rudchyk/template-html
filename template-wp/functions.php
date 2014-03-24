@@ -4,6 +4,8 @@
  */
 
 $themename = "my_theme";
+$option1 = get_option('option1');
+$option2 = get_option('option2');
 
 // sidebar widget
 if ( function_exists('register_sidebar') ) {
@@ -223,6 +225,18 @@ function mytheme_comment($comment, $args, $depth){
 }
 // Конец настройки вывода шаблона комментария
 
+//Custom Admin CSS
+function customAdmin() {
+    global $themename;
+    $url = get_settings('siteurl');
+    $url = $url . '/wp-content/themes/'.$themename.'/css/wp-admin.css';
+    echo '<!-- custom admin css -->
+          <link rel="stylesheet" href="' . $url . '">
+          <!-- /end custom adming css -->';
+}
+add_action('admin_head', 'customAdmin');
+//End custom Admin CSS
+
 // Настройки темы
 add_action('admin_menu', 'theme_option');
 
@@ -232,64 +246,44 @@ function theme_option() {
     add_menu_page('theme_option', 'Настройки темы '.$themename, 'administrator', __FILE__, 'theme_option_page');
 
     //call register settings function
-    add_action( 'admin_init', 'register_posterssettings' );
+    add_action( 'admin_init', 'register_theme_options_settings' );
 }
 
 
-function register_theme_optionssettings() {
+function register_theme_options_settings() {
     //register our settings
-    register_setting( 'theme_option-settings-group', 'cat01' );
+    register_setting( 'theme_option-settings-group', 'option1' );
+    register_setting( 'theme_option-settings-group', 'option2' );
 }
 
 function theme_option_page() {
   global $themename;
 ?>
-<style>
-.theme_option-title{
-  text-align: center;
-  font-family:Georgia,'Times New Roman',Times,serif;
-  padding: 10px 20px;
-}
-.theme_option-padding{
-  padding:0 20px;
-}
-.theme_option-border{
-  border-bottom:1px dotted #000000;
-}
-.theme_option-field{
-  width:100%;
-}
-.theme_option-number{
-  width:5%;
-}
-.theme_option-area{
-  width:100%;
-  height:100px;
-}
-</style>
-<h2 class="theme_option-title"><strong>Настройки темы <?php echo $themename; ?></strong></h2>
-<form action="options.php" method="POST" class="poster-admin-form">
+<h2 class="theme_option-title"><strong>Настройки темы <?=$themename?></strong></h2>
+<form action="options.php" method="POST" class="theme_option-form">
     <?php wp_nonce_field('update-options'); ?>
-    <h3 class="theme_option-padding">Заполните поля:</h3>
-    <table width="100%" border="0" class="theme_option-padding">
-      <tr>
-        <td style="width: 20%">
-          <label for="cat01"><strong>Катеегория вывода:</strong></label>
-        </td>
-        <td style="width: 80%">
-           <input type="text" class="theme_option-number" name="cat01" value="<?php echo get_option('cat01'); ?>" id="cat01">
-        </td>
-      </tr>
-      <!-- <tr><td colspan="2" class="theme_option-border">&nbsp;</td></tr>
-      <tr><td colspan="2">&nbsp;</td></tr> -->
-    </table>
+    <div class="theme_option-form-title"><?php _e('Настройки 1:', 'kubrick'); ?></div>
+    <div class="theme_option-row">
+        <div class="theme_option-label-box">
+            <label for="option1" class="theme_option-label"><?php _e('Первое свойство:', 'kubrick'); ?></label>
+        </div>
+        <div class="theme_option-box">
+            <input type="text" class="theme_option-field" name="option1" id="option1" value="<?=get_option('option1')?>">
+        </div>
+    </div>
+    <div class="theme_option-row">
+        <div class="theme_option-label-box">
+            <label for="option2" class="theme_option-label"><?php _e('Второе свойство:', 'kubrick'); ?></label>
+        </div>
+        <div class="theme_option-box">
+            <input type="text" class="theme_option-number" name="option2" id="option2" value="<?=get_option('option2')?>">
+        </div>
+    </div>
     <input type="hidden" name="action" value="update">
-    <input type="hidden" name="page_options" value="cat01">
-    <div class="theme_option-padding">
+    <input type="hidden" name="page_options" value="option1,option2">
+    <div class="theme_option-button">
         <input type="submit"  value="Сохранить">
     </div>
-
-
 </form>
 <?php
 

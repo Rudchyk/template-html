@@ -1,0 +1,34 @@
+.theme_option-title{
+    font-size: 24px;
+    text-align: center;
+    padding: 10px 20px 20px;
+    margin: 10px 20px 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+.theme_option-form-title{
+    font-style: italic;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.theme_option-row{
+    margin-bottom: 15px;
+}
+.theme_option-row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.theme_option-label-box{
+    width: 140px;
+    float: left;
+    line-height: 27px;
+}
+.theme_option-label{}
+.theme_option-box{
+    margin-left: 150px;
+}
+.theme_option-field{}
+.theme_option-button input{
+    cursor: pointer;
+}
