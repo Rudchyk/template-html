@@ -1,6 +1,6 @@
 <?php
 /*
-Single Post Template: simple-single // это имя страницы, но без плагина single-post-template шаблоны работать не будут
+Single Post Template: simple-single
 */
 ?>
 <?php get_header(); ?>
