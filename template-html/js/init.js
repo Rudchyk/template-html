@@ -1,22 +1,24 @@
+var sourcePath = "";
+
 if (head.browser.ie && head.browser.version < 8) {
-    location.replace("ie7/ie7.html");
+    location.replace(sourcePath+"ie7/ie7.html");
 }
 
 if (head.browser.ie && head.browser.version < 9) {
-    head.load("js/html5.js");
+    head.load(sourcePath+"js/html5.js");
 }
 
 head.js(
-    "js/jquery-1.10.2.min.js",
-    "js/rform.min.js",
-    // "js/.js",
-    // "js/scripts.js",
+    sourcePath+"js/jquery-1.10.2.min.js",
+    sourcePath+"js/rform.min.js",
+    // sourcePath+"js/.js",
+    // sourcePath+"js/scripts.js",
     function() {}
 );
 
 if (head.browser.ie && head.browser.version < 10) {
     head.js(
-        "js/placeholder.min.js",
+        sourcePath+"js/placeholder.min.js",
         function() {
             $("input[placeholder], textarea[placeholder]").textPlaceholder();
         }
