@@ -54,6 +54,16 @@ $field-placeholder: #777;
     // &:focus{
     //     @include field-focus;
     // }
+    &.error{
+        border-color: #ef5b5b;
+        background-color: #ffebeb;
+        color: #ef5b5b;
+    }
+    &.valid{
+        border-color: #04ab5e;
+        background-color: #d9fdd6;
+        color: #04ab5e;
+    }
 }
 select.field{
     padding-right: 0;
