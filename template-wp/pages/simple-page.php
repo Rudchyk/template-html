@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: simple-page // это имя страницы
+Template Name: simple-page
 */
 ?>
 <?php get_header(); ?>

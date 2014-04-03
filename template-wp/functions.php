@@ -252,6 +252,9 @@ function theme_option() {
 
 function register_theme_options_settings() {
     //register our settings
+    register_setting( 'theme_option-settings-group', 'address' );
+    register_setting( 'theme_option-settings-group', 'siteEmail' );
+    register_setting( 'theme_option-settings-group', 'sub' );
     register_setting( 'theme_option-settings-group', 'option1' );
     register_setting( 'theme_option-settings-group', 'option2' );
 }
@@ -262,6 +265,31 @@ function theme_option_page() {
 <h2 class="theme_option-title"><strong>Настройки темы <?=$themename?></strong></h2>
 <form action="options.php" method="POST" class="theme_option-form">
     <?php wp_nonce_field('update-options'); ?>
+    <div class="theme_option-form-title"><?php _e('Настройки почты обратной связи', 'kubrick'); ?></div>
+    <div class="theme_option-row">
+        <div class="theme_option-label-box">
+            <label for="address" class="theme_option-label"><?php _e('Куда отправлять сообщения:', 'kubrick'); ?></label>
+        </div>
+        <div class="theme_option-box">
+            <input type="text" class="theme_option-field" name="address" id="address" value="<?=get_option('address')?>">
+        </div>
+    </div>
+    <div class="theme_option-row">
+        <div class="theme_option-label-box">
+            <label for="siteEmail" class="theme_option-label"><?php _e('Адрес с которого отправляются сообщения:', 'kubrick'); ?></label>
+        </div>
+        <div class="theme_option-box">
+            <input type="text" class="theme_option-number" name="siteEmail" id="siteEmail" value="<?=get_option('siteEmail')?>">
+        </div>
+    </div>
+    <div class="theme_option-row">
+        <div class="theme_option-label-box">
+            <label for="sub" class="theme_option-label"><?php _e('Тема сообщения:', 'kubrick'); ?></label>
+        </div>
+        <div class="theme_option-box">
+            <input type="text" class="theme_option-number" name="sub" id="sub" value="<?=get_option('sub')?>">
+        </div>
+    </div>
     <div class="theme_option-form-title"><?php _e('Настройки 1:', 'kubrick'); ?></div>
     <div class="theme_option-row">
         <div class="theme_option-label-box">
@@ -280,7 +308,7 @@ function theme_option_page() {
         </div>
     </div>
     <input type="hidden" name="action" value="update">
-    <input type="hidden" name="page_options" value="option1,option2">
+    <input type="hidden" name="page_options" value="option1,option2,address,siteEmail,sub">
     <div class="theme_option-button">
         <input type="submit"  value="Сохранить">
     </div>

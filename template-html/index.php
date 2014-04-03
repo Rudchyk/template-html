@@ -1,5 +1,5 @@
 <?php
-$templateName = 'mine-html';
+$templateName = 'name';
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">

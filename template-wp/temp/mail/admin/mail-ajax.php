@@ -1,26 +1,23 @@
 <?php
 
-    // Куда отправлять сообщения
-    $address = "viking_r@mail.ru";
+    // Content-Type:
+    $contenttype = 'text/html; charset=utf-8';
 
-    // Адрес с которого отправляются сообщения
-    $siteEmail = "info@mysite.com";
-
-    // Тема сообщения
-    $sub = "Обратная связь";
+    // Принимаем данные с формы
+    if (isset($_POST['address'])) {$address = $_POST['address'];}
+    if (isset($_POST['siteEmail'])) {$siteEmail = $_POST['siteEmail'];}
+    if (isset($_POST['sub'])) {$sub = $_POST['sub'];}
+    if (isset($_POST['name'])) {$name = $_POST['name'];}
+    if (isset($_POST['email'])) {$email = $_POST['email'];}
+    if (isset($_POST['area'])) {$text = $_POST['area'];}
 
     // Данные для передачи письма
     $headers = array(
         'MIME-Version: 1.0',
         'From: ' . $siteEmail,
         'Reply-To: ' . $siteEmail,
-        'Content-Type: text/html; charset=utf-8'
+        'Content-Type: '. $contenttype
     );
-
-    // Принимаем данные с формы
-    if (isset($_POST['name'])) {$name = $_POST['name'];}
-    if (isset($_POST['email'])) {$email = $_POST['email'];}
-    if (isset($_POST['area'])) {$text = $_POST['area'];}
 
     // Формируем текст письма
     $msg .= "<p><strong>Имя:</strong> $name</p>";

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php bloginfo('language'); ?>">
 <head>
     <title><?php bloginfo('name');?></title>
     <!-- Meta -->
