@@ -13,13 +13,24 @@
 }
 
 $experimental-support-for-svg: true;
+
+// Brief
+
 $base-font-family: Arial, Helvetica, sans-serif;
 // $base-font-size: 16px;
 $base-font-color: #444;
 $base-link-color: #287fc3;
-$standard: 960px;
-// $tablet: 768px;
-// $mobile: 480px;
-// $min-width: 240px;
+
+// Breakpoints
+
+// $Xlarge: 1200px;
+$Large: 960px;
+// $Medium: 768px;
+// $Small: 480px;
+// $Mini: 240px;
+
+// Settings
+
+$standard: $Large;
 $footer-height: 100px;
 $field-height: 30px;

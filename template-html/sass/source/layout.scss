@@ -2,17 +2,17 @@
 
 /* ---------->>> MEDIA QUERIES <<<-----------*/
 
-/* Smaller than standard*/
-// @media only screen and (max-width: $standard - 1) {}
+/* Large Desktops */
+// @media only screen and (min-width: $Xlarge) {}
 
-/* Tablet Portrait size to standard*/
-// @media only screen and (min-width: $tablet) and (max-width: $standard - 1) {}
+/* Desktops & tablets landscape */
+// @media only screen and (min-width: $Large) and (max-width: $Xlarge - 1) {}
 
-/*Tablet Portrait size*/
-// @media only screen and (max-width: $tablet - 1) {}
+/* Tablets portrait */
+// @media only screen and (min-width: $Medium) and (max-width: $Large - 1) {}
 
-/* Mobile Landscape Size to Tablet Portrait */
-// @media only screen and (min-width: $mobile) and (max-width: $tablet - 1) {}
+/* Phones landscape */
+// @media only screen and (min-width: $Small) and (max-width: $Medium - 1) {}
 
-/* Mobile Portrait Size to Mobile Landscape Size */
-// @media only screen and (max-width: $mobile - 1) {}
+/* Tablet Portrait size*/
+// @media only screen and (max-width: $Small - 1) {}
