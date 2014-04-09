@@ -25,6 +25,8 @@ if (head.browser.ie && head.browser.version < 10) {
     );
 }
 
+// if (document.body.classList.contains('body_class')) {}
+
 if (head.browser.opera) {
     head.ready(document, function () {
         function removePlaceholder(e) {
