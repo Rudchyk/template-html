@@ -1,3 +1,7 @@
+function hasClass(elem, className) {
+    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+
 var sourcePath = "";
 
 if (head.browser.ie && head.browser.version < 8) {
@@ -25,7 +29,7 @@ if (head.browser.ie && head.browser.version < 10) {
     );
 }
 
-// if (document.body.classList.contains('body_class')) {}
+// if (hasClass(document.documentElement, 'body_class')) {}
 
 if (head.browser.opera) {
     head.ready(document, function () {
