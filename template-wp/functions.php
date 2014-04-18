@@ -7,6 +7,17 @@ $themename = "my_theme";
 $option1 = get_option('option1');
 $option2 = get_option('option2');
 
+//html class
+function html_class(){
+    if (is_home()) {
+        echo "home";
+    }
+    // else if (is_page(1)) {
+    //     echo "class";
+    // }
+}
+//end html class
+
 // sidebar widget
 if ( function_exists('register_sidebar') ) {
   register_sidebar(array(

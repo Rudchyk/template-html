@@ -29,7 +29,12 @@ if (head.browser.ie && head.browser.version < 10) {
     );
 }
 
-// if (hasClass(document.documentElement, 'body_class')) {}
+// if (hasClass(document.documentElement, 'body_class')) {
+//     head.js(
+//         sourcePath+"js/.js",
+//         function() {}
+//     );
+// }
 
 if (head.browser.opera) {
     head.ready(document, function () {

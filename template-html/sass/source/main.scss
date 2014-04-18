@@ -38,13 +38,14 @@ body{
         // image: url(../images/bg.jpg);
         // repeat: no-repeat;
         // position: top center;
-    };
+    }
     color: $base-font-color;
     line-height: 1;
     font:{
         family: $base-font-family;
+        size: $base-font-size;
     }
-    @include adjust-font-size-to(14px);
+    // @include adjust-font-size-to(14px);
 }
 
 .container{
@@ -101,13 +102,15 @@ $paragraf-margin: 10px 0;
         margin: $paragraf-margin;
     }
     table,
-    td{
+    td,
+    th{
         border: 1px solid #ccc;
     }
     table{
         margin: $paragraf-margin;
     }
-    td{
+    td,
+    th{
         padding: 5px;
     }
     hr{
