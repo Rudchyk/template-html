@@ -6,13 +6,16 @@
 $themename = "my_theme";
 $option1 = get_option('option1');
 $option2 = get_option('option2');
+// $page = 1;
 
 //html class
 function html_class(){
+    global $page;
+
     if (is_home()) {
         echo "home";
     }
-    // else if (is_page(1)) {
+    // else if (is_page($page)) {
     //     echo "class";
     // }
 }
