@@ -10,7 +10,7 @@ $option2 = get_option('option2');
 
 //html class
 function html_class(){
-    global $page;
+    // global $page;
 
     if (is_home()) {
         echo "home";
@@ -42,18 +42,18 @@ if ( function_exists('register_sidebar') ) {
 
 // Вывод первой картинки из поста (ссылка)
 function catch_that_image() {
-global $post, $posts;
-$first_img = '';
-ob_start();
-ob_end_clean();
-$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i',
-$post->post_content, $matches);
-$first_img = $matches [1] [0];
-// no image found display default image instead
-if(empty($first_img)){
-    $first_img = "/wp-content/themes/".$themename."/images/required/noimg.jpg";
-}
-return $first_img;
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i',
+    $post->post_content, $matches);
+    $first_img = $matches [1] [0];
+    // no image found display default image instead
+    if(empty($first_img)){
+        $first_img = "/wp-content/themes/".$themename."/images/required/noimg.jpg";
+    }
+    return $first_img;
 }
 // Конец вывода первой картинки из поста (ссылка)
 
@@ -67,10 +67,10 @@ register_nav_menus(array(
 // Конец инициализации меню
 // Настройки вывода меню
 function my_wp_nav_menu_args($args=''){
-  $args['container'] = '';
-  $args['depth'] = '1';
-  $args['menu_class'] = 'menu';
-     return $args;
+    $args['container'] = '';
+    $args['depth'] = '1';
+    $args['menu_class'] = 'menu';
+    return $args;
 } // function
 add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 // Конец настройки вывода меню
@@ -97,7 +97,7 @@ function the_excerpt_max_charlength($charlength) {
 }
 function new_excerpt_length($length) {
     return 800;
-    }
+}
 add_filter('excerpt_length', 'new_excerpt_length');
 
 // Конец вывода цитаты с разным количеством символов в любом месте шаблона
@@ -150,7 +150,7 @@ function kama_pagenavi($before='', $after='', $echo=true) {
                     $out.= sprintf ("<span class='pages'>$text_num_page</span>",$paged,$max_page);
                 }
 
-                if ($backtext && $paged!=1) $out.= '<a href="'.get_pagenum_link(($paged-1)).'">'.$backtext.'</a>';
+                if ($backtext && $paged!=1) $out.= '<a href="'.get_pagenum_link(($paged-1)).'" class="previouspostslink">'.$backtext.'</a>';
 
                 if ($start_page >= 2 && $pages_to_show < $max_page) {
                     $out.= '<a href="'.get_pagenum_link().'">'. ($first_page_text?$first_page_text:1) .'</a>';
@@ -181,7 +181,7 @@ function kama_pagenavi($before='', $after='', $echo=true) {
                     $out.= '<a href="'.get_pagenum_link($max_page).'">'. ($last_page_text?$last_page_text:$max_page) .'</a>';
                 }
 
-                if ($nexttext && $paged!=$end_page) $out.= '<a href="'.get_pagenum_link(($paged+1)).'">'.$nexttext.'</a>';
+                if ($nexttext && $paged!=$end_page) $out.= '<a href="'.get_pagenum_link(($paged+1)).'" class="nextpostslink">'.$nexttext.'</a>';
 
         $out.= "</div>".$after."\n";
     if ($echo) echo $out;
