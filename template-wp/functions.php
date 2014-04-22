@@ -13,10 +13,10 @@ function html_class(){
     // global $page;
 
     if (is_home()) {
-        echo "home";
+        return "home";
     }
     // else if (is_page($page)) {
-    //     echo "class";
+    //     return "class";
     // }
 }
 //end html class
