@@ -1,9 +1,9 @@
 <?php get_header(); ?>
     <?php if (have_posts()) : ?>
-        <h2><?php _e('Результаты поиска', 'kubrick'); ?></h2>
+        <h1><?php _e('Результаты поиска', 'kubrick'); ?></h1>
         <?php while (have_posts()) : the_post(); ?>
             <!-- post -->
-            <?php include (TEMPLATEPATH . '/include/post.php'); ?>
+            <?php include (TEMPLATEPATH . '/include/posts/post.php'); ?>
             <!-- end post -->
         <?php endwhile; ?>
         <!-- pagination -->

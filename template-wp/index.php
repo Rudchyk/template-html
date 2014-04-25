@@ -2,7 +2,7 @@
 <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
         <!-- post -->
-        <?php include (TEMPLATEPATH . '/include/post.php'); ?>
+        <?php include (TEMPLATEPATH . '/include/posts/post.php'); ?>
         <!-- end post -->
     <?php endwhile; ?>
     <!-- pagination -->

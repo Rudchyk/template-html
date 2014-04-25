@@ -328,10 +328,8 @@ function theme_option_page() {
     </div>
 </form>
 <?php
-
 }
 // конец настройки темы
 
-function kubrick_theme_page() {
+function kubrick_theme_page() {}
 ?>
-<?php } ?>

@@ -1,8 +1,8 @@
+var sourcePath = "";
+
 function hasClass(elem, className) {
     return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
 }
-
-var sourcePath = "";
 
 if (head.browser.ie && head.browser.version < 8) {
     location.replace(sourcePath+"ie7/ie7.html");
