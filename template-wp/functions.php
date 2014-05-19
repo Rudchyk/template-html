@@ -3,9 +3,8 @@
  * @package WordPress
  */
 
-$themename = "my_theme";
-$option1 = get_option('option1');
-$option2 = get_option('option2');
+$themename = "my_theme-wp";
+// $option = get_option('option1');
 // $page = 1;
 
 //html class

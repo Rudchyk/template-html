@@ -545,11 +545,6 @@ optgroup {
 
 /* ---------->>> OTHER CLASSES  <<<-----------*/
 
-.break{
-    word-wrap: break-word;
-    @include word-break(break-all);
-}
-
 .ellipsis{
     @include ellipsis(no-wrap);
 }
@@ -571,11 +566,15 @@ optgroup {
     vertical-align: middle;
 }
 
-.tablebox{
+.table{
     display: table;
 }
 
-.cellbox{
+.row{
+    display: table-row;
+}
+
+.cell{
     display: table-cell;
 }
 

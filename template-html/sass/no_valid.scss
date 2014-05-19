@@ -12,3 +12,8 @@ button{
 .no_select{
     @include user-select(none);
 }
+
+.break{
+    word-wrap: break-word;
+    // @include word-break(break-all);
+}
