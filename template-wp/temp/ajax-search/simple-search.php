@@ -23,10 +23,11 @@ remove_filter('posts_where', 'filter_where');
 /* The LOOP */
 echo '<ul id="simple-ajax-search-result-list">';
 while ($ajax_query->have_posts()) : $ajax_query->the_post();
-    ?>
+?>
     <!-- post -->
         <?php include (TEMPLATEPATH . '/include/posts/post.php'); ?>
     <!-- end post -->
-    <?php
+<?php
 endwhile;
 echo '</ul>';
+?>
