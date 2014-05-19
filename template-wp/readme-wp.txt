@@ -176,3 +176,9 @@ CSS:
 .youtube_gallery_item{}
 .youtube_gallery_item .ytsg_play + img{}
 .youtube_gallery_caption{}
+
+
+-- Функции --
+
+Возвращает постоянную ссылку на запись, для дальнейшего использования в php
+<?=get_permalink($id);?>

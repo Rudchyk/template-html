@@ -35,9 +35,10 @@ html {
 body{
     background: {
         color: #fff;
-        // image: url(../images/bg.jpg);
+        // image: url(../images/bg/bg.jpg);
         // repeat: no-repeat;
         // position: top center;
+        // size: cover;
     }
     color: $base-font-color;
     line-height: 1;

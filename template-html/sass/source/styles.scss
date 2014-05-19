@@ -20,6 +20,14 @@
 
     height: $footer-height;
     width: 100%;
+    overflow: hidden;
+
+    background: {
+        color: #ccc;
+        // image: url(../images/bg/bg.jpg);
+        // repeat: no-repeat;
+        // position: top center;
+    }
 }
 
 // /* ---------->>> POPUPS <<<-----------*/

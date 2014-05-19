@@ -18,6 +18,9 @@ function html_class(){
     // else if (is_page($page)) {
     //     return "class";
     // }
+    else {
+        return "inside";
+    }
 }
 //end html class
 
@@ -30,14 +33,14 @@ if ( function_exists('register_sidebar') ) {
     'after_title' => '</h2>',
   ));
 }
-if ( function_exists('register_sidebar') ) {
-  register_sidebar(2, array(
-    'before_widget' => '<li id="%1$s" class="widget %2$s">',
-    'after_widget' => '</li>',
-    'before_title' => '<h2 class="widgettitle">',
-    'after_title' => '</h2>',
-  ));
-}
+// if ( function_exists('register_sidebar') ) {
+//   register_sidebar(2, array(
+//     'before_widget' => '<li id="%1$s" class="widget %2$s">',
+//     'after_widget' => '</li>',
+//     'before_title' => '<h2 class="widgettitle">',
+//     'after_title' => '</h2>',
+//   ));
+// }
 // end sidebar widget
 
 // Вывод первой картинки из поста (ссылка)
@@ -46,8 +49,7 @@ function catch_that_image() {
     $first_img = '';
     ob_start();
     ob_end_clean();
-    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i',
-    $post->post_content, $matches);
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
     $first_img = $matches [1] [0];
     // no image found display default image instead
     if(empty($first_img)){
@@ -79,21 +81,21 @@ add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
 // Вывод цитаты с разным количеством символов в любом месте шаблона
 function the_excerpt_max_charlength($charlength) {
-     $excerpt = get_the_excerpt();
-     $charlength++;
-     if ( mb_strlen( $excerpt ) > $charlength ) {
-          $subex = mb_substr( $excerpt, 0, $charlength - 5 );
-          $exwords = explode( ' ', $subex );
-          $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
-          if ( $excut < 0 ) {
-               echo mb_substr( $subex, 0, $excut );
-          } else {
-               echo $subex;
-          }
-          echo '...';
-     } else {
-          echo $excerpt;
-     }
+    $excerpt = get_the_excerpt();
+    $charlength++;
+    if ( mb_strlen( $excerpt ) > $charlength ) {
+        $subex = mb_substr( $excerpt, 0, $charlength - 5 );
+        $exwords = explode( ' ', $subex );
+        $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+        if ( $excut < 0 ) {
+            echo mb_substr( $subex, 0, $excut );
+        } else {
+            echo $subex;
+        }
+        echo '...';
+    } else {
+        echo $excerpt;
+    }
 }
 function new_excerpt_length($length) {
     return 800;
@@ -191,7 +193,7 @@ function kama_pagenavi($before='', $after='', $echo=true) {
 
 /*end no_more_jumping*/
 function no_more_jumping($post) {
-return '<a href="'.get_permalink($post->ID).'" class="read-more">'.'Читать далее &raquo;'.'</a>';
+    return '<a href="'.get_permalink($post->ID).'" class="read-more">'.'Читать далее &raquo;'.'</a>';
 }
 add_filter('the_content_more_link', 'no_more_jumping');
 /*end no_more_jumping*/
@@ -266,9 +268,9 @@ function theme_option() {
 
 function register_theme_options_settings() {
     //register our settings
-    register_setting( 'theme_option-settings-group', 'address' );
-    register_setting( 'theme_option-settings-group', 'siteEmail' );
-    register_setting( 'theme_option-settings-group', 'sub' );
+    // register_setting( 'theme_option-settings-group', 'address' );
+    // register_setting( 'theme_option-settings-group', 'siteEmail' );
+    // register_setting( 'theme_option-settings-group', 'sub' );
     register_setting( 'theme_option-settings-group', 'option1' );
     register_setting( 'theme_option-settings-group', 'option2' );
 }
@@ -279,6 +281,7 @@ function theme_option_page() {
 <h2 class="theme_option-title"><strong>Настройки темы <?=$themename?></strong></h2>
 <form action="options.php" method="POST" class="theme_option-form">
     <?php wp_nonce_field('update-options'); ?>
+    <!--
     <div class="theme_option-form-title"><?php _e('Настройки почты обратной связи', 'kubrick'); ?></div>
     <div class="theme_option-row">
         <div class="theme_option-label-box">
@@ -304,6 +307,7 @@ function theme_option_page() {
             <input type="text" class="theme_option-number" name="sub" id="sub" value="<?=get_option('sub')?>">
         </div>
     </div>
+    -->
     <div class="theme_option-form-title"><?php _e('Настройки 1:', 'kubrick'); ?></div>
     <div class="theme_option-row">
         <div class="theme_option-label-box">
@@ -322,7 +326,13 @@ function theme_option_page() {
         </div>
     </div>
     <input type="hidden" name="action" value="update">
-    <input type="hidden" name="page_options" value="option1,option2,address,siteEmail,sub">
+    <input type="hidden" name="page_options" value="
+    option1,
+    option2,
+    //address,
+    //siteEmail,
+    //sub
+    ">
     <div class="theme_option-button">
         <input type="submit"  value="Сохранить">
     </div>
