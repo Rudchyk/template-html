@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="<?php bloginfo('language'); ?>" class="<?=html_class()?>">
 <head>
-    <title><?php bloginfo('name');?></title>
+    <?php
+        if (is_home()) {
+            $title = get_bloginfo('name');
+        }
+        else{
+            $title =  wp_title('', False);
+        }
+    ?>
+    <title><?=$title?></title>
     <!-- Meta -->
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>">
     <meta name="description" content="<?php bloginfo('description'); ?>">
