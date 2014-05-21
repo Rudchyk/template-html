@@ -12,25 +12,137 @@
     font-size: $font-unit * $to-size / $from-size;
 }
 
+@mixin field-focus{
+    border: 1px solid #aaa;
+    box-shadow:  0 0 3px rgba(0,0,0,.2);
+}
+
+@mixin icons($name) {
+    @include icons-sprite($name);
+    height: icons-sprite-height($name);
+    width: icons-sprite-width($name);
+}
+
 $experimental-support-for-svg: true;
+$disable-magic-sprite-selectors:true;
 
 // Brief
 
 $base-font-family: Arial, Helvetica, sans-serif;
 // $base-font-size: 16px;
 $base-font-color: #444;
+
+// -- links --
 $base-link-color: #287fc3;
+$link-visited: false; //boolean
+$link-active: false; //boolean
 
-// Breakpoints
+$size: 960px;
 
-// $Xlarge: 1200px;
-$Large: 960px;
-// $Medium: 768px;
-// $Small: 480px;
-// $Mini: 240px;
+// -- RWD --
+$RWD: false; //boolean
+
+// Resolution
+
+$FHD: 1920px;
+$WXGA-plus: 1680px;
+$HD: 1366px;
+$WXGA: 1280px;
+$XGA-landscape: 1024px;
+$XGA-portrait: 768px;
+$VGA: 640px;
+$HVGA: 480px;
+$QVGA: 320px;
 
 // Settings
 
-$standard: $Large;
-$footer-height: 100px;
+$Max: $size;
+$standard: $size;
+$Min: $QVGA;
+
+// -- footer --
+$footer-height: 100px; //if
+
+// -- bottom footer --
+$bottom-footer: true; //boolean
+
+// arrays
+
+$prefix-placeholders:
+":-moz-placeholder",
+"::-moz-placeholder",
+"::-webkit-input-placeholder",
+":-ms-input-placeholder",
+".text-placeholder",
+"[data-operaplaceholder]"
+;
+
+// -- icons sprite --
+// $icons:
+// name
+// ;
+// $blocks:
+// name
+// ;
+// $befores:
+// name
+// ;
+// $afters:
+// name
+// ;
+// $buttons:
+// name
+// ;
+
+// formstyle
+
+// --field--
+// size
+$field-width: 210px;
 $field-height: 30px;
+// background
+$field-background: #fff;
+// border
+$field-border: true; //boolean
+$field-border-width: 1px;
+$field-border-style: solid;
+$field-border-color: #ccc;
+// other styles
+$field-radius: 3px; //if
+$field-padding: 0 4px;
+// typography
+$field-font-family: $base-font-family;
+$field-font-size: 13px;
+$field-color: #444;
+$field-placeholder: #777;
+
+
+// --button--
+// size
+$button-width: false; //if
+$button-height: false; //if
+// border
+$button-border: true; //boolean
+$button-border-width: 1px;
+$button-border-style: solid;
+$button-border-color: #aaa;
+// background
+$button-background-gradient: false; //boolean
+$button-background: false; //boolean
+$button-background-ie: false; //if
+$button-background-hover-ie: false; //if
+@mixin button-background{
+    // color or gradient
+}
+@mixin button-background-hover{
+    // color or gradient
+}
+// other styles
+$button-radius: 3px; //if
+$button-padding: 0 4px;
+// typography
+$button-font-family: $base-font-family;
+$button-font-size: 13px;
+$button-color: #444;
+$button-hover-color: #222; //if
+$button-text-shadow: 0 1px rgba(255, 255, 255, .75); //if

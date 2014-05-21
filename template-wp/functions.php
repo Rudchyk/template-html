@@ -42,6 +42,10 @@ if ( function_exists('register_sidebar') ) {
 // }
 // end sidebar widget
 
+// init advanced-custom-fields plugin
+include_once('advanced-custom-fields/acf.php');
+// end init advanced-custom-fields plugin
+
 // Вывод первой картинки из поста (ссылка)
 function catch_that_image() {
     global $post, $posts;

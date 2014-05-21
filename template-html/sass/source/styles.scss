@@ -6,20 +6,15 @@
 
 /* ---------->>> CONTENT <<<-----------*/
 
-.content{
-    padding-bottom: $footer-height;
-}
+.content{}
 .main-section{}
 
 /* ---------->>> FOOTER <<<-----------*/
 
 .footer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    height: $footer-height;
-    width: 100%;
+    @if $footer-height {
+        height: $footer-height;
+    }
     overflow: hidden;
 
     background: {

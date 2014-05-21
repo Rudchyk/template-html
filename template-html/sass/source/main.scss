@@ -10,25 +10,33 @@ a,
 .link{
     color: $base-link-color;
     text-decoration: underline;
-    // &:visited{
-    //     color: $base-link-color;
-    //     text-decoration: underline;
-    // }
+    @if $link-visited{
+        &:visited{
+            color: $base-link-color;
+            text-decoration: underline;
+        }
+    }
     &:hover{
         text-decoration: none;
     }
-    // &:active{
-    //     text-decoration: underline;
-    // }
+    @if $link-active {
+        &:active{
+            text-decoration: underline;
+        }
+    }
 }
 
 /* ---------->>> GLOBAL <<<-----------*/
 
 html {
-    min-width: $standard; // No mobile!!!
-    >body .container-wrap{
-        height: auto;
-        min-height: 100%;
+    @if not $RWD {
+        min-width: $standard;
+    }
+    @if $bottom-footer {
+        >body .container-wrap{
+            height: auto;
+            min-height: 100%;
+        }
     }
 }
 
@@ -46,18 +54,34 @@ body{
         family: $base-font-family;
         size: $base-font-size;
     }
-    // @include adjust-font-size-to(14px);
 }
 
 .container{
     margin: auto;
-    width: $standard;
-    // max-width: $Xlarge;
-    // min-width: $Mini;
+    @if $RWD {
+        max-width: $Max;
+        min-width: $Min;
+    }
+    @else {
+        width: $standard;
+    }
 }
 .container-wrap{
     position: relative;
     overflow-x: hidden;
+}
+
+@if $bottom-footer{
+    .content{
+        padding-bottom: $footer-height;
+    }
+    .footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+    }
 }
 
 .loading{
