@@ -1,9 +1,10 @@
 $('form').on('submit', function(event) {
     event.preventDefault();
     $.ajax({
-        'type':   'get',
-        'url' :   '/wp-content/themes/fafu-wp/ajax-search/simple-search.php',
+        'type':   'POST',
+        'url' :   '/wp-content/themes/fafu-wp/ajax/simple-search.php',
         'data':   $(this).serialize(),
+        'context': this,
         'success': function (result) {
             $('div').html(result);
         }

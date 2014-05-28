@@ -1,14 +1,10 @@
+<?php
+    if (is_home()) { $title = get_bloginfo('name'); }
+    else { $title =  wp_title('', False); }
+?>
 <!DOCTYPE html>
-<html lang="<?php bloginfo('language'); ?>" class="<?=html_class()?>">
+<html lang="<?php bloginfo('language'); ?>" class="<?=htmlClass()?>">
 <head>
-    <?php
-        if (is_home()) {
-            $title = get_bloginfo('name');
-        }
-        else{
-            $title =  wp_title('', False);
-        }
-    ?>
     <title><?=$title?></title>
     <!-- Meta -->
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>">

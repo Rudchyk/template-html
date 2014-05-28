@@ -3,34 +3,30 @@
  * @package WordPress
  */
 
+/* -- variables -- */
+$jquery = 'jquery-1.10.2.min';
 $themename = "my_theme-wp";
 // $option = get_option('option1');
 // $page = 1;
+/* -- end variables -- */
 
-//html class
-function html_class(){
+/* -- html class -- */
+function htmlClass(){
     // global $page;
-
-    if (is_home()) {
-        return "home";
-    }
-    // else if (is_page($page)) {
-    //     return "class";
-    // }
-    else {
-        return "inside";
-    }
+    if (is_home()) { return "home"; }
+    // else if (is_page($page)) { return "class"; }
+    else { return "inside"; }
 }
-//end html class
+/* -- end html class -- */
 
-// sidebar widget
+/* -- sidebar widget -- */
 if ( function_exists('register_sidebar') ) {
-  register_sidebar(array(
-    'before_widget' => '<li id="%1$s" class="widget %2$s">',
-    'after_widget' => '</li>',
-    'before_title' => '<h2 class="widgettitle">',
-    'after_title' => '</h2>',
-  ));
+    register_sidebar(array(
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h2 class="widgettitle">',
+        'after_title' => '</h2>',
+    ));
 }
 // if ( function_exists('register_sidebar') ) {
 //   register_sidebar(2, array(
@@ -40,49 +36,32 @@ if ( function_exists('register_sidebar') ) {
 //     'after_title' => '</h2>',
 //   ));
 // }
-// end sidebar widget
+/* -- end sidebar widget -- */
 
-// init advanced-custom-fields plugin
+/* -- init advanced-custom-fields plugin -- */
 include_once('advanced-custom-fields/acf.php');
-// end init advanced-custom-fields plugin
+/* -- end init advanced-custom-fields plugin -- */
 
-// Вывод первой картинки из поста (ссылка)
-function catch_that_image() {
-    global $post, $posts;
-    $first_img = '';
-    ob_start();
-    ob_end_clean();
-    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-    $first_img = $matches [1] [0];
-    // no image found display default image instead
-    if(empty($first_img)){
-        $first_img = "/wp-content/themes/".$themename."/images/required/noimg.jpg";
-    }
-    return $first_img;
-}
-// Конец вывода первой картинки из поста (ссылка)
-
-// Редактируемое меню WP3
-
-// Инициализация меню
-register_nav_menus(array(
-    'top' => 'Меню 1',
-    'bottom' => 'Меню 2'
-));
-// Конец инициализации меню
-// Настройки вывода меню
+/* -- Произвольное меню в WP 3.0+ -- */
+/* --- Регистрируем меню навигаций --- */
+register_nav_menus(
+    array(
+        'top' => 'Верхнее меню',
+        'bottom' => 'Нижнее меню'
+    )
+);
+/* --- Конец регистрации меню навигаций --- */
+/* --- Глобальные настройки меню навигаций --- */
 function my_wp_nav_menu_args($args=''){
     $args['container'] = '';
     $args['depth'] = '1';
-    $args['menu_class'] = 'menu';
     return $args;
-} // function
+}
 add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
-// Конец настройки вывода меню
+/* --- Конец глобальной настройки меню навигаций --- */
+/* -- Конец произвольного меню в WP 3.0+ -- */
 
-// Конец редактируемого меню WP3
-
-// Вывод цитаты с разным количеством символов в любом месте шаблона
+/* -- Вывод цитаты с разным количеством символов в любом месте шаблона -- */
 function the_excerpt_max_charlength($charlength) {
     $excerpt = get_the_excerpt();
     $charlength++;
@@ -100,14 +79,13 @@ function the_excerpt_max_charlength($charlength) {
         echo $excerpt;
     }
 }
-function new_excerpt_length($length) {
-    return 800;
-}
-add_filter('excerpt_length', 'new_excerpt_length');
+// function new_excerpt_length($length) {
+//     return 800;
+// }
+// add_filter('excerpt_length', 'new_excerpt_length');
+/* -- Конец вывода цитаты с разным количеством символов в любом месте шаблона -- */
 
-// Конец вывода цитаты с разным количеством символов в любом месте шаблона
-
-/*kama_pagenavi*/
+/* -- Kama Pagenavi -- */
 function kama_pagenavi($before='', $after='', $echo=true) {
     /* ================ Настройки ================ */
     $text_num_page = ''; // Текст для количества страниц. {current} заменится текущей, а {last} последней. Пример: 'Страница {current} из {last}' = Страница 4 из 60
@@ -192,16 +170,16 @@ function kama_pagenavi($before='', $after='', $echo=true) {
     if ($echo) echo $out;
     else return $out;
 }
-/*end kama_pagenavi*/
+/* -- end Kama Pagenavi -- */
 
-/*end no_more_jumping*/
+/* -- No More Jumping -- */
 function no_more_jumping($post) {
     return '<a href="'.get_permalink($post->ID).'" class="read-more">'.'Читать далее &raquo;'.'</a>';
 }
 add_filter('the_content_more_link', 'no_more_jumping');
-/*end no_more_jumping*/
+/* -- end No More Jumping */
 
-/* Очищаем wp_head(); */
+/* -- Очищаем wp_head(); -- */
 function remove_recent_comments_style() {
   global $wp_widget_factory;
   remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
@@ -216,18 +194,18 @@ remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
 remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
 remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
 remove_action( 'wp_head', 'wp_generator' );
-/* Конец очистки wp_head(); */
+/* -- Конец очистки wp_head(); -- */
 
-/* Переносим скрипты в wp_footer(); */
+/* -- Переносим скрипты в wp_footer(); -- */
 remove_action('wp_head', 'wp_print_scripts');
 remove_action('wp_head', 'wp_print_head_scripts', 9);
 remove_action('wp_head', 'wp_enqueue_scripts', 1);
 add_action('wp_footer', 'wp_print_scripts', 5);
 add_action('wp_footer', 'wp_enqueue_scripts', 5);
 add_action('wp_footer', 'wp_print_head_scripts', 5);
-/* Конец переноса скриптов в wp_footer(); */
+/* -- Конец переноса скриптов в wp_footer(); -- */
 
-// Настройка вывода шаблона комментария
+/* -- Настройка вывода шаблона комментария -- */
 function mytheme_comment($comment, $args, $depth){
    $GLOBALS['comment'] = $comment; ?>
    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>" class="comment">
@@ -242,21 +220,36 @@ function mytheme_comment($comment, $args, $depth){
      </div>
 <?php
 }
-// Конец настройки вывода шаблона комментария
+/* -- Конец настройки вывода шаблона комментария -- */
 
-//Custom Admin CSS
+/* -- Custom Admin CSS -- */
 function customAdmin() {
-    global $themename;
-    $url = get_settings('siteurl');
-    $url = $url . '/wp-content/themes/'.$themename.'/css/wp-admin.css';
-    echo '<!-- custom admin css -->
-          <link rel="stylesheet" href="' . $url . '">
-          <!-- /end custom adming css -->';
+    global $themename, $jquery;
+    $themeSiteUrl = get_settings('siteurl');
+    $themeDirUrl = $themeSiteUrl.'/wp-content/themes/'.$themename;
+    $themeCssDir = $themeDirUrl.'/css/';
+    $themeJsDir = $themeDirUrl.'/js/';
+    $customAdminCssNames = array( 'wp-admin' );
+    // $customAdminJsNames = array( $jquery, 'wp-admin' );
+    if (isset($customAdminCssNames)) {
+        echo "\r\n<!-- custom admin css -->\r\n";
+        foreach ($customAdminCssNames as $customAdminCssName) {
+            echo '<link rel="stylesheet" href="' . $themeCssDir . $customAdminCssName . '.css">'."\r\n";
+        }
+        echo "<!-- /end custom adming css -->\r\n";
+    }
+    if (isset($customAdminJsNames)) {
+        echo "<!-- custom admin js -->\r\n";
+        foreach ($customAdminJsNames as $customAdminJsName) {
+            echo '<script src="' . $themeJsDir . $customAdminJsName . '.js"></script>'."\r\n";
+        }
+        echo "<!-- /end custom admin js -->\r\n";
+    }
 }
 add_action('admin_head', 'customAdmin');
-//End custom Admin CSS
+/* -- End custom Admin CSS -- */
 
-// Настройки темы
+/* -- Настройки темы -- */
 add_action('admin_menu', 'theme_option');
 
 function theme_option() {
@@ -342,7 +335,7 @@ function theme_option_page() {
 </form>
 <?php
 }
-// конец настройки темы
+/* -- конец настройки темы -- */
 
 function kubrick_theme_page() {}
 ?>
