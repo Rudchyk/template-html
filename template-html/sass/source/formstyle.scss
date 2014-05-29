@@ -44,10 +44,16 @@
     // }
 }
 @each $prefix-placeholder in $prefix-placeholders {
-    .field#{$prefix-placeholder} {
-        color: $field-placeholder;
-        @if "#{$prefix-placeholder}" == ":-moz-placeholder" or "#{$prefix-placeholder}" == "::-moz-placeholder"{
+    .field{
+        &#{$prefix-placeholder}{
+            color: $field-placeholder;
+            text-overflow:ellipsis;
             opacity: 1;
+            @include transition(opacity .3s ease);
+        }
+        &:focus#{$prefix-placeholder}{
+            opacity: 0;
+            @include transition(opacity .3s ease);
         }
     }
 }
