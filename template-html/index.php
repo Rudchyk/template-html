@@ -1,5 +1,11 @@
 <?php
-$templateName = 'name';
+$templateName = themeName();
+function themeName(){
+    $themeNameDir = dirname(__FILE__);
+    $themeNameArr = explode("\\", $themeNameDir);
+    $themeNameVar = end($themeNameArr);
+    return $themeNameVar;
+}
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">

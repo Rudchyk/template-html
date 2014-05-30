@@ -5,7 +5,7 @@
 
 /* -- variables -- */
 $jquery = 'jquery-1.10.2.min';
-$themename = "my_theme-wp";
+$themename = themeName();
 // $option = get_option('option1');
 // $page = 1;
 /* -- end variables -- */
@@ -19,22 +19,36 @@ function htmlClass(){
 }
 /* -- end html class -- */
 
+/* -- theme name -- */
+function themeName(){
+    $themeNameDir = dirname(__FILE__);
+    $themeNameArr = explode("\\", $themeNameDir);
+    $themeNameVar = end($themeNameArr);
+    return $themeNameVar;
+}
+/* -- end theme name -- */
+
 /* -- sidebar widget -- */
 if ( function_exists('register_sidebar') ) {
-    register_sidebar(array(
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-        'after_widget' => '</li>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>',
-    ));
+    register_sidebar(
+        array(
+            'before_widget' => '<li id="%1$s" class="widget %2$s">',
+            'after_widget' => '</li>',
+            'before_title' => '<h2 class="widgettitle">',
+            'after_title' => '</h2>',
+        )
+    );
 }
 // if ( function_exists('register_sidebar') ) {
-//   register_sidebar(2, array(
-//     'before_widget' => '<li id="%1$s" class="widget %2$s">',
-//     'after_widget' => '</li>',
-//     'before_title' => '<h2 class="widgettitle">',
-//     'after_title' => '</h2>',
-//   ));
+//     register_sidebar(
+//         2,
+//         array(
+//             'before_widget' => '<li id="%1$s" class="widget %2$s">',
+//             'after_widget' => '</li>',
+//             'before_title' => '<h2 class="widgettitle">',
+//             'after_title' => '</h2>',
+//         )
+//     );
 // }
 /* -- end sidebar widget -- */
 

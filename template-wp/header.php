@@ -17,8 +17,9 @@
     <link rel="alternate" type="application/rss+xml" title="<?php _e('RSS 2.0', 'kubrick'); ?>" href="<?php bloginfo('rss2_url'); ?>">
     <!-- Scripts -->
     <script data-headjs-load="<?php bloginfo('template_url');?>/js/init.js" src="<?php bloginfo('template_url');?>/js/head.min.js"></script>
-    <!--Подключает скрипт comment-reply.js на статической странице или странице поста. Скрипт перемещает форму добавления комментария под комментарий, у которого мы кликнули на ссылку “ответить” -->
-    <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+    <!--Подключает скрипт comment-reply.js на статической странице или странице поста.
+        Скрипт перемещает форму добавления комментария под комментарий, у которого мы кликнули на ссылку “ответить” -->
+    <!-- <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?> -->
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
