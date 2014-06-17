@@ -5,11 +5,22 @@
     width: $el-width * 100% / $parent-width;
 }
 
+@function rwd-width-val($el-width, $parent-width: $standard){
+    @return $el-width * 100% / $parent-width;
+}
+
 @mixin adjust-font-size-to($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) {
     @if not $relative-font-sizing and $from-size != $base-font-size {
         @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
     }
     font-size: $font-unit * $to-size / $from-size;
+}
+
+@function adjust-font-size-to-val($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size){
+    @if not $relative-font-sizing and $from-size != $base-font-size {
+        @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
+    }
+    @return $font-unit * $to-size / $from-size;
 }
 
 @mixin field-focus{
@@ -65,6 +76,12 @@ $footer-height: 100px; //if
 
 // -- bottom footer --
 $bottom-footer: true; //boolean
+
+// -- text --
+$text: false; //boolean
+
+// -- loading --
+$loading: true; //boolean
 
 // arrays
 

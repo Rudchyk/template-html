@@ -84,92 +84,96 @@ body{
     }
 }
 
-.loading{
-    background: {
-        color: #fff;
-        image: url(../images/required/loading.gif);
-        repeat: no-repeat;
-        position: center;
+@if $loading{
+    .loading{
+        background: {
+            color: #fff;
+            image: url(../images/required/loading.gif);
+            repeat: no-repeat;
+            position: center;
+        }
     }
 }
 
 /* ---------->>> TEXT PAGE STYLE <<<-----------*/
 
-$paragraf-margin: 10px 0;
+@if $text{
+    $paragraf-margin: 10px 0;
 
-.text{
-    line-height: normal;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6{
-        margin: $paragraf-margin;
+    .text{
+        line-height: normal;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6{
+            margin: $paragraf-margin;
+        }
+        h1{}
+        h2{}
+        h3{}
+        ul{
+            list-style: disc;
+            margin: $paragraf-margin;
+            li{}
+        }
+        ol{
+            list-style: decimal;
+            margin: $paragraf-margin;
+            li{}
+        }
+        li{
+            margin-left: 30px;
+        }
+        p{
+            margin: $paragraf-margin;
+        }
+        table,
+        td,
+        th{
+            border: 1px solid #ccc;
+        }
+        table{
+            margin: $paragraf-margin;
+        }
+        td,
+        th{
+            padding: 5px;
+        }
+        hr{
+            border-top: 1px solid #ddd;
+            clear: both;
+            margin: $paragraf-margin;
+        }
+        blockquote{
+            border-left: 2px solid #333;
+            margin: 16px 28px 10px 16px;
+            padding-left: 16px;
+        }
+        img,
+        embed,
+        object,
+        video{
+            max-width: 100%;
+        }
     }
-    h1{}
-    h2{}
-    h3{}
-    ul{
-        list-style: disc;
-        margin: $paragraf-margin;
-        li{}
-    }
-    ol{
-        list-style: decimal;
-        margin: $paragraf-margin;
-        li{}
-    }
-    li{
-        margin-left: 30px;
-    }
-    p{
-        margin: $paragraf-margin;
-    }
-    table,
-    td,
-    th{
-        border: 1px solid #ccc;
-    }
-    table{
-        margin: $paragraf-margin;
-    }
-    td,
-    th{
-        padding: 5px;
-    }
-    hr{
-        border-top: 1px solid #ddd;
-        clear: both;
-        margin: $paragraf-margin;
-    }
-    blockquote{
-        border-left: 2px solid #333;
-        margin: 16px 28px 10px 16px;
-        padding-left: 16px;
-    }
-    img,
-    embed,
-    object,
-    video{
-        max-width: 100%;
-    }
-}
 
-/* ---------->>> IMAGES <<<-----------*/
+    /* ---------->>> IMAGES <<<-----------*/
 
-$align-img-side: 16px;
-$align-img-bottom: 10px;
+    $align-img-side: 16px;
+    $align-img-bottom: 10px;
 
-img.aligncenter{
-    display: block;
-    margin: 0 auto 2px;
-}
-img.alignright{
-    margin: 0 0 $align-img-bottom $align-img-side;
-    float: right;
-}
-img.alignleft{
-    margin: 0 $align-img-side $align-img-bottom 0;
-    float: left;
+    img.aligncenter{
+        display: block;
+        margin: 0 auto 2px;
+    }
+    img.alignright{
+        margin: 0 0 $align-img-bottom $align-img-side;
+        float: right;
+    }
+    img.alignleft{
+        margin: 0 $align-img-side $align-img-bottom 0;
+        float: left;
+    }
 }

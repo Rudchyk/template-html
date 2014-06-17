@@ -48,11 +48,11 @@
         &#{$prefix-placeholder}{
             color: $field-placeholder;
             text-overflow:ellipsis;
-            opacity: 1;
+            @include opacity(1);
             @include transition(opacity .3s ease);
         }
         &:focus#{$prefix-placeholder}{
-            opacity: 0;
+            @include opacity(0);
             @include transition(opacity .3s ease);
         }
     }
@@ -82,7 +82,7 @@ textarea.field{
         height: $button-height;
     }
     @else{
-        border: $field-height;
+        height: $field-height;
     }
     // width
     @if $button-width {
@@ -137,7 +137,8 @@ textarea.field{
     }
 }
 a.button,
-span.button{
+span.button,
+div.button{
     text-align: center;
     line-height: $field-height;
     &,

@@ -2,7 +2,7 @@
 $templateName = themeName();
 function themeName(){
     $themeNameDir = dirname(__FILE__);
-    $themeNameArr = explode("\\", $themeNameDir);
+    $themeNameArr = explode("/", $themeNameDir);
     $themeNameVar = end($themeNameArr);
     return $themeNameVar;
 }
