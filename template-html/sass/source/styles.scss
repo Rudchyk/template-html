@@ -6,23 +6,20 @@
 
 /* ---------->>> CONTENT <<<-----------*/
 
-.content{}
+.content{
+    padding-bottom: $footer-height;
+}
+
 .main-section{}
 
 /* ---------->>> FOOTER <<<-----------*/
 
 .footer{
-    @if $footer-height {
-        height: $footer-height;
-    }
+    @include box-sizing(border-box);
+    height: $footer-height;
     overflow: hidden;
 
-    background: {
-        color: #ccc;
-        // image: url(../images/bg/bg.jpg);
-        // repeat: no-repeat;
-        // position: top center;
-    }
+    background-color: #ccc;
 }
 
 // /* ---------->>> POPUPS <<<-----------*/

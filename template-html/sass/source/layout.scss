@@ -1,27 +1,27 @@
 @import "var";
 
-/* ---------->>> PAGES <<<-----------*/
+// /* ---------->>> PAGES <<<-----------*/
 
-.home{
-    .header{}
-    .content{}
-    .main-section{}
-    .footer{}
-}
+// .home{
+//     .header{}
+//     .content{}
+//     .main-section{}
+//     .footer{}
+// }
 
 // /* ---------->>> MEDIA QUERIES <<<-----------*/
 
-/* Large Desktops */
+// /* Large Desktops */
 // @media only screen and (min-width: $HD) {}
 
-/* Desktops & tablets landscape */
+// /* Desktops & tablets landscape */
 // @media only screen and (min-width: $XGA-landscape + 1) and (max-width: $HD) {}
 
-/* Tablets portrait */
+// /* Tablets portrait */
 // @media only screen and (min-width: $XGA-portrait + 1) and (max-width: $XGA-landscape) {}
 
-/* Phones landscape */
+// /* Phones landscape */
 // @media only screen and (min-width: $QVGA + 1) and (max-width: $XGA-portrait) {}
 
-/* Tablet Portrait size*/
+// /* Tablet Portrait size*/
 // @media only screen and (max-width: $QVGA) {}

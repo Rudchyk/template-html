@@ -29,24 +29,13 @@
 .ie8{
     .field{
         line-height: $field-height;
+        @include placeholder(".text-placeholder", $fieldPlaceholder, true);
     }
-    .button{
-        @if $button-background-gradient {
-            // background
-            @if $button-background-ie {
-                background: $button-background-ie;
-            }
-            @else{
-                background: #eee;
-            }
+    .btn{
+        @if $btnBgGradient {
+            background-color: $btnBgIe;
             &:hover{
-                // background
-                @if $button-background-ie {
-                    background: $button-background-hover-ie;
-                }
-                @else{
-                    background: #ddd;
-                }
+                background-color: $btnBgIeHover;
             }
         }
     }
@@ -56,9 +45,13 @@
 
 .ff{}
 
-// /* ---------->>> Opera <<<-----------*/
+/* ---------->>> Opera <<<-----------*/
 
-.opera{}
+.opera{
+    .field{
+        @include placeholder("[data-operaplaceholder]", $fieldPlaceholder, true);
+    }
+}
 
 // /* ---------->>> Safari <<<-----------*/
 

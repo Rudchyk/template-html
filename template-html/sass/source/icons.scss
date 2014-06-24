@@ -1,9 +1,17 @@
 @import "var";
 
-/* ---------->>> SPRITE <<<-----------*/
+// /* ---------->>> SPRITE <<<-----------*/
 
 // $icons-spacing: 10px;
 // @import "icons/*.png";
+
+// /* ---------->>> MIXINS <<<-----------*/
+
+@mixin icons($name) {
+    @include icons-sprite($name);
+    height: icons-sprite-height($name);
+    width: icons-sprite-width($name);
+}
 
 /* ---------->>> ICONS <<<-----------*/
 

@@ -1,60 +1,15 @@
 @import "compass/css3";
 @import "compass/typography/vertical_rhythm";
 
-@mixin rwd-width($el-width, $parent-width: $standard) {
-    width: $el-width * 100% / $parent-width;
-}
 
-@function rwd-width-val($el-width, $parent-width: $standard){
-    @return $el-width * 100% / $parent-width;
-}
-
-@mixin adjust-font-size-to($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) {
-    @if not $relative-font-sizing and $from-size != $base-font-size {
-        @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
-    }
-    font-size: $font-unit * $to-size / $from-size;
-}
-
-@function adjust-font-size-to-val($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size){
-    @if not $relative-font-sizing and $from-size != $base-font-size {
-        @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
-    }
-    @return $font-unit * $to-size / $from-size;
-}
-
-@mixin field-focus{
-    border: 1px solid #aaa;
-    box-shadow:  0 0 3px rgba(0,0,0,.2);
-}
-
-@mixin icons($name) {
-    @include icons-sprite($name);
-    height: icons-sprite-height($name);
-    width: icons-sprite-width($name);
-}
-
+// **Global
+// $base-font-size but in your output unit of choice. Defaults to 1em when $relative-font-sizing is true.
+$font-unit: if($relative-font-sizing, 1em, $base-font-size);
+// To enable SVG gradient support in Opera and IE9
 $experimental-support-for-svg: true;
+// Determines if you want to include magic selectors in your sprites
 $disable-magic-sprite-selectors:true;
-
-// Brief
-
-$base-font-family: Arial, Helvetica, sans-serif;
-// $base-font-size: 16px;
-$base-font-color: #444;
-
-// -- links --
-$base-link-color: #287fc3;
-$link-visited: false; //boolean
-$link-active: false; //boolean
-
-$size: 960px;
-
-// -- RWD --
-$RWD: false; //boolean
-
 // Resolution
-
 $FHD: 1920px;
 $WXGA-plus: 1680px;
 $HD: 1366px;
@@ -64,35 +19,168 @@ $XGA-portrait: 768px;
 $VGA: 640px;
 $HVGA: 480px;
 $QVGA: 320px;
+// Vendor Extension Prefixes Placeholders
+$prefix-placeholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-input-placeholder", ":-ms-input-placeholder";
+
+// Mixins
+
+// Vendor Extension Prefixes
+@mixin extension($property, $value, $moz, $webkit, $o, $ms, $khtml, $official: true) {
+    @if $webkit {
+        -webkit-#{$property}: $value;
+    }
+    @if $khtml {
+        -khtml-#{$property}: $value;
+    }
+    @if $moz {
+        -moz-#{$property}: $value;
+    }
+    @if $ms {
+        -ms-#{$property}: $value;
+    }
+    @if $o {
+        -o-#{$property}: $value;
+    }
+    @if $official {
+        #{$property}: $value;
+    }
+}
+// --Responsive Web Design *width*--
+@mixin rwd-width($el-width, $parent-width: $standard) {
+    width: $el-width * 100% / $parent-width;
+}
+@function rwd-width-val($el-width, $parent-width: $standard){
+    @return $el-width * 100% / $parent-width;
+}
+// --Responsive Web Design *font-size*--
+@mixin adjust-font-size-to($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) {
+    @if not $relative-font-sizing and $from-size != $base-font-size {
+        @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
+    }
+    font-size: $font-unit * $to-size / $from-size;
+}
+@function adjust-font-size-to-val($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size){
+    @if not $relative-font-sizing and $from-size != $base-font-size {
+        @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
+    }
+    @return $font-unit * $to-size / $from-size;
+}
+// --Animation
+@mixin animation($name, $value) {
+    @include extension(animation, $name $value, -moz, -webkit, -o, -ms, not -khtml);
+}
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+// --Validation
+@mixin validation($color, $bg, $border: $color){
+    border-color: $border;
+    background-color: $bg;
+    color: $color;
+}
+// Placeholder
+@mixin placeholder($name, $color, $attr: false){
+    &#{$name}{
+        opacity: 1;
+        @include transition(opacity .3s ease);
+        text-overflow:ellipsis;
+        color: $color;
+    }
+    @if $attr{
+        &#{$name}:focus{
+            opacity: 0;
+        }
+    }
+    @else{
+        &:focus#{$name}{
+            opacity: 0;
+        }
+    }
+}
+// Pseudo
+@mixin pseudo-style{
+    content: '';
+    position: absolute;
+}
+// Align icons
+@mixin align-icon($top){
+    position: relative;
+    top: -#{$top}px;
+}
+// Arrows
+@mixin arrow($side, $width, $height, $color, $once: true, $pos: true){
+    $mirrorSide: null;
+    $top: "top";
+    $right: "right";
+    $bottom: "bottom";
+    $left: "left";
+
+    @if $side == $top { $mirrorSide: $bottom; }
+    @else if $side == $right { $mirrorSide: $left; }
+    @else if $side == $bottom{ $mirrorSide: $top; }
+    @else{ $mirrorSide: $right; }
+
+    @if $once{
+        @include pseudo-style;
+    }
+
+    @if $pos{
+        $secPos: null;
+        @if $side == $top or $side == $bottom{ $secPos: $left}
+        @else{ $secPos: $top }
+
+        #{$side}: 100%;
+        #{$secPos}: 50%;
+        margin-#{$secPos}: -#{$width}/2;
+    }
+    @else{
+        @content;
+    }
+
+    border: $width solid transparent;
+    border:{
+        #{$side}:{
+            width: $height;
+            color: $color;
+        }
+        #{$mirrorSide}:{
+            width: 0;
+        }
+    }
+}
+
+// Brief
+
+$base-font-family: Arial, Helvetica, sans-serif;
+// $base-font-size: 16px;
+$base-font-color: #444;
+
+// -- links --
+$base-link-color: #287fc3;
 
 // Settings
+
+$size: 960px;
 
 $Max: $size;
 $standard: $size;
 $Min: $QVGA;
 
 // -- footer --
-$footer-height: 100px; //if
-
-// -- bottom footer --
-$bottom-footer: true; //boolean
-
-// -- text --
-$text: false; //boolean
-
-// -- loading --
-$loading: true; //boolean
+$footer-height: 100px;
 
 // arrays
-
-$prefix-placeholders:
-":-moz-placeholder",
-"::-moz-placeholder",
-"::-webkit-input-placeholder",
-":-ms-input-placeholder",
-".text-placeholder",
-"[data-operaplaceholder]"
-;
 
 // -- icons sprite --
 // $icons:
@@ -115,51 +203,19 @@ $prefix-placeholders:
 
 // --field--
 // size
-$field-width: 210px;
-$field-height: 30px;
+$fieldWidth: 210px;
+$fieldHeight: 30px;
 // background
-$field-background: #fff;
-// border
-$field-border: true; //boolean
-$field-border-width: 1px;
-$field-border-style: solid;
-$field-border-color: #ccc;
-// other styles
-$field-radius: 3px; //if
-$field-padding: 0 4px;
+$fieldBg: #fff;
+$fieldPadding: 0 4px;
 // typography
-$field-font-family: $base-font-family;
-$field-font-size: 13px;
-$field-color: #444;
-$field-placeholder: #777;
+$fieldPlaceholder: #777;
 
 
 // --button--
 // size
-$button-width: false; //if
-$button-height: false; //if
-// border
-$button-border: true; //boolean
-$button-border-width: 1px;
-$button-border-style: solid;
-$button-border-color: #aaa;
+$btnHeight: false; //if
 // background
-$button-background-gradient: false; //boolean
-$button-background: false; //boolean
-$button-background-ie: false; //if
-$button-background-hover-ie: false; //if
-@mixin button-background{
-    // color or gradient
-}
-@mixin button-background-hover{
-    // color or gradient
-}
-// other styles
-$button-radius: 3px; //if
-$button-padding: 0 4px;
-// typography
-$button-font-family: $base-font-family;
-$button-font-size: 13px;
-$button-color: #444;
-$button-hover-color: #222; //if
-$button-text-shadow: 0 1px rgba(255, 255, 255, .75); //if
+$btnBgGradient: true; //boolean
+$btnBgIe: #eee;
+$btnBgIeHover: #ddd;

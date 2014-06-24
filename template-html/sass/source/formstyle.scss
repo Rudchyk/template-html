@@ -1,65 +1,42 @@
 @import "var";
 
+@mixin field-focus{
+    border: 1px solid #aaa;
+    box-shadow:  0 0 3px rgba(0,0,0,.2);
+}
+
 /* ---------->>> FORMS <<<-----------*/
 
 /*field style*/
 .field{
-    width: $field-width;
+    width: $fieldWidth;
     max-width: 100%;
-    height: $field-height;
+    height: $fieldHeight;
     @include box-sizing(border-box);
-    padding: $field-padding;
+    padding: $fieldPadding;
 
-    background: $field-background;
-    // border
-    @if $field-border {
-        border: $field-border-width $field-border-style $field-border-color;
-    }
-    @else{
-        border: none;
-    }
-    // border-radius
-    @if $field-radius{
-        border-radius: $field-radius;
-    }
+    background-color: $fieldBg;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 
-    font:{
-        family: $field-font-family;
-        size: $field-font-size;
-    }
-    color: $field-color;
+    font: 13px $base-font-family;
+    color: #444;
 
-    // &:focus{
-    //     @include field-focus;
-    // }
-    // &.error{
-    //     border-color: #ef5b5b;
-    //     background-color: #ffebeb;
-    //     color: #ef5b5b;
-    // }
-    // &.valid{
-    //     border-color: #04ab5e;
-    //     background-color: #d9fdd6;
-    //     color: #04ab5e;
-    // }
-}
-@each $prefix-placeholder in $prefix-placeholders {
-    .field{
-        &#{$prefix-placeholder}{
-            color: $field-placeholder;
-            text-overflow:ellipsis;
-            @include opacity(1);
-            @include transition(opacity .3s ease);
-        }
-        &:focus#{$prefix-placeholder}{
-            @include opacity(0);
-            @include transition(opacity .3s ease);
-        }
+    &:focus{
+        @include field-focus;
+    }
+    &.error{
+        @include validation(#ef5b5b, #ffebeb);
+    }
+    &.valid{
+        @include validation(#04ab5e, #d9fdd6);
+    }
+    @each $prefix-placeholder in $prefix-placeholders {
+        @include placeholder($prefix-placeholder, $fieldPlaceholder);
     }
 }
 select.field{
     padding-right: 0;
-
     &,
     &:active,
     &:focus {
@@ -76,71 +53,32 @@ textarea.field{
 
 /*buttons style*/
 
-.button{
+.btn{
     // height
-    @if $button-height {
-        height: $button-height;
+    @if $btnHeight {
+        height: $btnHeight;
     }
     @else{
-        height: $field-height;
+        height: $fieldHeight;
     }
-    // width
-    @if $button-width {
-        width: $button-width;
-    }
-    @else{
-        padding: $button-padding;
-    }
+    padding: 0 4px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    @include background(linear-gradient(top, rgba(255,255,255,.2), rgba(0,0,0,.2)));
 
-    // border
-    @if $button-border {
-        border: $button-border-width $button-border-style $button-border-color;
-    }
-    @else{
-        border: none;
-    }
-    // border-radius
-    @if $button-radius{
-        border-radius: $button-radius;
-    }
-
-    // background
-    @if $button-background {
-        @include button-background;
-    }
-    @else{
-        @include background(linear-gradient(top, rgba(255,255,255,.2), rgba(0,0,0,.2)));
-    }
-
-    line-height: normal;
-    //text-shadow
-    @if $button-text-shadow {
-        text-shadow: $button-text-shadow;
-    }
-    color: $button-color;
-    font:{
-        family: $button-font-family;
-        size: $button-font-size;
-    }
+    color: #444;
+    font: $base-font-family/normal 13px;
+    text-shadow: 0 1px rgba(255, 255, 255, .75);
 
     &:hover{
-        @if $button-background {
-            @include button-background-hover;
-        }
-        @else{
-            @include background(linear-gradient(top, rgba(255,255,255,.3), rgba(0,0,0,.3)));
-        }
-
-        @if $button-hover-color{
-            color: $button-hover-color;
-        }
+        @include background(linear-gradient(top, rgba(255,255,255,.3), rgba(0,0,0,.3)));
+        color: #222;
     }
 }
-a.button,
-span.button,
-div.button{
+a.btn,
+span.btn{
     text-align: center;
-    line-height: $field-height;
+    line-height: $fieldHeight;
     &,
     &:hover{
         text-decoration: none;

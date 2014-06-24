@@ -31,7 +31,7 @@
 @mixin no-bullets{
     list-style: none;
     li {
-        margin-left: 0px;
+        margin-left: 0;
     }
 }
 
