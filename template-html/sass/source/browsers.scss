@@ -4,12 +4,12 @@
 
 .ie{
     // clear the password reveal button and the clear button in IE10
-    // .hidden_input{
-    //     &::-ms-clear,
-    //     &::-ms-reveal{
-    //         display: none;
-    //     }
-    // }
+    .hidden_input{
+        &::-ms-clear,
+        &::-ms-reveal{
+            display: none;
+        }
+    }
 }
 
 // /* ---------->>> IE11 <<<-----------*/
@@ -28,16 +28,8 @@
 
 .ie8{
     .field{
-        line-height: $field-height;
-        @include placeholder(".text-placeholder", $fieldPlaceholder, true);
-    }
-    .btn{
-        @if $btnBgGradient {
-            background-color: $btnBgIe;
-            &:hover{
-                background-color: $btnBgIeHover;
-            }
-        }
+        line-height: $fieldHeight;
+        @include placeholder(".text-placeholder", $fieldPlaceholderColor, true);
     }
 }
 
@@ -49,7 +41,7 @@
 
 .opera{
     .field{
-        @include placeholder("[data-operaplaceholder]", $fieldPlaceholder, true);
+        @include placeholder("[data-operaplaceholder]", $fieldPlaceholderColor, true);
     }
 }
 

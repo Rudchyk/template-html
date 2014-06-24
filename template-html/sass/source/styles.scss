@@ -7,7 +7,7 @@
 /* ---------->>> CONTENT <<<-----------*/
 
 .content{
-    padding-bottom: $footer-height;
+    padding-bottom: $footerHeight;
 }
 
 .main-section{}
@@ -16,10 +16,10 @@
 
 .footer{
     @include box-sizing(border-box);
-    height: $footer-height;
+    height: $footerHeight;
     overflow: hidden;
 
-    background-color: #ccc;
+    background-color: #000;
 }
 
 // /* ---------->>> POPUPS <<<-----------*/

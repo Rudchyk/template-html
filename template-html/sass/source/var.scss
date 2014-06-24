@@ -1,3 +1,4 @@
+@charset "utf-8";
 @import "compass/css3";
 @import "compass/typography/vertical_rhythm";
 
@@ -20,31 +21,56 @@ $VGA: 640px;
 $HVGA: 480px;
 $QVGA: 320px;
 // Vendor Extension Prefixes Placeholders
-$prefix-placeholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-input-placeholder", ":-ms-input-placeholder";
+$prefixPlaceholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-input-placeholder", ":-ms-input-placeholder";
+
+// **Brief
+
+$baseFontFamily: Arial, Helvetica, sans-serif;
+$baseFontSize: $base-font-size;
+$baseFontColor: #444;
+$baseLinkColor: #287fc3;
+
+$size: 960px;
+
+$Max: $size;
+$standard: $size;
+$Min: $QVGA;
+
+// --footer--
+$footerHeight: 100px;
+
+// --icons sprite--
+// $icons:
+// name
+// ;
+// $blocks:
+// name
+// ;
+// $befores:
+// name
+// ;
+// $afters:
+// name
+// ;
+// $buttons:
+// name
+// ;
+
+// **Formstyle
+
+// --fields--
+// size
+$fieldWidth: 210px;
+$fieldHeight: 30px;
+// typography
+$fieldPlaceholderColor: #777;
+
+// --buttons--
+// size
+$btnHeight: false;
 
 // Mixins
 
-// Vendor Extension Prefixes
-@mixin extension($property, $value, $moz, $webkit, $o, $ms, $khtml, $official: true) {
-    @if $webkit {
-        -webkit-#{$property}: $value;
-    }
-    @if $khtml {
-        -khtml-#{$property}: $value;
-    }
-    @if $moz {
-        -moz-#{$property}: $value;
-    }
-    @if $ms {
-        -ms-#{$property}: $value;
-    }
-    @if $o {
-        -o-#{$property}: $value;
-    }
-    @if $official {
-        #{$property}: $value;
-    }
-}
 // --Responsive Web Design *width*--
 @mixin rwd-width($el-width, $parent-width: $standard) {
     width: $el-width * 100% / $parent-width;
@@ -67,7 +93,7 @@ $prefix-placeholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-inpu
 }
 // --Animation
 @mixin animation($name, $value) {
-    @include extension(animation, $name $value, -moz, -webkit, -o, -ms, not -khtml);
+    @include experimental(animation, $name $value, -moz, -webkit, -o, -ms, not -khtml);
 }
 @mixin keyframes($name) {
     @-webkit-keyframes #{$name} {
@@ -159,63 +185,3 @@ $prefix-placeholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-inpu
         }
     }
 }
-
-// Brief
-
-$base-font-family: Arial, Helvetica, sans-serif;
-// $base-font-size: 16px;
-$base-font-color: #444;
-
-// -- links --
-$base-link-color: #287fc3;
-
-// Settings
-
-$size: 960px;
-
-$Max: $size;
-$standard: $size;
-$Min: $QVGA;
-
-// -- footer --
-$footer-height: 100px;
-
-// arrays
-
-// -- icons sprite --
-// $icons:
-// name
-// ;
-// $blocks:
-// name
-// ;
-// $befores:
-// name
-// ;
-// $afters:
-// name
-// ;
-// $buttons:
-// name
-// ;
-
-// formstyle
-
-// --field--
-// size
-$fieldWidth: 210px;
-$fieldHeight: 30px;
-// background
-$fieldBg: #fff;
-$fieldPadding: 0 4px;
-// typography
-$fieldPlaceholder: #777;
-
-
-// --button--
-// size
-$btnHeight: false; //if
-// background
-$btnBgGradient: true; //boolean
-$btnBgIe: #eee;
-$btnBgIeHover: #ddd;

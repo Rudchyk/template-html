@@ -8,7 +8,7 @@
 
 a,
 .link{
-    color: $base-link-color;
+    color: $baseLinkColor;
     text-decoration: underline;
     // &:visited{
     //     color: $base-link-color;
@@ -34,8 +34,8 @@ html {
 
 body{
     background-color: #FFF;
-    color: $base-font-color;
-    font: $base-font-size/1 $base-font-family;
+    color: $baseFontColor;
+    font: $baseFontSize/1 $baseFontFamily;
 }
 
 .container{
@@ -63,8 +63,7 @@ body{
 
 /* ---------->>> TEXT PAGE STYLE <<<-----------*/
 
-$paragraf-margin: 10px 0;
-
+$paragrafMargin: 10px 0;
 .text{
     line-height: normal;
     h1,
@@ -73,26 +72,26 @@ $paragraf-margin: 10px 0;
     h4,
     h5,
     h6{
-        margin: $paragraf-margin;
+        margin: $paragrafMargin;
     }
     h1{}
     h2{}
     h3{}
     ul{
         list-style: disc;
-        margin: $paragraf-margin;
+        margin: $paragrafMargin;
         li{}
     }
     ol{
         list-style: decimal;
-        margin: $paragraf-margin;
+        margin: $paragrafMargin;
         li{}
     }
     li{
         margin-left: 30px;
     }
     p{
-        margin: $paragraf-margin;
+        margin: $paragrafMargin;
     }
     table,
     td,
@@ -100,7 +99,7 @@ $paragraf-margin: 10px 0;
         border: 1px solid #ccc;
     }
     table{
-        margin: $paragraf-margin;
+        margin: $paragrafMargin;
     }
     td,
     th{
@@ -109,7 +108,7 @@ $paragraf-margin: 10px 0;
     hr{
         border-top: 1px solid #ddd;
         clear: both;
-        margin: $paragraf-margin;
+        margin: $paragrafMargin;
     }
     blockquote{
         border-left: 2px solid #333;
@@ -129,15 +128,15 @@ $paragraf-margin: 10px 0;
 $align-img-side: 16px;
 $align-img-bottom: 10px;
 
-img.aligncenter{
+.aligncenter{
     display: block;
     margin: 0 auto 2px;
 }
-img.alignright{
+.alignright{
     margin: 0 0 $align-img-bottom $align-img-side;
     float: right;
 }
-img.alignleft{
+.alignleft{
     margin: 0 $align-img-side $align-img-bottom 0;
     float: left;
 }

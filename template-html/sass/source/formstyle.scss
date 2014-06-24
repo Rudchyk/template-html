@@ -13,13 +13,13 @@
     max-width: 100%;
     height: $fieldHeight;
     @include box-sizing(border-box);
-    padding: $fieldPadding;
+    padding: 0 4px;
 
-    background-color: $fieldBg;
+    background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 3px;
 
-    font: 13px $base-font-family;
+    font: 13px $baseFontFamily;
     color: #444;
 
     &:focus{
@@ -31,8 +31,8 @@
     &.valid{
         @include validation(#04ab5e, #d9fdd6);
     }
-    @each $prefix-placeholder in $prefix-placeholders {
-        @include placeholder($prefix-placeholder, $fieldPlaceholder);
+    @each $prefixPlaceholder in $prefixPlaceholders {
+        @include placeholder($prefixPlaceholder, $fieldPlaceholderColor);
     }
 }
 select.field{
@@ -64,14 +64,15 @@ textarea.field{
     padding: 0 4px;
     border: 1px solid #aaa;
     border-radius: 3px;
-    @include background(linear-gradient(top, rgba(255,255,255,.2), rgba(0,0,0,.2)));
+    background-color: #0044cc;
+    @include background-image(linear-gradient(top, #0088cc, #0044cc));
 
     color: #444;
-    font: $base-font-family/normal 13px;
+    font: 13px/normal $baseFontFamily;
     text-shadow: 0 1px rgba(255, 255, 255, .75);
 
     &:hover{
-        @include background(linear-gradient(top, rgba(255,255,255,.3), rgba(0,0,0,.3)));
+        background-color: #0044cc;
         color: #222;
     }
 }
