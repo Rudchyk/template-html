@@ -2,8 +2,6 @@
 
 // /* ---------->>> FONTS <<<-----------*/
 
-
-
 /* ---------->>> STANDARD STYLE <<<-----------*/
 
 a,
@@ -26,16 +24,19 @@ a,
 
 html {
     min-width: $standard;
-    >body .container-wrap{
-        height: auto;
-        min-height: 100%;
+    >body{
+        .container-wrap,
+        .grid{
+            height: auto;
+            min-height: 100%;
+        }
     }
 }
 
 body{
     background-color: #FFF;
     color: $baseFontColor;
-    font: $baseFontSize/1 $baseFontFamily;
+    font: $baseFontSize+unquote('/')+1 $baseFontFamily;
 }
 
 .container{
@@ -44,8 +45,14 @@ body{
     // max-width: $Max;
     // min-width: $Min;
 }
+
+.grid{
+    @include grids; // vaues: $numberOfColumns: 12, $gutterWidth: 20, $fullWidth: 960;
+}
+
 .container-wrap{
     position: relative;
+    z-index: 2;
     overflow-x: hidden;
 }
 

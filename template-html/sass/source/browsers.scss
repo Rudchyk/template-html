@@ -4,12 +4,12 @@
 
 .ie{
     // clear the password reveal button and the clear button in IE10
-    .hidden_input{
-        &::-ms-clear,
-        &::-ms-reveal{
-            display: none;
-        }
-    }
+    // .hidden_input{
+    //     &::-ms-clear,
+    //     &::-ms-reveal{
+    //         display: none;
+    //     }
+    // }
 }
 
 // /* ---------->>> IE11 <<<-----------*/

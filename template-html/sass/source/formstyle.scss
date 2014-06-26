@@ -9,7 +9,7 @@
 
 /*field style*/
 .field{
-    width: $fieldWidth;
+    width: 210px;
     max-width: 100%;
     height: $fieldHeight;
     @include box-sizing(border-box);
@@ -22,62 +22,56 @@
     font: 13px $baseFontFamily;
     color: #444;
 
-    &:focus{
-        @include field-focus;
-    }
-    &.error{
-        @include validation(#ef5b5b, #ffebeb);
-    }
-    &.valid{
-        @include validation(#04ab5e, #d9fdd6);
-    }
+    // &:focus{
+    //     @include field-focus;
+    // }
+    // &.error{
+    //     @include validation(#ef5b5b, #ffebeb);
+    // }
+    // &.valid{
+    //     @include validation(#04ab5e, #d9fdd6);
+    // }
     @each $prefixPlaceholder in $prefixPlaceholders {
         @include placeholder($prefixPlaceholder, $fieldPlaceholderColor);
     }
 }
-select.field{
-    padding-right: 0;
-    &,
-    &:active,
-    &:focus {
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        -webkit-focus-ring-color: rgba(0, 0, 0, 0);
-        outline: none;
-    }
-}
-textarea.field{
-    min-height: 60px;
-}
+// select.field{
+//     padding-right: 0;
+//     &,
+//     &:active,
+//     &:focus {
+//         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+//         -webkit-focus-ring-color: rgba(0, 0, 0, 0);
+//         outline: none;
+//     }
+// }
+// textarea.field{
+//     min-height: 60px;
+// }
 
 /*end field style*/
 
 /*buttons style*/
 
 .btn{
-    // height
-    @if $btnHeight {
-        height: $btnHeight;
-    }
-    @else{
-        height: $fieldHeight;
-    }
+    height: $fieldHeight;
     padding: 0 4px;
     border: 1px solid #aaa;
     border-radius: 3px;
     background-color: #0044cc;
     @include background-image(linear-gradient(top, #0088cc, #0044cc));
 
-    color: #444;
+    color: #fff;
     font: 13px/normal $baseFontFamily;
-    text-shadow: 0 1px rgba(255, 255, 255, .75);
 
     &:hover{
-        background-color: #0044cc;
-        color: #222;
+        @include background-image(linear-gradient(top, #0044cc, #0088cc));
     }
 }
 a.btn,
 span.btn{
+    display: inline-block;
+    vertical-align: top;
     text-align: center;
     line-height: $fieldHeight;
     &,

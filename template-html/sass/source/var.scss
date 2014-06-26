@@ -1,15 +1,15 @@
-@charset "utf-8";
 @import "compass/css3";
 @import "compass/typography/vertical_rhythm";
 
-
 // **Global
-// $base-font-size but in your output unit of choice. Defaults to 1em when $relative-font-sizing is true.
-$font-unit: if($relative-font-sizing, 1em, $base-font-size);
+
 // To enable SVG gradient support in Opera and IE9
 $experimental-support-for-svg: true;
 // Determines if you want to include magic selectors in your sprites
 $disable-magic-sprite-selectors:true;
+// Toggle all your grids on and off
+$show-grid-backgrounds: true;
+
 // Resolution
 $FHD: 1920px;
 $WXGA-plus: 1680px;
@@ -31,6 +31,7 @@ $baseFontColor: #444;
 $baseLinkColor: #287fc3;
 
 $size: 960px;
+$grid: $size;
 
 $Max: $size;
 $standard: $size;
@@ -59,26 +60,21 @@ $footerHeight: 100px;
 // **Formstyle
 
 // --fields--
-// size
-$fieldWidth: 210px;
+// Height
 $fieldHeight: 30px;
 // typography
 $fieldPlaceholderColor: #777;
 
-// --buttons--
-// size
-$btnHeight: false;
-
 // Mixins
 
-// --Responsive Web Design *width*--
+// ** Responsive Web Design *width*--
 @mixin rwd-width($el-width, $parent-width: $standard) {
     width: $el-width * 100% / $parent-width;
 }
 @function rwd-width-val($el-width, $parent-width: $standard){
     @return $el-width * 100% / $parent-width;
 }
-// --Responsive Web Design *font-size*--
+// ** Responsive Web Design *font-size*
 @mixin adjust-font-size-to($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) {
     @if not $relative-font-sizing and $from-size != $base-font-size {
         @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
@@ -91,7 +87,7 @@ $btnHeight: false;
     }
     @return $font-unit * $to-size / $from-size;
 }
-// --Animation
+// ** Animation
 @mixin animation($name, $value) {
     @include experimental(animation, $name $value, -moz, -webkit, -o, -ms, not -khtml);
 }
@@ -109,13 +105,13 @@ $btnHeight: false;
         @content;
     }
 }
-// --Validation
+// ** Validation
 @mixin validation($color, $bg, $border: $color){
     border-color: $border;
     background-color: $bg;
     color: $color;
 }
-// Placeholder
+// ** Placeholder
 @mixin placeholder($name, $color, $attr: false){
     &#{$name}{
         opacity: 1;
@@ -134,17 +130,28 @@ $btnHeight: false;
         }
     }
 }
-// Pseudo
+// ** Pseudo
 @mixin pseudo-style{
     content: '';
     position: absolute;
 }
-// Align icons
+// ** Align icons
 @mixin align-icon($top){
     position: relative;
     top: -#{$top}px;
 }
-// Arrows
+// ** Arrows
+@mixin arrowBorder($side, $height, $color, $mirrorSide){
+    border:{
+        #{$side}:{
+            width: $height;
+            color: $color;
+        }
+        #{$mirrorSide}:{
+            width: 0;
+        }
+    }
+}
 @mixin arrow($side, $width, $height, $color, $once: true, $pos: true){
     $mirrorSide: null;
     $top: "top";
@@ -175,13 +182,64 @@ $btnHeight: false;
     }
 
     border: $width solid transparent;
-    border:{
-        #{$side}:{
-            width: $height;
-            color: $color;
-        }
-        #{$mirrorSide}:{
-            width: 0;
-        }
+    @include arrowBorder($side, $height, $color, $mirrorSide);
+}
+// ** Grids
+// Add just the horizontal grid to an element's background
+@mixin column-grid-background($myoffset, $total: $grid-background-total-columns, $column: $grid-background-column-width, $gutter: $grid-background-gutter-width, $offset: $grid-background-offset, $column-color: $grid-background-column-color, $gutter-color: $grid-background-gutter-color, $force-fluid: $grid-background-force-fluid) {
+  @if $show-grid-backgrounds and $show-column-grid-backgrounds {
+    @include background-image(get-column-gradient($total, $column, $gutter, $offset, $column-color, $gutter-color, $force-fluid));
+    background-position: $myoffset 0;
+  }
+}
+@function columnWidth($numberOfColumns, $gutterWidth, $fullWidth){
+    $contentWidth: $fullWidth - $gutterWidth; // Content width;
+    $numberOfGutter: $numberOfColumns - 1; // Number of gutter;
+    $columnWidth: ($contentWidth - ($numberOfGutter*$gutterWidth))/$numberOfColumns; // Column width;
+    @return $columnWidth;
+}
+@mixin grids($numberOfColumns: 12, $gutterWidth: 20, $fullWidth: 960){
+    // Default
+    $title: "Grid System";
+    $desc: "Column Grid";
+    $grid-background-column-color: rgba(251, 188, 188, .5);
+    // Function
+    $myoffset: ($gutterWidth/2)+px;
+    $ColumnWwidth: columnWidth($numberOfColumns, $gutterWidth, $fullWidth);
+    $name: $fullWidth + " " + $title + ": " + $numberOfColumns + ", " + $desc + " " + $numberOfColumns + "x" + $ColumnWwidth + "x" + $gutterWidth;
+    // Settings
+    $grid-background-total-columns: $numberOfColumns;
+    $grid-background-column-width: $ColumnWwidth;
+    $grid-background-gutter-width: $gutterWidth;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    margin-left: -($grid/2);
+
+    width: $grid;
+
+    @include column-grid-background($myoffset);
+
+    &:before{
+        content: '#{$name}';
+
+        position: fixed;
+        top: 5px;
+        left: 5px;
+
+        font: italic 10px/normal Arial, Helvetica, sans-serif;
+        color: #444;
+    }
+}
+// ** Bulletproof font face
+@mixin fontFace($name, $fontFiles, $svgFontName: $fontFiles, $folder: $fontFiles){
+    @font-face {
+        font-family: $name;
+        src: url('../fonts/#{$folder}/#{$fontFiles}.eot?#iefix') format('embedded-opentype'), // IE6-IE9
+             url('../fonts/#{$folder}/#{$fontFiles}.woff') format('woff'), // Modern Browsers
+             url('../fonts/#{$folder}/#{$fontFiles}.ttf') format('truetype'), // Safari, Android, iOS
+             url('../fonts/#{$folder}/#{$fontFiles}.svg##{$svgFontName}') format('svg'); // Legacy iOS
     }
 }

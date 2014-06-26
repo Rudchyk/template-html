@@ -17,9 +17,6 @@
 .footer{
     @include box-sizing(border-box);
     height: $footerHeight;
-    overflow: hidden;
-
-    background-color: #000;
 }
 
 // /* ---------->>> POPUPS <<<-----------*/
