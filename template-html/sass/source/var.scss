@@ -141,7 +141,8 @@ $fieldPlaceholderColor: #777;
     top: -#{$top}px;
 }
 // ** Arrows
-@mixin arrowBorder($side, $height, $color, $mirrorSide){
+@mixin arrowBorder($side, $height, $color){
+    $mirrorSide: opposite-position($side);
     border:{
         #{$side}:{
             width: $height;
@@ -153,17 +154,6 @@ $fieldPlaceholderColor: #777;
     }
 }
 @mixin arrow($side, $width, $height, $color, $once: true, $pos: true){
-    $mirrorSide: null;
-    $top: "top";
-    $right: "right";
-    $bottom: "bottom";
-    $left: "left";
-
-    @if $side == $top { $mirrorSide: $bottom; }
-    @else if $side == $right { $mirrorSide: $left; }
-    @else if $side == $bottom{ $mirrorSide: $top; }
-    @else{ $mirrorSide: $right; }
-
     @if $once{
         @include pseudo-style;
     }
@@ -182,7 +172,7 @@ $fieldPlaceholderColor: #777;
     }
 
     border: $width solid transparent;
-    @include arrowBorder($side, $height, $color, $mirrorSide);
+    @include arrowBorder($side, $height, $color);
 }
 // ** Grids
 // Add just the horizontal grid to an element's background
