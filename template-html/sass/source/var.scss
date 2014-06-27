@@ -243,3 +243,7 @@ $fieldPlaceholderColor: #777;
              url('../fonts/#{$folder}/#{$fontFiles}.svg##{$svgFontName}') format('svg'); // Legacy iOS
     }
 }
+@mixin rgbaBox($red, $green, $blue, $opacity, $color){
+    background-color: $color;
+    background-color: rgba($red, $green, $blue, $opacity);
+}
