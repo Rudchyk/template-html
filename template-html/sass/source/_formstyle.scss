@@ -1,10 +1,3 @@
-@import "var";
-
-@mixin field-focus{
-    border: 1px solid #aaa;
-    box-shadow:  0 0 3px rgba(0,0,0,.2);
-}
-
 /* ---------->>> FORMS <<<-----------*/
 
 /*field style*/
@@ -62,7 +55,7 @@
     @include background-image(linear-gradient(top, #0088cc, #0044cc));
 
     color: #fff;
-    font: 13px/normal $baseFontFamily;
+    font: 13px $baseFontFamily;
 
     &:hover{
         @include background-image(linear-gradient(top, #0044cc, #0088cc));
