@@ -1,1 +1,1 @@
-compass watch
+cmd /K compass watch

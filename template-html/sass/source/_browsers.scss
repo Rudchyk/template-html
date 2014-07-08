@@ -27,7 +27,6 @@
 .ie8{
     .field{
         line-height: $fieldHeight;
-        @include placeholder(".text-placeholder", $fieldPlaceholderColor, true);
     }
 }
 
@@ -37,11 +36,7 @@
 
 /* ---------->>> Opera <<<-----------*/
 
-.opera{
-    .field{
-        @include placeholder("[data-operaplaceholder]", $fieldPlaceholderColor, true);
-    }
-}
+.opera{}
 
 // /* ---------->>> Safari <<<-----------*/
 

@@ -16,7 +16,7 @@ $VGA: 640px;
 $HVGA: 480px;
 $QVGA: 320px;
 // Vendor Extension Prefixes Placeholders
-$prefixPlaceholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-input-placeholder", ":-ms-input-placeholder";
+$prefixPlaceholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-input-placeholder", ":-ms-input-placeholder", ".text-placeholder";
 
 // **Brief
 
@@ -36,21 +36,11 @@ $Min: $QVGA;
 $footerHeight: 100px;
 
 // --icons sprite--
-// $icons:
-// name
-// ;
-// $blocks:
-// name
-// ;
-// $befores:
-// name
-// ;
-// $afters:
-// name
-// ;
-// $buttons:
-// name
-// ;
+// $icons: name;
+// $blocks: name;
+// $befores: name;
+// $afters: name;
+// $buttons: name;
 
 // **Formstyle
 

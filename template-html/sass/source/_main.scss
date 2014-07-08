@@ -23,8 +23,7 @@ a,
 html {
     min-width: $standard;
     >body{
-        .container-wrap,
-        .grid{
+        .container-wrap{
             height: auto;
             min-height: 100%;
         }

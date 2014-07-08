@@ -80,14 +80,12 @@
     color: $color;
 }
 // ** Placeholder
-@mixin placeholder($name, $color, $attr: false){
+@mixin placeholder($name, $color){
     &#{$name}{
-        opacity: 1;
-        @include transition(opacity .3s ease);
-        text-overflow:ellipsis;
         color: $color;
+        opacity: 1;
     }
-    @if $attr{
+    @if $name == ".text-placeholder"{
         &#{$name}:focus{
             opacity: 0;
         }
@@ -177,6 +175,7 @@
     margin-left: -($grid/2);
 
     width: $grid;
+    height: 100%;
 
     @include column-grid-background($myoffset);
 
