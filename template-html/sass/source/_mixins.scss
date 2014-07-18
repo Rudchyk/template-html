@@ -97,14 +97,26 @@
     }
 }
 // ** Pseudo
-@mixin pseudo-style{
+@mixin pseudo-style($top: false, $right: false, $bottom: false, $left: false){
     content: '';
     position: absolute;
+    @if $top{
+        top: $top;
+    }
+    @if $right{
+        right: $right;
+    }
+    @if $bottom{
+        bottom: $bottom;
+    }
+    @if $left{
+        left: $left;
+    }
 }
 // ** Align icons
 @mixin align-icon($top){
     position: relative;
-    top: -#{$top}px;
+    top: #{$top}px;
 }
 // ** Arrows
 @mixin arrowBorder($side, $height, $color){

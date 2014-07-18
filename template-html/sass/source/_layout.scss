@@ -12,14 +12,23 @@
 // /* Large Desktops */
 // @media only screen and (min-width: $HD) {}
 
-// /* Desktops & tablets landscape */
-// @media only screen and (min-width: $XGA-landscape + 1) and (max-width: $HD) {}
+// /* Only desktops & tablets landscape */
+// @media only screen and (min-width: $XGALandscape + 1) and (max-width: $HD) {}
 
-// /* Tablets portrait */
-// @media only screen and (min-width: $XGA-portrait + 1) and (max-width: $XGA-landscape) {}
+// /* > 1024px */
+// @media only screen and (max-width: $XGALandscape) {}
+
+// /* Only tablets portrait */
+// @media only screen and (min-width: $XGAPortrait + 1) and (max-width: $XGALandscape) {}
+
+// /* > 768px */
+// @media only screen and (max-width: $XGAPortrait) {}
 
 // /* Phones landscape */
-// @media only screen and (min-width: $QVGA + 1) and (max-width: $XGA-portrait) {}
+// @media only screen and (min-width: $QVGA + 1) and (max-width: $XGAPortrait) {}
 
-// /* Tablet Portrait size*/
+// /* > 640px */
+// @media only screen and (max-width: $VGA) {}
+
+// /* Small phones */
 // @media only screen and (max-width: $QVGA) {}
