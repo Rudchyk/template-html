@@ -20,6 +20,18 @@ $prefixPlaceholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-input
 
 // **Fonts
 
+// **Sprite
+
+// $icons-spacing: 10px;
+// @import "icons/*.png";
+
+// --icons sprite--
+// $icons: name;
+// $blocks: name;
+// $befores: name;
+// $afters: name;
+// $buttons: name;
+
 // **Brief
 
 $baseFontFamily: Arial, Helvetica, sans-serif;
@@ -36,13 +48,6 @@ $Min: $QVGA;
 
 // --footer--
 $footerHeight: 100px;
-
-// --icons sprite--
-// $icons: name;
-// $blocks: name;
-// $befores: name;
-// $afters: name;
-// $buttons: name;
 
 // **Formstyle
 

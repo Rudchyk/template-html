@@ -30,6 +30,12 @@
         margin-left: 0;
     }
 }
+// **Sprite
+@mixin icons($name) {
+    @include icons-sprite($name);
+    height: icons-sprite-height($name);
+    width: icons-sprite-width($name);
+}
 // ** Responsive Web Design *width*--
 @mixin rwd-width($el-width, $parent-width: $standard) {
     width: $el-width * 100% / $parent-width;
@@ -132,18 +138,22 @@
     }
 }
 @mixin arrow($side, $width, $height, $color, $once: true, $pos: true){
+    $top: "top";
+    $bottom: "bottom";
+    $left: "left";
+
     @if $once{
         @include pseudo-style;
     }
 
     @if $pos{
         $secPos: null;
-        @if $side == $top or $side == $bottom{ $secPos: $left}
+        @if $side == $top or $side == $bottom { $secPos: $left}
         @else{ $secPos: $top }
 
         #{$side}: 100%;
         #{$secPos}: 50%;
-        margin-#{$secPos}: -#{$width}/2;
+        margin-#{$secPos}: -$width/2;
     }
     @else{
         @content;
