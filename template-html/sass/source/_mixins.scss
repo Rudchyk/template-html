@@ -249,3 +249,7 @@
     }
     margin: auto;
 }
+@mixin strongGradient($size, $beginColor, $endColor, $separator){
+    background-color: $beginColor;
+    @include background-image(linear-gradient($size, $beginColor, $beginColor $separator, $endColor $separator, $endColor));
+}
