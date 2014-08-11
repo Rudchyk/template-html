@@ -30,15 +30,13 @@ html {
 
 body{
     background-color: #FFF;
+
     color: $baseFontColor;
     font: $baseFontSize+unquote('/')+1 $baseFontFamily;
 }
 
 .container{
-    margin: auto;
-    width: $standard;
-    // max-width: $Max;
-    // min-width: $Min;
+    @include centerBlock($standard);
 }
 
 .grid{
@@ -47,6 +45,7 @@ body{
 
 .container-wrap{
     position: relative;
+
     overflow-x: hidden;
 }
 

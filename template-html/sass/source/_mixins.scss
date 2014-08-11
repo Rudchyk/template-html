@@ -226,3 +226,26 @@
     background-color: $color;
     background-color: rgba($red, $green, $blue, $opacity);
 }
+@mixin absCenter($zIndex: false) {
+    position: absolute;
+    @if ($zIndex){
+        z-index: $zIndex;
+    }
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+@mixin centerBlock($Static, $Max: false, $Min: false){
+    @if ($Static){
+        width: $Static;
+    }
+    @if($Max){
+        max-width: $Max;
+    }
+    @if($Min){
+        min-width: $Min;
+    }
+    margin: auto;
+}

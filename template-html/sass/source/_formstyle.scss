@@ -2,18 +2,18 @@
 
 /*field style*/
 .field{
+    @include box-sizing(border-box);
     width: 210px;
     max-width: 100%;
     height: $fieldHeight;
-    @include box-sizing(border-box);
     padding: 0 4px;
 
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 3px;
 
-    font: 13px $baseFontFamily;
     color: #444;
+    font: 13px $baseFontFamily;
 
     // &:focus{
     //     @include field-focus;
@@ -50,6 +50,7 @@
     height: $fieldHeight;
     padding: 0 4px;
     border: 1px solid #aaa;
+
     border-radius: 3px;
     background-color: #0044cc;
     @include background-image(linear-gradient(top, #0088cc, #0044cc));
@@ -58,15 +59,16 @@
     font: 13px $baseFontFamily;
 
     &:hover{
-        @include background-image(linear-gradient(top, #0044cc, #0088cc));
+        @include background-image(linear-gradient(bottom, #0088cc, #0044cc));
     }
 }
 a.btn,
 span.btn{
     display: inline-block;
     vertical-align: top;
-    text-align: center;
+
     line-height: $fieldHeight;
+    text-align: center;
     &,
     &:hover{
         text-decoration: none;
