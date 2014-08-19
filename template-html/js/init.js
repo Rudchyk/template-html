@@ -9,7 +9,7 @@ if (head.browser.ie && head.browser.version < 8) {
 }
 
 if (head.browser.ie && head.browser.version < 9) {
-    head.load(sourcePath+"js/html5.js");
+    head.js("http://html5shiv.googlecode.com/svn/trunk/html5.js");
 }
 
 head.js(
@@ -21,7 +21,7 @@ head.js(
 );
 
 if (head.browser.ie && head.browser.version < 10 || head.browser.opera) {
-    head.js( sourcePath+"js/placeholder.min.js" );
+    head.js( sourcePath+"js/ph.min.js" );
 }
 
 // if (hasClass(document.documentElement, 'body_class')) {

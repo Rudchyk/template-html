@@ -6,24 +6,19 @@
     width: 210px;
     max-width: 100%;
     height: $fieldHeight;
+    border: 1px solid #ccc;
     padding: 0 4px;
 
     background-color: #fff;
-    border: 1px solid #ccc;
     border-radius: 3px;
 
     color: #444;
     font: 13px $baseFontFamily;
 
-    // &:focus{
-    //     @include field-focus;
-    // }
-    // &.error{
-    //     @include validation(#ef5b5b, #ffebeb);
-    // }
-    // &.valid{
-    //     @include validation(#04ab5e, #d9fdd6);
-    // }
+    // &:focus{}
+    // &.error{}
+    // &.valid{}
+
     @each $prefixPlaceholder in $prefixPlaceholders {
         @include placeholder($prefixPlaceholder, $fieldPlaceholderColor);
     }
@@ -64,8 +59,7 @@
 }
 a.btn,
 span.btn{
-    display: inline-block;
-    vertical-align: top;
+    @include dib;
 
     line-height: $fieldHeight;
     text-align: center;
