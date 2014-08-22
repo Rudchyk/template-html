@@ -56,6 +56,15 @@
     }
     @return $font-unit * $to-size / $from-size;
 }
+@mixin rem-font-size($fontUnit){
+    $defaultFontSize: $base-font-size;
+    font-size: $fontUnit;
+    font-size: $fontUnit/$defaultFontSize+rem;
+}
+@function rem-font-size($fontUnit){
+    $defaultFontSize: $base-font-size;
+    @return $fontUnit/$defaultFontSize+rem;
+}
 // ** Animation
 @mixin animation($name, $value) {
     @include experimental(animation, $name $value, -moz, -webkit, -o, -ms, not -khtml);
