@@ -1,0 +1,32 @@
+.btn{
+    height: $btnDefaultHeight;
+    padding: 0 10px;
+
+    border: $btnDefaultBorderSize solid transparent;
+    border-radius: 5px;
+    background-color: #3498db;
+
+    color: $btnDefaultColor;
+    font: $btnDefaultFontSize $btnDefaultFontFamily;
+
+    &:hover{
+        background-color: #5dade2;
+    }
+    &[disabled],
+    &.has-disabled{
+        background-color: $btnHasDisabledColor;
+        border-color: $btnHasDisabledColor;
+    }
+}
+
+a,
+span{
+    &.btn{
+        line-height: $btnDefaultHeight;
+        text-align: center;
+        &,
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}

@@ -1,9 +1,9 @@
-/* ---------->>> HEADER <<<-----------*/
+// Header
 
 .header{}
 .logo{}
 
-/* ---------->>> CONTENT <<<-----------*/
+// Content
 
 .content{
     padding-bottom: $footerHeight;
@@ -11,13 +11,12 @@
 
 .main-section{}
 
-/* ---------->>> FOOTER <<<-----------*/
+// Footer
 
 .footer{
-    @include box-sizing(border-box);
     height: $footerHeight;
 }
 
-// /* ---------->>> POPUPS <<<-----------*/
+// Popups
 
-// /* ---------->>> OTHER STYLES <<<-----------*/
+// Other Styles

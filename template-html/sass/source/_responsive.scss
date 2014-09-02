@@ -1,0 +1,25 @@
+// --Media Queries--
+
+// /* Large Desktops */
+// @media only screen and (min-width: $HD) {}
+
+// /* Only desktops & tablets landscape */
+// @media only screen and (min-width: $XGALandscape + 1) and (max-width: $HD) {}
+
+// /* > 1024px */
+// @media only screen and (max-width: $XGALandscape) {}
+
+// /* Only tablets portrait */
+// @media only screen and (min-width: $XGAPortrait + 1) and (max-width: $XGALandscape) {}
+
+// /* > 768px */
+// @media only screen and (max-width: $XGAPortrait) {}
+
+// /* Phones landscape */
+// @media only screen and (min-width: $QVGA + 1) and (max-width: $XGAPortrait) {}
+
+// /* > 640px */
+// @media only screen and (max-width: $VGA) {}
+
+// /* Small phones */
+// @media only screen and (max-width: $QVGA) {}

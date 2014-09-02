@@ -1,0 +1,170 @@
+// --Default--
+
+// Box-sizing
+.box,
+.wrapper,
+.field,
+.footer{
+    @include box-sizing(border-box);
+}
+
+// Display
+
+.dib,
+.icon,
+.btn,
+.field,
+.wrapper{
+    display: inline-block;
+}
+
+.table{
+    display: table;
+}
+
+.row{
+    display: table-row;
+}
+
+.cell{
+    display: table-cell;
+}
+
+.block{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+// Vertical-align
+.dib{
+    vertical-align: top;
+}
+
+.icon,
+.btn,
+.field{
+    vertical-align: middle;
+}
+
+// Float
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+// Width
+.full,
+.tablebox,
+.wrapper,
+.footer{
+    width: 100%;
+}
+
+// Animation
+.light-animation,
+.btn,
+.field{
+    @include transition(all .25s ease);
+}
+
+// Text-align
+.tac{
+    text-align: center;
+}
+
+.tal{
+    text-align: left;
+}
+
+.tar{
+    text-align: right;
+}
+
+// Alignment Blocks In Width
+.jbox{
+    line-height: 0;
+    text-align: justify;
+    @include legacy-pie-clearfix;
+
+    .dib{
+        line-height: normal;
+    }
+}
+
+// Other
+.clear{
+    clear: both;
+}
+
+.clearfix{
+    @include pie-clearfix;
+}
+
+.no_select{
+    @include user-select(none);
+}
+
+// --Typography--
+.ellipsis{
+    @include ellipsis(no-wrap);
+}
+
+.break{
+    word-wrap: break-word;
+}
+
+// --Images--
+
+.loading{
+    background: #fff url(../images/required/loading.gif) no-repeat center;
+}
+
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+// --Buttons--
+
+.btn-block{
+    display: block;
+
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+// --Form--
+
+.field,
+.btn{
+    &[disabled],
+    &.has-disabled{
+        cursor: default;
+        @include opacity(0.7);
+    }
+}
+
+// Fake Input
+.input_box{
+    position: relative;
+    @include box-sizing(border-box);
+    display: inline-block;
+    vertical-align: top;
+
+    .hidden_input{
+        background: transparent;
+        @include box-sizing(border-box);
+        @include reset-box-model;
+        @include reset-font;
+        height: 100%;
+        width: 100%;
+    }
+}

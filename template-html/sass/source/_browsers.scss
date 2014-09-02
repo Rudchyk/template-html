@@ -1,4 +1,4 @@
-// /* ---------->>> ALL IE <<<-----------*/
+// All IE
 
 .ie{
     // clear the password reveal button and the clear button in IE10
@@ -10,38 +10,38 @@
     // }
 }
 
-// /* ---------->>> IE11 <<<-----------*/
+// IE11
 
 .ie11{}
 
-// /* ---------->>> IE10 <<<-----------*/
+// IE10
 
 .ie10{}
 
-// /* ---------->>> IE9 <<<-----------*/
+// IE9
 
 .ie9{}
 
-/* ---------->>> IE8 <<<-----------*/
+// IE8
 
 .ie8{
     .field{
-        line-height: $fieldHeight;
+        line-height: $fieldDefaultHeight;
     }
 }
 
-// /* ---------->>> Firefox <<<-----------*/
+// Firefox
 
 .ff{}
 
-/* ---------->>> Opera <<<-----------*/
+// Opera
 
 .opera{}
 
-// /* ---------->>> Safari <<<-----------*/
+// Safari
 
 .safari{}
 
-// /* ---------->>> Chrome <<<-----------*/
+// Chrome
 
 .chrome{}

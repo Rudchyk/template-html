@@ -30,11 +30,28 @@
         margin-left: 0;
     }
 }
+@mixin dib($align: top){
+    display: inline-block;
+    vertical-align: $align;
+}
 // **Sprite
 @mixin icons($name) {
     @include icons-sprite($name);
     height: icons-sprite-height($name);
     width: icons-sprite-width($name);
+}
+@mixin svg-bg-with-fallback($file_name) {
+    @include dib(middle);
+
+    height: icons-sprite-height($file_name);
+    width: icons-sprite-width($file_name);
+
+    background-repeat: no-repeat;
+    background-image: inline-image('svg/#{$file_name}.svg', image/svg\+xml);
+
+    html.no-svg & {
+        @include icons-sprite($file_name);
+    }
 }
 // ** Responsive Web Design *width*--
 @mixin rwd-width($el-width, $parent-width: $standard) {
@@ -250,8 +267,4 @@
 @mixin strongGradient($size, $beginColor, $endColor, $separator){
     background-color: $beginColor;
     @include background-image(linear-gradient($size, $beginColor, $beginColor $separator, $endColor $separator, $endColor));
-}
-@mixin dib($align: top){
-    display: inline-block;
-    vertical-align: $align;
 }

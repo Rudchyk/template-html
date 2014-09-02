@@ -1,71 +1,53 @@
-/* ---------->>> FORMS <<<-----------*/
+// field style
 
-/*field style*/
 .field{
-    @include box-sizing(border-box);
-    width: 210px;
+    width: $fieldDefaultWidth;
     max-width: 100%;
-    height: $fieldHeight;
-    border: 1px solid #ccc;
-    padding: 0 4px;
+    height: $fieldDefaultHeight;
+    padding: 0 10px;
 
-    background-color: #fff;
-    border-radius: 3px;
+    border: $fieldDefaultBorderSize solid $fieldDefaultBorderColor;
+    border-radius: 5px;
+    background-color: $fieldDefaultBackground;
 
-    color: #444;
-    font: 13px $baseFontFamily;
+    color: $fieldDefaultColor;
+    font: $fieldDefaultFontSize $fieldDefaultFontFamily;
 
     // &:focus{}
-    // &.error{}
-    // &.valid{}
+    &.has-error{
+        border-color: $fieldHasErrorColor;
+
+        color: $fieldHasErrorColor;
+    }
+    &.has-success{
+        border-color: $fieldHasSuccessColor;
+
+        color: $fieldHasSuccessColor;
+    }
+    &[disabled],
+    &.has-disabled{
+        border-color: $fieldHasDisabledColor;
+        background-color: $fieldHasDisabledBg;
+
+        color: $fieldHasDisabledColor;
+    }
 
     @each $prefixPlaceholder in $prefixPlaceholders {
-        @include placeholder($prefixPlaceholder, $fieldPlaceholderColor);
+        @include placeholder($prefixPlaceholder, $fieldDefaultPlaceholderColor);
     }
 }
-// select.field{
-//     padding-right: 0;
-//     &,
-//     &:active,
-//     &:focus {
-//         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-//         -webkit-focus-ring-color: rgba(0, 0, 0, 0);
-//         outline: none;
-//     }
-// }
-// textarea.field{
-//     min-height: 60px;
-// }
 
-/*end field style*/
-
-/*buttons style*/
-
-.btn{
-    height: $fieldHeight;
-    padding: 0 4px;
-    border: 1px solid #aaa;
-
-    border-radius: 3px;
-    background-color: #0044cc;
-    @include background-image(linear-gradient(top, #0088cc, #0044cc));
-
-    color: #fff;
-    font: 13px $baseFontFamily;
-
-    &:hover{
-        @include background-image(linear-gradient(bottom, #0088cc, #0044cc));
-    }
-}
-a.btn,
-span.btn{
-    @include dib;
-
-    line-height: $fieldHeight;
-    text-align: center;
+select.field{
+    padding-right: 0;
     &,
-    &:hover{
-        text-decoration: none;
+    &:active,
+    &:focus {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-focus-ring-color: rgba(0, 0, 0, 0);
+        outline: none;
     }
 }
-/*end buttons style*/
+
+textarea.field{
+    min-height: 60px;
+}

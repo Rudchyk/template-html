@@ -20,6 +20,8 @@ $prefixPlaceholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-input
 
 // **Fonts
 
+
+
 // **Sprite
 
 // $icons-spacing: 10px;
@@ -27,7 +29,7 @@ $prefixPlaceholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-input
 
 // --icons sprite--
 // $icons: name;
-// $blocks: name;
+// $blockIcons: name;
 // $befores: name;
 // $afters: name;
 // $buttons: name;
@@ -35,7 +37,7 @@ $prefixPlaceholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-input
 // **Brief
 
 $baseFontFamily: Arial, Helvetica, sans-serif;
-$baseFontSize: $base-font-size;
+$baseFontSize: rem-font-size($base-font-size);
 $baseFontColor: #444;
 $baseLinkColor: #287fc3;
 
@@ -52,7 +54,36 @@ $footerHeight: 100px;
 // **Formstyle
 
 // --fields--
+// Size
+$fieldDefaultWidth: 210px;
+$fieldDefaultHeight: 30px;
+// Style
+$fieldDefaultBorderSize: 1px;
+$fieldDefaultBorderColor: #bdc3c7;
+$fieldDefaultBackground: #fff;
+// Typography
+$fieldDefaultColor: #444;
+$fieldDefaultPlaceholderColor: #777;
+$fieldDefaultFontFamily: $baseFontFamily;
+$fieldDefaultFontSize: rem-font-size(13px);
+// Action
+$fieldHasErrorColor: #e74c3c;
+$fieldHasSuccessColor: #2ecc71;
+$fieldHasDisabledColor: #d5dbdb;
+$fieldHasDisabledBg: #f4f6f6;
+
+// --buttons--
 // Height
-$fieldHeight: 30px;
-// typography
-$fieldPlaceholderColor: #777;
+$btnDefaultHeight: $fieldDefaultHeight;
+// Style
+$btnDefaultBorderSize: 1px;
+// Typography
+$btnDefaultColor: #fff;
+$btnDefaultFontFamily: $baseFontFamily;
+$btnDefaultFontSize: rem-font-size(13px);
+// Action
+$btnHasDisabledColor: #bdc3c7;
+
+// --typography--
+$alignImgSide: 16px;
+$alignImgBottom: 10px;

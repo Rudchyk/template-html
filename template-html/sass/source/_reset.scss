@@ -213,11 +213,11 @@ strong {
 em,
 i,
 dfn{
-    font-style:italic;
+    font-style: italic;
 }
 
 u{
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
 small{
@@ -272,10 +272,6 @@ h4,
 h5,
 h6{
     font-weight: normal;
-}
-
-@for $i from 1 through 6 {
-  h#{$i} { font-size: 140% - $i*10; }
 }
 
 hr {
@@ -347,18 +343,18 @@ a{
 }
 
 input,
+textarea{
+    -webkit-user-modify: read-write-plaintext-only;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+input,
 textarea,
 select,
 button{
-    -webkit-user-modify: read-write-plaintext-only;
-    -webkit-tap-highlight-color: rgba(255,255,255,0);
     &,
     &:hover,
     &:focus{
         outline: none;
-    }
-    &:focus{
-        box-shadow: none!important;
     }
 }
 /*
@@ -447,110 +443,12 @@ NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
 */
 
 optgroup {
-  font-weight: bold;
+    font-weight: bold;
 }
 
-/* ---------->>> MY CLASSES  <<<-----------*/
-
-.wrapper{
-    @include box-sizing(border-box);
+input[type="submit"],
+html input[type="button"],
+input[type="reset"],
+button{
+    @include appearance(button);
 }
-
-.left{
-    float: left;
-}
-
-.right{
-    float: right;
-}
-
-.clear{
-    clear: both;
-}
-
-.tac{
-    text-align: center;
-}
-
-.tal{
-    text-align: left;
-}
-
-.tar{
-    text-align: right;
-}
-
-.clearfix{
-    @include pie-clearfix;
-}
-
-.tablebox,
-.wrapper{
-    width: 100%;
-}
-
-/* ---------->>> OTHER CLASSES  <<<-----------*/
-
-.ellipsis{
-    @include ellipsis(no-wrap);
-}
-.dib,
-.icon,
-.button,
-.field,
-.wrapper{
-    display: inline-block;
-}
-
-.dib{
-    vertical-align: top;
-}
-
-.icon,
-.button,
-.field{
-    vertical-align: middle;
-}
-
-.table{
-    display: table;
-}
-
-.row{
-    display: table-row;
-}
-
-.cell{
-    display: table-cell;
-}
-
-/* ---------->>> ALIGNMENT BLOCKS IN WIDTH  <<<-----------*/
-
-.jbox{
-    line-height: 0;
-    text-align: justify;
-    @include legacy-pie-clearfix;
-
-    .dib{
-        line-height: normal;
-        text-align: left;
-    }
-}
-
-// /* ---------->>> VIRTUAL INPUT  <<<-----------*/
-
-// .input_box{
-//     position: relative;
-//     @include box-sizing(border-box);
-//     display: inline-block;
-//     vertical-align: top;
-
-//     .hidden_input{
-//         background: transparent;
-//         @include box-sizing(border-box);
-//         @include reset-box-model;
-//         @include reset-font;
-//         height: 100%;
-//         width: 100%;
-//     }
-// }
