@@ -16,7 +16,18 @@ function themeName(){
     <meta name="author" content="Sergii Rudchyk">
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
+    body{
+        background-color: #fafafa;
+        font: 1rem Arial, Helvetica, sans-serif;
+    }
+    a{
+        color: #287fc3;
+    }
+    a:hover{
+        text-decoration: none;
+    }
     .theme-container{
         max-width: 940px;
         margin: auto;
@@ -37,14 +48,13 @@ function themeName(){
         margin: auto;
         padding-bottom: 1em;
     }
-    .theme-item-link{
-        padding-right: 1.5em;
-        background: url(https://dl.dropboxusercontent.com/u/62557375/temp/site/external_link_icon.gif) no-repeat right;
-    }
     @media only screen and (max-width: 1024px) {
         .theme-list{
             padding: 0 1em;
         }
+    }
+    .fa{
+        font-size: 11px;
     }
     </style>
 </head>
@@ -55,7 +65,7 @@ function themeName(){
         <?php
             if ($handle = opendir('.')) {
                 foreach (glob("*.html") as $filename) {
-                    echo "<li class='theme-item'><a href='$filename' target='_blank' class='theme-item-link'>$filename</a></li>";
+                    echo "<li class='theme-item'><a href='$filename' target='_blank' class='theme-item-link'>$filename</a> <i class='fa fa-external-link'></i></li>";
                 }
                 closedir($handle);
             }

@@ -1,10 +1,11 @@
-// --Default--
+// Default
 
 // Box-sizing
 .box,
 .wrapper,
 .field,
-.footer{
+.footer,
+.input_box{
     @include box-sizing(border-box);
 }
 
@@ -30,10 +31,12 @@
     display: table-cell;
 }
 
-.block{
+.block,
+.show{
     display: block;
 }
 
+.none,
 .hide{
     display: none;
 }
@@ -153,18 +156,17 @@
 }
 
 // Fake Input
-.input_box{
+.fake-input{
     position: relative;
-    @include box-sizing(border-box);
-    display: inline-block;
-    vertical-align: top;
+}
 
-    .hidden_input{
-        background: transparent;
-        @include box-sizing(border-box);
-        @include reset-box-model;
-        @include reset-font;
-        height: 100%;
-        width: 100%;
-    }
+.hidden-input{
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+
+    @include box-sizing(border-box);
+    @include reset-box-model;
+    @include reset-font;
 }

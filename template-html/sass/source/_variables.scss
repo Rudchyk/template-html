@@ -1,4 +1,4 @@
-// **Global
+// Global
 
 // To enable SVG gradient support in Opera and IE9
 $experimental-support-for-svg: true;
@@ -28,11 +28,11 @@ $prefixPlaceholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-input
 // @import "icons/*.png";
 
 // --icons sprite--
-// $icons: name;
-// $blockIcons: name;
-// $befores: name;
-// $afters: name;
-// $buttons: name;
+$icons: null;
+$blockIcons: null;
+$befores: null;
+$afters: null;
+$buttons: null;
 
 // **Brief
 
@@ -58,9 +58,6 @@ $footerHeight: 100px;
 $fieldDefaultWidth: 210px;
 $fieldDefaultHeight: 30px;
 // Style
-$fieldDefaultBorderSize: 1px;
-$fieldDefaultBorderColor: #bdc3c7;
-$fieldDefaultBackground: #fff;
 // Typography
 $fieldDefaultColor: #444;
 $fieldDefaultPlaceholderColor: #777;
@@ -75,8 +72,6 @@ $fieldHasDisabledBg: #f4f6f6;
 // --buttons--
 // Height
 $btnDefaultHeight: $fieldDefaultHeight;
-// Style
-$btnDefaultBorderSize: 1px;
 // Typography
 $btnDefaultColor: #fff;
 $btnDefaultFontFamily: $baseFontFamily;

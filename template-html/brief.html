@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>brief</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- CSS style -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeRDark.min.css">
+    <link rel="stylesheet" href="css/index.css?v=1">
+    <!-- Scripts -->
+    <script data-headjs-load="js/init.js" src="js/head.min.js"></script>
+    <style>
+        body{
+            background-color: #fafafa;
+            font: 1rem Arial, Helvetica, sans-serif;
+            color: #000;
+        }
+        .brief-container{
+            width: 960px;
+            margin: auto;
+            padding: 50px;
+        }
+        .brief-title,
+        .brief-small-title{
+            text-align: center;
+        }
+        .brief-title{
+            padding: 15px;
+        }
+        .brief-small-title{
+            padding: 5px;
+        }
+        .brief-codebox-cell,
+        .brief-previewbox-cell{
+            width: 50%;
+        }
+        .brief-codebox{
+            width: 480px;
+        }
+        .brief-previewbox-cell{
+            padding: 0 50px;
+        }
+        .brief-string{
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="brief-container">
+        <table width="100%">
+            <tr>
+                <td colspan="2">
+                    <h2 class="brief-title tac">Title</h2>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h3 class="brief-small-title">Small title</h3>
+                </td>
+            </tr>
+            <tr>
+                <td class="brief-codebox-cell">
+                    <div class="brief-codebox">
+                        <pre class="brush: html">
+                            HTML
+                        </pre>
+                    </div>
+                </td>
+                <td class="brief-previewbox-cell">
+                    Example
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+
+        $(document).ready(function() {
+
+        });
+    </script>
+</body>
+</html>

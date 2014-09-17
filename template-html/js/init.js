@@ -5,7 +5,7 @@ function hasClass(elem, className) {
 }
 
 if (head.browser.ie && head.browser.version < 8) {
-    location.replace(sourcePath+"ie7/ie7.html");
+    location.replace(sourcePath+"ie-old/index.html");
 }
 
 if (head.browser.ie && head.browser.version < 9) {
@@ -17,6 +17,7 @@ head.js(
     sourcePath+"js/rform.min.js",
     // sourcePath+"js/.js",
     // sourcePath+"js/scripts.js",
+    // sourcePath+"js/example.js",
     function() {}
 );
 

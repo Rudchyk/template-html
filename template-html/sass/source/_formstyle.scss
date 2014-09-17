@@ -1,3 +1,5 @@
+// Form style
+
 // field style
 
 .field{
@@ -6,9 +8,9 @@
     height: $fieldDefaultHeight;
     padding: 0 10px;
 
-    border: $fieldDefaultBorderSize solid $fieldDefaultBorderColor;
+    border: 1px solid #bdc3c7;
     border-radius: 5px;
-    background-color: $fieldDefaultBackground;
+    background-color: #fff;
 
     color: $fieldDefaultColor;
     font: $fieldDefaultFontSize $fieldDefaultFontFamily;

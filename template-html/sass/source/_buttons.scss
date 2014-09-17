@@ -1,8 +1,10 @@
+// Buttons
+
 .btn{
     height: $btnDefaultHeight;
     padding: 0 10px;
 
-    border: $btnDefaultBorderSize solid transparent;
+    border: 1px solid transparent;
     border-radius: 5px;
     background-color: #3498db;
 

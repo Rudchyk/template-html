@@ -1,7 +1,7 @@
 // Global
 
 html {
-    min-width: $standard;
+    // min-width: $standard;
     >body{
         .container-wrap{
             height: auto;
@@ -22,14 +22,13 @@ body{
 }
 
 .grid{
-    // vaues: $numberOfColumns: 12, $gutterWidth: 20, $fullWidth: 960;
-    @include grids;
+    @include grids; // vaues: $numberOfColumns: 12, $gutterWidth: 20, $fullWidth: 960;
 }
 
 .container-wrap{
     position: relative;
 
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
 
 .footer{
