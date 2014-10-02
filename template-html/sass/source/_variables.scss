@@ -20,6 +20,23 @@ $prefixPlaceholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-input
 
 // **Fonts
 
+// Web safe font combinations
+$Arial: Arial, Helvetica, sans-serif;
+$Verdana: Verdana, Geneva, sans-serif;
+$Tahoma: Tahoma, Geneva, sans-serif;
+$ArialBlack: "Arial Black", Gadget, sans-serif;
+$ComicSansMS: "Comic Sans MS", cursive, sans-serif;
+$Impact: Impact, Charcoal, sans-serif;
+$LucidaSansUnicode: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+$TrebuchetMS: "Trebuchet MS", Helvetica, sans-serif;
+$Georgia: Georgia, serif;
+$PalatinoLinotype: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+$TimesNewRoman: "Times New Roman", Times, serif;
+$CourierNew: "Courier New", Courier, monospace;
+$LucidaConsole: "Lucida Console", Monaco, monospace;
+
+// Load fonts
+
 
 
 // **Sprite
@@ -36,7 +53,7 @@ $buttons: null;
 
 // **Brief
 
-$baseFontFamily: Arial, Helvetica, sans-serif;
+$baseFontFamily: $Arial;
 $baseFontSize: rem-font-size($base-font-size);
 $baseFontColor: #444;
 $baseLinkColor: #287fc3;
