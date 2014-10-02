@@ -34,25 +34,20 @@
     display: inline-block;
     vertical-align: $align;
 }
-// **Sprite
+// Icons
 @mixin icons($name) {
     @include icons-sprite($name);
     height: icons-sprite-height($name);
     width: icons-sprite-width($name);
 }
-@mixin svg-bg-with-fallback($file_name) {
-    @include dib(middle);
-
-    height: icons-sprite-height($file_name);
-    width: icons-sprite-width($file_name);
-
-    background-repeat: no-repeat;
-    background-image: inline-image('svg/#{$file_name}.svg', image/svg\+xml);
-
-    html.no-svg & {
-        @include icons-sprite($file_name);
-    }
+@mixin centerWidthIcons($name) {
+    margin-left: -(icons-sprite-height($name)/2);
 }
+@mixin centerHeightIcons($name) {
+    margin-top: -(icons-sprite-height($name)/2);
+}
+
+// Size
 // ** Responsive Web Design *width*--
 @mixin rwd-width($el-width, $parent-width: $standard) {
     width: $el-width * 100% / $parent-width;
@@ -60,29 +55,8 @@
 @function rwd-width-val($el-width, $parent-width: $standard){
     @return $el-width * 100% / $parent-width;
 }
-// ** Responsive Web Design *font-size*
-@mixin adjust-font-size-to($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) {
-    @if not $relative-font-sizing and $from-size != $base-font-size {
-        @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
-    }
-    font-size: $font-unit * $to-size / $from-size;
-}
-@function adjust-font-size-to-val($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size){
-    @if not $relative-font-sizing and $from-size != $base-font-size {
-        @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
-    }
-    @return $font-unit * $to-size / $from-size;
-}
-@mixin rem-font-size($fontUnit){
-    $defaultFontSize: $base-font-size;
-    font-size: $fontUnit;
-    font-size: $fontUnit/$defaultFontSize+rem;
-}
-@function rem-font-size($fontUnit){
-    $defaultFontSize: $base-font-size;
-    @return $fontUnit/$defaultFontSize+rem;
-}
-// ** Animation
+
+// Animation
 @mixin animation($name, $value) {
     @include experimental(animation, $name $value, -moz, -webkit, -o, -ms, not -khtml);
 }
@@ -100,46 +74,8 @@
         @content;
     }
 }
-// ** Placeholder
-@mixin placeholder($name, $color){
-    &#{$name}{
-        color: $color;
-        opacity: 1;
-    }
-    @if $name == ".text-placeholder"{
-        &#{$name}:focus{
-            opacity: 0;
-        }
-    }
-    @else{
-        &:focus#{$name}{
-            opacity: 0;
-        }
-    }
-}
-// ** Pseudo
-@mixin pseudo-style($top: false, $right: false, $bottom: false, $left: false){
-    content: '';
-    position: absolute;
-    @if $top{
-        top: $top;
-    }
-    @if $right{
-        right: $right;
-    }
-    @if $bottom{
-        bottom: $bottom;
-    }
-    @if $left{
-        left: $left;
-    }
-}
-// ** Align icons
-@mixin align-icon($top){
-    position: relative;
-    top: #{$top}px;
-}
-// ** Arrows
+
+// Arrows
 @mixin arrowBorder($side, $height, $color){
     $mirrorSide: opposite-position($side);
     border:{
@@ -158,7 +94,7 @@
     $left: "left";
 
     @if $once{
-        @include pseudo-style;
+        @include pseudoAbsPos;
     }
 
     @if $pos{
@@ -177,8 +113,9 @@
     border: $width solid transparent;
     @include arrowBorder($side, $height, $color);
 }
-// ** Grids
-// Add just the horizontal grid to an element's background
+
+// Grids
+// ** Add just the horizontal grid to an element's background
 @mixin column-grid-background($myoffset, $total: $grid-background-total-columns, $column: $grid-background-column-width, $gutter: $grid-background-gutter-width, $offset: $grid-background-offset, $column-color: $grid-background-column-color, $gutter-color: $grid-background-gutter-color, $force-fluid: $grid-background-force-fluid) {
   @if $show-grid-backgrounds and $show-column-grid-backgrounds {
     @include background-image(get-column-gradient($total, $column, $gutter, $offset, $column-color, $gutter-color, $force-fluid));
@@ -227,6 +164,7 @@
         color: #444;
     }
 }
+// Font
 // ** Bulletproof font face
 @mixin fontFace($name, $fontFiles, $svgFontName: $fontFiles, $folder: $fontFiles){
     @font-face {
@@ -237,10 +175,30 @@
              url('../fonts/#{$folder}/#{$fontFiles}.svg##{$svgFontName}') format('svg'); // Legacy iOS
     }
 }
-@mixin rgbaBox($red, $green, $blue, $opacity, $color){
-    background-color: $color;
-    background-color: rgba($red, $green, $blue, $opacity);
+// ** Responsive Web Design *font-size*
+@mixin adjust-font-size-to($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) {
+    @if not $relative-font-sizing and $from-size != $base-font-size {
+        @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
+    }
+    font-size: $font-unit * $to-size / $from-size;
 }
+@function adjust-font-size-to-val($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size){
+    @if not $relative-font-sizing and $from-size != $base-font-size {
+        @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
+    }
+    @return $font-unit * $to-size / $from-size;
+}
+@mixin rem-font-size($fontUnit){
+    $defaultFontSize: $base-font-size;
+    font-size: $fontUnit;
+    font-size: $fontUnit/$defaultFontSize+rem;
+}
+@function rem-font-size($fontUnit){
+    $defaultFontSize: $base-font-size;
+    @return $fontUnit/$defaultFontSize+rem;
+}
+
+// Position
 @mixin absCenter($zIndex: false) {
     position: absolute;
     @if ($zIndex){
@@ -264,7 +222,101 @@
     }
     margin: auto;
 }
+// ** Align icons
+@mixin align-icon($top){
+    position: relative;
+    top: #{$top}px;
+}
+// ** Pseudo
+@mixin pseudoAbsPos($top: false, $right: false, $bottom: false, $left: false, $zIndex: false){
+    position: absolute;
+    @if $top{
+        top: $top;
+    }
+    @if $right{
+        right: $right;
+    }
+    @if $bottom{
+        bottom: $bottom;
+    }
+    @if $left{
+        left: $left;
+    }
+    @if $zIndex{
+        left: $zIndex;
+    }
+
+    content: '';
+}
+@mixin AbsPos($top: false, $right: false, $bottom: false, $left: false, $zIndex: false){
+    content: '';
+    position: absolute;
+    @if $top{
+        top: $top;
+    }
+    @if $right{
+        right: $right;
+    }
+    @if $bottom{
+        bottom: $bottom;
+    }
+    @if $left{
+        left: $left;
+    }
+    @if $zIndex{
+        z-index: $zIndex;
+    }
+}
+
+// Background
 @mixin strongGradient($size, $beginColor, $endColor, $separator){
     background-color: $beginColor;
     @include background-image(linear-gradient($size, $beginColor, $beginColor $separator, $endColor $separator, $endColor));
+}
+@mixin rgbaBox($red, $green, $blue, $opacity, $color){
+    background-color: $color;
+    background-color: rgba($red, $green, $blue, $opacity);
+}
+@mixin svg-bg-with-fallback($file_name) {
+    @include dib(middle);
+
+    height: icons-sprite-height($file_name);
+    width: icons-sprite-width($file_name);
+
+    background-repeat: no-repeat;
+    background-image: inline-image('svg/#{$file_name}.svg', image/svg\+xml);
+
+    html.no-svg & {
+        @include icons-sprite($file_name);
+    }
+}
+
+// Form
+@mixin fieldEvent($border, $background, $color){
+    @if $border{
+        border-color: $border;
+    }
+    @if $background{
+        background: $background;
+    }
+    @if $color{
+        color: $color;
+    }
+}
+// ** Placeholder
+@mixin placeholder($name, $color){
+    &#{$name}{
+        color: $color;
+        opacity: 1;
+    }
+    @if $name == ".text-placeholder"{
+        &#{$name}:focus{
+            opacity: 0;
+        }
+    }
+    @else{
+        &:focus#{$name}{
+            opacity: 0;
+        }
+    }
 }

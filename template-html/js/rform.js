@@ -1,105 +1,206 @@
-/*select plagin*/
 (function($){
-    $.fn.selectjs = function(){
+    var global = {
+        activeClass : 'has-active',
+        valueClass : 'has-value',
+        disabledClass : 'has-disabled'
+    };
+
+    /*field function*/
+    $.fn.fieldJS = function () {
         return this.each(function(){
             var settings = {
-                key : true,
-                selectBox : this,
-                activeClass : 'active',
-                slctdrop : $('.slctdrop-js'),
-                slct: '.slct',
-                selectjs: '.select-js'
+              el : this,
+              fieldClass : 'field'
             },
-            dropList = $(settings.selectBox).find(settings.slctdrop);
-            $(settings.selectBox).on('click', 'div', function(){
-                settings.slctdrop.hide();
-                $(this)
-                    .toggleClass(settings.activeClass)
-                    .next().slideToggle();
-                return false;
-            });
-            dropList.on('click', 'li', function(){
-                var thisBox = $(this),
-                    thisText = thisBox.text(),
-                    thisData = thisBox.data('option'),
-                    select = thisBox.closest(settings.selectjs).find(settings.slct);
-                select
-                    .text(thisText)
-                    .removeClass(settings.activeClass)
-                    .next().hide().end()
-                    .parent().children('input').val(thisData)
-                    .trigger('change');
-            });
-            $(document).click(function(event) {
-                if(settings.key && !$(event.target).closest(dropList).length){
-                    dropList.hide();
-                    $(settings.selectBox).find('div').delay(400).queue(function(nextJs){
-                        $(this).removeClass(settings.activeClass);
-                        nextJs();
-                    });
-                    settings.key = true;
-                    return;
-                }
-            });
+            $field = $(settings.el).find('.'+settings.fieldClass);
+
+            if (!$(settings.el).hasClass(global.disabledClass)) {
+                var $fieldVal = $field.val();
+
+                    if ($fieldVal) {
+                        $(settings.el).addClass(global.valueClass);
+                    };
+
+                    $field
+                        .focus(function(event) {
+                            $(this).parent().addClass(global.activeClass);
+                        })
+                        .blur(function(event) {
+                            $(this).parent().removeClass(global.activeClass);
+                        })
+                        .change(function(event) {
+                            if (!$fieldVal) {
+                                $(settings.el).addClass(global.valueClass);
+                            };
+                        });
+            }
+            else{
+                $field.attr('disabled', 'disabled');
+            }
         });
     };
-})($);
 
-/*radio function*/
-(function($){
-    $.fn.radio = function () {
+    /*select function*/
+    selectJS = function() {
+        this._init = function(element, options) {
+            var defaults = {
+                slctDropClass     : 'slctdrop',
+                slctDropListClass : 'slctdrop-list',
+                slctDropItemClass : 'slctdrop-item',
+                fieldBoxClass     : 'field-box',
+                fakeFieldClass    : 'fake-field',
+                workSelectClass   : 'hidden-select',
+                el                : $(element),
+                userBrowser         : /Android|webOS|iPhone|iPad|iPod|BlackBerry/i
+            },
+            settings = $.extend(defaults, options),
+            $elSelect = settings.el.find('select'),
+            $fakeField = settings.el.find('.'+settings.fakeFieldClass),
+            $elVal = $elSelect.val(),
+            $elText = $elSelect.find('option:selected').text(),
+            $options = $elSelect.find('option'),
+            $slctDrop = $('<div class="'+settings.slctDropClass+' '+settings.slctDropClass+'-js"></div>'),
+            $list = $('<ul class="'+settings.slctDropListClass+'"></ul>');
+
+            $fakeField.text($elText);
+            if (!settings.el.hasClass(global.disabledClass)) {
+
+                if (!$elVal) {
+                    settings.el.removeClass(global.activeClass);
+                }
+                else{
+                    $fakeField.text($elText);
+                    settings.el.addClass(global.valueClass);
+                }
+
+                if( !settings.userBrowser.test(navigator.userAgent) ) {
+                    $options.each(function(){
+                        var $this = $(this),
+                            $optionVal = $this.val(),
+                            $optionText = $this.text(),
+                            $optionLi = $('<li class="'+settings.slctDropItemClass+' '+settings.slctDropItemClass+'-js" data-option="'+$optionVal+'">'+$optionText+'</li>');
+
+                        if (!$this.is(':disabled')) {
+                            $list.append($optionLi);
+                        };
+                    });
+                    $slctDrop.prepend($list);
+                    $elSelect
+                        .hide()
+                        .before($slctDrop);
+                    settings.el.on('click', '.'+settings.fakeFieldClass, function() {
+                        var $fakeEl = $(this),
+                            $elParent = $fakeEl.closest('.'+settings.fieldBoxClass);
+
+                        $('.'+settings.slctDropClass+'-js').hide();
+                        $('.'+settings.fakeFieldClass).removeClass(global.activeClass);
+                        $elParent
+                            .addClass(global.activeClass)
+                            .find('.'+settings.slctDropClass+'-js').slideToggle();
+                    });
+                    settings.el.on('click', '.'+settings.slctDropItemClass+'-js', function() {
+                        var $item = $(this),
+                            $itemel = $item.closest('.'+settings.fieldBoxClass),
+                            $itemField = $itemel.find('.'+settings.fakeFieldClass),
+                            $itemSelect = $itemel.find('select'),
+                            $itemText = $item.text(),
+                            $itemOption = $item.data('option');
+                        $itemel
+                            .removeClass(global.activeClass)
+                            .addClass(global.valueClass)
+                            .find('.'+settings.slctDropClass+'-js').slideToggle();
+                        $itemField.text($itemText);
+                        $itemSelect.val($itemOption);
+                    });
+                    $(document).click(function(event) {
+                        if (!$(event.target).closest('.'+settings.fieldBoxClass).length) {
+                            settings.el
+                                .removeClass(global.activeClass)
+                                .find('.'+settings.slctDropClass+'-js').hide();
+                            if (!$elSelect.val()) {
+                                $elSelect.removeClass(global.valueClass);
+                            };
+                        };
+                    });
+                }
+                else{
+                    $elSelect.on('change', function() {
+                        var $thisVal = $(this).val();
+                        $fakeField.text($thisVal);
+                        settings.el.addClass(global.activeClass);
+                    });
+                }
+            }
+            else{
+                $elSelect.hide();
+            }
+        };
+    };
+    // Launch plugin
+    $.fn.selectJS = function( options ){
+        return this.each(function(){
+             $( this ).data( "selectJS", new selectJS()._init( this, options ) );
+         });
+    };
+
+    /*radio function*/
+    $.fn.radioJS = function () {
         return this.each(function(){
             var settings = {
               radio : this,
-              virtualRadio : '.radio',
-              activeClass : 'active'
+              virtualRadioClass : 'radio',
+            }
+
+            if (!$(settings.radio).hasClass(global.disabledClass)) {
+                $(settings.radio).on('click', '.'+settings.virtualRadioClass, function() {
+                    var radioThis = $(this),
+                        valueRadio = radioThis.data('rval');
+
+                    radioThis
+                            .parent().find('.'+settings.virtualRadioClass).removeClass(global.activeClass)
+                            .end().end().addClass(global.activeClass)
+                            .parent().find('input').val(valueRadio);
+                });
             };
-
-            $(settings.radio).on('click', settings.virtualRadio, function() {
-                var radioThis = $(this),
-                    valueRadio = radioThis.data('radio_value');
-
-                radioThis
-                        .parent().find(settings.virtualRadio).removeClass(settings.activeClass)
-                        .end().end().addClass(settings.activeClass)
-                        .parent().find('input').val(valueRadio);
-            });
         });
     };
-})($);
 
-/*checkbox function*/
-(function($){
-    $.fn.checkbox = function () {
+    /*checkbox function*/
+    $.fn.checkboxJS = function () {
         return this.each(function(){
-            var settings = {
-                checkbox : this,
-                activeClass : 'active'
-            };
-            $(settings.checkbox).on('change', 'input:checkbox', function(){
-                $(this).parent().toggleClass(settings.activeClass);
-            });
+            if (!$(this).hasClass(global.disabledClass)) {
+                $(this).on('change', 'input:checkbox', function(){
+                    $(this).parent().toggleClass(global.activeClass);
+                });
+            }
         });
     };
-})($);
 
-/*file function*/
-(function($){
-    $.fn.file = function () {
+    /*file function*/
+    $.fn.fileJS = function () {
         return this.each(function(){
             var settings = {
                 file : this,
-                field : '.fileload-field-js',
-                button: '.fileload-button-js'
+                fileloadField: '.fileload-field-js',
+                fileloadBtn: '.fileload-btn-js'
             };
-            $(settings.file).on('change', 'input:file', function(){
-                var $ThisEl = $(this),
-                    $fileResult = $ThisEl.val();
-                $ThisEl.parent().find(settings.field).text($fileResult);
-            })
-            .on('click', settings.button, function(){
-                $(this).siblings('input').click();
-            });
+            if (!$(settings.file).hasClass(global.disabledClass)) {
+                $(settings.file)
+                    .on('click', settings.fileloadBtn, function(){
+                        $(this)
+                            .siblings('input').click()
+                            .parent().addClass(global.activeClass);
+                    })
+                    .on('change', 'input:file', function(){
+                        var $ThisEl = $(this),
+                            $fileResult = $ThisEl.val();
+                        $ThisEl
+                            .parent()
+                                .removeClass(global.activeClass)
+                                .addClass(global.valueClass)
+                                .find(settings.fileloadField).text($fileResult);
+                    });
+            };
         });
     };
 })($);

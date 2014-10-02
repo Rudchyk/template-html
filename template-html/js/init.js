@@ -14,11 +14,26 @@ if (head.browser.ie && head.browser.version < 9) {
 
 head.js(
     "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js",
-    sourcePath+"js/rform.min.js",
+    sourcePath+"js/rform.js",
     // sourcePath+"js/.js",
     // sourcePath+"js/scripts.js",
-    // sourcePath+"js/example.js",
-    function() {}
+    sourcePath+"js/example.js",
+    function() {
+        // fieldJS
+        $('.field-box-js').fieldJS();
+
+        // selectJS
+        $('.select-box-js').selectJS();
+
+        // radioJS
+        $('.radio-box-js').radioJS();
+
+        /*checkbox*/
+        $('.check-box-js').checkboxJS();
+
+        /*file*/
+        $('.fileload-box-js').fileJS();
+    }
 );
 
 if (head.browser.ie && head.browser.version < 10 || head.browser.opera) {

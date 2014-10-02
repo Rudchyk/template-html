@@ -15,26 +15,36 @@
         body{
             background-color: #fafafa;
             font: 1rem Arial, Helvetica, sans-serif;
-            color: #000;
+            color: #34495e;
         }
         .brief-container{
             width: 960px;
             margin: auto;
             padding: 50px;
         }
-        .brief-title,
-        .brief-small-title{
-            text-align: center;
-        }
         .brief-title{
             padding: 15px;
         }
+        .brief-box{
+            margin-bottom: 40px;
+        }
+        .brief-class-title,
         .brief-small-title{
             padding: 5px;
+        }
+        .brief-small-title{
+            margin-top: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .brief-class-title{
+            color: #5eab4a;
+            font-style: italic;
         }
         .brief-codebox-cell,
         .brief-previewbox-cell{
             width: 50%;
+            vertical-align: middle;
         }
         .brief-codebox{
             width: 480px;
@@ -49,40 +59,378 @@
 </head>
 <body>
     <div class="brief-container">
-        <table width="100%">
-            <tr>
-                <td colspan="2">
-                    <h2 class="brief-title tac">Title</h2>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <h3 class="brief-small-title">Small title</h3>
-                </td>
-            </tr>
-            <tr>
-                <td class="brief-codebox-cell">
-                    <div class="brief-codebox">
-                        <pre class="brush: html">
-                            HTML
-                        </pre>
+        <h2 class="brief-title tac">Forms</h2>
+        <div class="brief-small-title tac">Input</div>
+        <div class="brief-box table">
+            <div class="cell brief-codebox-cell">
+                <div class="brief-codebox">
+                    <!-- Cod -->
+                    <pre class="brush: html">
+                        <div class="field-box field-box-js*">
+                            <input type="text" name="name" class="field" autocomplete="off" placeholder="Name">
+                        </div>
+                    </pre>
+                    <!-- / Cod -->
+                </div>
+            </div>
+            <div class="cell brief-previewbox-cell">
+                <!-- Preview -->
+                <div class="brief-small-title tac">Inactive</div>
+                <div class="brief-class-title tac">class="field-box"</div>
+                <div class="field-box field-box-js">
+                    <input type="text" name="name" class="field" autocomplete="off" placeholder="Name">
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Active</div>
+                <div class="brief-class-title tac">class="field-box has-active"</div>
+                <div class="field-box field-box-js">
+                    <input type="text" name="name" class="field" autocomplete="off" placeholder="Name" autofocus>
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Value</div>
+                <div class="brief-class-title tac">class="field-box has-value"</div>
+                <div class="field-box field-box-js">
+                    <input type="text" name="name" class="field" autocomplete="off" placeholder="Name" value="Anthony Remy">
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Error</div>
+                <div class="brief-class-title tac">class="field-box has-error"</div>
+                <div class="field-box field-box-js has-error">
+                    <input type="text" name="name" class="field" autocomplete="off" placeholder="Name" value="111">
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Success</div>
+                <div class="brief-class-title tac">class="field-box has-success"</div>
+                <div class="field-box field-box-js has-success">
+                    <input type="text" name="name" class="field" autocomplete="off" placeholder="Name" value="Isla Ouellet">
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Disabled</div>
+                <div class="brief-class-title tac">class="field-box has-disabled"</div>
+                <div class="field-box field-box-js has-disabled">
+                    <input type="text" name="name" class="field" autocomplete="off" placeholder="Name">
+                </div>
+                <!-- / Preview -->
+            </div>
+        </div>
+        <div class="brief-small-title tac">Select</div>
+        <div class="brief-box table">
+            <div class="cell brief-codebox-cell">
+                <div class="brief-codebox">
+                    <!-- Cod -->
+                    <pre class="brush: html">
+                        <div class="field-box select-box select-box-js*">
+                            <div class="field fake-field field-slct"></div>
+                            <select name="select" id="select" class="ceiling-pos hidden-field">
+                                <option disabled selected>title</option>
+                                <option value="option1">option1</option>
+                                <option value="option2">option2</option>
+                                <option value="option3">option3</option>
+                            </select>
+                        </div>
+                    </pre>
+                    <pre class="brush: js">
+                        // selectJS
+                        $('.field-box-select-js').selectJS();
+                    </pre>
+                    <!-- / Cod -->
+                </div>
+            </div>
+            <div class="cell brief-previewbox-cell">
+                <!-- Preview -->
+                <div class="brief-small-title tac">Inactive</div>
+                <div class="brief-class-title tac">class="field-box select-box"</div>
+                <div class="field-box select-box select-box-js">
+                    <div class="field fake-field field-slct"></div>
+                    <select name="select" id="select" class="ceiling-pos hidden-field">
+                        <option disabled selected>title</option>
+                        <option value="option1">option1</option>
+                        <option value="option2">option2</option>
+                        <option value="option3">option3</option>
+                    </select>
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Value</div>
+                <div class="brief-class-title tac">class="field-box select-box has-value"</div>
+                <div class="field-box select-box select-box-js has-value">
+                    <div class="field fake-field field-slct"></div>
+                    <select name="select" id="select" class="ceiling-pos hidden-field">
+                        <option value="option1">option1</option>
+                        <option value="option2">option2</option>
+                        <option value="option3">option3</option>
+                    </select>
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Error</div>
+                <div class="brief-class-title tac">class="field-box select-box has-error"</div>
+                <div class="field-box select-box select-box-js has-error">
+                    <div class="field fake-field field-slct"></div>
+                    <select name="select" id="select" class="ceiling-pos hidden-field">
+                        <option disabled selected>title</option>
+                        <option value="option1">option1</option>
+                        <option value="option2">option2</option>
+                        <option value="option3">option3</option>
+                    </select>
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Succes</div>
+                <div class="brief-class-title tac">class="field-box select-box has-success"</div>
+                <div class="field-box select-box select-box-js has-success">
+                    <div class="field fake-field field-slct"></div>
+                    <select name="select" id="select" class="ceiling-pos hidden-field">
+                        <option value="option1">option1</option>
+                        <option value="option2">option2</option>
+                        <option value="option3">option3</option>
+                    </select>
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Disabled</div>
+                <div class="brief-class-title tac">class="field-box select-box has-disabled"</div>
+                <div class="field-box select-box select-box-js has-disabled">
+                    <div class="field fake-field field-slct"></div>
+                    <select name="select" id="select" class="ceiling-pos hidden-field">
+                        <option disabled selected>title</option>
+                        <option value="option1">option1</option>
+                        <option value="option2">option2</option>
+                        <option value="option3">option3</option>
+                    </select>
+                </div>
+                <!-- / Preview -->
+            </div>
+        </div>
+        <div class="brief-small-title tac">Radio Buttons</div>
+        <div class="brief-box table">
+            <div class="cell brief-codebox-cell">
+                <div class="brief-codebox">
+                    <!-- Cod -->
+                    <pre class="brush: html">
+                        <div class="radio-box radio-box-js">
+                            <div class="el has-ps-icon has-ps-left-icon radio has-active" data-rval="Radio is on">
+                                <span class="radio-text">Radio is on</span>
+                            </div>
+                            <div class="el has-ps-icon has-ps-left-icon radio" data-rval="Radio is off">
+                                <span class="radio-text">Radio is off</span>
+                            </div>
+                            <input type="hidden" name="radio" id="radio" value="Radio is on">
+                        </div>
+                    </pre>
+                    <pre class="brush: js">
+                        // radioJS
+                        $('.radio-box-js').radioJS();
+                    </pre>
+                    <!-- / Cod -->
+                </div>
+            </div>
+            <div class="cell brief-previewbox-cell tac">
+                <!-- Preview -->
+                <div class="brief-small-title tac">Active and Inactive</div>
+                <div class="brief-class-title tac">class="radio-box"</div>
+                <div class="radio-box radio-box-js">
+                    <div class="el has-ps-icon has-ps-left-icon radio has-active" data-rval="Radio is on">
+                        <span class="radio-text">Radio is on</span>
                     </div>
-                </td>
-                <td class="brief-previewbox-cell">
-                    Example
-                </td>
-            </tr>
-        </table>
+                    <div class="el has-ps-icon has-ps-left-icon radio" data-rval="Radio is off">
+                        <span class="radio-text">Radio is off</span>
+                    </div>
+                    <input type="hidden" name="radio" id="radio" value="Radio is on">
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Disabled</div>
+                <div class="brief-class-title tac">class="radio-box has-disabled"</div>
+                <div class="radio-box radio-box-js has-disabled">
+                    <div class="el has-ps-icon has-ps-left-icon radio has-active" data-rval="Radio is on">
+                        <span class="radio-text">Radio is on</span>
+                    </div>
+                    <div class="el has-ps-icon has-ps-left-icon radio" data-rval="Radio is off">
+                        <span class="radio-text">Radio is off</span>
+                    </div>
+                    <input type="hidden" name="radio" id="radio" value="Radio is on">
+                </div>
+                <!-- / Preview -->
+            </div>
+        </div>
+        <div class="brief-small-title tac">Checkboxes</div>
+        <div class="brief-box table">
+            <div class="cell brief-codebox-cell">
+                <div class="brief-codebox">
+                    <!-- Cod -->
+                    <pre class="brush: html">
+                        <label class="el has-ps-icon has-ps-left-icon check-box check-box-js has-active" for="checkbox1">
+                            <span class="check-text">Checked</span>
+                            <input type="checkbox" name="checkbox" id="checkbox1" class="aborted" value="Checked" checked>
+                        </label>
+                    </pre>
+                    <pre class="brush: js">
+                        /*checkbox*/
+                        $('.check-box-js').checkboxJS();
+                    </pre>
+                    <!-- / Cod -->
+                </div>
+            </div>
+            <div class="cell brief-previewbox-cell tac">
+                <!-- Preview -->
+                <div class="brief-small-title tac">Checked</div>
+                <div class="brief-class-title tac">class="check-box has-active"</div>
+                <label class="el has-ps-icon has-ps-left-icon check-box check-box-js has-active" for="checkbox1">
+                    <span class="check-text">Checked</span>
+                    <input type="checkbox" name="checkbox" id="checkbox1" class="aborted" value="Checked" checked>
+                </label>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Unchecked</div>
+                <div class="brief-class-title tac">class="check-box"</div>
+                <label class="el has-ps-icon has-ps-left-icon check-box check-box-js" for="checkbox2">
+                    <span class="check-text">Unchecked</span>
+                    <input type="checkbox" name="checkbox" id="checkbox2" class="aborted" value="Unchecked">
+                </label>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Disabled checked</div>
+                <div class="brief-class-title tac">class="check-box has-disabled"</div>
+                <label class="el has-ps-icon has-ps-left-icon check-box check-box-js has-active has-disabled" for="checkbox3">
+                    <span class="check-text">Checked</span>
+                    <input type="checkbox" name="checkbox" id="checkbox3" class="aborted" value="Checked" checked>
+                </label>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Disabled unchecked</div>
+                <div class="brief-class-title tac">class="check-box has-active has-disabled"</div>
+                <label class="el has-ps-icon has-ps-left-icon check-box check-box-js has-disabled" for="checkbox">
+                    <span class="check-text">Unchecked</span>
+                    <input type="checkbox" name="checkbox" id="checkbox4" class="aborted" value="Unchecked">
+                </label>
+                <!-- / Preview -->
+            </div>
+        </div>
+        <div class="brief-small-title tac">Fileload-box</div>
+        <div class="brief-box table">
+            <div class="cell brief-codebox-cell">
+                <div class="brief-codebox">
+                    <!-- Cod -->
+                    <pre class="brush: html">
+                        <div class="fileload-box fileload-box-js">
+                            <input type="file" name="file" id="file" class="aborted" value="">
+                            <div class="field fake-field fileload-field fileload-field-js">Select file</div>
+                            <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
+                        </div>
+                    </pre>
+                    <!-- / Cod -->
+                </div>
+            </div>
+            <div class="cell brief-previewbox-cell">
+                <!-- Preview -->
+                <div class="brief-small-title tac">Inactive</div>
+                <div class="brief-class-title tac">class="fileload-box"</div>
+                <div class="fileload-box fileload-box-js">
+                    <input type="file" name="file" id="file" class="aborted" value="">
+                    <div class="field fake-field fileload-field fileload-field-js">Select file</div>
+                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Active</div>
+                <div class="brief-class-title tac">class="fileload-box has-active"</div>
+                <div class="fileload-box fileload-box-js has-active">
+                    <input type="file" name="file" id="file" class="aborted" value="">
+                    <div class="field fake-field fileload-field fileload-field-js">Select file</div>
+                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Value</div>
+                <div class="brief-class-title tac">class="fileload-box has-value"</div>
+                <div class="fileload-box fileload-box-js has-value">
+                    <input type="file" name="file" id="file" class="aborted" value="C:\fakepath\some_file.txt">
+                    <div class="field fake-field fileload-field fileload-field-js">C:\fakepath\some_file.txt</div>
+                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Error</div>
+                <div class="brief-class-title tac">class="fileload-box has-error"</div>
+                <div class="fileload-box fileload-box-js has-error">
+                    <input type="file" name="file" id="file" class="aborted" value="">
+                    <div class="field fake-field fileload-field fileload-field-js"></div>
+                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Success</div>
+                <div class="brief-class-title tac">class="fileload-box has-success"</div>
+                <div class="fileload-box fileload-box-js has-success">
+                    <input type="file" name="file" id="file" class="aborted" value="C:\fakepath\some_file.txt">
+                    <div class="field fake-field fileload-field fileload-field-js">C:\fakepath\some_file.txt</div>
+                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Disabled</div>
+                <div class="brief-class-title tac">class="fileload-box has-disabled"</div>
+                <div class="fileload-box fileload-box-js has-disabled">
+                    <input type="file" name="file" id="file" class="aborted" value="">
+                    <div class="field fake-field fileload-field fileload-field-js">Select file</div>
+                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
+                </div>
+                <!-- / Preview -->
+            </div>
+        </div>
+        <div class="brief-small-title tac"></div>
+        <div class="brief-box table">
+            <div class="cell brief-codebox-cell">
+                <div class="brief-codebox">
+                    <!-- Cod -->
+                    <pre class="brush: html">
+
+                    </pre>
+                    <!-- / Cod -->
+                </div>
+            </div>
+            <div class="cell brief-previewbox-cell">
+                <!-- Preview -->
+
+                <!-- / Preview -->
+            </div>
+        </div>
+        <div class="brief-small-title tac">Buttons</div>
+        <div class="brief-box table">
+            <div class="cell brief-codebox-cell">
+                <div class="brief-codebox">
+                    <!-- Cod -->
+                    <pre class="brush: html">
+                        <button class="btn">Button</button>
+                    </pre>
+                    <!-- / Cod -->
+                </div>
+            </div>
+            <div class="cell brief-previewbox-cell tac">
+                <!-- Preview -->
+                <div class="brief-small-title tac">Inactive</div>
+                <div class="brief-class-title tac">class="btn"</div>
+                <button class="btn">Button</button>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Disabled</div>
+                <div class="brief-class-title tac">&lt;button disabled&gt;</div>
+                <button class="btn" disabled>Button</button>
+                <!-- / Preview -->
+            </div>
+        </div>
     </div>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
     <script type="text/javascript">
         SyntaxHighlighter.all();
-
-        $(document).ready(function() {
-
-        });
     </script>
 </body>
 </html>

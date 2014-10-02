@@ -24,8 +24,8 @@ $prefixPlaceholders: ":-moz-placeholder", "::-moz-placeholder", "::-webkit-input
 
 // **Sprite
 
-// $icons-spacing: 10px;
-// @import "icons/*.png";
+$icons-spacing: 10px;
+@import "icons/*.png";
 
 // --icons sprite--
 $icons: null;
@@ -50,35 +50,3 @@ $Min: $QVGA;
 
 // --footer--
 $footerHeight: 100px;
-
-// **Formstyle
-
-// --fields--
-// Size
-$fieldDefaultWidth: 210px;
-$fieldDefaultHeight: 30px;
-// Style
-// Typography
-$fieldDefaultColor: #444;
-$fieldDefaultPlaceholderColor: #777;
-$fieldDefaultFontFamily: $baseFontFamily;
-$fieldDefaultFontSize: rem-font-size(13px);
-// Action
-$fieldHasErrorColor: #e74c3c;
-$fieldHasSuccessColor: #2ecc71;
-$fieldHasDisabledColor: #d5dbdb;
-$fieldHasDisabledBg: #f4f6f6;
-
-// --buttons--
-// Height
-$btnDefaultHeight: $fieldDefaultHeight;
-// Typography
-$btnDefaultColor: #fff;
-$btnDefaultFontFamily: $baseFontFamily;
-$btnDefaultFontSize: rem-font-size(13px);
-// Action
-$btnHasDisabledColor: #bdc3c7;
-
-// --typography--
-$alignImgSide: 16px;
-$alignImgBottom: 10px;

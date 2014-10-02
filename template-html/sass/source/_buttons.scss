@@ -1,4 +1,13 @@
 // Buttons
+// Height
+$btnDefaultHeight: $fieldDefaultHeight;
+// Typography
+$btnDefaultColor: #fff;
+$btnDefaultFontFamily: $baseFontFamily;
+$btnDefaultFontSize: rem-font-size(13px);
+// Action
+$btnHasDisabledColor: #bdc3c7;
+
 
 .btn{
     height: $btnDefaultHeight;
@@ -14,21 +23,21 @@
     &:hover{
         background-color: #5dade2;
     }
-    &[disabled],
-    &.has-disabled{
+
+    .has-disabled &,
+    &[disabled]{
+        @extend .cur-default;
+        @extend .no_select;
         background-color: $btnHasDisabledColor;
         border-color: $btnHasDisabledColor;
     }
 }
 
-a,
-span{
-    &.btn{
-        line-height: $btnDefaultHeight;
-        text-align: center;
-        &,
-        &:hover{
-            text-decoration: none;
-        }
+.fake-btn{
+    line-height: $btnDefaultHeight;
+    text-align: center;
+    &,
+    &:hover{
+        text-decoration: none;
     }
 }

@@ -1,39 +1,84 @@
 // Form style
 
+// --fields--
+// Size
+$fieldDefaultWidth: 100%;
+$fieldDefaultHeight: 30px;
+$fieldDefaultPaddingSide: 10px;
+$fieldDefaultBorder: 1px solid #bdc3c7;
+$fieldDefaultBorderRadius: 5px;
+$fieldDefaultBg: #fff;
+
+// Style
+// Typography
+$fieldDefaultColor: #444;
+$fieldDefaultPlaceholderColor: #777;
+$fieldDefaultFontFamily: $baseFontFamily;
+$fieldDefaultFontSize: rem-font-size(13px);
+// Action
+// Value
+$fieldHasValueBg: #ecf9ff;
+$fieldHasValueBorder: #3eb6e9;
+$fieldHasValueColor: #000;
+// Active
+$fieldHasActiveBg: #fff;
+$fieldHasActiveBorder: $fieldHasValueBorder;
+$fieldHasActiveColor: $fieldHasValueColor;
+// Error
+$fieldHasErrorColor: #e74c3c;
+// Success
+$fieldHasSuccessColor: #2ecc71;
+// Disabled
+$fieldHasDisabledBg: #f4f6f6;
+$fieldHasDisabledColor: #d5dbdb;
+
 // field style
 
-.field{
-    width: $fieldDefaultWidth;
-    max-width: 100%;
-    height: $fieldDefaultHeight;
-    padding: 0 10px;
+.field-box{}
 
-    border: 1px solid #bdc3c7;
-    border-radius: 5px;
-    background-color: #fff;
+.field-frame{
+    width: $fieldDefaultWidth;
+    height: $fieldDefaultHeight;
+}
+
+.field{
+    @extend .field-frame;
+    max-width: 100%;
+    padding: 0 $fieldDefaultPaddingSide;
+
+    border: $fieldDefaultBorder;
+    border-radius: $fieldDefaultBorderRadius;
+    background: $fieldDefaultBg;
 
     color: $fieldDefaultColor;
     font: $fieldDefaultFontSize $fieldDefaultFontFamily;
 
-    // &:focus{}
-    &.has-error{
-        border-color: $fieldHasErrorColor;
-
-        color: $fieldHasErrorColor;
+    // Action
+    .has-value &{
+        // border, background, color
+        @include fieldEvent($fieldHasValueBorder, $fieldHasValueBg, $fieldHasValueColor);
     }
-    &.has-success{
-        border-color: $fieldHasSuccessColor;
-
-        color: $fieldHasSuccessColor;
+    .has-active &,
+    &:focus{
+        // border, background, color
+        @include fieldEvent($fieldHasActiveBorder, $fieldHasActiveBg, $fieldHasActiveColor);
     }
-    &[disabled],
-    &.has-disabled{
-        border-color: $fieldHasDisabledColor;
-        background-color: $fieldHasDisabledBg;
-
-        color: $fieldHasDisabledColor;
+    .has-error &{
+        // border, background, color
+        @include fieldEvent($fieldHasErrorColor, $fieldDefaultBg, $fieldHasErrorColor);
+    }
+    .has-success &{
+        // border, background, color
+        @include fieldEvent($fieldHasSuccessColor, $fieldDefaultBg, $fieldHasSuccessColor);
+    }
+    .has-disabled &,
+    &[disabled]{
+        @extend .cur-default;
+        @extend .no_select;
+        @include fieldEvent($fieldHasDisabledColor, $fieldHasDisabledBg, $fieldHasDisabledColor);
     }
 
+    // Placeholder
     @each $prefixPlaceholder in $prefixPlaceholders {
         @include placeholder($prefixPlaceholder, $fieldDefaultPlaceholderColor);
     }
@@ -52,4 +97,12 @@ select.field{
 
 textarea.field{
     min-height: 60px;
+}
+
+.fake-field{
+    position: relative;
+
+    @extend .ellipsis;
+
+    line-height: $fieldDefaultHeight;
 }

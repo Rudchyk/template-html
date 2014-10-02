@@ -1,0 +1,216 @@
+// rForms
+
+// Select JS
+$slctArrowWidth: 5px;
+$slctArrowHeight: 10px;
+$slctArrowColor: #bdc3c7;
+$slctArrowPosRight: 10px;
+$paddingRight: 30px;
+
+$maxHeightPoint: 7;
+$slctdropBg: #FFF;
+$slctdropItemColor: #444;
+$slctdropItemBgHover: $fieldHasValueBg;
+
+// Radio Buttons
+$radioIconVal: radio;
+$radioDefaultIcon: #{$radioIconVal}_inactive;
+$radioActiveIcon: #{$radioIconVal}_active;
+// $radioDisabledIcon: #{$radioIconVal}_inactive_disabled;
+// $radioActiveDisabledIcon: #{$radioIconVal}_active_disabled;
+$radioPadding: 30px;
+$radioMargin: 0 10px;
+
+// Checkboxes
+$checkIconVal: check;
+$checkDefaultIcon: #{$checkIconVal}_inactive;
+$checkActiveIcon: #{$checkIconVal}_active;
+// $checkDisabledIcon: #{$checkIconVal}_inactive_disabled;
+// $checkActiveDisabledIcon: #{$checkIconVal}_active_disabled;
+$checkPadding: $radioPadding;
+
+// Files
+$fileloadFieldWidth: 73%;
+$fileloadBtnWidth: 25%;
+
+
+// Select JS
+
+.select-box{
+    .hidden-field{
+        opacity: 0;
+    }
+}
+
+.field-slct{
+    @extend .cur-pointer;
+
+    padding-right: $paddingRight;
+
+    color: $fieldDefaultPlaceholderColor;
+
+    &:after{
+        @include arrow("top", $slctArrowWidth, $slctArrowHeight, $slctArrowColor, true, false){
+            right: $slctArrowPosRight;
+            top: 50%;
+            margin-top: -($slctArrowHeight/2);
+        };
+    }
+
+    // Action
+    .has-value &{
+        &:after{
+            border-top-color: $fieldHasValueBorder;
+        }
+    }
+    .has-active &{
+        &:after{
+            @include arrowBorder("bottom", $slctArrowHeight, $fieldHasActiveBorder);
+        }
+    }
+    .has-error &{
+        &:after{
+            border-top-color: $fieldHasErrorColor;
+        }
+    }
+    .has-error.has-active &{
+        &:after{
+            border-bottom-color: $fieldHasErrorColor;
+        }
+    }
+    .has-success &{
+        &:after{
+            border-top-color: $fieldHasSuccessColor;
+        }
+    }
+    .has-success.has-active &{
+        &:after{
+            border-bottom-color: $fieldHasSuccessColor;
+        }
+    }
+    .has-disabled &{
+        &:after{
+            border-top-color: $fieldHasDisabledColor;
+        }
+    }
+}
+.slctdrop{
+    @include AbsPos(100%, false, false, 0, 10);
+
+    display: none;
+    overflow: hidden;
+
+    @include box-sizing(border-box);
+    @extend .full;
+
+    background-color: $slctdropBg;
+    border: $fieldDefaultBorder;
+    border-radius: $fieldDefaultBorderRadius;
+
+    font: $fieldDefaultFontSize $fieldDefaultFontFamily;
+}
+.slctdrop-list{
+    overflow-y: auto;
+
+    width: 110%;
+    max-height: $fieldDefaultHeight*$maxHeightPoint;
+}
+.slctdrop-item{
+    @extend .cur-pointer;
+    @extend .block;
+
+    padding: 0 $fieldDefaultPaddingSide;
+
+    color: $slctdropItemColor;
+    line-height: $fieldDefaultHeight;
+
+    &:hover{
+        background-color: $slctdropItemBgHover;
+    }
+
+    &:first-child{
+        border-radius: $fieldDefaultBorderRadius $fieldDefaultBorderRadius 0 0;
+    }
+
+    &:last-child{
+        border-radius: 0 0 $fieldDefaultBorderRadius $fieldDefaultBorderRadius;
+    }
+}
+
+.check-box,
+.radio-box{
+    &.has-disabled{
+        opacity: .5;
+        @extend .no_select;
+    }
+}
+
+// Radio Buttons
+
+.radio-box{
+    line-height: $fieldDefaultHeight;
+
+    @extend .no_select;
+    &.has-disabled{
+        .radio{
+            @extend .cur-default;
+        }
+    }
+}
+.radio{
+    @extend .cur-pointer;
+
+    margin: $radioMargin;
+
+    &:before{
+        @include icons($radioDefaultIcon);
+        @include centerHeightIcons($radioDefaultIcon);
+    }
+
+    &.has-active:before{
+        @include icons-sprite($radioActiveIcon);
+    }
+}
+.radio-text{
+    padding-left: $radioPadding;
+}
+
+// Checkboxes
+
+.check-box{
+    @extend .cur-pointer;
+
+    line-height: $fieldDefaultHeight;
+
+    @extend .no_select;
+
+    &:before{
+        @include icons($checkDefaultIcon);
+        @include centerHeightIcons($checkDefaultIcon);
+    }
+
+    &.has-active:before{
+        @include icons-sprite($checkActiveIcon);
+    }
+    &.has-disabled{
+        @extend .cur-default;
+    }
+}
+.check-text{
+    margin-left: $checkPadding;
+}
+
+// Files
+
+.fileload-box{
+    @extend .relative;
+
+    @extend .no_select;
+}
+.fileload-field{
+    line-height: $fieldDefaultHeight;
+    width: $fileloadFieldWidth;
+}
+.fileload-btn{
+    width: $fileloadBtnWidth;
+}

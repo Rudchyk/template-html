@@ -4,6 +4,7 @@
 .box,
 .wrapper,
 .field,
+.btn,
 .footer,
 .input_box{
     @include box-sizing(border-box);
@@ -15,7 +16,8 @@
 .icon,
 .btn,
 .field,
-.wrapper{
+.wrapper,
+.el{
     display: inline-block;
 }
 
@@ -48,7 +50,8 @@
 
 .icon,
 .btn,
-.field{
+.field,
+.el{
     vertical-align: middle;
 }
 
@@ -128,7 +131,7 @@
     background: #fff url(../images/required/loading.gif) no-repeat center;
 }
 
-.img-responsive{
+.img-rwd{
     display: block;
     max-width: 100%;
     height: auto;
@@ -136,31 +139,26 @@
 
 // --Buttons--
 
-.btn-block{
+.btn-bl{
     display: block;
 
     width: 100%;
     padding-right: 0;
     padding-left: 0;
+
+    text-align: center;
 }
 
 // --Form--
 
-.field,
-.btn{
-    &[disabled],
-    &.has-disabled{
-        cursor: default;
-        @include opacity(0.7);
-    }
+.cur-pointer{
+    cursor: pointer;
+}
+.cur-default{
+    cursor: default;
 }
 
-// Fake Input
-.fake-input{
-    position: relative;
-}
-
-.hidden-input{
+.hidden-field{
     width: 100%;
     height: 100%;
 
@@ -169,4 +167,94 @@
     @include box-sizing(border-box);
     @include reset-box-model;
     @include reset-font;
+}
+
+.aborted{
+    position: absolute;
+    left: -10000px;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.ceiling-pos{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.relative,
+.has-ps-icon,
+.has-icon,
+.field-box{
+    position: relative;
+}
+
+.abs-icon{
+    position: absolute;
+    z-index: 1;
+}
+.left-icon{
+    top: 50%;
+    left: 0;
+}
+.right-icon{
+    top: 50%;
+    right: 0;
+}
+.top-icon{
+    top: 0;
+    left: 50%;
+}
+.bottom-icon{
+    left: 50%;
+    bottom: 0;
+}
+.center-icon{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.has-ps-icon{
+    &:before{
+        position: absolute;
+
+        content: '';
+    }
+}
+.has-ps-left-icon{
+    &:before{
+        top: 50%;
+        left: 0;
+    }
+}
+.has-ps-right-icon{
+    &:before{
+        top: 50%;
+        right: 0;
+    }
+}
+.has-ps-top-icon{
+    &:before{
+        top: 0;
+        left: 50%;
+    }
+}
+.has-ps-bottom-icon{
+    &:before{
+        left: 50%;
+        bottom: 0;
+    }
+}
+.has-ps-center-icon{
+    &:before{
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
 }
