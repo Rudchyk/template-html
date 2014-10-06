@@ -15,6 +15,9 @@ if (head.browser.ie && head.browser.version < 9) {
 head.js(
     "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js",
     sourcePath+"js/rform.js",
+    sourcePath+"js/jquery.actual.min.js",
+    sourcePath+"js/tip.js",
+    sourcePath+"js/modal.js",
     // sourcePath+"js/.js",
     // sourcePath+"js/scripts.js",
     sourcePath+"js/example.js",
@@ -28,11 +31,23 @@ head.js(
         // radioJS
         $('.radio-box-js').radioJS();
 
-        /*checkbox*/
+        /*checkboxJS*/
         $('.check-box-js').checkboxJS();
 
-        /*file*/
+        /*fileJS*/
         $('.fileload-box-js').fileJS();
+
+        /*modalJS*/
+        $('.popup-link-js').modalJS();
+
+        /*tipJS*/
+        $('.tip-js').tipJS();
+        $('.tip-top-js').tipJS({
+            side: 'top'
+        });
+        $('.tip-fix-js').tipJS({
+            fix: true
+        });
     }
 );
 

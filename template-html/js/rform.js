@@ -48,6 +48,7 @@
                 slctDropListClass : 'slctdrop-list',
                 slctDropItemClass : 'slctdrop-item',
                 fieldBoxClass     : 'field-box',
+                hideClass         : 'hide',
                 fakeFieldClass    : 'fake-field',
                 workSelectClass   : 'hidden-select',
                 el                : $(element),
@@ -81,6 +82,9 @@
                             $optionLi = $('<li class="'+settings.slctDropItemClass+' '+settings.slctDropItemClass+'-js" data-option="'+$optionVal+'">'+$optionText+'</li>');
 
                         if (!$this.is(':disabled')) {
+                            if ($elText == $optionText) {
+                                $optionLi.addClass(settings.hideClass);
+                            };
                             $list.append($optionLi);
                         };
                     });
@@ -111,6 +115,8 @@
                             .find('.'+settings.slctDropClass+'-js').slideToggle();
                         $itemField.text($itemText);
                         $itemSelect.val($itemOption);
+                        $itemel.find('.'+settings.slctDropItemClass+'-js').removeClass(settings.hideClass);
+                        $item.addClass(settings.hideClass);
                     });
                     $(document).click(function(event) {
                         if (!$(event.target).closest('.'+settings.fieldBoxClass).length) {
@@ -197,8 +203,11 @@
                         $ThisEl
                             .parent()
                                 .removeClass(global.activeClass)
-                                .addClass(global.valueClass)
-                                .find(settings.fileloadField).text($fileResult);
+                                .addClass(global.valueClass);
+
+                        if ($ThisEl.parent().find(settings.fileloadField).length) {
+                            $ThisEl.parent().find(settings.fileloadField).text($fileResult);
+                        };
                     });
             };
         });

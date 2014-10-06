@@ -198,18 +198,6 @@
     @return $fontUnit/$defaultFontSize+rem;
 }
 
-// Position
-@mixin absCenter($zIndex: false) {
-    position: absolute;
-    @if ($zIndex){
-        z-index: $zIndex;
-    }
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-}
 @mixin centerBlock($Static, $Max: false, $Min: false){
     @if ($Static){
         width: $Static;
@@ -223,34 +211,25 @@
     margin: auto;
 }
 // ** Align icons
-@mixin align-icon($top){
-    position: relative;
-    top: #{$top}px;
+@mixin alignIcon($top){
+    @include pos(relative, #{$top}px, false, false, false, false);
 }
 // ** Pseudo
 @mixin pseudoAbsPos($top: false, $right: false, $bottom: false, $left: false, $zIndex: false){
-    position: absolute;
-    @if $top{
-        top: $top;
-    }
-    @if $right{
-        right: $right;
-    }
-    @if $bottom{
-        bottom: $bottom;
-    }
-    @if $left{
-        left: $left;
-    }
-    @if $zIndex{
-        left: $zIndex;
-    }
+    @include pos(absolute, $top, $right, $bottom, $left, $zIndex);
 
     content: '';
 }
-@mixin AbsPos($top: false, $right: false, $bottom: false, $left: false, $zIndex: false){
-    content: '';
-    position: absolute;
+@mixin pos($pos, $top: false, $right: false, $bottom: false, $left: false, $zIndex: false){
+    @if $pos == "absolute"{
+        @extend .absolute;
+    }
+    @else if $pos == "relative"{
+        @extend .relative;
+    }
+    @else{
+        position: $pos;
+    }
     @if $top{
         top: $top;
     }

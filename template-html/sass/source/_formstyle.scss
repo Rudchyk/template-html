@@ -54,24 +54,24 @@ $fieldHasDisabledColor: #d5dbdb;
     font: $fieldDefaultFontSize $fieldDefaultFontFamily;
 
     // Action
-    .has-value &{
+    .field-box.has-value &{
         // border, background, color
         @include fieldEvent($fieldHasValueBorder, $fieldHasValueBg, $fieldHasValueColor);
     }
-    .has-active &,
+    .field-box.has-active &,
     &:focus{
         // border, background, color
         @include fieldEvent($fieldHasActiveBorder, $fieldHasActiveBg, $fieldHasActiveColor);
     }
-    .has-error &{
+    .field-box.has-error &{
         // border, background, color
         @include fieldEvent($fieldHasErrorColor, $fieldDefaultBg, $fieldHasErrorColor);
     }
-    .has-success &{
+    .field-box.has-success &{
         // border, background, color
         @include fieldEvent($fieldHasSuccessColor, $fieldDefaultBg, $fieldHasSuccessColor);
     }
-    .has-disabled &,
+    .field-box.has-disabled &,
     &[disabled]{
         @extend .cur-default;
         @extend .no_select;

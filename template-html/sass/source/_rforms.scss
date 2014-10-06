@@ -95,9 +95,9 @@ $fileloadBtnWidth: 25%;
     }
 }
 .slctdrop{
-    @include AbsPos(100%, false, false, 0, 10);
+    @include pos(absolute, 100%, false, false, 0, 10);
 
-    display: none;
+    @extend .hide;
     overflow: hidden;
 
     @include box-sizing(border-box);
@@ -160,6 +160,7 @@ $fileloadBtnWidth: 25%;
 .radio{
     @extend .cur-pointer;
 
+    padding-left: $radioPadding;
     margin: $radioMargin;
 
     &:before{
@@ -171,14 +172,14 @@ $fileloadBtnWidth: 25%;
         @include icons-sprite($radioActiveIcon);
     }
 }
-.radio-text{
-    padding-left: $radioPadding;
-}
+.radio-text{}
 
 // Checkboxes
 
 .check-box{
     @extend .cur-pointer;
+
+    padding-left: $checkPadding;
 
     line-height: $fieldDefaultHeight;
 
@@ -196,9 +197,7 @@ $fileloadBtnWidth: 25%;
         @extend .cur-default;
     }
 }
-.check-text{
-    margin-left: $checkPadding;
-}
+.check-text{}
 
 // Files
 

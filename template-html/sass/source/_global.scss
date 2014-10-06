@@ -26,15 +26,13 @@ body{
 }
 
 .container-wrap{
-    position: relative;
+    @extend .relative;
 
     // overflow-x: hidden;
 }
 
 .footer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    @include pos(absolute, false, false, 0, 0, 2);
 }
 
 

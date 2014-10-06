@@ -213,7 +213,7 @@
                 <div class="brief-codebox">
                     <!-- Cod -->
                     <pre class="brush: html">
-                        <div class="radio-box radio-box-js">
+                        <div class="radio-box radio-box-js*">
                             <div class="el has-ps-icon has-ps-left-icon radio has-active" data-rval="Radio is on">
                                 <span class="radio-text">Radio is on</span>
                             </div>
@@ -265,7 +265,7 @@
                 <div class="brief-codebox">
                     <!-- Cod -->
                     <pre class="brush: html">
-                        <label class="el has-ps-icon has-ps-left-icon check-box check-box-js has-active" for="checkbox1">
+                        <label class="el has-ps-icon has-ps-left-icon check-box check-box-js* has-active" for="checkbox1">
                             <span class="check-text">Checked</span>
                             <input type="checkbox" name="checkbox" id="checkbox1" class="aborted" value="Checked" checked>
                         </label>
@@ -318,11 +318,15 @@
                 <div class="brief-codebox">
                     <!-- Cod -->
                     <pre class="brush: html">
-                        <div class="fileload-box fileload-box-js">
+                        <div class="fileload-box fileload-box-js*">
                             <input type="file" name="file" id="file" class="aborted" value="">
                             <div class="field fake-field fileload-field fileload-field-js">Select file</div>
                             <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
                         </div>
+                    </pre>
+                    <pre class="brush: js">
+                        /*file*/
+                        $('.fileload-box-js').fileJS();
                     </pre>
                     <!-- / Cod -->
                 </div>
@@ -382,22 +386,13 @@
                     <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
                 </div>
                 <!-- / Preview -->
-            </div>
-        </div>
-        <div class="brief-small-title tac"></div>
-        <div class="brief-box table">
-            <div class="cell brief-codebox-cell">
-                <div class="brief-codebox">
-                    <!-- Cod -->
-                    <pre class="brush: html">
-
-                    </pre>
-                    <!-- / Cod -->
-                </div>
-            </div>
-            <div class="cell brief-previewbox-cell">
                 <!-- Preview -->
-
+                <div class="brief-small-title tac">Without field</div>
+                <div class="brief-class-title tac">class="fileload-box"</div>
+                <div class="fileload-box fileload-box-js tac">
+                    <input type="file" name="file" id="file" class="aborted" value="">
+                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
+                </div>
                 <!-- / Preview -->
             </div>
         </div>
@@ -425,10 +420,112 @@
                 <!-- / Preview -->
             </div>
         </div>
+        <h2 class="brief-title tac">Modal</h2>
+        <div class="brief-small-title tac"></div>
+        <div class="brief-box table">
+            <div class="cell brief-codebox-cell">
+                <div class="brief-codebox">
+                    <!-- Cod -->
+                    <pre class="brush: html">
+                        <!--Call-->
+                        <span class="link popup-link popup-link-js" data-popup="modal">modal</span>
+                    </pre>
+                    <pre class="brush: html">
+                        <!--Modal-->
+                        <div class="popupper-modal popupper popupper-class popupper-js*">
+                            <span class="popupper-close md-close icon popupper-close-js*"></span>
+                            <div class="popupper-body">
+                                Some text
+                            </div>
+                        </div><!-- /Popupper-modal -->
+                    </pre>
+                    <pre class="brush: js">
+                        /*modalJS*/
+                        $('.popup-link-js').modalJS();
+                    </pre>
+                    <pre class="brush: sass">
+                        @import "source/modals.scss"; // modalJS
+                    </pre>
+                    <pre class="brush: html">
+                        <!--Icon-->
+                        images/icons/close-rounded.png
+                    </pre>
+                    <!-- / Cod -->
+                </div>
+            </div>
+            <div class="cell brief-previewbox-cell tac">
+                <!-- Preview -->
+                    <span class="link popup-link popup-link-js" data-popup="modal">modal</span>
+                <!-- / Preview -->
+            </div>
+        </div>
+        <div class="brief-small-title tac">Tooltips</div>
+        <div class="brief-box table">
+            <div class="cell brief-codebox-cell">
+                <div class="brief-codebox">
+                    <!-- Cod -->
+                    <pre class="brush: html">
+                        class="tip-top-js" data-tip_message="Message" data-tip_class="tip"
+                    </pre>
+                    <pre class="brush: js">
+                        /*tipJS*/
+                        $('.tip-js').tipJS();
+                    </pre>
+                    <pre class="brush: sass">
+                        @import "source/tip.scss"; // tiplJS
+                    </pre>
+                    <!-- / Cod -->
+                </div>
+            </div>
+            <div class="cell brief-previewbox-cell">
+                <!-- Preview -->
+                <div class="brief-small-title tac">Validation</div>
+                <div class="field-box field-box-js has-error tip-js" data-tip_message="Field has error" data-tip_class="error">
+                    <input type="text" name="name" id="name" class="field" autocomplete="off" placeholder="Name" value="1111">
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Tip</div>
+                <div class="tac">
+                    <span class="link tip-top-js" data-tip_message="Message 2" data-tip_class="tip">Lorem</span> ipsum <span class="link tip-top-js" data-tip_message="Message" data-tip_class="tip">dolor</span> sit amet.
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Tip fix</div>
+                <div class="tip-fix-js" data-tip_message="Fix Message" data-tip_class="fix">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem enim repellendus voluptatibus debitis quae consequuntur!
+                </div>
+                <!-- / Preview -->
+            </div>
+        </div>
+        <div class="brief-small-title tac"></div>
+        <div class="brief-box table">
+            <div class="cell brief-codebox-cell">
+                <div class="brief-codebox">
+                    <!-- Cod -->
+                    <pre class="brush: html">
+
+                    </pre>
+                    <!-- / Cod -->
+                </div>
+            </div>
+            <div class="cell brief-previewbox-cell">
+                <!-- Preview -->
+
+                <!-- / Preview -->
+            </div>
+        </div>
     </div>
+    <div class="popupper popupper-modal popupper-size popupper-js">
+        <span class="icon close-rounded-icon popupper-close popupper-close-js"></span>
+        <div class="popupper-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum tempora optio qui maxime excepturi modi animi aliquid similique, perferendis voluptates placeat suscipit culpa, ex adipisci sit autem non ut corrupti. Quod, facere dolor tenetur perferendis dolore fugiat soluta beatae cupiditate praesentium cumque earum minima aliquid accusantium assumenda rerum quas a reiciendis nemo ut eius. Atque natus sapiente necessitatibus repellendus modi facere iure fugit aut tempore consequuntur corporis eaque delectus optio saepe vel, earum quis nostrum mollitia aliquid illum cupiditate illo, itaque adipisci nemo? Voluptatibus illum non magni nobis quos inventore harum quo accusamus pariatur, sequi aliquid animi id nesciunt debitis.
+        </div>
+    </div><!-- /Popupper-modal -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushSass.min.js"></script>
     <script type="text/javascript">
         SyntaxHighlighter.all();
     </script>

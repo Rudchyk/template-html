@@ -45,7 +45,7 @@ $icons-spacing: 10px;
 @import "icons/*.png";
 
 // --icons sprite--
-$icons: null;
+$icons: close-rounded;
 $blockIcons: null;
 $befores: null;
 $afters: null;
@@ -58,7 +58,7 @@ $baseFontSize: rem-font-size($base-font-size);
 $baseFontColor: #444;
 $baseLinkColor: #287fc3;
 
-$size: 960px;
+$size: 960+px;
 $grid: $size;
 
 $Max: $size;
@@ -66,4 +66,4 @@ $standard: $size;
 $Min: $QVGA;
 
 // --footer--
-$footerHeight: 100px;
+$footerHeight: 100+px;

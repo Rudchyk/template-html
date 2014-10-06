@@ -1,0 +1,224 @@
+// Tip
+
+// **Default
+
+.messageTip-box{
+    @extend .relative;
+}
+
+.messageTip{
+    @include pos(absolute, false, false, false, false, 500);
+
+    @extend .none;
+
+    &:before{
+        @include pseudoAbsPos(false, false, false, false, false);
+
+        border-style: solid;
+        border-color: transparent;
+    }
+    &.messageTip-right,
+    &.messageTip-left{
+        &:before{
+            top: 50%;
+        }
+    }
+    &.messageTip-top,
+    &.messageTip-bottom{
+        &:before{
+            left: 50%;
+        }
+    }
+    &.messageTip-right{
+        left: 100%;
+
+        &:before{
+            right: 100%;
+        }
+    }
+    &.messageTip-left{
+        right: 100%;
+
+        &:before{
+            left: 100%;
+        }
+    }
+    &.messageTip-top{
+        bottom: 100%;
+
+        &:before{
+            top: 100%;
+        }
+    }
+    &.messageTip-bottom{
+        top: 100%;
+        &:before{
+            bottom: 100%;
+        }
+    }
+    &.messageTip-fix{
+        position: fixed;
+
+        &:before{
+            border: none;
+        }
+    }
+}
+
+// Styles
+
+// **Error
+$MessageBg: #ef5b5b;
+$ArrowWidth: 5px;
+$ArrowHeight: 8px;
+$MessageIndent: 12px;
+
+.messageTip-error{
+    padding: 10px 14px;
+
+    background-color: $MessageBg;
+    box-shadow: 3px 4px 6px rgba(0,0,1,.22);
+
+    color: #fff;
+    line-height: 1;
+    white-space: nowrap;
+
+    &.messageTip-right,
+    &.messageTip-left{
+        &:before{
+            margin-top: -$ArrowWidth;
+        }
+    }
+    &.messageTip-top,
+    &.messageTip-bottom{
+        &:before{
+            margin-left: -$ArrowWidth;
+        }
+    }
+    &.messageTip-right{
+        margin-left: $MessageIndent;
+
+        &:before{
+            border-width: $ArrowWidth $ArrowHeight $ArrowWidth 0;
+            border-right-color: $MessageBg;
+        }
+    }
+    &.messageTip-left{
+        margin-right: $MessageIndent;
+
+        &:before{
+            border-width: $ArrowWidth 0 $ArrowWidth $ArrowHeight;
+            border-left-color: $MessageBg;
+        }
+    }
+    &.messageTip-top{
+        margin-bottom: $MessageIndent;
+
+        &:before{
+            border-width: $ArrowHeight $ArrowWidth 0 $ArrowWidth;
+            border-top-color: $MessageBg;
+        }
+    }
+    &.messageTip-bottom{
+        margin-top: $MessageIndent;
+
+        &:before{
+            border-width: 0 $ArrowWidth $ArrowHeight $ArrowWidth;
+            border-bottom-color: $MessageBg;
+        }
+    }
+}
+
+// **Tip
+
+$MessageBg: #000;
+$ArrowWidth: 5px;
+$ArrowHeight: 8px;
+$MessageIndent: 12px;
+
+.messageTip-tip{
+    padding: 5px;
+
+    background-color: $MessageBg;
+    border-radius: 5px;
+
+    color: #fff;
+    line-height: 1;
+    white-space: nowrap;
+
+    &.messageTip-right,
+    &.messageTip-left{
+        &:before{
+            margin-top: -$ArrowWidth;
+        }
+    }
+    &.messageTip-top,
+    &.messageTip-bottom{
+        &:before{
+            margin-left: -$ArrowWidth;
+        }
+    }
+    &.messageTip-right{
+        margin-left: $MessageIndent;
+
+        &:before{
+            border-width: $ArrowWidth $ArrowHeight $ArrowWidth 0;
+            border-right-color: $MessageBg;
+        }
+    }
+    &.messageTip-left{
+        margin-right: $MessageIndent;
+
+        &:before{
+            border-width: $ArrowWidth 0 $ArrowWidth $ArrowHeight;
+            border-left-color: $MessageBg;
+        }
+    }
+    &.messageTip-top{
+        margin-bottom: $MessageIndent;
+
+        &:before{
+            border-width: $ArrowHeight $ArrowWidth 0 $ArrowWidth;
+            border-top-color: $MessageBg;
+        }
+    }
+    &.messageTip-bottom{
+        margin-top: $MessageIndent;
+
+        &:before{
+            border-width: 0 $ArrowWidth $ArrowHeight $ArrowWidth;
+            border-bottom-color: $MessageBg;
+        }
+    }
+}
+
+.messageTip-fix{
+    cursor: help;
+
+    padding: 5px;
+
+    background-color: blue;
+    border-radius: 5px;
+
+    color: #fff;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+// ** Action
+
+.messageTip-box{
+    &.has-error{
+        .messageTip-error{
+            display: block;
+        }
+    }
+    &:hover{
+        .messageTip-tip{
+            display: block;
+        }
+        .messageTip-fix{
+            display: block;
+        }
+    }
+}
