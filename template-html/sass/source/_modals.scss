@@ -2,6 +2,7 @@
 
 $popupperBody: 20px;
 $popupperBg: #fff;
+$popupperSize: 500px;
 
 // **Default
 
@@ -43,10 +44,12 @@ $popupperBg: #fff;
 .popupper-pos{
     @include pos(absolute);
 }
+.popupper-static{}
 
 // **Style
 
 // .popupper-{}
+
 .popupper-size{
-    width: 500px;
+    width: $popupperSize;
 }

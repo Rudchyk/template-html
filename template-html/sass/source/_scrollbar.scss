@@ -1,0 +1,539 @@
+
+// scroll-standard > .scroll-element.scroll-x,
+// scroll-standard > .scroll-element.scroll-y - Панель сколла
+// scroll-arrow - Стрелки скролла (общий класс)
+// scroll-arrow_less - Стрелка на уменьшение
+// scroll-arrow_more - Стрелка на прибавление
+// scroll-bar - Ползунок
+
+// Scrollbar Defaults Var
+$scrollbarDefaultsSize: 18px;
+$scrollbarDefaultsBg: #f2f3f3;
+$scrollbarDefaultsBarMin: 16px;
+$scrollbarDefaultsBarSize: 6px;
+$scrollbarDefaultsBarColor: #76c0df;
+$scrollbarDefaultsBarColorHover: #9ccbdf;
+$scrollbarDefaultsBarRadius: 3px;
+$scrollbarDefaultsArrowSize: 5px;
+$scrollbarDefaultsArrowColor: $scrollbarDefaultsBarColor;
+$scrollbarDefaultsArrowColorHover: $scrollbarDefaultsBarColorHover;
+
+// Scrollbar Simple Var
+$scrollbarSimpleSize: 12px;
+$scrollbarSimpleBg: transparent;
+$scrollbarSimpleBarSize: $scrollbarDefaultsBarSize;
+$scrollbarSimpleBarColor: $scrollbarDefaultsBarColor;
+$scrollbarSimpleBarColorHover: $scrollbarDefaultsBarColorHover;
+$scrollbarSimpleBarRadius: $scrollbarDefaultsBarRadius;
+$scrollbarSimpleBarOffset: 3px;
+$scrollbarSimpleHover: true;
+
+
+// Scrollbar Defaults
+
+.scroll-wrapper {
+    @extend .relative;
+
+    overflow: hidden !important;
+
+    padding: 0 !important;
+
+    > .scroll-content {
+        position: relative !important;
+        top: 0;
+        left: 0;
+
+        overflow: scroll !important;
+
+        @include box-sizing(content-box!important);
+        width: auto !important;
+        max-width: none !important;
+        height: auto;
+        max-height: none !important;
+        margin: 0;
+        padding: 0;
+
+        border: none !important;
+    }
+
+    > .scroll-content::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}
+
+.scroll-element{
+    .scroll-bar,
+    .scroll-arrow {
+        @extend .cur-pointer;
+    }
+}
+
+.scroll-standard,
+.scroll-simple_outer,
+.scroll-simple_inner{
+    > .scroll-element{
+        &,
+        div{
+            position: absolute;
+            z-index: 10;
+
+            margin: 0;
+            padding: 0;
+
+            border: none;
+        }
+    }
+}
+.scroll-standard,
+.scroll-simple_outer{
+    > .scroll-element{
+        &,
+        div{
+            overflow: hidden;
+        }
+    }
+}
+.scroll-simple_outer,
+.scroll-simple_inner{
+    > .scroll-element{
+        &,
+        div{
+            background: none;
+            display: block;
+        }
+
+        div {
+            top: 0;
+            left: 0;
+
+            @extend .full-size;
+        }
+    }
+}
+
+// standard scroll
+
+.scroll-standard{
+    > .scroll-content{
+        &.scroll-scrolly_show {
+            left: -$scrollbarDefaultsSize;
+
+            margin-left: $scrollbarDefaultsSize;
+        }
+        &.scroll-scrollx_show {
+            top:  -$scrollbarDefaultsSize;
+
+            margin-top: $scrollbarDefaultsSize;
+        }
+    }
+
+
+    > .scroll-element {
+        background-color: $scrollbarDefaultsBg;
+
+        .scroll-element_outer,
+        .scroll-element_size,
+        .scroll-element_inner-wrapper,
+        .scroll-element_inner,
+        .scroll-bar,
+        .scroll-bar div
+        {
+            top: 0;
+            left: 0;
+
+            @extend .full-size;
+        }
+        .scroll-element_outer,
+        .scroll-element_size,
+        .scroll-element_inner-wrapper,
+        .scroll-bar_body
+        {
+            background: none!important;
+        }
+
+        &.scroll-x,
+        &.scroll-y {
+            &.scroll-element_show-arrows{
+                .scroll-arrow{
+                    text-align: center;
+
+                    &:before{
+                        @extend .relative;
+
+                        content: '';
+
+                        @include dib(middle);
+
+                        border: $scrollbarDefaultsArrowSize solid transparent;
+                    }
+                }
+            }
+        }
+
+
+        &.scroll-x {
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            min-width: 100%;
+            height: $scrollbarDefaultsSize;
+
+            .scroll-bar {
+                top: 50%;
+
+                min-width: $scrollbarDefaultsBarMin;
+                height: $scrollbarDefaultsBarSize;
+                margin-top: -($scrollbarDefaultsBarSize/2);
+
+                background-color: $scrollbarDefaultsBarColor;
+                border-radius: $scrollbarDefaultsBarRadius;
+
+                &:hover{
+                    background-color: $scrollbarDefaultsBarColorHover;
+                }
+            }
+            .scroll-bar_body {}
+            .scroll-bar_body-inner {}
+            .scroll-bar_center {}
+            .scroll-bar_bottom {}
+
+            &.scroll-element_show-arrows{
+                .scroll-arrow{
+                    width: $scrollbarDefaultsSize;
+                    height: 100%;
+                }
+                .scroll-arrow_less {
+                    &:before{
+                        border-left-width: 0;
+                        border-right-color: $scrollbarDefaultsArrowColor;
+                    }
+                    &:hover:before{
+                        border-right-color: $scrollbarDefaultsArrowColorHover;
+                    }
+                }
+                .scroll-arrow_more {
+                    left: auto;
+                    right: 0;
+
+                    &:before{
+                        border-right-width: 0;
+                        border-left-color: $scrollbarDefaultsArrowColor;
+                    }
+                    &:hover:before{
+                        border-left-color: $scrollbarDefaultsArrowColorHover;
+                    }
+                }
+
+                .scroll-element_outer {
+                    left: $scrollbarDefaultsSize;
+                }
+                .scroll-element_inner {
+                    left: -($scrollbarDefaultsSize*2);
+                }
+                .scroll-element_size {
+                    left: -($scrollbarDefaultsSize*2);
+                }
+
+                &.scroll-scrolly_show{
+                    .scroll-arrow_more {
+                        right: $scrollbarDefaultsSize;
+                    }
+                    .scroll-element_inner {
+                        left: -($scrollbarDefaultsSize*3);
+                    }
+                    .scroll-element_size {
+                        left: -($scrollbarDefaultsSize*3);
+                    }
+                }
+            }
+            &.scroll-scrolly_show{
+                .scroll-element_size {
+                    left: -$scrollbarDefaultsSize;
+                }
+                .scroll-element_inner {
+                    left: -$scrollbarDefaultsSize;
+                }
+            }
+        }
+
+        &.scroll-y {
+            top: 0;
+            right: 0;
+
+            width: $scrollbarDefaultsSize;
+            height: 100%;
+            min-height: 100%;
+
+            .scroll-bar {
+                left: 50%;
+
+                width: $scrollbarDefaultsBarSize;
+                min-height: $scrollbarDefaultsBarMin;
+                margin-left: -($scrollbarDefaultsBarSize/2);
+
+                background-color: $scrollbarDefaultsBarColor;
+                border-radius: $scrollbarDefaultsBarRadius;
+
+                &:hover{
+                    background-color: $scrollbarDefaultsBarColorHover;
+                }
+            }
+            .scroll-bar_body {}
+            .scroll-bar_body-inner {}
+            .scroll-bar_center {}
+            .scroll-bar_bottom {}
+
+            &.scroll-element_show-arrows{
+                .scroll-arrow{
+                    width: 100%;
+                    height: $scrollbarDefaultsSize;
+                }
+                .scroll-arrow_less {
+                    &:before{
+                        border-top-width: 0;
+                        border-bottom-color: $scrollbarDefaultsArrowColor;
+                    }
+                    &:hover:before{
+                        border-bottom-color: $scrollbarDefaultsArrowColorHover;
+                    }
+                }
+                .scroll-arrow_more {
+                    top: auto;
+                    bottom: 0;
+
+                    &:before{
+                        border-bottom-width: 0;
+                        border-top-color: $scrollbarDefaultsArrowColor;
+                    }
+                    &:hover:before{
+                        border-top-color: $scrollbarDefaultsArrowColorHover;
+                    }
+                }
+
+                .scroll-element_outer {
+                    top: $scrollbarDefaultsSize;
+                }
+                .scroll-element_inner {
+                    top: -($scrollbarDefaultsSize*2);
+                }
+                .scroll-element_size {
+                    top: -($scrollbarDefaultsSize*2);
+                }
+
+                &.scroll-scrollx_show{
+                    .scroll-arrow_more {
+                        bottom: $scrollbarDefaultsSize;
+                    }
+                    .scroll-element_inner {
+                        top: -($scrollbarDefaultsSize*3);
+                    }
+                    .scroll-element_size {
+                        top: -($scrollbarDefaultsSize*3);
+                    }
+                }
+            }
+            &.scroll-scrollx_show{
+                .scroll-element_size {
+                    top: -$scrollbarDefaultsSize;
+                }
+                .scroll-element_inner {
+                    top: -$scrollbarDefaultsSize;
+                }
+            }
+        }
+
+        // Scroll Arrows
+
+        .scroll-arrow {
+            display: none;
+        }
+        &.scroll-element_show-arrows .scroll-arrow {
+            z-index: 12;
+
+            display: block;
+        }
+    }
+}
+
+// Simple Outer Scroll
+
+.scroll-simple_outer{
+    > .scroll-content{
+        &.scroll-scrolly_show {
+            left: -$scrollbarSimpleSize;
+
+            margin-left: $scrollbarSimpleSize;
+        }
+        &.scroll-scrollx_show {
+            top: -$scrollbarSimpleSize;
+
+            margin-top:  $scrollbarSimpleSize;
+        }
+    }
+
+    > .scroll-element {
+        background-color: transparent;
+
+        &.scroll-x {
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            min-width: 100%;
+            height: $scrollbarSimpleSize;
+
+            .scroll-bar {
+                top: $scrollbarSimpleBarOffset;
+
+                height: $scrollbarSimpleBarSize;
+                background-color: $scrollbarSimpleBarColor;
+                border-radius: $scrollbarSimpleBarRadius;
+
+                &:hover{
+                    background-color: $scrollbarSimpleBarColorHover;
+                }
+            }
+            &.scroll-scrolly_show{
+                .scroll-element_size {
+                    left: -$scrollbarSimpleSize;
+                }
+                .scroll-element_inner {
+                    left: -$scrollbarSimpleSize;
+                }
+            }
+        }
+
+        &.scroll-y {
+            top: 0;
+            right: 0;
+
+            width: $scrollbarSimpleSize;
+            height: 100%;
+            min-height: 100%;
+
+
+            .scroll-bar {
+                left: $scrollbarSimpleBarOffset;
+
+                width: $scrollbarSimpleBarSize;
+                background-color: $scrollbarSimpleBarColor;
+                border-radius: $scrollbarSimpleBarRadius;
+
+                &:hover{
+                    background-color: $scrollbarSimpleBarColorHover;
+                }
+            }
+            .scroll-element_outer {
+                top: $scrollbarSimpleBarSize;
+            }
+            .scroll-element_inner {
+                top: -($scrollbarSimpleBarSize*2);
+            }
+            .scroll-element_size {
+                top: -($scrollbarSimpleBarSize*2);
+            }
+            &.scroll-scrollx_show{
+                .scroll-element_size {
+                    top: -$scrollbarSimpleSize;
+                }
+                .scroll-element_inner {
+                    top: -$scrollbarSimpleSize;
+                }
+            }
+        }
+
+        &.scroll-draggable .scroll-bar {
+            background-color: $scrollbarSimpleBarColorHover;
+        }
+    }
+}
+
+// Simple Inner Scroll
+
+.scroll-simple_inner{
+    > .scroll-element{
+
+        div{
+            display: block;
+        }
+
+        .scroll-element_inner {
+            display: none;
+        }
+
+        .scroll-bar {
+            @if $scrollbarSimpleHover{
+                display: none;
+            }
+
+            background-color: $scrollbarSimpleBarColor;
+            border-radius: $scrollbarSimpleBarRadius;
+
+            &:hover{
+                background-color: $scrollbarSimpleBarColorHover;
+            }
+        }
+
+        @if $scrollbarSimpleHover{
+            &.scroll-draggable .scroll-bar {
+                display: block;
+            }
+        }
+
+        &.scroll-x {
+            left: 0;
+            bottom: 0px;
+
+            overflow: visible;
+
+            min-width: 100%;
+            width: 100%;
+            height: 0px;
+
+            .scroll-element_size {
+                left: -8px;
+            }
+            &.scroll-scrolly_show .scroll-element_size {
+                left: -22px;
+            }
+            .scroll-element_outer {
+                left: 4px;
+            }
+            .scroll-bar {
+                top: -($scrollbarSimpleBarSize*2);
+
+                height: $scrollbarSimpleBarSize;
+            }
+        }
+
+        &.scroll-y {
+            top: 0;
+            right: 0px;
+
+            width: 0px;
+            height: 100%;
+            min-height: 100%;
+
+            .scroll-element_outer {
+                top: 4px;
+            }
+            .scroll-element_size {
+                top: -8px;
+            }
+            &.scroll-scrollx_show .scroll-element_size {
+                top: -22px;
+            }
+            .scroll-bar {
+                left: -($scrollbarSimpleBarSize*2);
+
+                width: $scrollbarSimpleBarSize;
+            }
+        }
+    }
+
+    &:hover > .scroll-element .scroll-bar {
+        display: block;
+    }
+}

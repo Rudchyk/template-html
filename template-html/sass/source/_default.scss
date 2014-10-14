@@ -76,7 +76,7 @@
 
 // Width
 .full,
-.tablebox,
+.table,
 .wrapper,
 .footer{
     width: 100%;
@@ -127,7 +127,7 @@
     @include pie-clearfix;
 }
 
-.no_select{
+.no-select{
     @include user-select(none);
 }
 
@@ -152,18 +152,6 @@
     height: auto;
 }
 
-// --Buttons--
-
-.btn-bl{
-    @extend .block;
-
-    @extend .full;
-    padding-right: 0;
-    padding-left: 0;
-
-    @extend .tac;
-}
-
 // --Form--
 
 .cur-pointer,
@@ -177,15 +165,7 @@
     cursor: help;
 }
 
-.hidden-field{
-    @extend .full-size;
-
-    background: transparent;
-
-    @include box-sizing(border-box);
-    @include reset-box-model;
-    @include reset-font;
-}
+// --Position--
 
 .aborted{
     @include pos(absolute, false, false, false, -10000px, false);
@@ -193,11 +173,9 @@
     opacity: 0;
     visibility: hidden;
 }
-
 .ceiling-pos{
     @include pos(absolute, 0, false, false, 0, false);
 }
-
 .abs-icon{
     @include pos(absolute, false, false, false, false, 1);
 }
@@ -224,7 +202,6 @@
     left: 0;
     margin: auto;
 }
-
 .has-ps-icon{
     &:before{
         @extend .absolute;
@@ -262,5 +239,10 @@
 
 .circle{
     border-radius: 50%;
+}
+
+.default-scroll{
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 

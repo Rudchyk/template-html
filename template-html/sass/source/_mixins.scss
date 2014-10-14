@@ -41,10 +41,20 @@
     width: icons-sprite-width($name);
 }
 @mixin centerWidthIcons($name) {
-    margin-left: -(icons-sprite-height($name)/2);
+    margin-left: -(icons-sprite-width($name)/2);
 }
 @mixin centerHeightIcons($name) {
     margin-top: -(icons-sprite-height($name)/2);
+}
+@mixin iconsPos($fileName, $distance, $alignmentHeight, $size: "right"){
+    @include icons($fileName);
+    margin-#{$size}: $distance;
+    @if $alignmentHeight{
+        @include centerHeightIcons($fileName);
+    }
+    else{
+        @include centerWidthIcons($fileName);
+    }
 }
 
 // Size

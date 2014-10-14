@@ -1,0 +1,23 @@
+// Tabs
+
+// **Default
+.tab-content{
+    @extend .none;
+    &.tab-content-visible{
+        @extend .show;
+    }
+}
+.tab{
+    @extend .cur-pointer;
+}
+
+// Styles
+
+// .tabs-section-box{
+//     .tabs{}
+//     .tab{
+//         &:hover{}
+//         &.tab-current{}
+//     }
+//     .tab-content{}
+// }

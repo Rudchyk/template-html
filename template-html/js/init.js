@@ -18,6 +18,8 @@ head.js(
     sourcePath+"js/jquery.actual.min.js",
     sourcePath+"js/tip.js",
     sourcePath+"js/modal.js",
+    sourcePath+"js/tabs.js",
+    sourcePath+"js/jquery.scrollbar.min.js",
     // sourcePath+"js/.js",
     // sourcePath+"js/scripts.js",
     sourcePath+"js/example.js",
@@ -26,7 +28,9 @@ head.js(
         $('.field-box-js').fieldJS();
 
         // selectJS
-        $('.select-box-js').selectJS();
+        $('.select-box-js').selectJS({
+            userScroll: true
+        });
 
         // radioJS
         $('.radio-box-js').radioJS();
@@ -48,6 +52,12 @@ head.js(
         $('.tip-fix-js').tipJS({
             fix: true
         });
+
+        /*tabsJS*/
+        $('.tabs-js').tabsJS();
+
+        /*jquery.scrollbar*/
+        $('.scroll-js').scrollbar();
     }
 );
 

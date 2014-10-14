@@ -5,7 +5,7 @@ $slctArrowWidth: 5px;
 $slctArrowHeight: 10px;
 $slctArrowColor: #bdc3c7;
 $slctArrowPosRight: 10px;
-$paddingRight: 30px;
+$slctArrowContainer: $fieldHelperContainer;
 
 $maxHeightPoint: 7;
 $slctdropBg: #FFF;
@@ -37,7 +37,7 @@ $fileloadBtnWidth: 25%;
 // Select JS
 
 .select-box{
-    .hidden-field{
+    .field-hidden{
         opacity: 0;
     }
 }
@@ -45,7 +45,7 @@ $fileloadBtnWidth: 25%;
 .field-slct{
     @extend .cur-pointer;
 
-    padding-right: $paddingRight;
+    padding-right: $slctArrowContainer;
 
     color: $fieldDefaultPlaceholderColor;
 
@@ -95,7 +95,7 @@ $fileloadBtnWidth: 25%;
     }
 }
 .slctdrop{
-    @include pos(absolute, 100%, false, false, 0, 10);
+    @include pos(absolute, 100%, false, false, 0, 100);
 
     @extend .hide;
     overflow: hidden;
@@ -110,9 +110,6 @@ $fileloadBtnWidth: 25%;
     font: $fieldDefaultFontSize $fieldDefaultFontFamily;
 }
 .slctdrop-list{
-    overflow-y: auto;
-
-    width: 110%;
     max-height: $fieldDefaultHeight*$maxHeightPoint;
 }
 .slctdrop-item{

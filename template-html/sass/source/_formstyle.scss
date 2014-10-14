@@ -10,11 +10,13 @@ $fieldDefaultBorderRadius: 5px;
 $fieldDefaultBg: #fff;
 
 // Style
+$fieldHelperContainer: 30px;
 // Typography
 $fieldDefaultColor: #444;
 $fieldDefaultPlaceholderColor: #777;
 $fieldDefaultFontFamily: $baseFontFamily;
 $fieldDefaultFontSize: rem-font-size(13px);
+
 // Action
 // Value
 $fieldHasValueBg: #ecf9ff;
@@ -54,24 +56,24 @@ $fieldHasDisabledColor: #d5dbdb;
     font: $fieldDefaultFontSize $fieldDefaultFontFamily;
 
     // Action
-    .field-box.has-value &{
+    .has-value &{
         // border, background, color
         @include fieldEvent($fieldHasValueBorder, $fieldHasValueBg, $fieldHasValueColor);
     }
-    .field-box.has-active &,
+    .has-active &,
     &:focus{
         // border, background, color
         @include fieldEvent($fieldHasActiveBorder, $fieldHasActiveBg, $fieldHasActiveColor);
     }
-    .field-box.has-error &{
+    .has-error &{
         // border, background, color
         @include fieldEvent($fieldHasErrorColor, $fieldDefaultBg, $fieldHasErrorColor);
     }
-    .field-box.has-success &{
+    .has-success &{
         // border, background, color
         @include fieldEvent($fieldHasSuccessColor, $fieldDefaultBg, $fieldHasSuccessColor);
     }
-    .field-box.has-disabled &,
+    .has-disabled &,
     &[disabled]{
         @extend .cur-default;
         @extend .no_select;
@@ -82,6 +84,34 @@ $fieldHasDisabledColor: #d5dbdb;
     @each $prefixPlaceholder in $prefixPlaceholders {
         @include placeholder($prefixPlaceholder, $fieldDefaultPlaceholderColor);
     }
+}
+
+.field-fake{
+    position: relative;
+
+    @extend .ellipsis;
+
+    line-height: $fieldDefaultHeight;
+}
+
+.field-hidden{
+    @extend .full-size;
+
+    background: transparent;
+
+    @include box-sizing(border-box);
+    @include reset-box-model;
+    @include reset-font;
+}
+
+.field-has-helper{
+    padding-right: $fieldHelperContainer;
+}
+
+.field-helper{
+    @extend .abs-icon;
+
+    @extend .right-icon;
 }
 
 select.field{
@@ -97,12 +127,4 @@ select.field{
 
 textarea.field{
     min-height: 60px;
-}
-
-.fake-field{
-    position: relative;
-
-    @extend .ellipsis;
-
-    line-height: $fieldDefaultHeight;
 }

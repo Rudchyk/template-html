@@ -23,7 +23,8 @@ modalJS = function() {
             pos: 50,
             modalData : 'popup',
             posClass : '-pos',
-            closeClass : '-close-js'
+            closeClass : '-close-js',
+            staticModal : 'static'
         },
         settings = $.extend(defaults, options);
 
@@ -31,9 +32,20 @@ modalJS = function() {
             modalWindow : '.'+settings.modalWindowClass+'-js',
             close : '.'+settings.modalWindowClass+settings.closeClass,
             posClass : settings.modalWindowClass+settings.posClass,
-            overlayJsClass : settings.shadowBlock + '-js'
+            overlayJsClass : settings.shadowBlock + '-js',
+            StaticModalWindowClass : settings.modalWindowClass+'-'+settings.staticModal
         },
         overlay = $('<div class="' + settings.shadowBlock +' ' + modal.overlayJsClass + '"></div>');
+
+        if ($('.'+modal.StaticModalWindowClass)) {
+            $('.'+modal.StaticModalWindowClass).each(function(){
+                var $thisM = $(this);
+                $thisM.css({
+                    top:($(window).height()/2-$thisM.height()/2),
+                    left:($(window).width()/2-$thisM.width()/2)
+                });
+            });
+        };
 
         settings.modalLink.click(function(){
             var $thisEl = $(this),
@@ -45,17 +57,26 @@ modalJS = function() {
             $(modal.modalWindow)
                                 .hide()
                                 .removeClass(modal.posClass)
-                                .css({top: '', left: ''});
+                                .css({
+                                    top: '',
+                                    left: ''
+                                });
             $('.'+modal.overlayJsClass).remove();
             $('body').prepend(overlay);
             $modalPopap.show();
             if (settings.center == true) {
-                $modalPopap.css({top:($(window).height()/2-$modalPopap.height()/2), left:($(window).width()/2-$modalPopap.width()/2)});
+                $modalPopap.css({
+                    top:($(window).height()/2-$modalPopap.height()/2),
+                    left:($(window).width()/2-$modalPopap.width()/2)
+                });
             }
             else{
-                $modalPopap.addClass(modal.posClass).css({top: $modalPos, left: ''});
+                $modalPopap.addClass(modal.posClass).css({
+                    top: $modalPos, left: ''
+                });
             };
         });
+
         $(modal.modalWindow).on('click', modal.close, function(){
             block(settings, modal);
             return;

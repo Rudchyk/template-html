@@ -28,6 +28,8 @@ Author: Sergii.Rudchyk
 @import "source/all.scss";
 @import "source/modals.scss"; // modalJS
 @import "source/tip.scss"; // tipJS
+@import "source/tabs.scss"; // tabsJS
+@import "source/scrollbar.scss"; // jquery.scrollbar
 
 @import "source/default.scss";
 
@@ -35,3 +37,5 @@ Author: Sergii.Rudchyk
 @import "source/responsive.scss";
 
 @import "source/browsers.scss";
+
+@import "source/brief.scss";

@@ -11,51 +11,6 @@
     <link rel="stylesheet" href="css/index.css?v=1">
     <!-- Scripts -->
     <script data-headjs-load="js/init.js" src="js/head.min.js"></script>
-    <style>
-        body{
-            background-color: #fafafa;
-            font: 1rem Arial, Helvetica, sans-serif;
-            color: #34495e;
-        }
-        .brief-container{
-            width: 960px;
-            margin: auto;
-            padding: 50px;
-        }
-        .brief-title{
-            padding: 15px;
-        }
-        .brief-box{
-            margin-bottom: 40px;
-        }
-        .brief-class-title,
-        .brief-small-title{
-            padding: 5px;
-        }
-        .brief-small-title{
-            margin-top: 15px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        .brief-class-title{
-            color: #5eab4a;
-            font-style: italic;
-        }
-        .brief-codebox-cell,
-        .brief-previewbox-cell{
-            width: 50%;
-            vertical-align: middle;
-        }
-        .brief-codebox{
-            width: 480px;
-        }
-        .brief-previewbox-cell{
-            padding: 0 50px;
-        }
-        .brief-string{
-            padding: 5px 0;
-        }
-    </style>
 </head>
 <body>
     <div class="brief-container">
@@ -69,6 +24,10 @@
                         <div class="field-box field-box-js*">
                             <input type="text" name="name" class="field" autocomplete="off" placeholder="Name">
                         </div>
+                    </pre>
+                    <pre class="brush: js">
+                        /*Source*/
+                        js/rform.js
                     </pre>
                     <!-- / Cod -->
                 </div>
@@ -125,14 +84,18 @@
                     <!-- Cod -->
                     <pre class="brush: html">
                         <div class="field-box select-box select-box-js*">
-                            <div class="field fake-field field-slct"></div>
-                            <select name="select" id="select" class="ceiling-pos hidden-field">
+                            <div class="field field-fake field-slct"></div>
+                            <select name="select" id="select" class="ceiling-pos field-hidden">
                                 <option disabled selected>title</option>
                                 <option value="option1">option1</option>
                                 <option value="option2">option2</option>
                                 <option value="option3">option3</option>
                             </select>
                         </div>
+                    </pre>
+                    <pre class="brush: js">
+                        /*Source*/
+                        js/rform.js
                     </pre>
                     <pre class="brush: js">
                         // selectJS
@@ -146,8 +109,8 @@
                 <div class="brief-small-title tac">Inactive</div>
                 <div class="brief-class-title tac">class="field-box select-box"</div>
                 <div class="field-box select-box select-box-js">
-                    <div class="field fake-field field-slct"></div>
-                    <select name="select" id="select" class="ceiling-pos hidden-field">
+                    <div class="field field-fake field-slct"></div>
+                    <select name="select" id="select" class="ceiling-pos field-hidden">
                         <option disabled selected>title</option>
                         <option value="option1">option1</option>
                         <option value="option2">option2</option>
@@ -159,8 +122,8 @@
                 <div class="brief-small-title tac">Value</div>
                 <div class="brief-class-title tac">class="field-box select-box has-value"</div>
                 <div class="field-box select-box select-box-js has-value">
-                    <div class="field fake-field field-slct"></div>
-                    <select name="select" id="select" class="ceiling-pos hidden-field">
+                    <div class="field field-fake field-slct"></div>
+                    <select name="select" id="select" class="ceiling-pos field-hidden">
                         <option value="option1">option1</option>
                         <option value="option2">option2</option>
                         <option value="option3">option3</option>
@@ -171,8 +134,8 @@
                 <div class="brief-small-title tac">Error</div>
                 <div class="brief-class-title tac">class="field-box select-box has-error"</div>
                 <div class="field-box select-box select-box-js has-error">
-                    <div class="field fake-field field-slct"></div>
-                    <select name="select" id="select" class="ceiling-pos hidden-field">
+                    <div class="field field-fake field-slct"></div>
+                    <select name="select" id="select" class="ceiling-pos field-hidden">
                         <option disabled selected>title</option>
                         <option value="option1">option1</option>
                         <option value="option2">option2</option>
@@ -184,8 +147,8 @@
                 <div class="brief-small-title tac">Succes</div>
                 <div class="brief-class-title tac">class="field-box select-box has-success"</div>
                 <div class="field-box select-box select-box-js has-success">
-                    <div class="field fake-field field-slct"></div>
-                    <select name="select" id="select" class="ceiling-pos hidden-field">
+                    <div class="field field-fake field-slct"></div>
+                    <select name="select" id="select" class="ceiling-pos field-hidden">
                         <option value="option1">option1</option>
                         <option value="option2">option2</option>
                         <option value="option3">option3</option>
@@ -196,8 +159,8 @@
                 <div class="brief-small-title tac">Disabled</div>
                 <div class="brief-class-title tac">class="field-box select-box has-disabled"</div>
                 <div class="field-box select-box select-box-js has-disabled">
-                    <div class="field fake-field field-slct"></div>
-                    <select name="select" id="select" class="ceiling-pos hidden-field">
+                    <div class="field field-fake field-slct"></div>
+                    <select name="select" id="select" class="ceiling-pos field-hidden">
                         <option disabled selected>title</option>
                         <option value="option1">option1</option>
                         <option value="option2">option2</option>
@@ -222,6 +185,10 @@
                             </div>
                             <input type="hidden" name="radio" id="radio" value="Radio is on">
                         </div>
+                    </pre>
+                    <pre class="brush: js">
+                        /*Source*/
+                        js/rform.js
                     </pre>
                     <pre class="brush: js">
                         // radioJS
@@ -269,6 +236,10 @@
                             <span class="check-text">Checked</span>
                             <input type="checkbox" name="checkbox" id="checkbox1" class="aborted" value="Checked" checked>
                         </label>
+                    </pre>
+                    <pre class="brush: js">
+                        /*Source*/
+                        js/rform.js
                     </pre>
                     <pre class="brush: js">
                         /*checkbox*/
@@ -320,9 +291,13 @@
                     <pre class="brush: html">
                         <div class="fileload-box fileload-box-js*">
                             <input type="file" name="file" id="file" class="aborted" value="">
-                            <div class="field fake-field fileload-field fileload-field-js">Select file</div>
+                            <div class="field field-fake fileload-field fileload-field-js">Select file</div>
                             <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
                         </div>
+                    </pre>
+                    <pre class="brush: js">
+                        /*Source*/
+                        js/rform.js
                     </pre>
                     <pre class="brush: js">
                         /*file*/
@@ -337,7 +312,7 @@
                 <div class="brief-class-title tac">class="fileload-box"</div>
                 <div class="fileload-box fileload-box-js">
                     <input type="file" name="file" id="file" class="aborted" value="">
-                    <div class="field fake-field fileload-field fileload-field-js">Select file</div>
+                    <div class="field field-fake fileload-field fileload-field-js">Select file</div>
                     <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
                 </div>
                 <!-- / Preview -->
@@ -346,7 +321,7 @@
                 <div class="brief-class-title tac">class="fileload-box has-active"</div>
                 <div class="fileload-box fileload-box-js has-active">
                     <input type="file" name="file" id="file" class="aborted" value="">
-                    <div class="field fake-field fileload-field fileload-field-js">Select file</div>
+                    <div class="field field-fake fileload-field fileload-field-js">Select file</div>
                     <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
                 </div>
                 <!-- / Preview -->
@@ -355,7 +330,7 @@
                 <div class="brief-class-title tac">class="fileload-box has-value"</div>
                 <div class="fileload-box fileload-box-js has-value">
                     <input type="file" name="file" id="file" class="aborted" value="C:\fakepath\some_file.txt">
-                    <div class="field fake-field fileload-field fileload-field-js">C:\fakepath\some_file.txt</div>
+                    <div class="field field-fake fileload-field fileload-field-js">C:\fakepath\some_file.txt</div>
                     <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
                 </div>
                 <!-- / Preview -->
@@ -364,7 +339,7 @@
                 <div class="brief-class-title tac">class="fileload-box has-error"</div>
                 <div class="fileload-box fileload-box-js has-error">
                     <input type="file" name="file" id="file" class="aborted" value="">
-                    <div class="field fake-field fileload-field fileload-field-js"></div>
+                    <div class="field field-fake fileload-field fileload-field-js"></div>
                     <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
                 </div>
                 <!-- / Preview -->
@@ -373,7 +348,7 @@
                 <div class="brief-class-title tac">class="fileload-box has-success"</div>
                 <div class="fileload-box fileload-box-js has-success">
                     <input type="file" name="file" id="file" class="aborted" value="C:\fakepath\some_file.txt">
-                    <div class="field fake-field fileload-field fileload-field-js">C:\fakepath\some_file.txt</div>
+                    <div class="field field-fake fileload-field fileload-field-js">C:\fakepath\some_file.txt</div>
                     <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
                 </div>
                 <!-- / Preview -->
@@ -382,7 +357,7 @@
                 <div class="brief-class-title tac">class="fileload-box has-disabled"</div>
                 <div class="fileload-box fileload-box-js has-disabled">
                     <input type="file" name="file" id="file" class="aborted" value="">
-                    <div class="field fake-field fileload-field fileload-field-js">Select file</div>
+                    <div class="field field-fake fileload-field fileload-field-js">Select file</div>
                     <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
                 </div>
                 <!-- / Preview -->
@@ -440,6 +415,10 @@
                         </div><!-- /Popupper-modal -->
                     </pre>
                     <pre class="brush: js">
+                        /*Source*/
+                        js/modal.js
+                    </pre>
+                    <pre class="brush: js">
                         /*modalJS*/
                         $('.popup-link-js').modalJS();
                     </pre>
@@ -466,6 +445,11 @@
                     <!-- Cod -->
                     <pre class="brush: html">
                         class="tip-top-js" data-tip_message="Message" data-tip_class="tip"
+                    </pre>
+                    <pre class="brush: js">
+                        /*Source*/
+                        js/jquery.actual.min.js
+                        js/tip.js
                     </pre>
                     <pre class="brush: js">
                         /*tipJS*/
@@ -498,6 +482,144 @@
                 <!-- / Preview -->
             </div>
         </div>
+        <div class="brief-small-title tac">Tabs</div>
+        <div class="brief-box table">
+            <div class="cell brief-codebox-cell">
+                <div class="brief-codebox">
+                    <!-- Cod -->
+                    <pre class="brush: html">
+                        <!--tabs-->
+                        <div class="tabs-section tabs-section-js* my-class">
+                            <ul class="tabs tabs-js">
+                                <li class="tab tab-current">Tab1</li>
+                                <li class="tab">Tab2</li>
+                                <li class="tab">Tab3</li>
+                            </ul>
+                            <!--Tab1-->
+                            <div class="tab-content tab-content-js tab-content-visible">
+                                Content 1
+                            </div>
+                            <!--Tab2-->
+                            <div class="tab-content tab-content-js">
+                                Content 2
+                            </div>
+                            <!--Tab3-->
+                            <div class="tab-content tab-content-js">
+                                Content 3
+                            </div>
+                        </div>
+                        <!--end tabs-->
+                    </pre>
+                    <pre class="brush: js">
+                        /*Source*/
+                        js/tabs.js
+                    </pre>
+                    <pre class="brush: js">
+                        /*tabsJS*/
+                        $('.tabs-js').tabsJS();
+                    </pre>
+                    <pre class="brush: sass">
+                        @import "source/tabs.scss"; // tabsJS
+                    </pre>
+                    <!-- / Cod -->
+                </div>
+            </div>
+            <div class="cell brief-previewbox-cell">
+                <!-- Preview -->
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js my-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current">Tab1</li>
+                        <li class="tab">Tab2</li>
+                        <li class="tab">Tab3</li>
+                    </ul>
+                    <!--Tab1-->
+                    <div class="bl tab-content tab-content-js tab-content-visible">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, eos voluptate nemo officiis at rerum?
+                    </div>
+                    <!--Tab2-->
+                    <div class="bl tab-content tab-content-js">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus adipisci expedita corporis iure autem sint magni quisquam blanditiis quibusdam iste.
+                    </div>
+                    <!--Tab3-->
+                    <div class="bl tab-content tab-content-js">
+                        <div class="tab-scroll scroll-standard scroll-js">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo incidunt dolorem nostrum sapiente facilis sequi labore sunt laboriosam, quasi vero dolorum voluptate accusantium iusto, corporis tempore quo aspernatur itaque omnis magnam? Facere laudantium deleniti aspernatur repellendus debitis optio quas fuga natus ex, nihil sed, provident vitae accusamus, ipsam omnis magni?
+                        </div>
+                    </div>
+                </div>
+                <!--end tabs-->
+                <!-- / Preview -->
+            </div>
+        </div>
+        <div class="brief-small-title tac">Styleable Scrollbars</div>
+        <div class="brief-box table">
+            <div class="cell brief-codebox-cell">
+                <div class="brief-codebox">
+                    <!-- Cod -->
+                    <pre class="brush: html">
+                        <div class="some_parent_class scroll-js*">
+                            <div class="some_class">
+                                content with scroll
+                            </div>
+                        </div>
+                    </pre>
+                    <pre class="brush: js">
+                        /*Source*/
+                        js/jquery.scrollbar.min.js
+                    </pre>
+                    <pre class="brush: js">
+                        /*jquery.scrollbar*/
+                        $('.scroll-js').scrollbar();
+
+                        /*selectJS with jquery.scrollbar*/
+                        $('.select-box-js').selectJS({
+                            userScroll: true
+                        });
+                    </pre>
+                    <pre class="brush: sass">
+                        @import "source/scrollbar.scss"; // jquery.scrollbar
+                    </pre>
+                    <pre class="brush: sass">
+                        .some_parent_class{
+                            height: XXXpx;
+                        }
+                    </pre>
+                    <!-- / Cod -->
+                </div>
+            </div>
+            <div class="cell brief-previewbox-cell">
+                <!-- Preview -->
+                <div class="brief-small-title tac">Select scroll</div>
+                <div class="field-box select-box select-box-js">
+                    <div class="field field-fake field-slct"></div>
+                    <select name="select" id="select" class="ceiling-pos field-hidden">
+                        <option disabled selected>title</option>
+                        <option value="option1">option1</option>
+                        <option value="option2">option2</option>
+                        <option value="option3">option3</option>
+                        <option value="option4">option4</option>
+                        <option value="option5">option5</option>
+                        <option value="option6">option6</option>
+                        <option value="option7">option7</option>
+                        <option value="option8">option8</option>
+                        <option value="option9">option9</option>
+                        <option value="option10">option10</option>
+                        <option value="option11">option11</option>
+                        <option value="option12">option12</option>
+                    </select>
+                </div>
+                <!-- / Preview -->
+                <!-- Preview -->
+                <div class="brief-small-title tac">Scroll Box</div>
+                <div class="bl scroll-panel scroll-standard scroll-js">
+                    <div class="scroll-panel-content">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, dolore quidem! Odio voluptatum enim iure cum harum dolore, error quasi ullam eveniet, culpa nesciunt nemo asperiores dolor perferendis earum nam vel? Nam voluptas quisquam, ea laborum praesentium quas quam, natus voluptates ad provident voluptatum facere in perferendis deserunt labore iste optio dolore? Reprehenderit incidunt magni assumenda quo. Nostrum cupiditate aperiam beatae ab nesciunt quibusdam ex, soluta temporibus aspernatur harum, omnis alias excepturi, suscipit explicabo ipsum minus! Dolore officiis quisquam, nihil odit nam voluptas explicabo reiciendis voluptatum itaque fugiat asperiores, ipsa natus! Necessitatibus quod unde quisquam veritatis illo, illum ad quas!
+                    </div>
+                </div>
+                <!-- / Preview -->
+            </div>
+        </div>
         <div class="brief-small-title tac"></div>
         <div class="brief-box table">
             <div class="cell brief-codebox-cell">
@@ -522,6 +644,12 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum tempora optio qui maxime excepturi modi animi aliquid similique, perferendis voluptates placeat suscipit culpa, ex adipisci sit autem non ut corrupti. Quod, facere dolor tenetur perferendis dolore fugiat soluta beatae cupiditate praesentium cumque earum minima aliquid accusantium assumenda rerum quas a reiciendis nemo ut eius. Atque natus sapiente necessitatibus repellendus modi facere iure fugit aut tempore consequuntur corporis eaque delectus optio saepe vel, earum quis nostrum mollitia aliquid illum cupiditate illo, itaque adipisci nemo? Voluptatibus illum non magni nobis quos inventore harum quo accusamus pariatur, sequi aliquid animi id nesciunt debitis.
         </div>
     </div><!-- /Popupper-modal -->
+    <div class="popupper popupper-st popupper-size popupper-static popupper-js">
+        <span class="icon close-rounded-icon popupper-close popupper-close-js"></span>
+        <div class="popupper-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </div>
+    </div><!-- /Popupper-st -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>

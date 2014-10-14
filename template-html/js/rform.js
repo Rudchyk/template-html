@@ -49,10 +49,12 @@
                 slctDropItemClass : 'slctdrop-item',
                 fieldBoxClass     : 'field-box',
                 hideClass         : 'hide',
-                fakeFieldClass    : 'fake-field',
+                fakeFieldClass    : 'field-fake',
                 workSelectClass   : 'hidden-select',
+                userScrollClass   : 'scroll-simple_inner',
                 el                : $(element),
-                userBrowser         : /Android|webOS|iPhone|iPad|iPod|BlackBerry/i
+                userBrowser       : /Android|webOS|iPhone|iPad|iPod|BlackBerry/i,
+                userScroll        : false
             },
             settings = $.extend(defaults, options),
             $elSelect = settings.el.find('select'),
@@ -92,6 +94,17 @@
                     $elSelect
                         .hide()
                         .before($slctDrop);
+
+                    if (settings.userScroll) {
+                        $list
+                            .addClass(settings.userScrollClass)
+                            .scrollbar({
+                                "type": "simple"
+                            });
+                    }
+                    else{
+                        $list.addClass('default-scroll');
+                    }
                     settings.el.on('click', '.'+settings.fakeFieldClass, function() {
                         var $fakeEl = $(this),
                             $elParent = $fakeEl.closest('.'+settings.fieldBoxClass);

@@ -637,27 +637,27 @@ a:active,
   color: #444444;
   font: 0.8125rem Arial, Helvetica, sans-serif;
 }
-.field-box.has-value .field {
+.has-value .field {
   border-color: #3eb6e9;
   background: #ecf9ff;
   color: black;
 }
-.field-box.has-active .field, .field:focus {
+.has-active .field, .field:focus {
   border-color: #3eb6e9;
   background: white;
   color: black;
 }
-.field-box.has-error .field {
+.has-error .field {
   border-color: #e74c3c;
   background: white;
   color: #e74c3c;
 }
-.field-box.has-success .field {
+.has-success .field {
   border-color: #2ecc71;
   background: white;
   color: #2ecc71;
 }
-.field-box.has-disabled .field, .field[disabled] {
+.has-disabled .field, .field[disabled] {
   border-color: #d5dbdb;
   background: #f4f6f6;
   color: #d5dbdb;
@@ -698,6 +698,15 @@ a:active,
   opacity: 0;
 }
 
+.field-fake {
+  position: relative;
+  line-height: 30px;
+}
+
+.field-has-helper {
+  padding-right: 30px;
+}
+
 select.field {
   padding-right: 0;
 }
@@ -709,11 +718,6 @@ select.field, select.field:active, select.field:focus {
 
 textarea.field {
   min-height: 60px;
-}
-
-.fake-field {
-  position: relative;
-  line-height: 30px;
 }
 
 .select-box .hidden-field {
@@ -761,7 +765,7 @@ textarea.field {
 .slctdrop {
   top: 100%;
   left: 0;
-  z-index: 10;
+  z-index: 100;
   overflow: hidden;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -773,8 +777,6 @@ textarea.field {
 }
 
 .slctdrop-list {
-  overflow-y: auto;
-  width: 110%;
   max-height: 210px;
 }
 
@@ -1064,18 +1066,377 @@ textarea.field {
   display: block;
 }
 
-.relative, .container-wrap, .fileload-box, .messageTip-box,
+.scroll-wrapper {
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+.scroll-wrapper > .scroll-content {
+  position: relative !important;
+  top: 0;
+  left: 0;
+  overflow: scroll !important;
+  -webkit-box-sizing: content-box !important;
+  -moz-box-sizing: content-box !important;
+  box-sizing: content-box !important;
+  width: auto !important;
+  max-width: none !important;
+  height: auto;
+  max-height: none !important;
+  margin: 0;
+  padding: 0;
+  border: none !important;
+}
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.scroll-standard > .scroll-element,
+.scroll-standard > .scroll-element div,
+.scroll-simple_outer > .scroll-element,
+.scroll-simple_outer > .scroll-element div,
+.scroll-simple_inner > .scroll-element,
+.scroll-simple_inner > .scroll-element div {
+  position: absolute;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.scroll-standard > .scroll-element,
+.scroll-standard > .scroll-element div,
+.scroll-simple_outer > .scroll-element,
+.scroll-simple_outer > .scroll-element div {
+  overflow: hidden;
+}
+
+.scroll-simple_outer > .scroll-element,
+.scroll-simple_outer > .scroll-element div,
+.scroll-simple_inner > .scroll-element,
+.scroll-simple_inner > .scroll-element div {
+  background: none;
+  display: block;
+}
+.scroll-simple_outer > .scroll-element div,
+.scroll-simple_inner > .scroll-element div {
+  top: 0;
+  left: 0;
+}
+
+.scroll-standard > .scroll-content.scroll-scrolly_show {
+  left: -18px;
+  margin-left: 18px;
+}
+.scroll-standard > .scroll-content.scroll-scrollx_show {
+  top: -18px;
+  margin-top: 18px;
+}
+.scroll-standard > .scroll-element {
+  background-color: #f2f3f3;
+}
+.scroll-standard > .scroll-element .scroll-element_outer,
+.scroll-standard > .scroll-element .scroll-element_size,
+.scroll-standard > .scroll-element .scroll-element_inner-wrapper,
+.scroll-standard > .scroll-element .scroll-element_inner,
+.scroll-standard > .scroll-element .scroll-bar,
+.scroll-standard > .scroll-element .scroll-bar div {
+  top: 0;
+  left: 0;
+}
+.scroll-standard > .scroll-element .scroll-element_outer,
+.scroll-standard > .scroll-element .scroll-element_size,
+.scroll-standard > .scroll-element .scroll-element_inner-wrapper,
+.scroll-standard > .scroll-element .scroll-bar_body {
+  background: none !important;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-arrow, .scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-arrow {
+  text-align: center;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-arrow:before, .scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-arrow:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  border: 5px solid transparent;
+}
+.scroll-standard > .scroll-element.scroll-x {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-width: 100%;
+  height: 18px;
+}
+.scroll-standard > .scroll-element.scroll-x .scroll-bar {
+  top: 50%;
+  min-width: 16px;
+  height: 6px;
+  margin-top: -3px;
+  background-color: #76c0df;
+  border-radius: 3px;
+}
+.scroll-standard > .scroll-element.scroll-x .scroll-bar:hover {
+  background-color: #9ccbdf;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-arrow {
+  width: 18px;
+  height: 100%;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-arrow_less:before {
+  border-left-width: 0;
+  border-right-color: #76c0df;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-arrow_less:hover:before {
+  border-right-color: #9ccbdf;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-arrow_more {
+  left: auto;
+  right: 0;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-arrow_more:before {
+  border-right-width: 0;
+  border-left-color: #76c0df;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-arrow_more:hover:before {
+  border-left-color: #9ccbdf;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-element_outer {
+  left: 18px;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-element_inner {
+  left: -36px;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-element_size {
+  left: -36px;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows.scroll-scrolly_show .scroll-arrow_more {
+  right: 18px;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows.scroll-scrolly_show .scroll-element_inner {
+  left: -54px;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows.scroll-scrolly_show .scroll-element_size {
+  left: -54px;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-scrolly_show .scroll-element_size {
+  left: -18px;
+}
+.scroll-standard > .scroll-element.scroll-x.scroll-scrolly_show .scroll-element_inner {
+  left: -18px;
+}
+.scroll-standard > .scroll-element.scroll-y {
+  top: 0;
+  right: 0;
+  width: 18px;
+  height: 100%;
+  min-height: 100%;
+}
+.scroll-standard > .scroll-element.scroll-y .scroll-bar {
+  left: 50%;
+  width: 6px;
+  min-height: 16px;
+  margin-left: -3px;
+  background-color: #76c0df;
+  border-radius: 3px;
+}
+.scroll-standard > .scroll-element.scroll-y .scroll-bar:hover {
+  background-color: #9ccbdf;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-arrow {
+  width: 100%;
+  height: 18px;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-arrow_less:before {
+  border-top-width: 0;
+  border-bottom-color: #76c0df;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-arrow_less:hover:before {
+  border-bottom-color: #9ccbdf;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-arrow_more {
+  top: auto;
+  bottom: 0;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-arrow_more:before {
+  border-bottom-width: 0;
+  border-top-color: #76c0df;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-arrow_more:hover:before {
+  border-top-color: #9ccbdf;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-element_outer {
+  top: 18px;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-element_inner {
+  top: -36px;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-element_size {
+  top: -36px;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows.scroll-scrollx_show .scroll-arrow_more {
+  bottom: 18px;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows.scroll-scrollx_show .scroll-element_inner {
+  top: -54px;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows.scroll-scrollx_show .scroll-element_size {
+  top: -54px;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-scrollx_show .scroll-element_size {
+  top: -18px;
+}
+.scroll-standard > .scroll-element.scroll-y.scroll-scrollx_show .scroll-element_inner {
+  top: -18px;
+}
+.scroll-standard > .scroll-element .scroll-arrow {
+  display: none;
+}
+.scroll-standard > .scroll-element.scroll-element_show-arrows .scroll-arrow {
+  z-index: 12;
+  display: block;
+}
+
+.scroll-simple_outer > .scroll-content.scroll-scrolly_show {
+  left: -12px;
+  margin-left: 12px;
+}
+.scroll-simple_outer > .scroll-content.scroll-scrollx_show {
+  top: -12px;
+  margin-top: 12px;
+}
+.scroll-simple_outer > .scroll-element {
+  background-color: transparent;
+}
+.scroll-simple_outer > .scroll-element.scroll-x {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-width: 100%;
+  height: 12px;
+}
+.scroll-simple_outer > .scroll-element.scroll-x .scroll-bar {
+  top: 3px;
+  height: 6px;
+  background-color: #76c0df;
+  border-radius: 3px;
+}
+.scroll-simple_outer > .scroll-element.scroll-x .scroll-bar:hover {
+  background-color: #9ccbdf;
+}
+.scroll-simple_outer > .scroll-element.scroll-x.scroll-scrolly_show .scroll-element_size {
+  left: -12px;
+}
+.scroll-simple_outer > .scroll-element.scroll-x.scroll-scrolly_show .scroll-element_inner {
+  left: -12px;
+}
+.scroll-simple_outer > .scroll-element.scroll-y {
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 100%;
+  min-height: 100%;
+}
+.scroll-simple_outer > .scroll-element.scroll-y .scroll-bar {
+  left: 3px;
+  width: 6px;
+  background-color: #76c0df;
+  border-radius: 3px;
+}
+.scroll-simple_outer > .scroll-element.scroll-y .scroll-bar:hover {
+  background-color: #9ccbdf;
+}
+.scroll-simple_outer > .scroll-element.scroll-y .scroll-element_outer {
+  top: 6px;
+}
+.scroll-simple_outer > .scroll-element.scroll-y .scroll-element_inner {
+  top: -12px;
+}
+.scroll-simple_outer > .scroll-element.scroll-y .scroll-element_size {
+  top: -12px;
+}
+.scroll-simple_outer > .scroll-element.scroll-y.scroll-scrollx_show .scroll-element_size {
+  top: -12px;
+}
+.scroll-simple_outer > .scroll-element.scroll-y.scroll-scrollx_show .scroll-element_inner {
+  top: -12px;
+}
+.scroll-simple_outer > .scroll-element.scroll-draggable .scroll-bar {
+  background-color: #9ccbdf;
+}
+
+.scroll-simple_inner > .scroll-element div {
+  display: block;
+}
+.scroll-simple_inner > .scroll-element .scroll-element_inner {
+  display: none;
+}
+.scroll-simple_inner > .scroll-element .scroll-bar {
+  display: none;
+  background-color: #76c0df;
+  border-radius: 3px;
+}
+.scroll-simple_inner > .scroll-element .scroll-bar:hover {
+  background-color: #9ccbdf;
+}
+.scroll-simple_inner > .scroll-element.scroll-draggable .scroll-bar {
+  display: block;
+}
+.scroll-simple_inner > .scroll-element.scroll-x {
+  left: 0;
+  bottom: 0px;
+  overflow: visible;
+  min-width: 100%;
+  width: 100%;
+  height: 0px;
+}
+.scroll-simple_inner > .scroll-element.scroll-x .scroll-element_size {
+  left: -8px;
+}
+.scroll-simple_inner > .scroll-element.scroll-x.scroll-scrolly_show .scroll-element_size {
+  left: -22px;
+}
+.scroll-simple_inner > .scroll-element.scroll-x .scroll-element_outer {
+  left: 4px;
+}
+.scroll-simple_inner > .scroll-element.scroll-x .scroll-bar {
+  top: -12px;
+  height: 6px;
+}
+.scroll-simple_inner > .scroll-element.scroll-y {
+  top: 0;
+  right: 0px;
+  width: 0px;
+  height: 100%;
+  min-height: 100%;
+}
+.scroll-simple_inner > .scroll-element.scroll-y .scroll-element_outer {
+  top: 4px;
+}
+.scroll-simple_inner > .scroll-element.scroll-y .scroll-element_size {
+  top: -8px;
+}
+.scroll-simple_inner > .scroll-element.scroll-y.scroll-scrollx_show .scroll-element_size {
+  top: -22px;
+}
+.scroll-simple_inner > .scroll-element.scroll-y .scroll-bar {
+  left: -12px;
+  width: 6px;
+}
+.scroll-simple_inner:hover > .scroll-element .scroll-bar {
+  display: block;
+}
+
+.relative, .container-wrap, .fileload-box, .messageTip-box, .scroll-wrapper, .scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-arrow:before, .scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-arrow:before,
 .has-ps-icon,
 .has-icon,
 .field-box {
   position: relative;
 }
 
-.absolute, .footer, .field-slct:after, .slctdrop, .popupper-close, .popupper-pos, .messageTip, .messageTip:before, .aborted, .ceiling-pos, .abs-icon, .has-ps-icon:before {
+.absolute, .footer, .field-slct:after, .slctdrop, .popupper-close, .popupper-pos, .messageTip, .messageTip:before, .aborted, .ceiling-pos, .abs-icon, .field-helper, .has-ps-icon:before {
   position: absolute;
 }
 
-.box,
+.box, .my-tabs .tab-content,
 .wrapper,
 .field,
 .btn,
@@ -1107,11 +1468,12 @@ textarea.field {
 }
 
 .block, .slctdrop-item, .img-rwd, .btn-bl,
-.show {
+.show,
+.tab-content.tab-content-visible {
   display: block;
 }
 
-.none, .popupper, .messageTip,
+.none, .popupper, .messageTip, .tab-content,
 .hide,
 .slctdrop {
   display: none;
@@ -1136,14 +1498,26 @@ textarea.field {
   float: right;
 }
 
-.full, .slctdrop, .full-size, .popup-overlay, .hidden-field, .btn-bl,
+.full, .slctdrop, .full-size, .popup-overlay, .scroll-simple_outer > .scroll-element div,
+.scroll-simple_inner > .scroll-element div, .scroll-standard > .scroll-element .scroll-element_outer,
+.scroll-standard > .scroll-element .scroll-element_size,
+.scroll-standard > .scroll-element .scroll-element_inner-wrapper,
+.scroll-standard > .scroll-element .scroll-element_inner,
+.scroll-standard > .scroll-element .scroll-bar,
+.scroll-standard > .scroll-element .scroll-bar div, .hidden-field, .btn-bl,
 .tablebox,
 .wrapper,
 .footer {
   width: 100%;
 }
 
-.full-size, .popup-overlay, .hidden-field {
+.full-size, .popup-overlay, .scroll-simple_outer > .scroll-element div,
+.scroll-simple_inner > .scroll-element div, .scroll-standard > .scroll-element .scroll-element_outer,
+.scroll-standard > .scroll-element .scroll-element_size,
+.scroll-standard > .scroll-element .scroll-element_inner-wrapper,
+.scroll-standard > .scroll-element .scroll-element_inner,
+.scroll-standard > .scroll-element .scroll-bar,
+.scroll-standard > .scroll-element .scroll-bar div, .hidden-field {
   height: 100%;
 }
 
@@ -1195,14 +1569,14 @@ textarea.field {
   clear: both;
 }
 
-.no_select, .field-box.has-disabled .field, .field[disabled], .check-box.has-disabled,
+.no_select, .has-disabled .field, .field[disabled], .check-box.has-disabled,
 .radio-box.has-disabled, .radio-box, .check-box, .fileload-box, .has-disabled .btn, .btn[disabled] {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 }
 
-.ellipsis, .fake-field {
+.ellipsis, .field-fake {
   white-space: nowrap;
   overflow: hidden;
   -ms-text-overflow: ellipsis;
@@ -1228,12 +1602,13 @@ textarea.field {
   padding-left: 0;
 }
 
-.cur-pointer, .field-slct, .slctdrop-item, .radio, .check-box, .popup-link, .popupper-close,
+.cur-pointer, .field-slct, .slctdrop-item, .radio, .check-box, .popup-link, .popupper-close, .tab, .scroll-element .scroll-bar,
+.scroll-element .scroll-arrow,
 .link {
   cursor: pointer;
 }
 
-.cur-default, .field-box.has-disabled .field, .field[disabled], .radio-box.has-disabled .radio, .check-box.has-disabled, .has-disabled .btn, .btn[disabled] {
+.cur-default, .has-disabled .field, .field[disabled], .radio-box.has-disabled .radio, .check-box.has-disabled, .has-disabled .btn, .btn[disabled] {
   cursor: default;
 }
 
@@ -1266,7 +1641,7 @@ textarea.field {
   left: 0;
 }
 
-.abs-icon {
+.abs-icon, .field-helper {
   z-index: 1;
 }
 
@@ -1275,7 +1650,7 @@ textarea.field {
   left: 0;
 }
 
-.right-icon, .has-ps-right-icon:before {
+.right-icon, .field-helper, .has-ps-right-icon:before {
   top: 50%;
   right: 0;
 }
@@ -1306,6 +1681,103 @@ textarea.field {
   border-radius: 50%;
 }
 
+.default-scroll {
+  overflow: auto;
+}
+
 .ie8 .field {
   line-height: 30px;
+}
+
+body {
+  background-color: #fafafa;
+  font: 1rem Arial, Helvetica, sans-serif;
+  color: #34495e;
+}
+
+.brief-container {
+  width: 960px;
+  margin: auto;
+  padding: 50px;
+}
+
+.brief-title {
+  padding: 15px;
+}
+
+.brief-box {
+  margin-bottom: 40px;
+}
+
+.brief-class-title,
+.brief-small-title {
+  padding: 5px;
+}
+
+.brief-small-title {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.brief-class-title {
+  color: #5eab4a;
+  font-style: italic;
+}
+
+.brief-codebox-cell,
+.brief-previewbox-cell {
+  width: 50%;
+  vertical-align: middle;
+}
+
+.brief-codebox {
+  width: 480px;
+}
+
+.brief-previewbox-cell {
+  padding: 0 50px;
+}
+
+.brief-string {
+  padding: 5px 0;
+}
+
+.bl {
+  background-color: #FFF;
+}
+
+.my-tabs {
+  border: 1px solid #ccc;
+}
+.my-tabs .tabs {
+  border-bottom: 1px solid #ccc;
+}
+.my-tabs .tab {
+  display: inline-block;
+  vertical-align: top;
+  padding: 5px;
+}
+.my-tabs .tab:hover, .my-tabs .tab.tab-current {
+  color: #000;
+}
+.my-tabs .tab-content {
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+}
+
+.scroll-panel {
+  width: 400px;
+  height: 200px;
+  border: 1px solid #ccc;
+}
+
+.scroll-panel-content {
+  width: 600px;
+  padding: 10px;
+}
+
+.tab-scroll {
+  height: 90px;
 }

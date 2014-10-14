@@ -21,9 +21,9 @@ body{
     @include centerBlock($standard);
 }
 
-.grid{
-    @include grids; // vaues: $numberOfColumns: 12, $gutterWidth: 20, $fullWidth: 960;
-}
+// .grid{
+//     @include grids; // vaues: $numberOfColumns: 12, $gutterWidth: 20, $fullWidth: 960;
+// }
 
 .container-wrap{
     @extend .relative;

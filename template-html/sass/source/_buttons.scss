@@ -8,6 +8,7 @@ $btnDefaultFontSize: rem-font-size(13px);
 // Action
 $btnHasDisabledColor: #bdc3c7;
 
+// **Default
 
 .btn{
     height: $btnDefaultHeight;
@@ -33,7 +34,17 @@ $btnHasDisabledColor: #bdc3c7;
     }
 }
 
-.fake-btn{
+.btn-bl{
+    @extend .block;
+
+    @extend .full;
+    padding-right: 0;
+    padding-left: 0;
+
+    @extend .tac;
+}
+
+.btn-fake{
     line-height: $btnDefaultHeight;
     text-align: center;
     &,

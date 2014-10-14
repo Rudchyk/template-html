@@ -1,9 +1,9 @@
 // Typography
-$alignImgSide: 16+px;
-$alignImgBottom: 10+px;
+$alignImgSide: 16px;
+$alignImgBottom: 10px;
 
 a,
-.link{
+.link-fake{
     color: $baseLinkColor;
     text-decoration: underline;
     // &:visited{
@@ -67,13 +67,15 @@ a,
         padding: 5px;
     }
     hr{
-        border-top: 1px solid #ddd;
         clear: both;
+
+        border-top: 1px solid #ddd;
     }
     blockquote{
-        border-left: 2px solid #333;
-        margin: 16px 28px 10px 16px;
         padding-left: 16px;
+        margin: 16px 28px 10px 16px;
+
+        border-left: 2px solid #333;
     }
     img,
     embed,
@@ -87,14 +89,17 @@ a,
 // Images
 
 .aligncenter{
-    display: block;
+    @extend .block;
+
     margin: 0 auto 2px;
 }
 .alignright{
+    @extend .right;
+
     margin: 0 0 $alignImgBottom $alignImgSide;
-    float: right;
 }
 .alignleft{
+    @extend .left;
+
     margin: 0 $alignImgSide $alignImgBottom 0;
-    float: left;
 }
