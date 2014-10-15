@@ -28,7 +28,7 @@ $btnHasDisabledColor: #bdc3c7;
     .has-disabled &,
     &[disabled]{
         @extend .cur-default;
-        @extend .no_select;
+        @extend .no-select;
         background-color: $btnHasDisabledColor;
         border-color: $btnHasDisabledColor;
     }

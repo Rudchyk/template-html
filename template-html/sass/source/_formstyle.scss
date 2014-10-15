@@ -76,7 +76,7 @@ $fieldHasDisabledColor: #d5dbdb;
     .has-disabled &,
     &[disabled]{
         @extend .cur-default;
-        @extend .no_select;
+        @extend .no-select;
         @include fieldEvent($fieldHasDisabledColor, $fieldHasDisabledBg, $fieldHasDisabledColor);
     }
 

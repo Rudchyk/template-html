@@ -138,7 +138,7 @@ $fileloadBtnWidth: 25%;
 .radio-box{
     &.has-disabled{
         opacity: .5;
-        @extend .no_select;
+        @extend .no-select;
     }
 }
 
@@ -147,7 +147,7 @@ $fileloadBtnWidth: 25%;
 .radio-box{
     line-height: $fieldDefaultHeight;
 
-    @extend .no_select;
+    @extend .no-select;
     &.has-disabled{
         .radio{
             @extend .cur-default;
@@ -180,7 +180,7 @@ $fileloadBtnWidth: 25%;
 
     line-height: $fieldDefaultHeight;
 
-    @extend .no_select;
+    @extend .no-select;
 
     &:before{
         @include icons($checkDefaultIcon);
@@ -201,7 +201,7 @@ $fileloadBtnWidth: 25%;
 .fileload-box{
     @extend .relative;
 
-    @extend .no_select;
+    @extend .no-select;
 }
 .fileload-field{
     line-height: $fieldDefaultHeight;

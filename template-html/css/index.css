@@ -495,32 +495,6 @@ body {
   margin: auto;
 }
 
-.grid {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin-left: -960px/2;
-  width: 960px;
-  height: 100%;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iNTAlIiB4Mj0iMTAwJSIgeTI9IjUwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0icmdiYSgwLCAwLCAwLCAwKSIvPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iNi4yNSUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iNi4yNSUiIHN0b3AtY29sb3I9InJnYmEoMCwgMCwgMCwgMCkiLz48c3RvcCBvZmZzZXQ9IjguMzMzMzMlIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PHN0b3Agb2Zmc2V0PSI4LjMzMzMzJSIgc3RvcC1jb2xvcj0icmdiYSgyNTEsIDE4OCwgMTg4LCAwLjUpIi8+PHN0b3Agb2Zmc2V0PSIxNC41ODMzMyUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iMTQuNTgzMzMlIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PHN0b3Agb2Zmc2V0PSIxNi42NjY2NyUiIHN0b3AtY29sb3I9InJnYmEoMCwgMCwgMCwgMCkiLz48c3RvcCBvZmZzZXQ9IjE2LjY2NjY3JSIgc3RvcC1jb2xvcj0icmdiYSgyNTEsIDE4OCwgMTg4LCAwLjUpIi8+PHN0b3Agb2Zmc2V0PSIyMi45MTY2NyUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iMjIuOTE2NjclIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PHN0b3Agb2Zmc2V0PSIyNSUiIHN0b3AtY29sb3I9InJnYmEoMCwgMCwgMCwgMCkiLz48c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0icmdiYSgyNTEsIDE4OCwgMTg4LCAwLjUpIi8+PHN0b3Agb2Zmc2V0PSIzMS4yNSUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iMzEuMjUlIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PHN0b3Agb2Zmc2V0PSIzMy4zMzMzMyUiIHN0b3AtY29sb3I9InJnYmEoMCwgMCwgMCwgMCkiLz48c3RvcCBvZmZzZXQ9IjMzLjMzMzMzJSIgc3RvcC1jb2xvcj0icmdiYSgyNTEsIDE4OCwgMTg4LCAwLjUpIi8+PHN0b3Agb2Zmc2V0PSIzOS41ODMzMyUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iMzkuNTgzMzMlIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PHN0b3Agb2Zmc2V0PSI0MS42NjY2NyUiIHN0b3AtY29sb3I9InJnYmEoMCwgMCwgMCwgMCkiLz48c3RvcCBvZmZzZXQ9IjQxLjY2NjY3JSIgc3RvcC1jb2xvcj0icmdiYSgyNTEsIDE4OCwgMTg4LCAwLjUpIi8+PHN0b3Agb2Zmc2V0PSI0Ny45MTY2NyUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iNDcuOTE2NjclIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9InJnYmEoMCwgMCwgMCwgMCkiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0icmdiYSgyNTEsIDE4OCwgMTg4LCAwLjUpIi8+PHN0b3Agb2Zmc2V0PSI1Ni4yNSUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iNTYuMjUlIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PHN0b3Agb2Zmc2V0PSI1OC4zMzMzMyUiIHN0b3AtY29sb3I9InJnYmEoMCwgMCwgMCwgMCkiLz48c3RvcCBvZmZzZXQ9IjU4LjMzMzMzJSIgc3RvcC1jb2xvcj0icmdiYSgyNTEsIDE4OCwgMTg4LCAwLjUpIi8+PHN0b3Agb2Zmc2V0PSI2NC41ODMzMyUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iNjQuNTgzMzMlIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PHN0b3Agb2Zmc2V0PSI2Ni42NjY2NyUiIHN0b3AtY29sb3I9InJnYmEoMCwgMCwgMCwgMCkiLz48c3RvcCBvZmZzZXQ9IjY2LjY2NjY3JSIgc3RvcC1jb2xvcj0icmdiYSgyNTEsIDE4OCwgMTg4LCAwLjUpIi8+PHN0b3Agb2Zmc2V0PSI3Mi45MTY2NyUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iNzIuOTE2NjclIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9InJnYmEoMCwgMCwgMCwgMCkiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0icmdiYSgyNTEsIDE4OCwgMTg4LCAwLjUpIi8+PHN0b3Agb2Zmc2V0PSI4MS4yNSUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iODEuMjUlIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PHN0b3Agb2Zmc2V0PSI4My4zMzMzMyUiIHN0b3AtY29sb3I9InJnYmEoMCwgMCwgMCwgMCkiLz48c3RvcCBvZmZzZXQ9IjgzLjMzMzMzJSIgc3RvcC1jb2xvcj0icmdiYSgyNTEsIDE4OCwgMTg4LCAwLjUpIi8+PHN0b3Agb2Zmc2V0PSI4OS41ODMzMyUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iODkuNTgzMzMlIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PHN0b3Agb2Zmc2V0PSI5MS42NjY2NyUiIHN0b3AtY29sb3I9InJnYmEoMCwgMCwgMCwgMCkiLz48c3RvcCBvZmZzZXQ9IjkxLjY2NjY3JSIgc3RvcC1jb2xvcj0icmdiYSgyNTEsIDE4OCwgMTg4LCAwLjUpIi8+PHN0b3Agb2Zmc2V0PSI5Ny45MTY2NyUiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxODgsIDE4OCwgMC41KSIvPjxzdG9wIG9mZnNldD0iOTcuOTE2NjclIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDApIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 0% 50%, 960 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(0%, rgba(251, 188, 188, 0.5)), color-stop(6.25%, rgba(251, 188, 188, 0.5)), color-stop(6.25%, rgba(0, 0, 0, 0)), color-stop(8.33333%, rgba(0, 0, 0, 0)), color-stop(8.33333%, rgba(251, 188, 188, 0.5)), color-stop(14.58333%, rgba(251, 188, 188, 0.5)), color-stop(14.58333%, rgba(0, 0, 0, 0)), color-stop(16.66667%, rgba(0, 0, 0, 0)), color-stop(16.66667%, rgba(251, 188, 188, 0.5)), color-stop(22.91667%, rgba(251, 188, 188, 0.5)), color-stop(22.91667%, rgba(0, 0, 0, 0)), color-stop(25%, rgba(0, 0, 0, 0)), color-stop(25%, rgba(251, 188, 188, 0.5)), color-stop(31.25%, rgba(251, 188, 188, 0.5)), color-stop(31.25%, rgba(0, 0, 0, 0)), color-stop(33.33333%, rgba(0, 0, 0, 0)), color-stop(33.33333%, rgba(251, 188, 188, 0.5)), color-stop(39.58333%, rgba(251, 188, 188, 0.5)), color-stop(39.58333%, rgba(0, 0, 0, 0)), color-stop(41.66667%, rgba(0, 0, 0, 0)), color-stop(41.66667%, rgba(251, 188, 188, 0.5)), color-stop(47.91667%, rgba(251, 188, 188, 0.5)), color-stop(47.91667%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(251, 188, 188, 0.5)), color-stop(56.25%, rgba(251, 188, 188, 0.5)), color-stop(56.25%, rgba(0, 0, 0, 0)), color-stop(58.33333%, rgba(0, 0, 0, 0)), color-stop(58.33333%, rgba(251, 188, 188, 0.5)), color-stop(64.58333%, rgba(251, 188, 188, 0.5)), color-stop(64.58333%, rgba(0, 0, 0, 0)), color-stop(66.66667%, rgba(0, 0, 0, 0)), color-stop(66.66667%, rgba(251, 188, 188, 0.5)), color-stop(72.91667%, rgba(251, 188, 188, 0.5)), color-stop(72.91667%, rgba(0, 0, 0, 0)), color-stop(75%, rgba(0, 0, 0, 0)), color-stop(75%, rgba(251, 188, 188, 0.5)), color-stop(81.25%, rgba(251, 188, 188, 0.5)), color-stop(81.25%, rgba(0, 0, 0, 0)), color-stop(83.33333%, rgba(0, 0, 0, 0)), color-stop(83.33333%, rgba(251, 188, 188, 0.5)), color-stop(89.58333%, rgba(251, 188, 188, 0.5)), color-stop(89.58333%, rgba(0, 0, 0, 0)), color-stop(91.66667%, rgba(0, 0, 0, 0)), color-stop(91.66667%, rgba(251, 188, 188, 0.5)), color-stop(97.91667%, rgba(251, 188, 188, 0.5)), color-stop(97.91667%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(251, 188, 188, 0.5) 0px, rgba(251, 188, 188, 0.5) 60px, rgba(0, 0, 0, 0) 60px, rgba(0, 0, 0, 0) 80px, rgba(251, 188, 188, 0.5) 80px, rgba(251, 188, 188, 0.5) 140px, rgba(0, 0, 0, 0) 140px, rgba(0, 0, 0, 0) 160px, rgba(251, 188, 188, 0.5) 160px, rgba(251, 188, 188, 0.5) 220px, rgba(0, 0, 0, 0) 220px, rgba(0, 0, 0, 0) 240px, rgba(251, 188, 188, 0.5) 240px, rgba(251, 188, 188, 0.5) 300px, rgba(0, 0, 0, 0) 300px, rgba(0, 0, 0, 0) 320px, rgba(251, 188, 188, 0.5) 320px, rgba(251, 188, 188, 0.5) 380px, rgba(0, 0, 0, 0) 380px, rgba(0, 0, 0, 0) 400px, rgba(251, 188, 188, 0.5) 400px, rgba(251, 188, 188, 0.5) 460px, rgba(0, 0, 0, 0) 460px, rgba(0, 0, 0, 0) 480px, rgba(251, 188, 188, 0.5) 480px, rgba(251, 188, 188, 0.5) 540px, rgba(0, 0, 0, 0) 540px, rgba(0, 0, 0, 0) 560px, rgba(251, 188, 188, 0.5) 560px, rgba(251, 188, 188, 0.5) 620px, rgba(0, 0, 0, 0) 620px, rgba(0, 0, 0, 0) 640px, rgba(251, 188, 188, 0.5) 640px, rgba(251, 188, 188, 0.5) 700px, rgba(0, 0, 0, 0) 700px, rgba(0, 0, 0, 0) 720px, rgba(251, 188, 188, 0.5) 720px, rgba(251, 188, 188, 0.5) 780px, rgba(0, 0, 0, 0) 780px, rgba(0, 0, 0, 0) 800px, rgba(251, 188, 188, 0.5) 800px, rgba(251, 188, 188, 0.5) 860px, rgba(0, 0, 0, 0) 860px, rgba(0, 0, 0, 0) 880px, rgba(251, 188, 188, 0.5) 880px, rgba(251, 188, 188, 0.5) 940px, rgba(0, 0, 0, 0) 940px, rgba(0, 0, 0, 0) 960px);
-  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(251, 188, 188, 0.5) 0px, rgba(251, 188, 188, 0.5) 60px, rgba(0, 0, 0, 0) 60px, rgba(0, 0, 0, 0) 80px, rgba(251, 188, 188, 0.5) 80px, rgba(251, 188, 188, 0.5) 140px, rgba(0, 0, 0, 0) 140px, rgba(0, 0, 0, 0) 160px, rgba(251, 188, 188, 0.5) 160px, rgba(251, 188, 188, 0.5) 220px, rgba(0, 0, 0, 0) 220px, rgba(0, 0, 0, 0) 240px, rgba(251, 188, 188, 0.5) 240px, rgba(251, 188, 188, 0.5) 300px, rgba(0, 0, 0, 0) 300px, rgba(0, 0, 0, 0) 320px, rgba(251, 188, 188, 0.5) 320px, rgba(251, 188, 188, 0.5) 380px, rgba(0, 0, 0, 0) 380px, rgba(0, 0, 0, 0) 400px, rgba(251, 188, 188, 0.5) 400px, rgba(251, 188, 188, 0.5) 460px, rgba(0, 0, 0, 0) 460px, rgba(0, 0, 0, 0) 480px, rgba(251, 188, 188, 0.5) 480px, rgba(251, 188, 188, 0.5) 540px, rgba(0, 0, 0, 0) 540px, rgba(0, 0, 0, 0) 560px, rgba(251, 188, 188, 0.5) 560px, rgba(251, 188, 188, 0.5) 620px, rgba(0, 0, 0, 0) 620px, rgba(0, 0, 0, 0) 640px, rgba(251, 188, 188, 0.5) 640px, rgba(251, 188, 188, 0.5) 700px, rgba(0, 0, 0, 0) 700px, rgba(0, 0, 0, 0) 720px, rgba(251, 188, 188, 0.5) 720px, rgba(251, 188, 188, 0.5) 780px, rgba(0, 0, 0, 0) 780px, rgba(0, 0, 0, 0) 800px, rgba(251, 188, 188, 0.5) 800px, rgba(251, 188, 188, 0.5) 860px, rgba(0, 0, 0, 0) 860px, rgba(0, 0, 0, 0) 880px, rgba(251, 188, 188, 0.5) 880px, rgba(251, 188, 188, 0.5) 940px, rgba(0, 0, 0, 0) 940px, rgba(0, 0, 0, 0) 960px);
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(251, 188, 188, 0.5) 0px, rgba(251, 188, 188, 0.5) 60px, rgba(0, 0, 0, 0) 60px, rgba(0, 0, 0, 0) 80px, rgba(251, 188, 188, 0.5) 80px, rgba(251, 188, 188, 0.5) 140px, rgba(0, 0, 0, 0) 140px, rgba(0, 0, 0, 0) 160px, rgba(251, 188, 188, 0.5) 160px, rgba(251, 188, 188, 0.5) 220px, rgba(0, 0, 0, 0) 220px, rgba(0, 0, 0, 0) 240px, rgba(251, 188, 188, 0.5) 240px, rgba(251, 188, 188, 0.5) 300px, rgba(0, 0, 0, 0) 300px, rgba(0, 0, 0, 0) 320px, rgba(251, 188, 188, 0.5) 320px, rgba(251, 188, 188, 0.5) 380px, rgba(0, 0, 0, 0) 380px, rgba(0, 0, 0, 0) 400px, rgba(251, 188, 188, 0.5) 400px, rgba(251, 188, 188, 0.5) 460px, rgba(0, 0, 0, 0) 460px, rgba(0, 0, 0, 0) 480px, rgba(251, 188, 188, 0.5) 480px, rgba(251, 188, 188, 0.5) 540px, rgba(0, 0, 0, 0) 540px, rgba(0, 0, 0, 0) 560px, rgba(251, 188, 188, 0.5) 560px, rgba(251, 188, 188, 0.5) 620px, rgba(0, 0, 0, 0) 620px, rgba(0, 0, 0, 0) 640px, rgba(251, 188, 188, 0.5) 640px, rgba(251, 188, 188, 0.5) 700px, rgba(0, 0, 0, 0) 700px, rgba(0, 0, 0, 0) 720px, rgba(251, 188, 188, 0.5) 720px, rgba(251, 188, 188, 0.5) 780px, rgba(0, 0, 0, 0) 780px, rgba(0, 0, 0, 0) 800px, rgba(251, 188, 188, 0.5) 800px, rgba(251, 188, 188, 0.5) 860px, rgba(0, 0, 0, 0) 860px, rgba(0, 0, 0, 0) 880px, rgba(251, 188, 188, 0.5) 880px, rgba(251, 188, 188, 0.5) 940px, rgba(0, 0, 0, 0) 940px, rgba(0, 0, 0, 0) 960px);
-  background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(251, 188, 188, 0.5) 0px, rgba(251, 188, 188, 0.5) 60px, rgba(0, 0, 0, 0) 60px, rgba(0, 0, 0, 0) 80px, rgba(251, 188, 188, 0.5) 80px, rgba(251, 188, 188, 0.5) 140px, rgba(0, 0, 0, 0) 140px, rgba(0, 0, 0, 0) 160px, rgba(251, 188, 188, 0.5) 160px, rgba(251, 188, 188, 0.5) 220px, rgba(0, 0, 0, 0) 220px, rgba(0, 0, 0, 0) 240px, rgba(251, 188, 188, 0.5) 240px, rgba(251, 188, 188, 0.5) 300px, rgba(0, 0, 0, 0) 300px, rgba(0, 0, 0, 0) 320px, rgba(251, 188, 188, 0.5) 320px, rgba(251, 188, 188, 0.5) 380px, rgba(0, 0, 0, 0) 380px, rgba(0, 0, 0, 0) 400px, rgba(251, 188, 188, 0.5) 400px, rgba(251, 188, 188, 0.5) 460px, rgba(0, 0, 0, 0) 460px, rgba(0, 0, 0, 0) 480px, rgba(251, 188, 188, 0.5) 480px, rgba(251, 188, 188, 0.5) 540px, rgba(0, 0, 0, 0) 540px, rgba(0, 0, 0, 0) 560px, rgba(251, 188, 188, 0.5) 560px, rgba(251, 188, 188, 0.5) 620px, rgba(0, 0, 0, 0) 620px, rgba(0, 0, 0, 0) 640px, rgba(251, 188, 188, 0.5) 640px, rgba(251, 188, 188, 0.5) 700px, rgba(0, 0, 0, 0) 700px, rgba(0, 0, 0, 0) 720px, rgba(251, 188, 188, 0.5) 720px, rgba(251, 188, 188, 0.5) 780px, rgba(0, 0, 0, 0) 780px, rgba(0, 0, 0, 0) 800px, rgba(251, 188, 188, 0.5) 800px, rgba(251, 188, 188, 0.5) 860px, rgba(0, 0, 0, 0) 860px, rgba(0, 0, 0, 0) 880px, rgba(251, 188, 188, 0.5) 880px, rgba(251, 188, 188, 0.5) 940px, rgba(0, 0, 0, 0) 940px, rgba(0, 0, 0, 0) 960px);
-  background-position: 10px 0;
-}
-.grid:before {
-  content: "960 Grid System: 12, Column Grid 12x60x20";
-  position: fixed;
-  top: 5px;
-  left: 5px;
-  font: italic 10px/normal Arial, Helvetica, sans-serif;
-  color: #444;
-}
-
 .footer {
   bottom: 0;
   left: 0;
@@ -528,16 +502,16 @@ body {
 }
 
 a,
-.link {
+.link-fake {
   color: #287fc3;
   text-decoration: underline;
 }
 a:hover,
-.link:hover {
+.link-fake:hover {
   text-decoration: none;
 }
 a:active,
-.link:active {
+.link-fake:active {
   text-decoration: none;
 }
 
@@ -592,13 +566,13 @@ a:active,
   padding: 5px;
 }
 .text hr {
-  border-top: 1px solid #ddd;
   clear: both;
+  border-top: 1px solid #ddd;
 }
 .text blockquote {
-  border-left: 2px solid #333;
-  margin: 16px 28px 10px 16px;
   padding-left: 16px;
+  margin: 16px 28px 10px 16px;
+  border-left: 2px solid #333;
 }
 .text img,
 .text embed,
@@ -609,18 +583,15 @@ a:active,
 }
 
 .aligncenter {
-  display: block;
   margin: 0 auto 2px;
 }
 
 .alignright {
   margin: 0 0 10px 16px;
-  float: right;
 }
 
 .alignleft {
   margin: 0 16px 10px 0;
-  float: left;
 }
 
 .field-frame, .field {
@@ -703,6 +674,20 @@ a:active,
   line-height: 30px;
 }
 
+.field-hidden {
+  background: transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
 .field-has-helper {
   padding-right: 30px;
 }
@@ -720,7 +705,7 @@ textarea.field {
   min-height: 60px;
 }
 
-.select-box .hidden-field {
+.select-box .field-hidden {
   opacity: 0;
 }
 
@@ -858,11 +843,16 @@ textarea.field {
   border-color: #bdc3c7;
 }
 
-.fake-btn {
+.btn-bl {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.btn-fake {
   line-height: 30px;
   text-align: center;
 }
-.fake-btn, .fake-btn:hover {
+.btn-fake, .btn-fake:hover {
   text-decoration: none;
 }
 
@@ -1467,7 +1457,7 @@ textarea.field {
   display: table-cell;
 }
 
-.block, .slctdrop-item, .img-rwd, .btn-bl,
+.block, .aligncenter, .slctdrop-item, .btn-bl, .img-rwd,
 .show,
 .tab-content.tab-content-visible {
   display: block;
@@ -1490,34 +1480,34 @@ textarea.field {
   vertical-align: middle;
 }
 
-.left {
+.left, .alignleft {
   float: left;
 }
 
-.right {
+.right, .alignright {
   float: right;
 }
 
-.full, .slctdrop, .full-size, .popup-overlay, .scroll-simple_outer > .scroll-element div,
+.full, .slctdrop, .btn-bl, .full-size, .field-hidden, .popup-overlay, .scroll-simple_outer > .scroll-element div,
 .scroll-simple_inner > .scroll-element div, .scroll-standard > .scroll-element .scroll-element_outer,
 .scroll-standard > .scroll-element .scroll-element_size,
 .scroll-standard > .scroll-element .scroll-element_inner-wrapper,
 .scroll-standard > .scroll-element .scroll-element_inner,
 .scroll-standard > .scroll-element .scroll-bar,
-.scroll-standard > .scroll-element .scroll-bar div, .hidden-field, .btn-bl,
-.tablebox,
+.scroll-standard > .scroll-element .scroll-bar div,
+.table,
 .wrapper,
 .footer {
   width: 100%;
 }
 
-.full-size, .popup-overlay, .scroll-simple_outer > .scroll-element div,
+.full-size, .field-hidden, .popup-overlay, .scroll-simple_outer > .scroll-element div,
 .scroll-simple_inner > .scroll-element div, .scroll-standard > .scroll-element .scroll-element_outer,
 .scroll-standard > .scroll-element .scroll-element_size,
 .scroll-standard > .scroll-element .scroll-element_inner-wrapper,
 .scroll-standard > .scroll-element .scroll-element_inner,
 .scroll-standard > .scroll-element .scroll-bar,
-.scroll-standard > .scroll-element .scroll-bar div, .hidden-field {
+.scroll-standard > .scroll-element .scroll-bar div {
   height: 100%;
 }
 
@@ -1569,7 +1559,7 @@ textarea.field {
   clear: both;
 }
 
-.no_select, .has-disabled .field, .field[disabled], .check-box.has-disabled,
+.no-select, .has-disabled .field, .field[disabled], .check-box.has-disabled,
 .radio-box.has-disabled, .radio-box, .check-box, .fileload-box, .has-disabled .btn, .btn[disabled] {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1597,11 +1587,6 @@ textarea.field {
   height: auto;
 }
 
-.btn-bl {
-  padding-right: 0;
-  padding-left: 0;
-}
-
 .cur-pointer, .field-slct, .slctdrop-item, .radio, .check-box, .popup-link, .popupper-close, .tab, .scroll-element .scroll-bar,
 .scroll-element .scroll-arrow,
 .link {
@@ -1614,20 +1599,6 @@ textarea.field {
 
 .cur-help {
   cursor: help;
-}
-
-.hidden-field {
-  background: transparent;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: none;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
 }
 
 .aborted {
@@ -1683,6 +1654,7 @@ textarea.field {
 
 .default-scroll {
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .ie8 .field {
