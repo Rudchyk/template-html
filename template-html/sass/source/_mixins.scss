@@ -114,7 +114,7 @@
 
         #{$side}: 100%;
         #{$secPos}: 50%;
-        margin-#{$secPos}: -$width/2;
+        margin-#{$secPos}: -$width;
     }
     @else{
         @content;
@@ -206,6 +206,10 @@
 @function rem-font-size($fontUnit){
     $defaultFontSize: $base-font-size;
     @return $fontUnit/$defaultFontSize+rem;
+}
+@mixin photoshopLetterSpacing($photoshopValue){
+    $cssValue: $photoshopValue/1000;
+    letter-spacing: $cssValue+em;
 }
 
 @mixin centerBlock($Static, $Max: false, $Min: false){
