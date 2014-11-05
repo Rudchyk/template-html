@@ -1,0 +1,185 @@
+.bx-wrapper {
+    @extend .relative;
+
+    margin: 0 auto 60px;
+    padding: 0;
+
+    img {
+        @extend .img-rwd;
+    }
+
+    // theme
+
+    .bx-viewport {
+        left: -5px;
+
+        background: #fff;
+        border: solid #fff 5px;
+        box-shadow: 0 0 5px #ccc;
+    }
+
+    .bx-pager,
+    .bx-controls-auto {
+        @extend .full;
+
+        @include pos(absolute, false, false, -30px, false, false);
+    }
+
+    /* LOADER */
+
+    .bx-loading {
+        @extend .loading;
+        @extend .full-size;
+
+        @include pos(absolute, 0, false, false, 0, 2000);
+
+        min-height: 50px;
+    }
+
+    // pager
+
+    .bx-pager {
+        padding-top: 20px;
+
+        color: #666;
+        font: bold rem-font-size(14px) $Arial;
+        text-align: center;
+        &.bx-default-pager {
+            a {
+                @extend .block;
+
+                width: 10px;
+                height: 10px;
+                margin: 0 5px;
+
+                border-radius: 5px;
+                background: #666;
+                text-indent: -9999px;
+
+                &:hover,
+                &.active {
+                    background: #000;
+                }
+            }
+        }
+    }
+
+    .bx-pager .bx-pager-item,
+    .bx-controls-auto .bx-controls-auto-item {
+        display: inline-block;
+    }
+
+    // direction controls (next / prev)
+
+    .bx-prev {
+        left: 10px;
+
+        @include icons-sprite(bx-prev);
+
+        &:hover{
+            @include icons-sprite(bx-prev_hover);
+        }
+    }
+
+    .bx-next {
+        right: 10px;
+
+        @include icons-sprite(bx-next);
+
+        &:hover{
+            @include icons-sprite(bx-next_hover);
+        }
+    }
+
+    .bx-controls-direction{
+        a{
+            @include pos(absolute, 50%, false, false, false, 9999);
+
+            width: 32px;
+            height: 32px;
+            margin-top: -16px;
+
+            text-indent: -9999px;
+
+            &.disabled {
+                display: none;
+            }
+        }
+    }
+
+
+    // auto controls (start / stop)
+
+    .bx-controls-auto {
+        text-align: center;
+
+        .bx-start,
+        .bx-stop {
+            @extend .block;
+
+            margin: 0 3px;
+
+            text-indent: -9999px;
+        }
+        .bx-start {
+            width: 10px;
+            height: 11px;
+
+            @include icons-sprite(bx-start);
+
+            &:hover,
+            &.active{
+                @include icons-sprite(bx-start_hover);
+            }
+        }
+        .bx-stop {
+            width: 9px;
+            height: 11px;
+
+            @include icons-sprite(bx-stop);
+
+            &:hover,
+            &.active{
+                @include icons-sprite(bx-stop_hover);
+            }
+        }
+    }
+
+    // pager with auto-controls hybrid layout
+
+    .bx-controls.bx-has-controls-auto.bx-has-pager{
+        width: 80%;
+
+        text-align: left;
+
+        .bx-pager {
+            width: 80%;
+
+            text-align: left;
+        }
+        .bx-controls-auto {
+            right: 0;
+
+            width: 35px;
+        }
+    }
+
+    // image captions
+
+    .bx-caption {
+        @extend .full;
+
+        @include pos(absolute, false, false, 0, 0, false);
+
+        background: rgba(80, 80, 80, .75);
+
+        span {
+            @extend .block;
+
+            padding: 10px;
+
+            color: #fff;
+            font: rem-font-size(14px) $Arial;
+        }
+    }
+}

@@ -1,8 +1,8 @@
 /*
 Author: Sergii.Rudchyk
 */
-.icons-sprite, .radio:before, .radio.has-active:before, .check-box:before, .check-box.has-active:before, .fancybox-close, .fancybox-prev span, .fancybox-next span, #fancybox-buttons a.btnPrev, #fancybox-buttons a.btnNext, #fancybox-buttons a.btnPlay, #fancybox-buttons a.btnPlayOn, #fancybox-buttons a.btnToggle, #fancybox-buttons a.btnToggleOn, #fancybox-buttons a.btnClose {
-  background: url('../images/icons-s1de8bf08c1.png') no-repeat;
+.icons-sprite, .radio:before, .radio.has-active:before, .check-box:before, .check-box.has-active:before, .fancybox-close, .fancybox-prev span, .fancybox-next span, #fancybox-buttons a.btnPrev, #fancybox-buttons a.btnNext, #fancybox-buttons a.btnPlay, #fancybox-buttons a.btnPlayOn, #fancybox-buttons a.btnToggle, #fancybox-buttons a.btnToggleOn, #fancybox-buttons a.btnClose, .bx-wrapper .bx-prev, .bx-wrapper .bx-prev:hover, .bx-wrapper .bx-next, .bx-wrapper .bx-next:hover, .bx-wrapper .bx-controls-auto .bx-start, .bx-wrapper .bx-controls-auto .bx-start:hover, .bx-wrapper .bx-controls-auto .bx-start.active, .bx-wrapper .bx-controls-auto .bx-stop, .bx-wrapper .bx-controls-auto .bx-stop:hover, .bx-wrapper .bx-controls-auto .bx-stop.active {
+  background: url('../images/icons-s4a22a17cf9.png') no-repeat;
 }
 
 /* ---------->>> XHTML, HTML4, HTML5 Reset <<<-----------*/
@@ -799,13 +799,13 @@ textarea.field {
   margin: 0 10px;
 }
 .radio:before {
-  background-position: 0 -224px;
+  background-position: 0 -392px;
   height: 20px;
   width: 20px;
   margin-top: -10px;
 }
 .radio.has-active:before {
-  background-position: 0 -354px;
+  background-position: 0 -522px;
 }
 
 .check-box {
@@ -813,7 +813,7 @@ textarea.field {
   line-height: 30px;
 }
 .check-box:before {
-  background-position: 0 -194px;
+  background-position: 0 -362px;
   height: 20px;
   width: 20px;
   margin-top: -10px;
@@ -1625,31 +1625,31 @@ textarea.field {
   opacity: 1;
 }
 #fancybox-buttons a.btnPrev {
-  background-position: 0 -454px;
+  background-position: 0 -622px;
 }
 #fancybox-buttons a.btnNext {
-  background-position: 0 -494px;
+  background-position: 0 -662px;
   border-right: 1px solid #3e3e3e;
 }
 #fancybox-buttons a.btnPlay {
-  background-position: 0 -574px;
+  background-position: 0 -742px;
 }
 #fancybox-buttons a.btnPlayOn {
-  background-position: 0 -614px;
+  background-position: 0 -782px;
 }
 #fancybox-buttons a.btnToggle {
-  background-position: 0 -414px;
+  background-position: 0 -582px;
   border: 1px solid transparent;
   border-left-color: #111;
   border-right-color: #3e3e3e;
   width: fancybox-sprite-width(fancyBtnToggle);
 }
 #fancybox-buttons a.btnToggleOn {
-  background-position: 0 -534px;
+  background-position: 0 -702px;
 }
 #fancybox-buttons a.btnClose {
   width: fancybox-sprite-width(fancyBtnClose);
-  background-position: 0 -314px;
+  background-position: 0 -482px;
   border-left: 1px solid #111;
 }
 #fancybox-buttons a.btnDisabled {
@@ -1696,15 +1696,130 @@ textarea.field {
   border: 0;
 }
 
+.bx-wrapper {
+  margin: 0 auto 60px;
+  padding: 0;
+  /* LOADER */
+}
+.bx-wrapper .bx-viewport {
+  left: -5px;
+  background: #fff;
+  border: solid #fff 5px;
+  box-shadow: 0 0 5px #ccc;
+}
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  bottom: -30px;
+}
+.bx-wrapper .bx-loading {
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  min-height: 50px;
+}
+.bx-wrapper .bx-pager {
+  padding-top: 20px;
+  color: #666;
+  font: bold 0.875rem Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background: #666;
+  text-indent: -9999px;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active {
+  background: #000;
+}
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+}
+.bx-wrapper .bx-prev {
+  left: 10px;
+  background-position: 0 -164px;
+}
+.bx-wrapper .bx-prev:hover {
+  background-position: 0 -320px;
+}
+.bx-wrapper .bx-next {
+  right: 10px;
+  background-position: 0 -236px;
+}
+.bx-wrapper .bx-next:hover {
+  background-position: 0 -278px;
+}
+.bx-wrapper .bx-controls-direction a {
+  top: 50%;
+  z-index: 9999;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  text-indent: -9999px;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+.bx-wrapper .bx-controls-auto .bx-start,
+.bx-wrapper .bx-controls-auto .bx-stop {
+  margin: 0 3px;
+  text-indent: -9999px;
+}
+.bx-wrapper .bx-controls-auto .bx-start {
+  width: 10px;
+  height: 11px;
+  background-position: 0 -822px;
+}
+.bx-wrapper .bx-controls-auto .bx-start:hover, .bx-wrapper .bx-controls-auto .bx-start.active {
+  background-position: 0 -843px;
+}
+.bx-wrapper .bx-controls-auto .bx-stop {
+  width: 9px;
+  height: 11px;
+  background-position: 0 -864px;
+}
+.bx-wrapper .bx-controls-auto .bx-stop:hover, .bx-wrapper .bx-controls-auto .bx-stop.active {
+  background-position: 0 -885px;
+}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager {
+  width: 80%;
+  text-align: left;
+}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  width: 80%;
+  text-align: left;
+}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+.bx-wrapper .bx-caption {
+  bottom: 0;
+  left: 0;
+  background: rgba(80, 80, 80, 0.75);
+}
+.bx-wrapper .bx-caption span {
+  padding: 10px;
+  color: #fff;
+  font: 0.875rem Arial, Helvetica, sans-serif;
+}
+
 .relative, .container-wrap, .fileload-box, .messageTip-box, .scroll-wrapper, .scroll-standard > .scroll-element.scroll-x.scroll-element_show-arrows .scroll-arrow:before, .scroll-standard > .scroll-element.scroll-y.scroll-element_show-arrows .scroll-arrow:before, .fancybox-skin, .fancybox-outer,
-.fancybox-inner, .fancybox-title, .fancybox-title-outside-wrap, #fancybox-thumbs ul, #fancybox-thumbs ul li a, #fancybox-thumbs ul li img, .brif-tabs .tab:hover .tab-span, .brif-tabs .tab.tab-current .tab-span,
+.fancybox-inner, .fancybox-title, .fancybox-title-outside-wrap, #fancybox-thumbs ul, #fancybox-thumbs ul li a, #fancybox-thumbs ul li img, .bx-wrapper, .brif-tabs .tab:hover .tab-span, .brif-tabs .tab.tab-current .tab-span,
 .has-ps-icon,
 .has-icon,
 .field-box {
   position: relative;
 }
 
-.absolute, .footer, .field-slct:after, .slctdrop, .messageTip, .messageTip:before, .fancybox-wrap, .fancybox-close, .fancybox-nav, .fancybox-nav span, .fancybox-tmp, .fancybox-overlay, .fancybox-title-float-wrap, .fancybox-title-over-wrap, .aborted, .ceiling-pos, .abs-icon, .field-helper, .has-ps-icon:before {
+.absolute, .footer, .field-slct:after, .slctdrop, .messageTip, .messageTip:before, .fancybox-wrap, .fancybox-close, .fancybox-nav, .fancybox-nav span, .fancybox-tmp, .fancybox-overlay, .fancybox-title-float-wrap, .fancybox-title-over-wrap, .bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto, .bx-wrapper .bx-loading, .bx-wrapper .bx-controls-direction a, .bx-wrapper .bx-caption, .aborted, .ceiling-pos, .abs-icon, .field-helper, .has-ps-icon:before {
   position: absolute;
 }
 
@@ -1744,7 +1859,8 @@ textarea.field {
 }
 
 .block, .aligncenter, .slctdrop-item, .btn-bl, .fancybox-image,
-.fancybox-iframe, #fancybox-buttons ul, #fancybox-buttons a, #fancybox-thumbs ul li a, #fancybox-thumbs ul li img, .img-rwd, .brif-tabs .tabs, .brif-tabs .tab-span,
+.fancybox-iframe, #fancybox-buttons ul, #fancybox-buttons a, #fancybox-thumbs ul li a, #fancybox-thumbs ul li img, .bx-wrapper .bx-pager.bx-default-pager a, .bx-wrapper .bx-controls-auto .bx-start,
+.bx-wrapper .bx-controls-auto .bx-stop, .bx-wrapper .bx-caption span, .img-rwd, .bx-wrapper img, .brif-tabs .tabs, .brif-tabs .tab-span,
 .show,
 .tab-content.tab-content-visible,
 .example-tabs .tab-example-content.tab-content-visible {
@@ -1776,14 +1892,15 @@ textarea.field {
   float: right;
 }
 
-.full, .slctdrop, .btn-bl, #fancybox-buttons, #fancybox-thumbs, .full-size, .field-hidden, .scroll-simple_outer > .scroll-element div,
+.full, .slctdrop, .btn-bl, #fancybox-buttons, #fancybox-thumbs, .bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto, .bx-wrapper .bx-caption, .full-size, .field-hidden, .scroll-simple_outer > .scroll-element div,
 .scroll-simple_inner > .scroll-element div, .scroll-standard > .scroll-element .scroll-element_outer,
 .scroll-standard > .scroll-element .scroll-element_size,
 .scroll-standard > .scroll-element .scroll-element_inner-wrapper,
 .scroll-standard > .scroll-element .scroll-element_inner,
 .scroll-standard > .scroll-element .scroll-bar,
 .scroll-standard > .scroll-element .scroll-bar div, .fancybox-image,
-.fancybox-iframe,
+.fancybox-iframe, .bx-wrapper .bx-loading,
 .table,
 .wrapper,
 .footer {
@@ -1797,7 +1914,7 @@ textarea.field {
 .scroll-standard > .scroll-element .scroll-element_inner,
 .scroll-standard > .scroll-element .scroll-bar,
 .scroll-standard > .scroll-element .scroll-bar div, .fancybox-image,
-.fancybox-iframe {
+.fancybox-iframe, .bx-wrapper .bx-loading {
   height: 100%;
 }
 
@@ -1868,11 +1985,11 @@ textarea.field {
   word-wrap: break-word;
 }
 
-.loading, #fancybox-loading {
+.loading, #fancybox-loading, .bx-wrapper .bx-loading {
   background: white url(../images/required/loading.gif) no-repeat center;
 }
 
-.img-rwd {
+.img-rwd, .bx-wrapper img {
   max-width: 100%;
   height: auto;
 }

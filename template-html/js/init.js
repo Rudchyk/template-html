@@ -24,6 +24,7 @@ head.js(
     sourcePath+"js/jquery.fancybox-thumbs.js",
     sourcePath+"js/jquery.fancybox-buttons.js",
     sourcePath+"js/jquery.fancybox-media.js",
+    sourcePath+"js/jquery.bxslider.min.js",
     // sourcePath+"js/.js",
     // sourcePath+"js/scripts.js",
     sourcePath+"js/example.js",
@@ -94,12 +95,29 @@ head.js(
                 }
             }
         });
+
         $('.fancybox-button-js').fancybox({
             closeBtn        : false,
             helpers     : {
                 title   : { type : 'inside' },
                 buttons : {}
             }
+        });
+
+        // bxSlider
+        $('.bxslider-js').bxSlider();
+
+        $('.bxslider-auto-js').bxSlider({
+            auto: true,
+            autoControls: true
+        });
+
+        $('.bxslider-carousel-js').bxSlider({
+            slideWidth: 200,
+            minSlides: 2,
+            maxSlides: 3,
+            slideMargin: 10,
+            moveSlides: 1
         });
     }
 );
