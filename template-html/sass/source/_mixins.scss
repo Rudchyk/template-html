@@ -241,6 +241,9 @@
     @else if $pos == "relative"{
         @extend .relative;
     }
+    @else if $pos == "fixed"{
+        @extend .fixed;
+    }
     @else{
         position: $pos;
     }

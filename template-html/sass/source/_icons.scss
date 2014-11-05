@@ -1,10 +1,10 @@
 //icons
 
-@each $icon in $icons {
-    .#{$icon}-icon{
-        @include icons(#{$icon});
-    }
-}
+// @each $icon in $icons {
+//     .#{$icon}-icon{
+//         @include icons(#{$icon});
+//     }
+// }
 
 //blockIcons
 

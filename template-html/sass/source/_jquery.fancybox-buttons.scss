@@ -1,0 +1,96 @@
+$fancyboxButtonsWidtn: icons-sprite-width(fancyBtnPrev);
+$fancyboxButtonsHeight: icons-sprite-height(fancyBtnPrev);
+
+#fancybox-buttons {
+    @extend .full;
+
+    @include pos(fixed, false, false, false, 0, 8050);
+
+    &.top {
+        top: 10px;
+    }
+
+    &.bottom {
+        bottom: 10px;
+    }
+
+    ul {
+        @extend .block;
+
+        width: 166px;
+        height: 30px;
+        margin: auto;
+        padding: 0;
+
+        border: 1px solid #111;
+        border-radius: 3px;
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.05);
+        background: rgb(50,50,50);
+        @include background(linear-gradient(top, rgb(68,68,68) 0%, rgb(52,52,52) 50%, rgb(41,41,41) 50%, rgb(51,51,51) 100%));
+
+        li {
+            @extend .left;
+
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    a {
+        @extend .block;
+        opacity: .8;
+
+        width: $fancyboxButtonsWidtn;
+        height: $fancyboxButtonsHeight;
+
+        background-color: transparent;
+
+        text-indent: -9999px;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &.btnPrev {
+            @include icons-sprite(fancyBtnPrev);
+        }
+
+        &.btnNext {
+            @include icons-sprite(fancyBtnNext);
+            border-right: 1px solid #3e3e3e;
+        }
+
+        &.btnPlay {
+            @include icons-sprite(fancyBtnPlay);
+        }
+
+        &.btnPlayOn {
+            @include icons-sprite(fancyBtnPlayOn);
+        }
+
+        &.btnToggle {
+            @include icons-sprite(fancyBtnToggle);
+            border: 1px solid transparent;
+            border-left-color: #111;
+            border-right-color: #3e3e3e;
+            width: fancybox-sprite-width(fancyBtnToggle);
+        }
+
+        &.btnToggleOn {
+            @include icons-sprite(fancyBtnToggleOn);
+        }
+
+        &.btnClose {
+            width: fancybox-sprite-width(fancyBtnClose);
+
+            @include icons-sprite(fancyBtnClose);
+            border-left: 1px solid #111;
+        }
+
+        &.btnDisabled {
+            @extend .cur-default;
+
+            opacity : .4;
+        }
+    }
+}

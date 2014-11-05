@@ -20,6 +20,10 @@ head.js(
     sourcePath+"js/modal.js",
     sourcePath+"js/tabs.js",
     sourcePath+"js/jquery.scrollbar.min.js",
+    sourcePath+"js/jquery.fancybox.pack.js",
+    sourcePath+"js/jquery.fancybox-thumbs.js",
+    sourcePath+"js/jquery.fancybox-buttons.js",
+    sourcePath+"js/jquery.fancybox-media.js",
     // sourcePath+"js/.js",
     // sourcePath+"js/scripts.js",
     sourcePath+"js/example.js",
@@ -56,8 +60,47 @@ head.js(
         /*tabsJS*/
         $('.tabs-js').tabsJS();
 
+        $('.tabs-global-js').tabsJS({
+            tabSection : '.tabs-global-section-js',
+            tabContent : '.tab-global-content-js',
+        });
+        $('.tabs-example-js').tabsJS({
+            tabSection : '.tabs-example-section-js',
+            tabContent : '.tab-example-content-js',
+        });
+
         /*jquery.scrollbar*/
         $('.scroll-js').scrollbar();
+
+        /*fancybox*/
+        $('.fancybox-modal').fancybox({
+            wrapCSS: 'customClass',
+            openEffect: 'elastic'
+        });
+        $('.fancy-prew-outside-js').fancybox();
+        $('.fancy-prew-inside-js').fancybox({
+            helpers     : {
+                title   : { type : 'inside' }
+            }
+        });
+        $('.fancy-prew-js').fancybox();
+
+        $('.fancybox-thumb-js').fancybox({
+            helpers     : {
+                title   : { type : 'outside' },
+                thumbs  : {
+                    width   : 50,
+                    height  : 50
+                }
+            }
+        });
+        $('.fancybox-button-js').fancybox({
+            closeBtn        : false,
+            helpers     : {
+                title   : { type : 'inside' },
+                buttons : {}
+            }
+        });
     }
 );
 

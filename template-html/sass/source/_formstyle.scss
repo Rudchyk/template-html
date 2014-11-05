@@ -2,7 +2,7 @@
 
 // --fields--
 // Size
-$fieldDefaultWidth: 100%;
+$fieldDefaultWidth: 310px;
 $fieldDefaultHeight: 30px;
 $fieldDefaultPaddingSide: 10px;
 $fieldDefaultBorder: 1px solid #bdc3c7;
@@ -36,7 +36,9 @@ $fieldHasDisabledColor: #d5dbdb;
 
 // field style
 
-.field-box{}
+.field-box{
+    @include dib(middle);
+}
 
 .field-frame{
     width: $fieldDefaultWidth;

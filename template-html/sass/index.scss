@@ -26,10 +26,12 @@ Author: Sergii.Rudchyk
 @import "source/footer.scss";
 // @import "source/some.scss";
 @import "source/all.scss";
-@import "source/modals.scss"; // modalJS
 @import "source/tip.scss"; // tipJS
 @import "source/tabs.scss"; // tabsJS
 @import "source/scrollbar.scss"; // jquery.scrollbar
+@import "source/jquery.fancybox.scss"; // jquery.fancybox
+@import "source/jquery.fancybox-buttons.scss"; // jquery.fancybox-buttons
+@import "source/jquery.fancybox-thumbs.scss"; // jquery.fancybox-thumbs
 
 @import "source/default.scss";
 

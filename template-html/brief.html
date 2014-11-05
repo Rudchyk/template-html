@@ -16,74 +16,175 @@
     <div class="brief-container">
         <h2 class="brief-title tac">Forms</h2>
         <div class="brief-small-title tac">Input</div>
-        <div class="brief-box table">
-            <div class="cell brief-codebox-cell">
-                <div class="brief-codebox">
-                    <!-- Cod -->
-                    <pre class="brush: html">
-                        <div class="field-box field-box-js*">
+        <!--tabs-->
+        <div class="tabs-section tabs-global-section-js brif-tabs">
+            <ul class="tabs tabs-global-js">
+                <li class="tab tab-current"><span class="tab-span">Input inactive</span></li>
+                <li class="tab"><div class="tab-span">Input has error</div></li>
+                <li class="tab"><div class="tab-span">Input has success</div></li>
+                <li class="tab"><div class="tab-span">Input has disabled</div></li>
+            </ul>
+            <!--Input inactive-->
+            <div class="tab-content tab-global-content-js tab-content-visible">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="field-box field-box-js">
                             <input type="text" name="name" class="field" autocomplete="off" placeholder="Name">
                         </div>
-                    </pre>
-                    <pre class="brush: js">
-                        /*Source*/
-                        js/rform.js
-                    </pre>
-                    <!-- / Cod -->
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="field-box field-box-js*">
+                                <input type="text" name="name" class="field" autocomplete="off" placeholder="Name">
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/formstyle.scss";
+                        </pre>
+                    </div>
                 </div>
+                <!--end tabs-->
             </div>
-            <div class="cell brief-previewbox-cell">
-                <!-- Preview -->
-                <div class="brief-small-title tac">Inactive</div>
-                <div class="brief-class-title tac">class="field-box"</div>
-                <div class="field-box field-box-js">
-                    <input type="text" name="name" class="field" autocomplete="off" placeholder="Name">
+            <!--Input has error-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="field-box field-box-js has-error">
+                            <input type="text" name="name" class="field" autocomplete="off" placeholder="Name" value="111">
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="field-box field-box-js* has-error">
+                                <input type="text" name="name" class="field" autocomplete="off" placeholder="Name">
+                            </div>
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/formstyle.scss";
+                        </pre>
+                    </div>
                 </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Active</div>
-                <div class="brief-class-title tac">class="field-box has-active"</div>
-                <div class="field-box field-box-js">
-                    <input type="text" name="name" class="field" autocomplete="off" placeholder="Name" autofocus>
+                <!--end tabs-->
+            </div>
+            <!--Input has success-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="field-box field-box-js has-success">
+                            <input type="text" name="name" class="field" autocomplete="off" placeholder="Name" value="Isla Ouellet">
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="field-box field-box-js* has-success">
+                                <input type="text" name="name" class="field" autocomplete="off" placeholder="Name" value="Isla Ouellet">
+                            </div>
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/formstyle.scss";
+                        </pre>
+                    </div>
                 </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Value</div>
-                <div class="brief-class-title tac">class="field-box has-value"</div>
-                <div class="field-box field-box-js">
-                    <input type="text" name="name" class="field" autocomplete="off" placeholder="Name" value="Anthony Remy">
+                <!--end tabs-->
+            </div>
+            <!--Input has disabled-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="field-box field-box-js has-disabled">
+                            <input type="text" name="name" class="field" autocomplete="off" placeholder="Name">
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="field-box field-box-js* has-disabled">
+                                <input type="text" name="name" class="field" autocomplete="off" placeholder="Name" value="Isla Ouellet">
+                            </div>
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/formstyle.scss";
+                        </pre>
+                    </div>
                 </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Error</div>
-                <div class="brief-class-title tac">class="field-box has-error"</div>
-                <div class="field-box field-box-js has-error">
-                    <input type="text" name="name" class="field" autocomplete="off" placeholder="Name" value="111">
-                </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Success</div>
-                <div class="brief-class-title tac">class="field-box has-success"</div>
-                <div class="field-box field-box-js has-success">
-                    <input type="text" name="name" class="field" autocomplete="off" placeholder="Name" value="Isla Ouellet">
-                </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Disabled</div>
-                <div class="brief-class-title tac">class="field-box has-disabled"</div>
-                <div class="field-box field-box-js has-disabled">
-                    <input type="text" name="name" class="field" autocomplete="off" placeholder="Name">
-                </div>
-                <!-- / Preview -->
+                <!--end tabs-->
             </div>
         </div>
+        <!--end tabs-->
         <div class="brief-small-title tac">Select</div>
-        <div class="brief-box table">
-            <div class="cell brief-codebox-cell">
-                <div class="brief-codebox">
-                    <!-- Cod -->
-                    <pre class="brush: html">
-                        <div class="field-box select-box select-box-js*">
+        <!--tabs-->
+        <div class="tabs-section tabs-global-section-js brif-tabs">
+            <ul class="tabs tabs-global-js">
+                <li class="tab tab-current"><span class="tab-span">Select inactive</span></li>
+                <li class="tab"><div class="tab-span">Select has value</div></li>
+                <li class="tab"><div class="tab-span">Select has error</div></li>
+                <li class="tab"><div class="tab-span">Select has succes</div></li>
+                <li class="tab"><div class="tab-span">Select has disabled</div></li>
+            </ul>
+            <!--Select inactive-->
+            <div class="tab-content tab-global-content-js tab-content-visible">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">Sass</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="field-box select-box select-box-js">
                             <div class="field field-fake field-slct"></div>
                             <select name="select" id="select" class="ceiling-pos field-hidden">
                                 <option disabled selected>title</option>
@@ -92,91 +193,278 @@
                                 <option value="option3">option3</option>
                             </select>
                         </div>
-                    </pre>
-                    <pre class="brush: js">
-                        /*Source*/
-                        js/rform.js
-                    </pre>
-                    <pre class="brush: js">
-                        // selectJS
-                        $('.field-box-select-js').selectJS();
-                    </pre>
-                    <!-- / Cod -->
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="field-box select-box select-box-js*">
+                                <div class="field field-fake field-slct"></div>
+                                <select name="select" id="select" class="ceiling-pos field-hidden">
+                                    <option disabled selected>title</option>
+                                    <option value="option1">option1</option>
+                                    <option value="option2">option2</option>
+                                    <option value="option3">option3</option>
+                                </select>
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // selectJS
+                            $('.field-box-select-js').selectJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
                 </div>
+                <!--end tabs-->
             </div>
-            <div class="cell brief-previewbox-cell">
-                <!-- Preview -->
-                <div class="brief-small-title tac">Inactive</div>
-                <div class="brief-class-title tac">class="field-box select-box"</div>
-                <div class="field-box select-box select-box-js">
-                    <div class="field field-fake field-slct"></div>
-                    <select name="select" id="select" class="ceiling-pos field-hidden">
-                        <option disabled selected>title</option>
-                        <option value="option1">option1</option>
-                        <option value="option2">option2</option>
-                        <option value="option3">option3</option>
-                    </select>
+            <!--Select has value-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">Sass</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="field-box select-box select-box-js">
+                            <div class="field field-fake field-slct"></div>
+                            <select name="select" id="select" class="ceiling-pos field-hidden">
+                                <option value="option1">option1</option>
+                                <option value="option2">option2</option>
+                                <option value="option3">option3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="field-box select-box select-box-js*">
+                                <div class="field field-fake field-slct"></div>
+                                <select name="select" id="select" class="ceiling-pos field-hidden">
+                                    <option value="option1">option1</option>
+                                    <option value="option2">option2</option>
+                                    <option value="option3">option3</option>
+                                </select>
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // selectJS
+                            $('.field-box-select-js').selectJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
                 </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Value</div>
-                <div class="brief-class-title tac">class="field-box select-box has-value"</div>
-                <div class="field-box select-box select-box-js has-value">
-                    <div class="field field-fake field-slct"></div>
-                    <select name="select" id="select" class="ceiling-pos field-hidden">
-                        <option value="option1">option1</option>
-                        <option value="option2">option2</option>
-                        <option value="option3">option3</option>
-                    </select>
+                <!--end tabs-->
+            </div>
+            <!--Select has error-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="field-box select-box select-box-js has-error">
+                            <div class="field field-fake field-slct"></div>
+                            <select name="select" id="select" class="ceiling-pos field-hidden">
+                                <option disabled selected>title</option>
+                                <option value="option1">option1</option>
+                                <option value="option2">option2</option>
+                                <option value="option3">option3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="field-box select-box select-box-js* has-error">
+                                <div class="field field-fake field-slct"></div>
+                                <select name="select" id="select" class="ceiling-pos field-hidden">
+                                    <option disabled selected>title</option>
+                                    <option value="option1">option1</option>
+                                    <option value="option2">option2</option>
+                                    <option value="option3">option3</option>
+                                </select>
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // selectJS
+                            $('.field-box-select-js').selectJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
                 </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Error</div>
-                <div class="brief-class-title tac">class="field-box select-box has-error"</div>
-                <div class="field-box select-box select-box-js has-error">
-                    <div class="field field-fake field-slct"></div>
-                    <select name="select" id="select" class="ceiling-pos field-hidden">
-                        <option disabled selected>title</option>
-                        <option value="option1">option1</option>
-                        <option value="option2">option2</option>
-                        <option value="option3">option3</option>
-                    </select>
+                <!--end tabs-->
+            </div>
+            <!--Select has succes-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="field-box select-box select-box-js has-success">
+                            <div class="field field-fake field-slct"></div>
+                            <select name="select" id="select" class="ceiling-pos field-hidden">
+                                <option value="option1">option1</option>
+                                <option value="option2">option2</option>
+                                <option value="option3">option3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="field-box select-box select-box-js* has-success">
+                                <div class="field field-fake field-slct"></div>
+                                <select name="select" id="select" class="ceiling-pos field-hidden">
+                                    <option value="option1">option1</option>
+                                    <option value="option2">option2</option>
+                                    <option value="option3">option3</option>
+                                </select>
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // selectJS
+                            $('.field-box-select-js').selectJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
                 </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Succes</div>
-                <div class="brief-class-title tac">class="field-box select-box has-success"</div>
-                <div class="field-box select-box select-box-js has-success">
-                    <div class="field field-fake field-slct"></div>
-                    <select name="select" id="select" class="ceiling-pos field-hidden">
-                        <option value="option1">option1</option>
-                        <option value="option2">option2</option>
-                        <option value="option3">option3</option>
-                    </select>
+                <!--end tabs-->
+            </div>
+            <!--Select has disabled-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="field-box select-box select-box-js has-disabled">
+                            <div class="field field-fake field-slct"></div>
+                            <select name="select" id="select" class="ceiling-pos field-hidden">
+                                <option disabled selected>title</option>
+                                <option value="option1">option1</option>
+                                <option value="option2">option2</option>
+                                <option value="option3">option3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="field-box select-box select-box-js* has-disabled">
+                                <div class="field field-fake field-slct"></div>
+                                <select name="select" id="select" class="ceiling-pos field-hidden">
+                                    <option disabled selected>title</option>
+                                    <option value="option1">option1</option>
+                                    <option value="option2">option2</option>
+                                    <option value="option3">option3</option>
+                                </select>
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // selectJS
+                            $('.field-box-select-js').selectJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
                 </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Disabled</div>
-                <div class="brief-class-title tac">class="field-box select-box has-disabled"</div>
-                <div class="field-box select-box select-box-js has-disabled">
-                    <div class="field field-fake field-slct"></div>
-                    <select name="select" id="select" class="ceiling-pos field-hidden">
-                        <option disabled selected>title</option>
-                        <option value="option1">option1</option>
-                        <option value="option2">option2</option>
-                        <option value="option3">option3</option>
-                    </select>
-                </div>
-                <!-- / Preview -->
+                <!--end tabs-->
             </div>
         </div>
+        <!--end tabs-->
         <div class="brief-small-title tac">Radio Buttons</div>
-        <div class="brief-box table">
-            <div class="cell brief-codebox-cell">
-                <div class="brief-codebox">
-                    <!-- Cod -->
-                    <pre class="brush: html">
-                        <div class="radio-box radio-box-js*">
+        <!--tabs-->
+        <div class="tabs-section tabs-global-section-js brif-tabs">
+            <ul class="tabs tabs-global-js">
+                <li class="tab tab-current"><span class="tab-span">Active and Inactive</span></li>
+                <li class="tab"><div class="tab-span">Disabled</div></li>
+            </ul>
+            <!--Active and Inactive-->
+            <div class="tab-content tab-global-content-js tab-content-visible">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="radio-box radio-box-js">
                             <div class="el has-ps-icon has-ps-left-icon radio has-active" data-rval="Radio is on">
                                 <span class="radio-text">Radio is on</span>
                             </div>
@@ -185,471 +473,1519 @@
                             </div>
                             <input type="hidden" name="radio" id="radio" value="Radio is on">
                         </div>
-                    </pre>
-                    <pre class="brush: js">
-                        /*Source*/
-                        js/rform.js
-                    </pre>
-                    <pre class="brush: js">
-                        // radioJS
-                        $('.radio-box-js').radioJS();
-                    </pre>
-                    <!-- / Cod -->
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="radio-box radio-box-js*">
+                                <div class="el has-ps-icon has-ps-left-icon radio has-active" data-rval="Radio is on">
+                                    <span class="radio-text">Radio is on</span>
+                                </div>
+                                <div class="el has-ps-icon has-ps-left-icon radio" data-rval="Radio is off">
+                                    <span class="radio-text">Radio is off</span>
+                                </div>
+                                <input type="hidden" name="radio" id="radio" value="Radio is on">
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // radioJS
+                            $('.radio-box-js').radioJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
                 </div>
+                <!--end tabs-->
             </div>
-            <div class="cell brief-previewbox-cell tac">
-                <!-- Preview -->
-                <div class="brief-small-title tac">Active and Inactive</div>
-                <div class="brief-class-title tac">class="radio-box"</div>
-                <div class="radio-box radio-box-js">
-                    <div class="el has-ps-icon has-ps-left-icon radio has-active" data-rval="Radio is on">
-                        <span class="radio-text">Radio is on</span>
+            <!--Disabled-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="radio-box radio-box-js has-disabled">
+                            <div class="el has-ps-icon has-ps-left-icon radio has-active" data-rval="Radio is on">
+                                <span class="radio-text">Radio is on</span>
+                            </div>
+                            <div class="el has-ps-icon has-ps-left-icon radio" data-rval="Radio is off">
+                                <span class="radio-text">Radio is off</span>
+                            </div>
+                            <input type="hidden" name="radio" id="radio" value="Radio is on">
+                        </div>
                     </div>
-                    <div class="el has-ps-icon has-ps-left-icon radio" data-rval="Radio is off">
-                        <span class="radio-text">Radio is off</span>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                        <div class="radio-box radio-box-js* has-disabled">
+                            <div class="el has-ps-icon has-ps-left-icon radio has-active" data-rval="Radio is on">
+                                <span class="radio-text">Radio is on</span>
+                            </div>
+                            <div class="el has-ps-icon has-ps-left-icon radio" data-rval="Radio is off">
+                                <span class="radio-text">Radio is off</span>
+                            </div>
+                            <input type="hidden" name="radio" id="radio" value="Radio is on">
+                        </div>
+                        </pre>
                     </div>
-                    <input type="hidden" name="radio" id="radio" value="Radio is on">
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // radioJS
+                            $('.radio-box-js').radioJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
                 </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Disabled</div>
-                <div class="brief-class-title tac">class="radio-box has-disabled"</div>
-                <div class="radio-box radio-box-js has-disabled">
-                    <div class="el has-ps-icon has-ps-left-icon radio has-active" data-rval="Radio is on">
-                        <span class="radio-text">Radio is on</span>
-                    </div>
-                    <div class="el has-ps-icon has-ps-left-icon radio" data-rval="Radio is off">
-                        <span class="radio-text">Radio is off</span>
-                    </div>
-                    <input type="hidden" name="radio" id="radio" value="Radio is on">
-                </div>
-                <!-- / Preview -->
+                <!--end tabs-->
             </div>
         </div>
+        <!--end tabs-->
         <div class="brief-small-title tac">Checkboxes</div>
-        <div class="brief-box table">
-            <div class="cell brief-codebox-cell">
-                <div class="brief-codebox">
-                    <!-- Cod -->
-                    <pre class="brush: html">
-                        <label class="el has-ps-icon has-ps-left-icon check-box check-box-js* has-active" for="checkbox1">
+        <!--tabs-->
+        <div class="tabs-section tabs-global-section-js brif-tabs">
+            <ul class="tabs tabs-global-js">
+                <li class="tab tab-current"><span class="tab-span">Checked and unchecked</span></li>
+                <li class="tab"><div class="tab-span">Disabled checked and unchecked</div></li>
+            </ul>
+            <!--Checked and unchecked-->
+            <div class="tab-content tab-global-content-js tab-content-visible">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <label class="el has-ps-icon has-ps-left-icon check-box check-box-js has-active" for="checkbox1" style="margin-right: 15px">
                             <span class="check-text">Checked</span>
                             <input type="checkbox" name="checkbox" id="checkbox1" class="aborted" value="Checked" checked>
                         </label>
-                    </pre>
-                    <pre class="brush: js">
-                        /*Source*/
-                        js/rform.js
-                    </pre>
-                    <pre class="brush: js">
-                        /*checkbox*/
-                        $('.check-box-js').checkboxJS();
-                    </pre>
-                    <!-- / Cod -->
+                        <label class="el has-ps-icon has-ps-left-icon check-box check-box-js" for="checkbox2">
+                            <span class="check-text">Unchecked</span>
+                            <input type="checkbox" name="checkbox" id="checkbox2" class="aborted" value="Unchecked">
+                        </label>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <!--Checked-->
+                            <label class="el has-ps-icon has-ps-left-icon check-box check-box-js* has-active" for="checkbox1">
+                                <span class="check-text">Checked</span>
+                                <input type="checkbox" name="checkbox" id="checkbox1" class="aborted" value="Checked" checked>
+                            </label>
+
+                            <!--Unchecked-->
+                            <label class="el has-ps-icon has-ps-left-icon check-box check-box-js*" for="checkbox2">
+                                <span class="check-text">Unchecked</span>
+                                <input type="checkbox" name="checkbox" id="checkbox2" class="aborted" value="Unchecked">
+                            </label>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // checkboxJS
+                            $('.check-box-js').checkboxJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
                 </div>
+                <!--end tabs-->
             </div>
-            <div class="cell brief-previewbox-cell tac">
-                <!-- Preview -->
-                <div class="brief-small-title tac">Checked</div>
-                <div class="brief-class-title tac">class="check-box has-active"</div>
-                <label class="el has-ps-icon has-ps-left-icon check-box check-box-js has-active" for="checkbox1">
-                    <span class="check-text">Checked</span>
-                    <input type="checkbox" name="checkbox" id="checkbox1" class="aborted" value="Checked" checked>
-                </label>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Unchecked</div>
-                <div class="brief-class-title tac">class="check-box"</div>
-                <label class="el has-ps-icon has-ps-left-icon check-box check-box-js" for="checkbox2">
-                    <span class="check-text">Unchecked</span>
-                    <input type="checkbox" name="checkbox" id="checkbox2" class="aborted" value="Unchecked">
-                </label>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Disabled checked</div>
-                <div class="brief-class-title tac">class="check-box has-disabled"</div>
-                <label class="el has-ps-icon has-ps-left-icon check-box check-box-js has-active has-disabled" for="checkbox3">
-                    <span class="check-text">Checked</span>
-                    <input type="checkbox" name="checkbox" id="checkbox3" class="aborted" value="Checked" checked>
-                </label>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Disabled unchecked</div>
-                <div class="brief-class-title tac">class="check-box has-active has-disabled"</div>
-                <label class="el has-ps-icon has-ps-left-icon check-box check-box-js has-disabled" for="checkbox">
-                    <span class="check-text">Unchecked</span>
-                    <input type="checkbox" name="checkbox" id="checkbox4" class="aborted" value="Unchecked">
-                </label>
-                <!-- / Preview -->
+            <!--Disabled checked and unchecked-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <label class="el has-ps-icon has-ps-left-icon check-box check-box-js has-active has-disabled" for="checkbox1" style="margin-right: 15px">
+                            <span class="check-text">Checked</span>
+                            <input type="checkbox" name="checkbox" id="checkbox1" class="aborted" value="Checked" checked>
+                        </label>
+                        <label class="el has-ps-icon has-ps-left-icon check-box check-box-js has-disabled" for="checkbox2">
+                            <span class="check-text">Unchecked</span>
+                            <input type="checkbox" name="checkbox" id="checkbox2" class="aborted" value="Unchecked">
+                        </label>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <!--Checked-->
+                            <label class="el has-ps-icon has-ps-left-icon check-box check-box-js* has-active has-disabled" for="checkbox1">
+                                <span class="check-text">Checked</span>
+                                <input type="checkbox" name="checkbox" id="checkbox1" class="aborted" value="Checked" checked>
+                            </label>
+
+                            <!--Unchecked-->
+                            <label class="el has-ps-icon has-ps-left-icon check-box check-box-js* has-disabled" for="checkbox2">
+                                <span class="check-text">Unchecked</span>
+                                <input type="checkbox" name="checkbox" id="checkbox2" class="aborted" value="Unchecked">
+                            </label>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // checkboxJS
+                            $('.check-box-js').checkboxJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
+                </div>
+                <!--end tabs-->
             </div>
         </div>
-        <div class="brief-small-title tac">Fileload-box</div>
-        <div class="brief-box table">
-            <div class="cell brief-codebox-cell">
-                <div class="brief-codebox">
-                    <!-- Cod -->
-                    <pre class="brush: html">
-                        <div class="fileload-box fileload-box-js*">
+        <!--end tabs-->
+        <div class="brief-small-title tac">Fileload</div>
+        <!--tabs-->
+        <div class="tabs-section tabs-global-section-js brif-tabs">
+            <ul class="tabs tabs-global-js">
+                <li class="tab tab-current"><span class="tab-span">Inactive</span></li>
+                <li class="tab"><div class="tab-span">Has value</div></li>
+                <li class="tab"><div class="tab-span">Has error</div></li>
+                <li class="tab"><div class="tab-span">Has success</div></li>
+                <li class="tab"><div class="tab-span">Has disabled</div></li>
+                <li class="tab"><div class="tab-span">Without field</div></li>
+            </ul>
+            <!--inactive-->
+            <div class="tab-content tab-global-content-js tab-content-visible">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="fileload-box fileload-box-js">
                             <input type="file" name="file" id="file" class="aborted" value="">
                             <div class="field field-fake fileload-field fileload-field-js">Select file</div>
-                            <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
+                            <div class="btn btn-fake fileload-btn fileload-btn-js">Select file</div>
                         </div>
-                    </pre>
-                    <pre class="brush: js">
-                        /*Source*/
-                        js/rform.js
-                    </pre>
-                    <pre class="brush: js">
-                        /*file*/
-                        $('.fileload-box-js').fileJS();
-                    </pre>
-                    <!-- / Cod -->
-                </div>
-            </div>
-            <div class="cell brief-previewbox-cell">
-                <!-- Preview -->
-                <div class="brief-small-title tac">Inactive</div>
-                <div class="brief-class-title tac">class="fileload-box"</div>
-                <div class="fileload-box fileload-box-js">
-                    <input type="file" name="file" id="file" class="aborted" value="">
-                    <div class="field field-fake fileload-field fileload-field-js">Select file</div>
-                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
-                </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Active</div>
-                <div class="brief-class-title tac">class="fileload-box has-active"</div>
-                <div class="fileload-box fileload-box-js has-active">
-                    <input type="file" name="file" id="file" class="aborted" value="">
-                    <div class="field field-fake fileload-field fileload-field-js">Select file</div>
-                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
-                </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Value</div>
-                <div class="brief-class-title tac">class="fileload-box has-value"</div>
-                <div class="fileload-box fileload-box-js has-value">
-                    <input type="file" name="file" id="file" class="aborted" value="C:\fakepath\some_file.txt">
-                    <div class="field field-fake fileload-field fileload-field-js">C:\fakepath\some_file.txt</div>
-                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
-                </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Error</div>
-                <div class="brief-class-title tac">class="fileload-box has-error"</div>
-                <div class="fileload-box fileload-box-js has-error">
-                    <input type="file" name="file" id="file" class="aborted" value="">
-                    <div class="field field-fake fileload-field fileload-field-js"></div>
-                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
-                </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Success</div>
-                <div class="brief-class-title tac">class="fileload-box has-success"</div>
-                <div class="fileload-box fileload-box-js has-success">
-                    <input type="file" name="file" id="file" class="aborted" value="C:\fakepath\some_file.txt">
-                    <div class="field field-fake fileload-field fileload-field-js">C:\fakepath\some_file.txt</div>
-                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
-                </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Disabled</div>
-                <div class="brief-class-title tac">class="fileload-box has-disabled"</div>
-                <div class="fileload-box fileload-box-js has-disabled">
-                    <input type="file" name="file" id="file" class="aborted" value="">
-                    <div class="field field-fake fileload-field fileload-field-js">Select file</div>
-                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
-                </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Without field</div>
-                <div class="brief-class-title tac">class="fileload-box"</div>
-                <div class="fileload-box fileload-box-js tac">
-                    <input type="file" name="file" id="file" class="aborted" value="">
-                    <div class="btn fake-btn fileload-btn fileload-btn-js">Select file</div>
-                </div>
-                <!-- / Preview -->
-            </div>
-        </div>
-        <div class="brief-small-title tac">Buttons</div>
-        <div class="brief-box table">
-            <div class="cell brief-codebox-cell">
-                <div class="brief-codebox">
-                    <!-- Cod -->
-                    <pre class="brush: html">
-                        <button class="btn">Button</button>
-                    </pre>
-                    <!-- / Cod -->
-                </div>
-            </div>
-            <div class="cell brief-previewbox-cell tac">
-                <!-- Preview -->
-                <div class="brief-small-title tac">Inactive</div>
-                <div class="brief-class-title tac">class="btn"</div>
-                <button class="btn">Button</button>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Disabled</div>
-                <div class="brief-class-title tac">&lt;button disabled&gt;</div>
-                <button class="btn" disabled>Button</button>
-                <!-- / Preview -->
-            </div>
-        </div>
-        <h2 class="brief-title tac">Modal</h2>
-        <div class="brief-small-title tac"></div>
-        <div class="brief-box table">
-            <div class="cell brief-codebox-cell">
-                <div class="brief-codebox">
-                    <!-- Cod -->
-                    <pre class="brush: html">
-                        <!--Call-->
-                        <span class="link popup-link popup-link-js" data-popup="modal">modal</span>
-                    </pre>
-                    <pre class="brush: html">
-                        <!--Modal-->
-                        <div class="popupper-modal popupper popupper-class popupper-js*">
-                            <span class="popupper-close md-close icon popupper-close-js*"></span>
-                            <div class="popupper-body">
-                                Some text
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="fileload-box fileload-box-js*">
+                                <input type="file" name="file" id="file" class="aborted" value="">
+                                <div class="field field-fake fileload-field fileload-field-js">Select file</div>
+                                <div class="btn btn-fake fileload-btn fileload-btn-js">Select file</div>
                             </div>
-                        </div><!-- /Popupper-modal -->
-                    </pre>
-                    <pre class="brush: js">
-                        /*Source*/
-                        js/modal.js
-                    </pre>
-                    <pre class="brush: js">
-                        /*modalJS*/
-                        $('.popup-link-js').modalJS();
-                    </pre>
-                    <pre class="brush: sass">
-                        @import "source/modals.scss"; // modalJS
-                    </pre>
-                    <pre class="brush: html">
-                        <!--Icon-->
-                        images/icons/close-rounded.png
-                    </pre>
-                    <!-- / Cod -->
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // fileJS
+                            $('.fileload-box-js').fileJS();
+                        </pre>
+                    </div>
                 </div>
+                <!--end tabs-->
             </div>
-            <div class="cell brief-previewbox-cell tac">
-                <!-- Preview -->
-                    <span class="link popup-link popup-link-js" data-popup="modal">modal</span>
-                <!-- / Preview -->
-            </div>
-        </div>
-        <div class="brief-small-title tac">Tooltips</div>
-        <div class="brief-box table">
-            <div class="cell brief-codebox-cell">
-                <div class="brief-codebox">
-                    <!-- Cod -->
-                    <pre class="brush: html">
-                        class="tip-top-js" data-tip_message="Message" data-tip_class="tip"
-                    </pre>
-                    <pre class="brush: js">
-                        /*Source*/
-                        js/jquery.actual.min.js
-                        js/tip.js
-                    </pre>
-                    <pre class="brush: js">
-                        /*tipJS*/
-                        $('.tip-js').tipJS();
-                    </pre>
-                    <pre class="brush: sass">
-                        @import "source/tip.scss"; // tiplJS
-                    </pre>
-                    <!-- / Cod -->
-                </div>
-            </div>
-            <div class="cell brief-previewbox-cell">
-                <!-- Preview -->
-                <div class="brief-small-title tac">Validation</div>
-                <div class="field-box field-box-js has-error tip-js" data-tip_message="Field has error" data-tip_class="error">
-                    <input type="text" name="name" id="name" class="field" autocomplete="off" placeholder="Name" value="1111">
-                </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Tip</div>
-                <div class="tac">
-                    <span class="link tip-top-js" data-tip_message="Message 2" data-tip_class="tip">Lorem</span> ipsum <span class="link tip-top-js" data-tip_message="Message" data-tip_class="tip">dolor</span> sit amet.
-                </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Tip fix</div>
-                <div class="tip-fix-js" data-tip_message="Fix Message" data-tip_class="fix">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem enim repellendus voluptatibus debitis quae consequuntur!
-                </div>
-                <!-- / Preview -->
-            </div>
-        </div>
-        <div class="brief-small-title tac">Tabs</div>
-        <div class="brief-box table">
-            <div class="cell brief-codebox-cell">
-                <div class="brief-codebox">
-                    <!-- Cod -->
-                    <pre class="brush: html">
-                        <!--tabs-->
-                        <div class="tabs-section tabs-section-js* my-class">
-                            <ul class="tabs tabs-js">
-                                <li class="tab tab-current">Tab1</li>
-                                <li class="tab">Tab2</li>
-                                <li class="tab">Tab3</li>
-                            </ul>
-                            <!--Tab1-->
-                            <div class="tab-content tab-content-js tab-content-visible">
-                                Content 1
-                            </div>
-                            <!--Tab2-->
-                            <div class="tab-content tab-content-js">
-                                Content 2
-                            </div>
-                            <!--Tab3-->
-                            <div class="tab-content tab-content-js">
-                                Content 3
-                            </div>
-                        </div>
-                        <!--end tabs-->
-                    </pre>
-                    <pre class="brush: js">
-                        /*Source*/
-                        js/tabs.js
-                    </pre>
-                    <pre class="brush: js">
-                        /*tabsJS*/
-                        $('.tabs-js').tabsJS();
-                    </pre>
-                    <pre class="brush: sass">
-                        @import "source/tabs.scss"; // tabsJS
-                    </pre>
-                    <!-- / Cod -->
-                </div>
-            </div>
-            <div class="cell brief-previewbox-cell">
-                <!-- Preview -->
+            <!--Has value-->
+            <div class="tab-content tab-global-content-js">
                 <!--tabs-->
-                <div class="tabs-section tabs-section-js my-tabs">
+                <div class="tabs-section tabs-section-js brif-tabs">
                     <ul class="tabs tabs-js">
-                        <li class="tab tab-current">Tab1</li>
-                        <li class="tab">Tab2</li>
-                        <li class="tab">Tab3</li>
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="fileload-box fileload-box-js has-value">
+                            <input type="file" name="file" id="file" class="aborted" value="C:\fakepath\some_file.txt">
+                            <div class="field field-fake fileload-field fileload-field-js">C:\fakepath\some_file.txt</div>
+                            <div class="btn btn-fake fileload-btn fileload-btn-js">Select file</div>
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="fileload-box fileload-box-js* has-value">
+                                <input type="file" name="file" id="file" class="aborted" value="C:\fakepath\some_file.txt">
+                                <div class="field field-fake fileload-field fileload-field-js">C:\fakepath\some_file.txt</div>
+                                <div class="btn btn-fake fileload-btn fileload-btn-js">Select file</div>
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // fileJS
+                            $('.fileload-box-js').fileJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+            <!--Has error-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="fileload-box fileload-box-js has-error">
+                            <input type="file" name="file" id="file" class="aborted" value="">
+                            <div class="field field-fake fileload-field fileload-field-js"></div>
+                            <div class="btn btn-fake fileload-btn fileload-btn-js">Select file</div>
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="fileload-box fileload-box-js* has-error">
+                                <input type="file" name="file" id="file" class="aborted" value="">
+                                <div class="field field-fake fileload-field fileload-field-js"></div>
+                                <div class="btn btn-fake fileload-btn fileload-btn-js">Select file</div>
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // fileJS
+                            $('.fileload-box-js').fileJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+            <!--Has success-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="fileload-box fileload-box-js has-success">
+                            <input type="file" name="file" id="file" class="aborted" value="C:\fakepath\some_file.txt">
+                            <div class="field field-fake fileload-field fileload-field-js">C:\fakepath\some_file.txt</div>
+                            <div class="btn btn-fake fileload-btn fileload-btn-js">Select file</div>
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="fileload-box fileload-box-js* has-success">
+                                <input type="file" name="file" id="file" class="aborted" value="C:\fakepath\some_file.txt">
+                                <div class="field field-fake fileload-field fileload-field-js">C:\fakepath\some_file.txt</div>
+                                <div class="btn btn-fake fileload-btn fileload-btn-js">Select file</div>
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // fileJS
+                            $('.fileload-box-js').fileJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+            <!--Has disabled-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="fileload-box fileload-box-js has-disabled">
+                            <input type="file" name="file" id="file" class="aborted" value="">
+                            <div class="field field-fake fileload-field fileload-field-js">Select file</div>
+                            <div class="btn btn-fake fileload-btn fileload-btn-js">Select file</div>
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="fileload-box fileload-box-js* has-disabled">
+                                <input type="file" name="file" id="file" class="aborted" value="">
+                                <div class="field field-fake fileload-field fileload-field-js">Select file</div>
+                                <div class="btn btn-fake fileload-btn fileload-btn-js">Select file</div>
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // fileJS
+                            $('.fileload-box-js').fileJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+            <!--Without field-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="fileload-box fileload-box-js">
+                            <input type="file" name="file" id="file" class="aborted" value="">
+                            <div class="btn btn-fake fileload-btn fileload-btn-js">Select file</div>
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="fileload-box fileload-box-js*">
+                                <input type="file" name="file" id="file" class="aborted" value="">
+                                <div class="btn btn-fake fileload-btn fileload-btn-js">Select file</div>
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/rform.js
+
+                            // fileJS
+                            $('.fileload-box-js').fileJS();
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/rforms.scss"; // rform
+                        </pre>
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+        </div>
+        <!--end tabs-->
+        <div class="brief-small-title tac">Buttons</div>
+        <!--tabs-->
+        <div class="tabs-section tabs-global-section-js brif-tabs">
+            <ul class="tabs tabs-global-js">
+                <li class="tab tab-current"><span class="tab-span">Inactive</span></li>
+                <li class="tab"><div class="tab-span">Disabled</div></li>
+            </ul>
+            <!--inactive-->
+            <div class="tab-content tab-global-content-js tab-content-visible">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <button class="btn">Button</button>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <button class="btn">Button</button>
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/buttons.scss";
+                        </pre>
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+            <!--Disabled-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">SCSS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <button class="btn" disabled>Button</button>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <button class="btn" disabled>Button</button>
+                        </pre>
+                    </div>
+                    <!--SCSS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/buttons.scss";
+                        </pre>
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+        </div>
+        <!--end tabs-->
+        <div class="brief-small-title tac">Tooltips</div>
+        <!--tabs-->
+        <div class="tabs-section tabs-global-section-js brif-tabs">
+            <ul class="tabs tabs-global-js">
+                <li class="tab tab-current"><span class="tab-span">Validation</span></li>
+                <li class="tab"><div class="tab-span">Tip</div></li>
+                <li class="tab"><div class="tab-span">Tip fix</div></li>
+            </ul>
+            <!--Validation-->
+            <div class="tab-content tab-global-content-js tab-content-visible">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SASS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="field-box field-box-js has-error tip-js" data-tip_message="Field has error" data-tip_class="error">
+                            <input type="text" name="name" id="name" class="field" autocomplete="off" placeholder="Name" value="1111">
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="field-box field-box-js* has-error tip-js*" data-tip_message="Field has error" data-tip_class="error">
+                                <input type="text" name="name" id="name" class="field" autocomplete="off" placeholder="Name" value="1111">
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/jquery.actual.min.js
+                            js/tip.js
+
+                            // tipJS
+                            $('.tip-js').tipJS();
+                        </pre>
+                    </div>
+                    <!--SASS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/tip.scss"; // tiplJS
+                        </pre>
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+            <!--Tip-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SASS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <span class="link tip-top-js" data-tip_message="Message 2" data-tip_class="tip">Lorem</span> ipsum <span class="link tip-top-js" data-tip_message="Message" data-tip_class="tip">dolor</span> sit amet.
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <span class="link tip-top-js*" data-tip_message="Message 2" data-tip_class="tip">Lorem</span> ipsum <span class="link tip-top-js*" data-tip_message="Message" data-tip_class="tip">dolor</span> sit amet.
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/jquery.actual.min.js
+                            js/tip.js
+
+                            // tipJS
+                            $('.tip-top-js').tipJS({
+                                side: 'top'
+                            });
+                        </pre>
+                    </div>
+                    <!--SASS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/tip.scss"; // tiplJS
+                        </pre>
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+            <!--Tip fix-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SASS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="tip-fix-js" data-tip_message="Fix Message" data-tip_class="fix">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem enim repellendus voluptatibus debitis quae consequuntur!
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="tip-fix-js*" data-tip_message="Fix Message" data-tip_class="fix">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem enim repellendus voluptatibus debitis quae consequuntur!
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/jquery.actual.min.js
+                            js/tip.js
+
+                            // tipJS
+                            $('.tip-fix-js').tipJS({
+                                fix: true
+                            });
+                        </pre>
+                    </div>
+                    <!--SASS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/tip.scss"; // tiplJS
+                        </pre>
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+        </div>
+        <!--end tabs-->
+        <div class="brief-small-title tac">Tabs</div>
+        <!--tabs-->
+        <div class="tabs-section tabs-section-js brif-tabs">
+            <ul class="tabs tabs-js">
+                <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                <li class="tab"><div class="tab-span">HTML</div></li>
+                <li class="tab"><div class="tab-span">JavaScript</div></li>
+                <li class="tab"><div class="tab-span">SASS</div></li>
+            </ul>
+            <!--Examples-->
+            <div class="tab-content tab-content-js tab-content-visible">
+                <!--tabs-->
+                <div class="tabs-section tabs-example-section-js example-tabs">
+                    <ul class="tabs-example tabs-example-js">
+                        <li class="tab-example tab-current">Tab1</li>
+                        <li class="tab-example">Tab2</li>
+                        <li class="tab-example">Tab3</li>
                     </ul>
                     <!--Tab1-->
-                    <div class="bl tab-content tab-content-js tab-content-visible">
+                    <div class="bl tab-example-content tab-example-content-js tab-content-visible">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, eos voluptate nemo officiis at rerum?
                     </div>
                     <!--Tab2-->
-                    <div class="bl tab-content tab-content-js">
+                    <div class="bl tab-example-content tab-example-content-js">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus adipisci expedita corporis iure autem sint magni quisquam blanditiis quibusdam iste.
                     </div>
                     <!--Tab3-->
-                    <div class="bl tab-content tab-content-js">
+                    <div class="bl tab-example-content tab-example-content-js">
                         <div class="tab-scroll scroll-standard scroll-js">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo incidunt dolorem nostrum sapiente facilis sequi labore sunt laboriosam, quasi vero dolorum voluptate accusantium iusto, corporis tempore quo aspernatur itaque omnis magnam? Facere laudantium deleniti aspernatur repellendus debitis optio quas fuga natus ex, nihil sed, provident vitae accusamus, ipsam omnis magni?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut aliquid, facilis, sapiente atque, rem debitis dolores rerum asperiores deleniti quia eius explicabo odit repellat obcaecati enim sunt iusto dicta recusandae numquam qui similique iure molestias doloremque! Ullam accusantium, quasi rerum magnam quae, ad atque vel ea blanditiis accusamus. Eum eius reiciendis placeat natus, error similique necessitatibus dolorem ipsam esse adipisci laudantium veritatis odit, architecto repellat ut nobis repudiandae sed, magnam dicta. Impedit tempora obcaecati iste laudantium porro, nam eligendi placeat perferendis quia voluptatum, temporibus repellendus quidem est ad tenetur ducimus veniam dignissimos atque molestias quod odio magni nobis repellat? Autem eaque nemo esse commodi illum sapiente iure consequuntur, eveniet harum excepturi delectus! Laborum error mollitia voluptatibus perferendis corporis facere cum. Molestias doloribus placeat quas. Facilis consequuntur veniam cum hic dolores sapiente cupiditate ea, libero iste aliquam itaque, perspiciatis recusandae illo temporibus consectetur consequatur voluptatum obcaecati ipsum porro maiores cumque harum. Magnam incidunt itaque aliquid explicabo esse, possimus dolor maxime accusamus rem voluptatibus quae aliquam vitae, animi totam consequatur aut at ut unde! Consequatur quos dolorum eaque fuga amet corporis harum quidem dolores, commodi cupiditate, aliquid doloribus, suscipit blanditiis necessitatibus nam repudiandae iusto porro dolorem culpa reprehenderit id est, nostrum veritatis.
                         </div>
                     </div>
                 </div>
                 <!--end tabs-->
-                <!-- / Preview -->
             </div>
-        </div>
-        <div class="brief-small-title tac">Styleable Scrollbars</div>
-        <div class="brief-box table">
-            <div class="cell brief-codebox-cell">
-                <div class="brief-codebox">
-                    <!-- Cod -->
-                    <pre class="brush: html">
-                        <div class="some_parent_class scroll-js*">
-                            <div class="some_class">
-                                content with scroll
+            <!--HTML-->
+            <div class="tab-content tab-content-js">
+                <pre class="brush: html">
+                    <!--tabs-->
+                    <div class="tabs-section tabs-section-js my-tabs">
+                        <ul class="tabs tabs-js*">
+                            <li class="tab tab-current">Tab1</li>
+                            <li class="tab">Tab2</li>
+                            <li class="tab">Tab3</li>
+                        </ul>
+                        <!--Tab1-->
+                        <div class="bl tab-content tab-content-js tab-content-visible">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, eos voluptate nemo officiis at rerum?
+                        </div>
+                        <!--Tab2-->
+                        <div class="bl tab-content tab-content-js">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus adipisci expedita corporis iure autem sint magni quisquam blanditiis quibusdam iste.
+                        </div>
+                        <!--Tab3-->
+                        <div class="bl tab-content tab-content-js">
+                            <div class="tab-scroll scroll-standard scroll-js*">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut aliquid, facilis, sapiente atque, rem debitis dolores rerum asperiores deleniti quia eius explicabo odit repellat obcaecati enim sunt iusto dicta recusandae numquam qui similique iure molestias doloremque! Ullam accusantium, quasi rerum magnam quae, ad atque vel ea blanditiis accusamus. Eum eius reiciendis placeat natus, error similique necessitatibus dolorem ipsam esse adipisci laudantium veritatis odit, architecto repellat ut nobis repudiandae sed, magnam dicta. Impedit tempora obcaecati iste laudantium porro, nam eligendi placeat perferendis quia voluptatum, temporibus repellendus quidem est ad tenetur ducimus veniam dignissimos atque molestias quod odio magni nobis repellat? Autem eaque nemo esse commodi illum sapiente iure consequuntur, eveniet harum excepturi delectus! Laborum error mollitia voluptatibus perferendis corporis facere cum. Molestias doloribus placeat quas. Facilis consequuntur veniam cum hic dolores sapiente cupiditate ea, libero iste aliquam itaque, perspiciatis recusandae illo temporibus consectetur consequatur voluptatum obcaecati ipsum porro maiores cumque harum. Magnam incidunt itaque aliquid explicabo esse, possimus dolor maxime accusamus rem voluptatibus quae aliquam vitae, animi totam consequatur aut at ut unde! Consequatur quos dolorum eaque fuga amet corporis harum quidem dolores, commodi cupiditate, aliquid doloribus, suscipit blanditiis necessitatibus nam repudiandae iusto porro dolorem culpa reprehenderit id est, nostrum veritatis.
                             </div>
                         </div>
+                    </div>
+                    <!--end tabs-->
+                </pre>
+            </div>
+            <!--JavaScript-->
+            <div class="tab-content tab-content-js">
+                <pre class="brush: js">
+                    /*Source*/
+                    js/tabs.js
+
+                    // tabsJS
+                    $('.tabs-js').tabsJS();
+                </pre>
+            </div>
+            <!--SASS-->
+            <div class="tab-content tab-content-js">
+                <pre class="brush: sass">
+                    @import "source/tabs.scss"; // tabsJ
+                </pre>
+            </div>
+        </div>
+        <!--end tabs-->
+        <div class="brief-small-title tac">Styleable Scrollbars</div>
+        <!--tabs-->
+        <div class="tabs-section tabs-global-section-js brif-tabs">
+            <ul class="tabs tabs-global-js">
+                <li class="tab tab-current"><span class="tab-span">Scroll Box</span></li>
+                <li class="tab"><div class="tab-span">Select scroll</div></li>
+                <li class="tab"><div class="tab-span">Scroll in tabs</div></li>
+            </ul>
+            <!--Scroll Box-->
+            <div class="tab-content tab-global-content-js tab-content-visible">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SASS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <div class="bl scroll-standard scroll-js some_parent_class">
+                            <div class="scroll-panel-content text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, dolore quidem! Odio voluptatum enim iure cum harum dolore, error quasi ullam eveniet, culpa nesciunt nemo asperiores dolor perferendis earum nam vel? Nam voluptas quisquam, ea laborum praesentium quas quam, natus voluptates ad provident voluptatum facere in perferendis deserunt labore iste optio dolore? Reprehenderit incidunt magni assumenda quo. Nostrum cupiditate aperiam beatae ab nesciunt quibusdam ex, soluta temporibus aspernatur harum, omnis alias excepturi, suscipit explicabo ipsum minus! Dolore officiis quisquam, nihil odit nam voluptas explicabo reiciendis voluptatum itaque fugiat asperiores, ipsa natus! Necessitatibus quod unde quisquam veritatis illo, illum ad quas!</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore sapiente, rerum quas nam ratione. Pariatur consequatur autem deleniti, quisquam, impedit officia, similique animi quaerat dignissimos praesentium quis, repellat obcaecati nesciunt porro quos! Eius numquam explicabo impedit eaque velit vel, voluptatibus eos vitae, soluta nisi necessitatibus distinctio odio! Nostrum libero ea ut, debitis, facere aliquid in optio dignissimos nemo fugiat voluptates ratione distinctio, laudantium tempora quis ab consequuntur accusamus possimus. Laboriosam deleniti dicta optio iste aut dolorem nobis at error veritatis ullam! Nobis, nam culpa! Consectetur saepe, obcaecati ab dolorum. A et, error odit eos consectetur tempora. Cum maxime, at.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quam explicabo veniam! Quos quam iusto nam, tempora obcaecati, molestiae officia ea aliquam nemo corrupti quisquam consectetur ratione nesciunt asperiores autem laboriosam nisi debitis distinctio, magnam dolorem dolores. Maiores magni officiis excepturi hic officia nisi, quasi nemo, ipsum molestiae repellendus dicta labore perferendis illum recusandae doloribus ratione! Omnis sapiente perspiciatis nisi voluptas cupiditate ipsa laboriosam soluta quasi saepe vitae. Ut accusantium vel, quos hic fuga, magnam voluptate, magni voluptates totam sint commodi porro. Praesentium labore, id, deserunt vero esse, numquam illo tempora odit tenetur officia inventore non assumenda! Esse nostrum vero eos voluptatem sunt, temporibus at quasi ea aliquam nemo aut perspiciatis quo vel sed ipsum, labore numquam consequuntur fuga possimus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <div class="bl scroll-standard scroll-js* some_parent_class">
+                                <div class="scroll-panel-content text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, dolore quidem! Odio voluptatum enim iure cum harum dolore, error quasi ullam eveniet, culpa nesciunt nemo asperiores dolor perferendis earum nam vel? Nam voluptas quisquam, ea laborum praesentium quas quam, natus voluptates ad provident voluptatum facere in perferendis deserunt labore iste optio dolore? Reprehenderit incidunt magni assumenda quo. Nostrum cupiditate aperiam beatae ab nesciunt quibusdam ex, soluta temporibus aspernatur harum, omnis alias excepturi, suscipit explicabo ipsum minus! Dolore officiis quisquam, nihil odit nam voluptas explicabo reiciendis voluptatum itaque fugiat asperiores, ipsa natus! Necessitatibus quod unde quisquam veritatis illo, illum ad quas!</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore sapiente, rerum quas nam ratione. Pariatur consequatur autem deleniti, quisquam, impedit officia, similique animi quaerat dignissimos praesentium quis, repellat obcaecati nesciunt porro quos! Eius numquam explicabo impedit eaque velit vel, voluptatibus eos vitae, soluta nisi necessitatibus distinctio odio! Nostrum libero ea ut, debitis, facere aliquid in optio dignissimos nemo fugiat voluptates ratione distinctio, laudantium tempora quis ab consequuntur accusamus possimus. Laboriosam deleniti dicta optio iste aut dolorem nobis at error veritatis ullam! Nobis, nam culpa! Consectetur saepe, obcaecati ab dolorum. A et, error odit eos consectetur tempora. Cum maxime, at.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quam explicabo veniam! Quos quam iusto nam, tempora obcaecati, molestiae officia ea aliquam nemo corrupti quisquam consectetur ratione nesciunt asperiores autem laboriosam nisi debitis distinctio, magnam dolorem dolores. Maiores magni officiis excepturi hic officia nisi, quasi nemo, ipsum molestiae repellendus dicta labore perferendis illum recusandae doloribus ratione! Omnis sapiente perspiciatis nisi voluptas cupiditate ipsa laboriosam soluta quasi saepe vitae. Ut accusantium vel, quos hic fuga, magnam voluptate, magni voluptates totam sint commodi porro. Praesentium labore, id, deserunt vero esse, numquam illo tempora odit tenetur officia inventore non assumenda! Esse nostrum vero eos voluptatem sunt, temporibus at quasi ea aliquam nemo aut perspiciatis quo vel sed ipsum, labore numquam consequuntur fuga possimus.</p>
+                                </div>
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/jquery.scrollbar.min.js
+
+                            // jquery.scrollbar
+                            $('.scroll-js').scrollbar();
+                        </pre>
+                    </div>
+                    <!--SASS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            /*Source*/
+                            @import "source/scrollbar.scss"; // jquery.scrollbar
+
+                            .some_parent_class{
+                                height: XXXpx;
+                            }
+                        </pre>
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+            <!--Select scroll-->
+            <div class="tab-content tab-global-content-js">
+            <!--tabs-->
+            <div class="tabs-section tabs-section-js brif-tabs">
+                <ul class="tabs tabs-js">
+                    <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                    <li class="tab"><div class="tab-span">HTML</div></li>
+                    <li class="tab"><div class="tab-span">JavaScript</div></li>
+                    <li class="tab"><div class="tab-span">SASS</div></li>
+                </ul>
+                <!--Examples-->
+                <div class="tab-content tab-content-js tab-content-visible">
+                    <div class="field-box select-box select-box-js">
+                        <div class="field field-fake field-slct"></div>
+                        <select name="select" id="select" class="ceiling-pos field-hidden">
+                            <option disabled selected>title</option>
+                            <option value="option1">option1</option>
+                            <option value="option2">option2</option>
+                            <option value="option3">option3</option>
+                            <option value="option4">option4</option>
+                            <option value="option5">option5</option>
+                            <option value="option6">option6</option>
+                            <option value="option7">option7</option>
+                            <option value="option8">option8</option>
+                            <option value="option9">option9</option>
+                            <option value="option10">option10</option>
+                            <option value="option11">option11</option>
+                            <option value="option12">option12</option>
+                        </select>
+                    </div>
+                </div>
+                <!--HTML-->
+                <div class="tab-content tab-content-js">
+                    <pre class="brush: html">
+                        <div class="field-box select-box select-box-js">
+                            <div class="field field-fake field-slct"></div>
+                            <select name="select" id="select" class="ceiling-pos field-hidden">
+                                <option disabled selected>title</option>
+                                <option value="option1">option1</option>
+                                <option value="option2">option2</option>
+                                <option value="option3">option3</option>
+                                <option value="option4">option4</option>
+                                <option value="option5">option5</option>
+                                <option value="option6">option6</option>
+                                <option value="option7">option7</option>
+                                <option value="option8">option8</option>
+                                <option value="option9">option9</option>
+                                <option value="option10">option10</option>
+                                <option value="option11">option11</option>
+                                <option value="option12">option12</option>
+                            </select>
+                        </div>
                     </pre>
+                </div>
+                <!--JavaScript-->
+                <div class="tab-content tab-content-js">
                     <pre class="brush: js">
                         /*Source*/
                         js/jquery.scrollbar.min.js
-                    </pre>
-                    <pre class="brush: js">
-                        /*jquery.scrollbar*/
-                        $('.scroll-js').scrollbar();
 
                         /*selectJS with jquery.scrollbar*/
                         $('.select-box-js').selectJS({
                             userScroll: true
                         });
                     </pre>
+                </div>
+                <!--SASS-->
+                <div class="tab-content tab-content-js">
                     <pre class="brush: sass">
+                        /*Source*/
+                        @import "source/rforms.scss"; // rform
                         @import "source/scrollbar.scss"; // jquery.scrollbar
                     </pre>
-                    <pre class="brush: sass">
-                        .some_parent_class{
-                            height: XXXpx;
-                        }
-                    </pre>
-                    <!-- / Cod -->
                 </div>
             </div>
-            <div class="cell brief-previewbox-cell">
-                <!-- Preview -->
-                <div class="brief-small-title tac">Select scroll</div>
-                <div class="field-box select-box select-box-js">
-                    <div class="field field-fake field-slct"></div>
-                    <select name="select" id="select" class="ceiling-pos field-hidden">
-                        <option disabled selected>title</option>
-                        <option value="option1">option1</option>
-                        <option value="option2">option2</option>
-                        <option value="option3">option3</option>
-                        <option value="option4">option4</option>
-                        <option value="option5">option5</option>
-                        <option value="option6">option6</option>
-                        <option value="option7">option7</option>
-                        <option value="option8">option8</option>
-                        <option value="option9">option9</option>
-                        <option value="option10">option10</option>
-                        <option value="option11">option11</option>
-                        <option value="option12">option12</option>
-                    </select>
-                </div>
-                <!-- / Preview -->
-                <!-- Preview -->
-                <div class="brief-small-title tac">Scroll Box</div>
-                <div class="bl scroll-panel scroll-standard scroll-js">
-                    <div class="scroll-panel-content">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, dolore quidem! Odio voluptatum enim iure cum harum dolore, error quasi ullam eveniet, culpa nesciunt nemo asperiores dolor perferendis earum nam vel? Nam voluptas quisquam, ea laborum praesentium quas quam, natus voluptates ad provident voluptatum facere in perferendis deserunt labore iste optio dolore? Reprehenderit incidunt magni assumenda quo. Nostrum cupiditate aperiam beatae ab nesciunt quibusdam ex, soluta temporibus aspernatur harum, omnis alias excepturi, suscipit explicabo ipsum minus! Dolore officiis quisquam, nihil odit nam voluptas explicabo reiciendis voluptatum itaque fugiat asperiores, ipsa natus! Necessitatibus quod unde quisquam veritatis illo, illum ad quas!
+            <!--end tabs-->
+            </div>
+            <!--Scroll in tabs-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SASS</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <!--tabs-->
+                        <div class="tabs-section tabs-example-section-js example-tabs">
+                            <ul class="tabs-example tabs-example-js">
+                                <li class="tab-example tab-current">Tab1</li>
+                                <li class="tab-example">Tab2</li>
+                            </ul>
+                            <!--Tab1-->
+                            <div class="bl tab-example-content tab-example-content-js tab-content-visible">
+                                <div class="tab-scroll scroll-standard scroll-js">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quis architecto, officia, accusantium animi, placeat earum quod possimus deserunt iste facere tempore inventore. Expedita quia soluta dolorum illo voluptatum consectetur cum asperiores, eveniet non. Sint facilis recusandae sunt ullam illum natus optio incidunt perspiciatis fugit culpa modi id quos, aliquid, quisquam et enim voluptatum qui. Sed dolores, dolor fugiat, delectus alias mollitia magni ex commodi, pariatur non eum neque recusandae atque tempore blanditiis debitis. Sunt laboriosam eum voluptatem praesentium provident, ipsa aut pariatur numquam. Excepturi minus, enim suscipit pariatur expedita aliquam sit, cum. Facere ex nesciunt doloribus illum molestias blanditiis autem architecto tempora ipsa voluptas voluptatibus dolore minima dolor consectetur rem sapiente, ut quo, quasi nam maxime soluta, libero nostrum rerum excepturi! Tempora atque totam inventore neque, ab ipsa aliquid id distinctio exercitationem mollitia deserunt molestias autem reiciendis aut blanditiis eos corporis harum incidunt, cumque quis. A sunt deserunt doloremque, ut unde libero inventore excepturi quam esse corrupti laudantium error deleniti ab, consequuntur vitae amet veniam, nemo tempora iusto id! Quasi obcaecati possimus labore quod sapiente a sint harum earum cupiditate. Quis ex eius aliquid eaque, ea ipsa, doloribus voluptatem totam vel aut error velit asperiores ut quas tenetur itaque saepe ratione numquam magni sit esse recusandae. Nobis ex at eveniet quam sapiente itaque aut quidem excepturi, nostrum, quos id, ratione, quisquam temporibus consequuntur dolore. Qui repellendus, rerum inventore doloremque alias. Iusto voluptates, sit? Maiores, voluptates est maxime, dignissimos molestias perferendis beatae placeat neque quo asperiores minima tempora libero delectus. Laborum alias ullam consequatur rem magni qui quis minima, labore hic omnis quos debitis accusamus commodi amet officiis odio, reprehenderit recusandae quaerat. Laudantium consequatur numquam aliquid quod sed, illum pariatur, dolor quasi rerum, necessitatibus inventore sit, molestias repellendus. Ullam omnis nobis aut corporis, assumenda atque aliquam facilis odio quia quibusdam aspernatur eos exercitationem maiores, minima dignissimos, molestiae dicta ratione dolorum. Voluptas vero sit, blanditiis? Explicabo obcaecati quo accusamus modi nulla esse reprehenderit aperiam nobis voluptatum doloremque excepturi rem voluptatem corporis dignissimos, alias reiciendis sequi, fugiat cumque iste, accusantium pariatur veritatis praesentium. Mollitia aperiam porro doloribus, qui nesciunt nemo error eligendi. Magni rem ab quo, officia architecto. Esse, repellendus illo accusantium velit eos vero odio quia delectus similique. Quia at minima assumenda. Suscipit voluptatibus soluta obcaecati deleniti enim quibusdam porro deserunt laudantium alias fugiat laborum facere fugit, reiciendis illum similique eaque itaque, iure nostrum commodi quas blanditiis sapiente molestiae ducimus? At.
+                                </div>
+                            </div>
+                            <!--Tab2-->
+                            <div class="bl tab-example-content tab-example-content-js">
+                                <div class="tab-scroll scroll-standard scroll-js">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut aliquid, facilis, sapiente atque, rem debitis dolores rerum asperiores deleniti quia eius explicabo odit repellat obcaecati enim sunt iusto dicta recusandae numquam qui similique iure molestias doloremque! Ullam accusantium, quasi rerum magnam quae, ad atque vel ea blanditiis accusamus. Eum eius reiciendis placeat natus, error similique necessitatibus dolorem ipsam esse adipisci laudantium veritatis odit, architecto repellat ut nobis repudiandae sed, magnam dicta. Impedit tempora obcaecati iste laudantium porro, nam eligendi placeat perferendis quia voluptatum, temporibus repellendus quidem est ad tenetur ducimus veniam dignissimos atque molestias quod odio magni nobis repellat? Autem eaque nemo esse commodi illum sapiente iure consequuntur, eveniet harum excepturi delectus! Laborum error mollitia voluptatibus perferendis corporis facere cum. Molestias doloribus placeat quas. Facilis consequuntur veniam cum hic dolores sapiente cupiditate ea, libero iste aliquam itaque, perspiciatis recusandae illo temporibus consectetur consequatur voluptatum obcaecati ipsum porro maiores cumque harum. Magnam incidunt itaque aliquid explicabo esse, possimus dolor maxime accusamus rem voluptatibus quae aliquam vitae, animi totam consequatur aut at ut unde! Consequatur quos dolorum eaque fuga amet corporis harum quidem dolores, commodi cupiditate, aliquid doloribus, suscipit blanditiis necessitatibus nam repudiandae iusto porro dolorem culpa reprehenderit id est, nostrum veritatis.
+                                </div>
+                            </div>
+                        </div>
+                        <!--end tabs-->
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <!--tabs-->
+                            <div class="tabs-section tabs-example-section-js example-tabs">
+                                <ul class="tabs-example tabs-example-js*">
+                                    <li class="tab-example tab-current">Tab1</li>
+                                    <li class="tab-example">Tab2</li>
+                                </ul>
+                                <!--Tab1-->
+                                <div class="bl tab-example-content tab-example-content-js tab-content-visible">
+                                    <div class="tab-scroll scroll-standard scroll-js*">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quis architecto, officia, accusantium animi, placeat earum quod possimus deserunt iste facere tempore inventore. Expedita quia soluta dolorum illo voluptatum consectetur cum asperiores, eveniet non. Sint facilis recusandae sunt ullam illum natus optio incidunt perspiciatis fugit culpa modi id quos, aliquid, quisquam et enim voluptatum qui. Sed dolores, dolor fugiat, delectus alias mollitia magni ex commodi, pariatur non eum neque recusandae atque tempore blanditiis debitis. Sunt laboriosam eum voluptatem praesentium provident, ipsa aut pariatur numquam. Excepturi minus, enim suscipit pariatur expedita aliquam sit, cum. Facere ex nesciunt doloribus illum molestias blanditiis autem architecto tempora ipsa voluptas voluptatibus dolore minima dolor consectetur rem sapiente, ut quo, quasi nam maxime soluta, libero nostrum rerum excepturi! Tempora atque totam inventore neque, ab ipsa aliquid id distinctio exercitationem mollitia deserunt molestias autem reiciendis aut blanditiis eos corporis harum incidunt, cumque quis. A sunt deserunt doloremque, ut unde libero inventore excepturi quam esse corrupti laudantium error deleniti ab, consequuntur vitae amet veniam, nemo tempora iusto id! Quasi obcaecati possimus labore quod sapiente a sint harum earum cupiditate. Quis ex eius aliquid eaque, ea ipsa, doloribus voluptatem totam vel aut error velit asperiores ut quas tenetur itaque saepe ratione numquam magni sit esse recusandae. Nobis ex at eveniet quam sapiente itaque aut quidem excepturi, nostrum, quos id, ratione, quisquam temporibus consequuntur dolore. Qui repellendus, rerum inventore doloremque alias. Iusto voluptates, sit? Maiores, voluptates est maxime, dignissimos molestias perferendis beatae placeat neque quo asperiores minima tempora libero delectus. Laborum alias ullam consequatur rem magni qui quis minima, labore hic omnis quos debitis accusamus commodi amet officiis odio, reprehenderit recusandae quaerat. Laudantium consequatur numquam aliquid quod sed, illum pariatur, dolor quasi rerum, necessitatibus inventore sit, molestias repellendus. Ullam omnis nobis aut corporis, assumenda atque aliquam facilis odio quia quibusdam aspernatur eos exercitationem maiores, minima dignissimos, molestiae dicta ratione dolorum. Voluptas vero sit, blanditiis? Explicabo obcaecati quo accusamus modi nulla esse reprehenderit aperiam nobis voluptatum doloremque excepturi rem voluptatem corporis dignissimos, alias reiciendis sequi, fugiat cumque iste, accusantium pariatur veritatis praesentium. Mollitia aperiam porro doloribus, qui nesciunt nemo error eligendi. Magni rem ab quo, officia architecto. Esse, repellendus illo accusantium velit eos vero odio quia delectus similique. Quia at minima assumenda. Suscipit voluptatibus soluta obcaecati deleniti enim quibusdam porro deserunt laudantium alias fugiat laborum facere fugit, reiciendis illum similique eaque itaque, iure nostrum commodi quas blanditiis sapiente molestiae ducimus? At.
+                                    </div>
+                                </div>
+                                <!--Tab2-->
+                                <div class="bl tab-example-content tab-example-content-js">
+                                    <div class="tab-scroll scroll-standard scroll-js*">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut aliquid, facilis, sapiente atque, rem debitis dolores rerum asperiores deleniti quia eius explicabo odit repellat obcaecati enim sunt iusto dicta recusandae numquam qui similique iure molestias doloremque! Ullam accusantium, quasi rerum magnam quae, ad atque vel ea blanditiis accusamus. Eum eius reiciendis placeat natus, error similique necessitatibus dolorem ipsam esse adipisci laudantium veritatis odit, architecto repellat ut nobis repudiandae sed, magnam dicta. Impedit tempora obcaecati iste laudantium porro, nam eligendi placeat perferendis quia voluptatum, temporibus repellendus quidem est ad tenetur ducimus veniam dignissimos atque molestias quod odio magni nobis repellat? Autem eaque nemo esse commodi illum sapiente iure consequuntur, eveniet harum excepturi delectus! Laborum error mollitia voluptatibus perferendis corporis facere cum. Molestias doloribus placeat quas. Facilis consequuntur veniam cum hic dolores sapiente cupiditate ea, libero iste aliquam itaque, perspiciatis recusandae illo temporibus consectetur consequatur voluptatum obcaecati ipsum porro maiores cumque harum. Magnam incidunt itaque aliquid explicabo esse, possimus dolor maxime accusamus rem voluptatibus quae aliquam vitae, animi totam consequatur aut at ut unde! Consequatur quos dolorum eaque fuga amet corporis harum quidem dolores, commodi cupiditate, aliquid doloribus, suscipit blanditiis necessitatibus nam repudiandae iusto porro dolorem culpa reprehenderit id est, nostrum veritatis.
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end tabs-->
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/tabs.js
+                            js/jquery.scrollbar.min.js
+
+                            // tabsJS
+                            $('.tabs-js').tabsJS();
+
+                            // jquery.scrollbar
+                            $('.scroll-js').scrollbar();
+                        </pre>
+                    </div>
+                    <!--SASS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            @import "source/tabs.scss"; // tabsJ
+                            @import "source/scrollbar.scss"; // jquery.scrollbar
+
+                            .some_parent_class{
+                                height: XXXpx;
+                            }
+                        </pre>
                     </div>
                 </div>
-                <!-- / Preview -->
+                <!--end tabs-->
             </div>
         </div>
-        <div class="brief-small-title tac"></div>
-        <div class="brief-box table">
-            <div class="cell brief-codebox-cell">
-                <div class="brief-codebox">
-                    <!-- Cod -->
-                    <pre class="brush: html">
+        <!--end tabs-->
+        <div class="brief-small-title tac">fancyBox</div>
+        <!--tabs-->
+        <div class="tabs-section tabs-global-section-js brif-tabs">
+            <ul class="tabs tabs-global-js">
+                <li class="tab tab-current"><span class="tab-span">Modal window</span></li>
+                <li class="tab"><span class="tab-span">Single images</span></li>
+                <li class="tab"><div class="tab-span">Image gallery</div></li>
+                <li class="tab"><div class="tab-span">Button helper</div></li>
+                <li class="tab"><div class="tab-span">Thumbnail helper</div></li>
+            </ul>
+            <!--Modal window-->
+            <div class="tab-content tab-global-content-js tab-content-visible">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SASS</div></li>
+                        <li class="tab"><div class="tab-span">Images</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <a href="#example" class="fancybox-modal">link</a>
+                        <div id="example" class="example-modal hide text">
+                            <h2 class="tac">Lorem ipsum dolor sit amet.</h2>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates veniam enim officia deleniti qui odit fuga unde rem quis, nostrum, tempora saepe nemo molestiae neque possimus ut id libero error eaque, magnam. Veniam itaque dicta porro adipisci temporibus, quae, nisi quisquam perferendis qui, doloremque fuga nesciunt placeat eum beatae perspiciatis animi nulla quam quidem nostrum, sunt reiciendis inventore dolores quis aliquid deserunt! Minus suscipit maxime laborum enim quo eaque ab, aspernatur quasi ipsum et quis non! Laborum doloremque natus dignissimos. Eum consequatur nisi provident, iste aut sapiente, dolorum impedit architecto harum cupiditate beatae ad. Eos modi numquam esse aperiam molestiae.
+                        </div>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <!--modal link-->
+                            <a href="#example-modal" class="fancybox-modal">link</a>
 
-                    </pre>
-                    <!-- / Cod -->
+                            <!--modal box-->
+                            <div id="example-modal" class="example-modal hide text">
+                                <h2 class="tac">Lorem ipsum dolor sit amet.</h2>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates veniam enim officia deleniti qui odit fuga unde rem quis, nostrum, tempora saepe nemo molestiae neque possimus ut id libero error eaque, magnam. Veniam itaque dicta porro adipisci temporibus, quae, nisi quisquam perferendis qui, doloremque fuga nesciunt placeat eum beatae perspiciatis animi nulla quam quidem nostrum, sunt reiciendis inventore dolores quis aliquid deserunt! Minus suscipit maxime laborum enim quo eaque ab, aspernatur quasi ipsum et quis non! Laborum doloremque natus dignissimos. Eum consequatur nisi provident, iste aut sapiente, dolorum impedit architecto harum cupiditate beatae ad. Eos modi numquam esse aperiam molestiae.
+                            </div>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/jquery.fancybox.pack.js
+
+                            // fancybox
+                            $('.fancybox-modal').fancybox({
+                                wrapCSS: 'customClass',
+                                openEffect: 'elastic'
+                            });
+                        </pre>
+                    </div>
+                    <!--SASS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            /*Source*/
+                            @import "source/jquery.fancybox.scss"; // jquery.fancybox
+                        </pre>
+                    </div>
+                    <!--Images-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            images/icons/fancyClose.png
+                            images/icons/fancyPrev.png
+                            images/icons/fancyNext.png
+                        </pre>
+                        <img src="images/icons/fancyClose.png" alt="fancyClose.png" title="fancyClose.png">
+                        <img src="images/icons/fancyPrev.png" alt="fancyPrev.png" title="fancyPrev.png">
+                        <img src="images/icons/fancyNext.png" alt="fancyNext.png" title="fancyNext.png">
+                    </div>
                 </div>
+                <!--end tabs-->
             </div>
-            <div class="cell brief-previewbox-cell">
-                <!-- Preview -->
+            <!--Single images-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SASS</div></li>
+                        <li class="tab"><div class="tab-span">Images</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <p class="fancy-title">Title outside</p>
+                        <a class="fancy-prew-link fancy-prew-outside-js" href="images/temp/img01.jpg" title="Lorem ipsum dolor sit amet">
+                            <img class="fancy-prew-img" src="images/temp/img01.jpg" alt="Lorem ipsum dolor sit amet">
+                        </a>
+                        <a class="fancy-prew-link fancy-prew-outside-js" href="images/temp/img02.jpg" title="Lorem ipsum dolor">
+                            <img class="fancy-prew-img" src="images/temp/img02.jpg" alt="Lorem ipsum dolor">
+                        </a>
+                        <p class="fancy-title">Title inside</p>
+                        <a class="fancy-prew-link fancy-prew-inside-js" href="images/temp/img03.jpg" title="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                            <img class="fancy-prew-img" src="images/temp/img03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                        </a>
+                        <a class="fancy-prew-link fancy-prew-inside-js" href="images/temp/img04.jpg" title="Lorem ipsum">
+                            <img class="fancy-prew-img" src="images/temp/img04.jpg" alt="Lorem ipsum">
+                        </a>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <p class="fancy-title">Title outside</p>
+                            <a class="fancy-prew-link fancy-prew-outside-js*" href="images/temp/img01.jpg" title="Lorem ipsum dolor sit amet">
+                                <img class="fancy-prew-img" src="images/temp/img01.jpg" alt="Lorem ipsum dolor sit amet">
+                            </a>
+                            <a class="fancy-prew-link fancy-prew-outside-js*" href="images/temp/img02.jpg" title="Lorem ipsum dolor">
+                                <img class="fancy-prew-img" src="images/temp/img02.jpg" alt="Lorem ipsum dolor">
+                            </a>
 
-                <!-- / Preview -->
+                            <p class="fancy-title">Title inside</p>
+                            <a class="fancy-prew-link fancy-prew-inside-js*" href="images/temp/img03.jpg" title="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                                <img class="fancy-prew-img" src="images/temp/img03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                            </a>
+                            <a class="fancy-prew-link fancy-prew-inside-js*" href="images/temp/img04.jpg" title="Lorem ipsum">
+                                <img class="fancy-prew-img" src="images/temp/img04.jpg" alt="Lorem ipsum">
+                            </a>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/jquery.fancybox.pack.js
+
+                            // fancybox
+
+                            // Title outside (default)
+                            $('.fancy-prew-outside-js').fancybox();
+
+                            // Title inside
+                            $('.fancy-prew-inside-js').fancybox({
+                                helpers     : {
+                                    title   : { type : 'inside' }
+                                }
+                            });
+                        </pre>
+                    </div>
+                    <!--SASS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            /*Source*/
+                            @import "source/jquery.fancybox.scss"; // jquery.fancybox
+                        </pre>
+                    </div>
+                    <!--Images-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            images/icons/fancyClose.png
+                            images/icons/fancyPrev.png
+                            images/icons/fancyNext.png
+                        </pre>
+                        <img src="images/icons/fancyClose.png" alt="fancyClose.png" title="fancyClose.png">
+                        <img src="images/icons/fancyPrev.png" alt="fancyPrev.png" title="fancyPrev.png">
+                        <img src="images/icons/fancyNext.png" alt="fancyNext.png" title="fancyNext.png">
+                    </div>
+                </div>
+                <!--end tabs-->
             </div>
+            <!--Image gallery-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SASS</div></li>
+                        <li class="tab"><div class="tab-span">Images</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <a rel="gallery" class="fancy-prew-link fancy-prew-js" href="images/temp/img01.jpg" title="Lorem ipsum dolor sit amet">
+                            <img class="fancy-prew-img" src="images/temp/img01.jpg" alt="Lorem ipsum dolor sit amet">
+                        </a>
+                        <a rel="gallery" class="fancy-prew-link fancy-prew-js" href="images/temp/img02.jpg" title="Lorem ipsum dolor">
+                            <img class="fancy-prew-img" src="images/temp/img02.jpg" alt="Lorem ipsum dolor">
+                        </a>
+                        <a rel="gallery" class="fancy-prew-link fancy-prew-js" href="images/temp/img03.jpg" title="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                            <img class="fancy-prew-img" src="images/temp/img03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                        </a>
+                        <a rel="gallery" class="fancy-prew-link fancy-prew-js" href="images/temp/img04.jpg" title="Lorem ipsum">
+                            <img class="fancy-prew-img" src="images/temp/img04.jpg" alt="Lorem ipsum">
+                        </a>
+                        <a rel="gallery" class="fancy-prew-link fancy-prew-js" href="images/temp/img05.jpg" title="Lorem ipsum consectetur ">
+                            <img class="fancy-prew-img" src="images/temp/img05.jpg" alt="Lorem ipsum consectetur ">
+                        </a>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <a rel="gallery" class="fancy-prew-link fancy-prew-js*" href="images/temp/img01.jpg" title="Lorem ipsum dolor sit amet">
+                                <img class="fancy-prew-img" src="images/temp/img01.jpg" alt="Lorem ipsum dolor sit amet">
+                            </a>
+                            <a rel="gallery" class="fancy-prew-link fancy-prew-js*" href="images/temp/img02.jpg" title="Lorem ipsum dolor">
+                                <img class="fancy-prew-img" src="images/temp/img02.jpg" alt="Lorem ipsum dolor">
+                            </a>
+                            <a rel="gallery" class="fancy-prew-link fancy-prew-js*" href="images/temp/img03.jpg" title="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                                <img class="fancy-prew-img" src="images/temp/img03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                            </a>
+                            <a rel="gallery" class="fancy-prew-link fancy-prew-js*" href="images/temp/img04.jpg" title="Lorem ipsum">
+                                <img class="fancy-prew-img" src="images/temp/img04.jpg" alt="Lorem ipsum">
+                            </a>
+                            <a rel="gallery" class="fancy-prew-link fancy-prew-js*" href="images/temp/img05.jpg" title="Lorem ipsum consectetur ">
+                                <img class="fancy-prew-img" src="images/temp/img05.jpg" alt="Lorem ipsum consectetur ">
+                            </a>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/jquery.fancybox.pack.js
+
+                            // fancybox
+                            $('.fancy-prew-js').fancybox();
+                        </pre>
+                    </div>
+                    <!--SASS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            /*Source*/
+                            @import "source/jquery.fancybox.scss"; // jquery.fancybox
+                        </pre>
+                    </div>
+                    <!--Images-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            images/icons/fancyClose.png
+                            images/icons/fancyPrev.png
+                            images/icons/fancyNext.png
+                        </pre>
+                        <img src="images/icons/fancyClose.png" alt="fancyClose.png" title="fancyClose.png">
+                        <img src="images/icons/fancyPrev.png" alt="fancyPrev.png" title="fancyPrev.png">
+                        <img src="images/icons/fancyNext.png" alt="fancyNext.png" title="fancyNext.png">
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+            <!--Button helper-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SASS</div></li>
+                        <li class="tab"><div class="tab-span">Images</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <a rel="fancybox-button" class="fancy-prew-link fancybox-button-js" href="images/temp/img01.jpg" title="Lorem ipsum dolor sit amet">
+                            <img class="fancy-prew-img" src="images/temp/img01.jpg" alt="Lorem ipsum dolor sit amet">
+                        </a>
+                        <a rel="fancybox-button" class="fancy-prew-link fancybox-button-js" href="images/temp/img02.jpg" title="Lorem ipsum dolor">
+                            <img class="fancy-prew-img" src="images/temp/img02.jpg" alt="Lorem ipsum dolor">
+                        </a>
+                        <a rel="fancybox-button" class="fancy-prew-link fancybox-button-js" href="images/temp/img03.jpg" title="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                            <img class="fancy-prew-img" src="images/temp/img03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                        </a>
+                        <a rel="fancybox-button" class="fancy-prew-link fancybox-button-js" href="images/temp/img04.jpg" title="Lorem ipsum">
+                            <img class="fancy-prew-img" src="images/temp/img04.jpg" alt="Lorem ipsum">
+                        </a>
+                        <a rel="fancybox-button" class="fancy-prew-link fancybox-button-js" href="images/temp/img05.jpg" title="Lorem ipsum consectetur ">
+                            <img class="fancy-prew-img" src="images/temp/img05.jpg" alt="Lorem ipsum consectetur ">
+                        </a>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <a rel="fancybox-button" class="fancy-prew-link fancybox-button-js*" href="images/temp/img01.jpg" title="Lorem ipsum dolor sit amet">
+                                <img class="fancy-prew-img" src="images/temp/img01.jpg" alt="Lorem ipsum dolor sit amet">
+                            </a>
+                            <a rel="fancybox-button" class="fancy-prew-link fancybox-button-js*" href="images/temp/img02.jpg" title="Lorem ipsum dolor">
+                                <img class="fancy-prew-img" src="images/temp/img02.jpg" alt="Lorem ipsum dolor">
+                            </a>
+                            <a rel="fancybox-button" class="fancy-prew-link fancybox-button-js*" href="images/temp/img03.jpg" title="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                                <img class="fancy-prew-img" src="images/temp/img03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                            </a>
+                            <a rel="fancybox-button" class="fancy-prew-link fancybox-button-js*" href="images/temp/img04.jpg" title="Lorem ipsum">
+                                <img class="fancy-prew-img" src="images/temp/img04.jpg" alt="Lorem ipsum">
+                            </a>
+                            <a rel="fancybox-button" class="fancy-prew-link fancybox-button-js*" href="images/temp/img05.jpg" title="Lorem ipsum consectetur ">
+                                <img class="fancy-prew-img" src="images/temp/img05.jpg" alt="Lorem ipsum consectetur ">
+                            </a>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/jquery.fancybox.pack.js
+                            js/jquery.fancybox-buttons.js
+
+                            // fancybox
+                            $('.fancybox-button-js').fancybox({
+                                closeBtn        : false,
+                                helpers     : {
+                                    title   : { type : 'inside' },
+                                    buttons : {}
+                                }
+                            });
+                        </pre>
+                    </div>
+                    <!--SASS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            /*Source*/
+                            @import "source/jquery.fancybox.scss"; // jquery.fancybox
+                            @import "source/jquery.fancybox-buttons.scss"; // jquery.fancybox-buttons
+                        </pre>
+                    </div>
+                    <!--Images-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            images/icons/fancyBtnPrev.png
+                            images/icons/fancyBtnNext.png
+                            images/icons/fancyBtnPlay.png
+                            images/icons/fancyBtnPlayOn.png
+                            images/icons/fancyBtnToggle.png
+                            images/icons/fancyBtnToggleOn.png
+                            images/icons/fancyBtnClose.png
+                        </pre>
+                        <p class="fancyBtnbox">
+                            <img src="images/icons/fancyBtnPrev.png" alt="fancyBtnPrev.png" title="fancyBtnPrev.png">
+                            <img src="images/icons/fancyBtnNext.png" alt="fancyBtnNext.png" title="fancyBtnNext.png">
+                            <img src="images/icons/fancyBtnPlay.png" alt="fancyBtnPlay.png" title="fancyBtnPlay.png">
+                            <img src="images/icons/fancyBtnPlayOn.png" alt="fancyBtnPlayOn.png" title="fancyBtnPlayOn.png">
+                            <img src="images/icons/fancyBtnToggle.png" alt="fancyBtnToggle.png" title="fancyBtnToggle.png">
+                            <img src="images/icons/fancyBtnToggleOn.png" alt="fancyBtnToggleOn.png" title="fancyBtnToggleOn.png">
+                            <img src="images/icons/fancyBtnClose.png" alt="fancyBtnClose.png" title="fancyBtnClose.png">
+                        </p>
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+            <!--Thumbnail helper-->
+            <div class="tab-content tab-global-content-js">
+                <!--tabs-->
+                <div class="tabs-section tabs-section-js brif-tabs">
+                    <ul class="tabs tabs-js">
+                        <li class="tab tab-current"><span class="tab-span">Example</span></li>
+                        <li class="tab"><div class="tab-span">HTML</div></li>
+                        <li class="tab"><div class="tab-span">JavaScript</div></li>
+                        <li class="tab"><div class="tab-span">SASS</div></li>
+                        <li class="tab"><div class="tab-span">Images</div></li>
+                    </ul>
+                    <!--Examples-->
+                    <div class="tab-content tab-content-js tab-content-visible">
+                        <a rel="fancybox-thumb" class="fancy-prew-link fancybox-thumb-js" href="images/temp/img01.jpg" title="Lorem ipsum dolor sit amet">
+                            <img class="fancy-prew-img" src="images/temp/img01.jpg" alt="Lorem ipsum dolor sit amet">
+                        </a>
+                        <a rel="fancybox-thumb" class="fancy-prew-link fancybox-thumb-js" href="images/temp/img02.jpg" title="Lorem ipsum dolor">
+                            <img class="fancy-prew-img" src="images/temp/img02.jpg" alt="Lorem ipsum dolor">
+                        </a>
+                        <a rel="fancybox-thumb" class="fancy-prew-link fancybox-thumb-js" href="images/temp/img03.jpg" title="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                            <img class="fancy-prew-img" src="images/temp/img03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                        </a>
+                        <a rel="fancybox-thumb" class="fancy-prew-link fancybox-thumb-js" href="images/temp/img04.jpg" title="Lorem ipsum">
+                            <img class="fancy-prew-img" src="images/temp/img04.jpg" alt="Lorem ipsum">
+                        </a>
+                        <a rel="fancybox-thumb" class="fancy-prew-link fancybox-thumb-js" href="images/temp/img05.jpg" title="Lorem ipsum consectetur ">
+                            <img class="fancy-prew-img" src="images/temp/img05.jpg" alt="Lorem ipsum consectetur ">
+                        </a>
+                    </div>
+                    <!--HTML-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            <a rel="fancybox-thumb" class="fancy-prew-link fancybox-thumb-js*" href="images/temp/img01.jpg" title="Lorem ipsum dolor sit amet">
+                                <img class="fancy-prew-img" src="images/temp/img01.jpg" alt="Lorem ipsum dolor sit amet">
+                            </a>
+                            <a rel="fancybox-thumb" class="fancy-prew-link fancybox-thumb-js*" href="images/temp/img02.jpg" title="Lorem ipsum dolor">
+                                <img class="fancy-prew-img" src="images/temp/img02.jpg" alt="Lorem ipsum dolor">
+                            </a>
+                            <a rel="fancybox-thumb" class="fancy-prew-link fancybox-thumb-js*" href="images/temp/img03.jpg" title="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                                <img class="fancy-prew-img" src="images/temp/img03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing">
+                            </a>
+                            <a rel="fancybox-thumb" class="fancy-prew-link fancybox-thumb-js*" href="images/temp/img04.jpg" title="Lorem ipsum">
+                                <img class="fancy-prew-img" src="images/temp/img04.jpg" alt="Lorem ipsum">
+                            </a>
+                            <a rel="fancybox-thumb" class="fancy-prew-link fancybox-thumb-js*" href="images/temp/img05.jpg" title="Lorem ipsum consectetur ">
+                                <img class="fancy-prew-img" src="images/temp/img05.jpg" alt="Lorem ipsum consectetur ">
+                            </a>
+                        </pre>
+                    </div>
+                    <!--JavaScript-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: js">
+                            /*Source*/
+                            js/jquery.fancybox.pack.js
+                            js/jquery.fancybox-thumbs.js
+
+                            // fancybox
+                            $('.fancybox-thumb-js').fancybox({
+                                helpers     : {
+                                    title   : { type : 'outside' },
+                                    thumbs  : {
+                                        width   : 50,
+                                        height  : 50
+                                    }
+                                }
+                            });
+                        </pre>
+                    </div>
+                    <!--SASS-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: sass">
+                            /*Source*/
+                            @import "source/jquery.fancybox.scss"; // jquery.fancybox
+                            @import "source/jquery.fancybox-thumbs.scss"; // jquery.fancybox-thumbs
+                        </pre>
+                    </div>
+                    <!--Images-->
+                    <div class="tab-content tab-content-js">
+                        <pre class="brush: html">
+                            images/icons/fancyClose.png
+                            images/icons/fancyPrev.png
+                            images/icons/fancyNext.png
+                        </pre>
+                        <img src="images/icons/fancyClose.png" alt="fancyClose.png" title="fancyClose.png">
+                        <img src="images/icons/fancyPrev.png" alt="fancyPrev.png" title="fancyPrev.png">
+                        <img src="images/icons/fancyNext.png" alt="fancyNext.png" title="fancyNext.png">
+                    </div>
+                </div>
+                <!--end tabs-->
+            </div>
+        </div>
+        <!--end tabs-->
+        <h2 class="global-title">Typography</h2>
+        <div class="global-bl text">
+            <img src="images/required/noimg.jpg" alt="no img" class="alignleft">
+            <p>
+                <a href="#">Lorem ipsum</a> dolor sit amet, <a href="http://xxx.xx">consectetur adipisicing elit</a>, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.<a href="#"><span>Duis aute irure dolor</span></a> in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+                <strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. <i>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</i> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+            <h1>Dummy text (H1)</h1>
+            <h2>Contrary to popular belief (H2)</h2>
+            <h3>De Finibus Bonorum et Malorum (H3)</h3>
+            <blockquote>
+                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+            </blockquote>
+            <hr>
+            <ul>
+                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+                <li>Lorem Ipsum has been the industry's standard.</li>
+                <li>Lorem Ipsum is simply dummy text of the printing.</li>
+                <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</li>
+                <li>Lorem Ipsum is simply dummy text of typesetting industry.</li>
+                <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</li>
+                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            </ul>
+            <p>
+                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+            </p>
+            <ol>
+                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+                <li>Lorem Ipsum has been the industry's standard.</li>
+                <li>Lorem Ipsum is simply dummy text of the printing.</li>
+                <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</li>
+                <li>Lorem Ipsum is simply dummy text of typesetting industry.</li>
+                <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</li>
+                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            </ol>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+            <table>
+                <tr>
+                    <th>Cell01</th>
+                    <th>Cell02</th>
+                    <th>Cell03</th>
+                    <th>Cell04</th>
+                </tr>
+                <tr>
+                    <td>Lorem Ipsum is simply dummy</td>
+                    <td>printing and typesetting industry</td>
+                    <td>Lorem Ipsum is simply dummy</td>
+                    <td>PageMaker including versions of Lorem Ipsum</td>
+                </tr>
+            </table>
+            <p>
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum
+            </p>
         </div>
     </div>
-    <div class="popupper popupper-modal popupper-size popupper-js">
-        <span class="icon close-rounded-icon popupper-close popupper-close-js"></span>
-        <div class="popupper-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum tempora optio qui maxime excepturi modi animi aliquid similique, perferendis voluptates placeat suscipit culpa, ex adipisci sit autem non ut corrupti. Quod, facere dolor tenetur perferendis dolore fugiat soluta beatae cupiditate praesentium cumque earum minima aliquid accusantium assumenda rerum quas a reiciendis nemo ut eius. Atque natus sapiente necessitatibus repellendus modi facere iure fugit aut tempore consequuntur corporis eaque delectus optio saepe vel, earum quis nostrum mollitia aliquid illum cupiditate illo, itaque adipisci nemo? Voluptatibus illum non magni nobis quos inventore harum quo accusamus pariatur, sequi aliquid animi id nesciunt debitis.
-        </div>
-    </div><!-- /Popupper-modal -->
-    <div class="popupper popupper-st popupper-size popupper-static popupper-js">
-        <span class="icon close-rounded-icon popupper-close popupper-close-js"></span>
-        <div class="popupper-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </div>
-    </div><!-- /Popupper-st -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>

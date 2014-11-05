@@ -200,8 +200,9 @@ $fileloadBtnWidth: 25%;
 
 .fileload-box{
     @extend .relative;
-
     @extend .no-select;
+
+    width: $fieldDefaultWidth;
 }
 .fileload-field{
     line-height: $fieldDefaultHeight;

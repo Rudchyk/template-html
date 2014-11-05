@@ -12,17 +12,128 @@ body{
 .brief-title{
     padding: 15px;
 }
+.syntaxhighlighter{
+    padding: 10px 0;
+}
+
+.brif-tabs{
+    .tabs{
+        @extend .block;
+        @extend .clearfix;
+
+        padding: 4px 0 0 1px;
+
+        border-bottom: solid 1px #ddd;
+    }
+    .tab{
+        @extend .left;
+
+        height: 40px;
+
+        &:hover,
+        &.tab-current{
+            .tab-span{
+                @include pos(relative, -4px, false, false, false, false);
+
+                height: 40px;
+                padding-top: 4px;
+
+                border-bottom: 1px solid #fff;
+                border-radius: 4px 4px 0 0;
+                background: #fff;
+
+                color: #111;
+            }
+        }
+    }
+    .tab-span{
+        @extend .block;
+
+        height: 39px;
+        padding: 0px 20px;
+        margin: 0 0 0 -1px;
+
+        border: solid 1px #ddd;
+        border-width: 1px 1px 0 1px;
+        background: #f5f5f5;
+
+        color: #333;
+        font-size: 16px;
+        line-height: 40px;
+    }
+    .tab-content{
+        clear: both;
+
+        padding: 15px;
+        margin-bottom: 24px;
+
+        border: solid 1px #ddd;
+        border-top: none;
+        background-color: #fff;
+    }
+}
+.example-modal{
+    width: 500px;
+}
+.fancy-prew-link{
+    overflow: hidden;
+    @include dib;
+
+    width: 130px;
+    height: 73px;
+}
+.fancy-prew-img{
+    width: 100%;
+}
+.fancy-title{
+    margin: 15px 0;
+}
+.fancyBtnbox{
+    background-color: #1B2426;
+}
+.global-title{
+    margin: 15px 0;
+
+    @include rem-font-size(44px);
+    text-align: center;
+}
+.global-bl{
+    padding: 15px;
+
+    border: 1px solid #ddd;
+    background-color: #FFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .brief-box{
     margin-bottom: 40px;
 }
 .brief-class-title,
-.brief-small-title{
+.brief-small-title,
+.brief-smaller-title{
     padding: 5px;
 }
 .brief-small-title{
     margin-top: 15px;
     font-size: 1.2rem;
     font-weight: bold;
+}
+.brief-smaller-title{
+    font-size: 1rem;
+    font-style: italic;
 }
 .brief-class-title{
     color: #5eab4a;
@@ -48,12 +159,13 @@ body{
 
 // Tabs
 
-.my-tabs{
+.example-tabs{
     border: 1px solid #ccc;
-    .tabs{
+    .tabs-example{
         border-bottom: 1px solid #ccc;
     }
-    .tab{
+    .tab-example{
+        @extend .cur-pointer;
         @include dib;
         padding: 5px;
         &:hover,
@@ -61,29 +173,34 @@ body{
             color: #000;
         }
     }
-    .tab-content{
-        // overflow: auto;
-
+    .tab-example-content{
+        @extend .none;
         @extend .box;
         width: 100%;
         height: 100px;
-        padding: 5px;
+        padding: 15px;
+
+        &.tab-content-visible{
+            @extend .show;
+        }
     }
 }
 
 //Styleable Scrollbars
 
-.scroll-panel{
-    width: 400px;
+.some_parent_class{
+    overflow: hidden;
+
+    width: 896px;
     height: 200px;
 
     border: 1px solid #ccc;
 }
 .scroll-panel-content{
-    width: 600px;
+    width: 1200px;
     padding: 10px;
 }
 
 .tab-scroll{
-    height: 90px;
+    height: 100%;
 }

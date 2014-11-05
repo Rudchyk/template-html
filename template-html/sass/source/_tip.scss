@@ -57,7 +57,7 @@
         }
     }
     &.messageTip-fix{
-        position: fixed;
+        @extend .fixed;
 
         &:before{
             border: none;
