@@ -286,6 +286,14 @@
         @include icons-sprite($file_name);
     }
 }
+@mixin bgImgBl($ImgName){
+    @extend .box;
+
+    width: image-width($ImgName);
+    height: image-height($ImgName);
+
+    background: transparent url("../"+$ImgName) no-repeat top center;
+}
 
 // Form
 @mixin fieldEvent($border, $background, $color){
