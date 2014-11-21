@@ -211,19 +211,13 @@
     $cssValue: $photoshopValue/1000;
     letter-spacing: $cssValue+em;
 }
-
-@mixin centerBlock($Static, $Max: false, $Min: false){
-    @if ($Static){
-        width: $Static;
-    }
-    @if($Max){
-        max-width: $Max;
-    }
-    @if($Min){
-        min-width: $Min;
-    }
-    margin: auto;
+@mixin numberLineHeight($fontSize, $height){
+    line-height: $height/$fontSize;
 }
+@function numberLineHeight($fontSize, $height){
+    @return $height/$fontSize;
+}
+
 // ** Align icons
 @mixin alignIcon($top){
     @include pos(relative, #{$top}px, false, false, false, false);
@@ -294,7 +288,18 @@
 
     background: transparent url("../"+$ImgName) no-repeat top center;
 }
-
+@mixin centerBlock($Static, $Max: false, $Min: false){
+    @if ($Static){
+        width: $Static;
+    }
+    @if($Max){
+        max-width: $Max;
+    }
+    @if($Min){
+        min-width: $Min;
+    }
+    margin: auto;
+}
 // Form
 @mixin fieldEvent($border, $background, $color){
     @if $border{
